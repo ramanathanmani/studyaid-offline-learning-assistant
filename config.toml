@@ -1,0 +1,10 @@
+[model]
+name = "Llama-3.2-1B-Instruct"
+pte = ""
+tokenizer = ""
+max_new = 480
+two_pass = false
+
+[runtime]
+mock = false
+passage = "samples/optics.txt"

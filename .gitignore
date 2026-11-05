@@ -1,0 +1,14 @@
+*.pte
+*.bin
+*.model
+*.json.tok
+tokenizer*
+outputs/*
+!outputs/.gitkeep
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+*.egg-info/
+dist/
+build/

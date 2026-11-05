@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "studyaid"
+version = "0.1.0"
+description = "Offline Study Aid (ExecuTorch + Llama 3.2) for Rural Tamil Nadu Learners"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "psutil>=5.9.0"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0"
+]
+executorch = [
+    "executorch"
+]
+
+[project.scripts]
+studyaid = "studyaid.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

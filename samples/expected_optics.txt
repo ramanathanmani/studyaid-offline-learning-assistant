@@ -1,0 +1,65 @@
+[MOCK BACKEND: not a real model run]
+
+=== NUMBERED PASSAGE ===
+[S1] When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.
+[S2] This deviation of ray of light is called refraction.
+[S3] Refraction takes place due to the difference in the velocity of light in different media.
+[S4] The velocity of light is more in a rarer medium and less in a denser medium.
+[S5] When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface.
+
+=== HARDEST SENTENCE BEFORE / AFTER ===
+Original (S1): When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.
+Simplified:   When light enters water or glass at a slant, its path bends.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  20           12           -40.0%
+Letters                101          47           -53.5%
+Avg letters/word       5.05         3.92         -22.4%
+
+=== SIMPLE SUMMARY ===
+Light bends when it passes from one clear material to another at an angle. This bending happens because light travels at different speeds in different materials. When light goes from water or glass into air, it bends away from the straight vertical line.
+
+=== VILLAGE LIFE EXAMPLE ===
+Think of walking a bullock cart from a smooth tar road into a muddy field at an angle. As the first wheel hits the thick mud, it slows down while the other wheel on the tar road is still moving fast. This difference in speed makes the entire cart turn or bend off its straight path. In the same way, a ray of light slows down and bends when it enters water from air.
+
+=== HARD WORDS ===
+- deviation: bending or turning away from a straight line (English only)
+- interface: boundary surface where two materials meet (English only)
+- medium: material through which light travels -> ஊடகம் (Oodagam) [unverified]
+- obliquely: at a slant or angle -> சாய்வாக (Saaivaaga) [unverified]
+- refraction: the bending of light as it moves between materials -> ஒளிவிலகல் (Oli-vilagal) [unverified]
+- transparent: see-through material that allows light to pass (English only)
+- velocity: speed in a given direction (English only)
+
+=== QUIZ QUESTIONS ===
+[Q1] What causes refraction to occur?
+     Answer: difference in the velocity of light in different media
+     Citation: S3
+     Support: SUPPORTED (shared: difference, velocity, light, media)
+
+[Q2] What is the deviation of a ray of light called?
+     Answer: deviation of ray of light is called refraction
+     Citation: S2
+     Support: SUPPORTED (shared: deviation, ray, light, refraction)
+
+[Q3] How does the refracted ray bend when entering a rarer medium from a denser medium?
+     Answer: refracted ray is bent away from the normal
+     Citation: S5
+     Support: SUPPORTED (shared: refracted, ray, bent, away, normal)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux
+CPU: Host CPU
+Cores: 8
+Total RAM: 15.3 GB
+Network state: real interfaces checked
+Default route: detected
+Model: Llama-3.2-1B-Instruct
+PTE size: N/A (mock run)
+Peak RSS: psutil measured
+Inference time: measured
+Tokens generated: 0
+Tokens/sec: 0.0
+Mode: MOCK BACKEND: not a real model run
