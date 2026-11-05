@@ -66,6 +66,8 @@ def build_report(pipe_res, telem_res):
     buf.append("=== QUIZ QUESTIONS / வினாடி வினா ===")
     quiz = pipe_res.get("quiz", [])
     if quiz:
+        if len(quiz) < 3:
+            buf.append(f"quiz incomplete ({len(quiz)} of 3)")
         for idx, q in enumerate(quiz, 1):
             buf.append(f"[Q{idx}] {q['q']}")
             buf.append(f"     Answer: {q['a']}")
@@ -79,7 +81,7 @@ def build_report(pipe_res, telem_res):
                 sug_str = f", suggested citation: {q['suggested']}" if q.get("suggested") else ""
                 buf.append(f"     Support: FLAGGED (shared: {sh_str}{sug_str})")
     else:
-        buf.append("No quiz items available.")
+        buf.append("quiz incomplete (0 of 3)")
     buf.append("")
 
     buf.append("=== JUDGE PROOF TELEMETRY ===")

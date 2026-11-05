@@ -30,20 +30,27 @@ class MockBackend:
         p_low = prompt.lower()
         if "rewrite in fewer words" in p_low:
             txt = "<SIMPLE>Light bends at a slant.</SIMPLE>"
+        elif "summary of the main scientific points" in p_low or "summary of the passage" in p_low:
+            txt = "<SUMMARY>Light bends when it passes between different transparent media. Its speed alters across different optical densities.</SUMMARY>"
+        elif "words to explain" in p_low:
+            txt = "<WORDS>\nrefraction | bending of light\nmedium | substance\nnormal | perpendicular line\nobliquely | at a slant\n</WORDS>"
         elif "village-life example" in p_low:
-            txt = "<VILLAGE>A bullock cart slows down in thick mud, causing the path of travel to deviate and bend.</VILLAGE>"
-        elif "create exactly 3 quiz questions" in p_low or ("<quiz>" in p_low and "<simple>" not in p_low):
+            txt = "<VILLAGE>In a village near Thanjavur, farmer Murugan pulls a wooden plow across wet paddy fields. The thick mud causes the plow path to undergo deviation.</VILLAGE>"
+        elif "quiz questions" in p_low or ("<quiz>" in p_low and "<simple>" not in p_low):
             txt = (
                 "<QUIZ>\n"
                 "Q: What causes refraction to occur?\n"
-                "A: difference in the velocity of light in different media\n"
+                "A: velocity difference in different media\n"
                 "C: S3\n\n"
                 "Q: What is the deviation of a ray of light called?\n"
-                "A: deviation of ray of light is called refraction\n"
+                "A: refraction\n"
                 "C: S2\n\n"
                 "Q: How does the refracted ray bend when entering a rarer medium from a denser medium?\n"
-                "A: refracted ray is bent away from the normal\n"
-                "C: S5\n"
+                "A: bent away from the normal\n"
+                "C: S5\n\n"
+                "Q: How does light travel through a uniform optical medium?\n"
+                "A: in straight lines\n"
+                "C: S1\n"
                 "</QUIZ>"
             )
         else:

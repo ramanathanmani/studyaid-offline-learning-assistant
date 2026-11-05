@@ -44,3 +44,22 @@ def test_pipeline_simplification_fallback():
     res = run_pipeline(txt, bk, {}, two_pass=True)
     assert res["guards"]["no_simpler_rewrite"] is True
     assert res["readab"]["orig"]["w_cnt"] == res["readab"]["simp"]["w_cnt"]
+
+def test_pipeline_summary_fallback():
+    class NoSummaryBackend:
+        def __init__(self):
+            self.is_mock = True
+        def gen(self, prompt, max_new=480):
+            p_low = prompt.lower()
+            if "quiz" in p_low:
+                return "<QUIZ>\nQ: What is sentence one?\nA: first sentence\nC: S1\nQ: What is sentence two?\nA: second sentence\nC: S2\nQ: What is sentence three?\nA: third sentence\nC: S3\n</QUIZ>", 40
+            return "<SIMPLE>A short sentence.</SIMPLE><VILLAGE>Farmer Murugan pulls plow in wet paddy field causing deviation.</VILLAGE><WORDS>sentence | line</WORDS>", 40
+
+    txt = "First sentence here. Second sentence follows. Third sentence ends."
+    bk = NoSummaryBackend()
+    res = run_pipeline(txt, bk, {}, two_pass=True)
+    summary = res["parsed"]["summary"]
+    assert "fallback: first sentences of the passage" in summary
+    assert "First sentence here." in summary
+    assert "Second sentence follows." in summary
+    assert res["guards"]["summary_produced_without_fallback"] is False

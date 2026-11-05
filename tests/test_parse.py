@@ -92,10 +92,36 @@ def test_parse_truncated_reply():
     )
     res = parse_resp(raw)
     assert res["valid"] is False
-    assert "SUMMARY" in res["missing"]
+    assert res["summary"] == "Light bends when moving between media."
     assert "VILLAGE" in res["missing"]
     assert "WORDS" in res["missing"]
     assert "QUIZ" in res["missing"]
+
+def test_extract_tag_unclosed_and_variations():
+    from studyaid.parse import extract_tag
+    txt = (
+        "<SIMPLE>Rewrite text here.\n"
+        "<SUMMARY>Summary paragraph.\n"
+        "<SVILLE>Village story in Thanjavur.\n"
+        "<WORDS>refraction | light bending"
+    )
+    assert extract_tag("SIMPLE", txt) == "Rewrite text here."
+    assert extract_tag("SUMMARY", txt) == "Summary paragraph."
+    assert extract_tag("VILLAGE", txt) == "Village story in Thanjavur."
+    assert "refraction | light bending" in extract_tag("WORDS", txt)
+
+def test_validate_quiz_reject_citation_and_sentence_copy():
+    s_list = [
+        ("S1", "An electric current is defined as the rate of flow of electric charges across any cross section of a conductor.")
+    ]
+    items = [
+        {"q": "What is current?", "a": "S1", "c": "S1"},
+        {"q": "What is current?", "a": "An electric current is defined as the rate of flow of electric charges across any cross section of a conductor.", "c": "S1"},
+        {"q": "What is current defined as?", "a": "rate of flow of electric charges", "c": "S1"}
+    ]
+    val = validate_quiz(items, s_list)
+    assert len(val) == 1
+    assert val[0]["a"] == "rate of flow of electric charges"
 
 def test_parse_malformed_reply():
     raw = (

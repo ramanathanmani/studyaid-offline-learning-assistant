@@ -27,7 +27,7 @@ def build_prompt(s_list, hard_s, hard_words, pass_mode=None):
             "3. <VILLAGE>: Write an everyday rural example (3-4 sentences) that directly explains the scientific concepts in the passage using real village situations.\n"
             "Worked Example for Village (different topic):\n"
             "Concept: Friction opposes motion.\n"
-            "Example: When a bullock cart moves from a smooth tar road onto loose sand, the cart wheels experience heavy friction, making the bullocks pull harder.\n"
+            "Example: In an agricultural village near Thanjavur, farmer Murugan pulls a wooden plow across wet paddy fields. The thick clay exerts heavy friction against the plow blade, requiring his two bullocks to pull with greater force.\n"
             "4. <WORDS>: Explain ONLY the candidate words listed above, one line per word in format:\n"
             "word | simple meaning in under 12 words\n\n"
             "Output using exact tags:"
@@ -38,28 +38,28 @@ def build_prompt(s_list, hard_s, hard_words, pass_mode=None):
         usr_msg = (
             f"Passage:\n{p_txt}\n\n"
             "Instructions:\n"
-            "Create exactly 3 quiz questions based on the cited sentences from the passage.\n"
+            "Create 4 short quiz questions and concise answers based on the passage above.\n"
             "Rules:\n"
-            "- Every question must end with '?'. Do NOT copy passage sentences as questions.\n"
-            "- Reuse exact words from the cited sentence in your answer.\n"
+            "- Every question must start with What, Why, How, or Which and end with '?'.\n"
+            "- Do NOT copy whole passage sentences as questions.\n"
+            "- Answer must be a short phrase (under 12 words), NOT a whole passage sentence.\n"
+            "- Reuse key words from the cited sentence in your answer.\n"
             "- Every question must have a different answer.\n"
-            "- Cite the exact sentence ID (e.g. S1, S2).\n\n"
-            "Worked Example (different topic - water cycle):\n"
-            "Passage excerpt: [S1] Water evaporates from lakes when heated by solar radiation. [S2] Rising vapor condenses into clouds.\n"
-            "Q: What happens to lake water when it is heated by solar radiation?\n"
-            "A: Evaporates\n"
-            "C: S1\n\n"
-            "Now produce 3 quiz items using EXACTLY this format:\n"
+            "- Cite the exact sentence ID (e.g. C: S1, C: S2).\n\n"
+            "Format:\n"
             "<QUIZ>\n"
             "Q: question?\n"
-            "A: answer\n"
+            "A: short answer under 12 words\n"
             "C: S1\n\n"
             "Q: question?\n"
-            "A: answer\n"
+            "A: short answer under 12 words\n"
             "C: S2\n\n"
             "Q: question?\n"
-            "A: answer\n"
-            "C: S3\n"
+            "A: short answer under 12 words\n"
+            "C: S3\n\n"
+            "Q: question?\n"
+            "A: short answer under 12 words\n"
+            "C: S4\n"
             "</QUIZ>"
         )
         return wrap_inst(sys_msg, usr_msg, seed="<QUIZ>\nQ:")
@@ -82,11 +82,33 @@ def build_retry_simple_prompt(orig_s_text, bad_simple):
     return wrap_inst(sys_msg, usr_msg, seed="<SIMPLE>")
 
 def build_retry_village_prompt(key_s_text):
-    sys_msg = "You are an educational assistant for rural students. Follow instructions strictly."
+    sys_msg = "You are an educational assistant for rural students. Always respond in English only. Follow instructions strictly."
     usr_msg = (
         f"Key concept sentence:\n{key_s_text}\n\n"
-        "Write an everyday village-life example (2-3 sentences) directly illustrating this concept. "
-        "You must explicitly mention the scientific terms and events from the concept sentence.\n"
+        "Write an everyday village-life example in English (2-3 sentences) directly illustrating this concept. "
+        "Use everyday rural Tamil Nadu settings (e.g. well, paddy field, bullock cart, farmer Murugan). Write in English only.\n"
         "Respond with ONLY the example inside <VILLAGE>...</VILLAGE> tags."
     )
-    return wrap_inst(sys_msg, usr_msg, seed="<VILLAGE>")
+    return wrap_inst(sys_msg, usr_msg, seed="<VILLAGE>\nIn a village")
+
+def build_retry_summary_prompt(s_list):
+    p_txt = fmt_sents(s_list)
+    sys_msg = "You are a concise educational assistant. Follow instructions strictly."
+    usr_msg = (
+        f"Passage:\n{p_txt}\n\n"
+        "Write a simple 2-3 sentence summary of the main scientific points in the passage.\n"
+        "Respond with ONLY the summary inside <SUMMARY>...</SUMMARY> tags."
+    )
+    return wrap_inst(sys_msg, usr_msg, seed="<SUMMARY>")
+
+def build_retry_words_prompt(cand_words):
+    hw_lines = "\n".join(f"- {w}" for w in cand_words[:5])
+    sys_msg = "You are a concise educational assistant. Follow instructions strictly."
+    usr_msg = (
+        f"Words to explain:\n{hw_lines}\n\n"
+        "Explain each word in simple everyday English (under 12 words each).\n"
+        "Format (one line per word):\n"
+        "word | simple meaning\n\n"
+        "Respond inside <WORDS>...</WORDS> tags."
+    )
+    return wrap_inst(sys_msg, usr_msg, seed="<WORDS>\n")

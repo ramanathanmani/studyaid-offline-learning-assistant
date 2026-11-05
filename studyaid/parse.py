@@ -1,13 +1,32 @@
 import re
+from studyaid.check import is_ans_too_long_or_copied
 
 def extract_tag(tag, txt):
-    m = re.search(rf'<(?:S)?{tag}>(.*?)</(?:S)?{tag}>', txt, re.DOTALL | re.IGNORECASE)
+    if not txt:
+        return None
+    t_clean = tag.strip().upper()
+    if t_clean == "VILLAGE":
+        t_pat = r'(?:S)?(?:VILLAGE|SVILLE|VILLE)'
+    else:
+        t_pat = rf'(?:S)?{t_clean}'
+    m = re.search(rf'<{t_pat}[^>]*>(.*?)</{t_pat}>', txt, re.DOTALL | re.IGNORECASE)
     if m:
         return m.group(1).strip()
+    known = ["SIMPLE", "SUMMARY", "VILLAGE", "SVILLE", "WORDS", "QUIZ"]
+    others = [k for k in known if not k.startswith(t_clean[:3])]
+    other_pat = "|".join(others)
+    pat = rf'<{t_pat}[^>]*>(.*?)(?=(?:<(?:S)?(?:{other_pat})[^>]*>)|\Z)'
+    m2 = re.search(pat, txt, re.DOTALL | re.IGNORECASE)
+    if m2:
+        res = m2.group(1).strip()
+        res = re.sub(rf'</{t_pat}>$', '', res, flags=re.IGNORECASE).strip()
+        return res if res else None
     return None
 
 def parse_words(txt, cand_words=None):
     if not txt:
+        if cand_words:
+            return [{"word": cw, "meaning": "no explanation generated"} for cw in cand_words]
         return []
     cand_set = {c.strip().lower() for c in (cand_words or [])}
     parsed = {}
@@ -67,14 +86,23 @@ def parse_quiz(txt):
 def validate_quiz(items, s_list):
     valid = []
     seen_ans = set()
+    s_map = {sid.upper(): txt for sid, txt in s_list}
     s_word_sets = [set(re.findall(r'[a-zA-Z]+', txt.lower())) for _, txt in s_list]
     for it in items:
         q = it["q"].strip()
         a = it["a"].strip()
+        cid = it.get("c", "").strip().upper()
         if not q.endswith("?"):
+            continue
+        if not a:
+            continue
+        if re.match(r'^\[?S\d+\]?$', a.strip(), re.IGNORECASE):
             continue
         ans_norm = a.lower()
         if ans_norm in seen_ans:
+            continue
+        c_txt = s_map.get(cid, "")
+        if c_txt and is_ans_too_long_or_copied(a, c_txt):
             continue
         q_words = set(re.findall(r'[a-zA-Z]+', q.lower()))
         if not q_words:
@@ -82,7 +110,7 @@ def validate_quiz(items, s_list):
         is_copied = False
         for s_words in s_word_sets:
             ov = len(q_words & s_words) / len(q_words)
-            if ov >= 0.8:
+            if len(q_words) >= 8 and ov >= 0.8:
                 is_copied = True
                 break
         if is_copied:
