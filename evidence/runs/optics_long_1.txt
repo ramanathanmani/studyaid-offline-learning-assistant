@@ -9,32 +9,40 @@
 
 === HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
 Original ([S5]): Convex lenses exploit this refractive behavior to converge parallel incident light rays onto a focal point, producing real inverted images on screens or virtual magnified images for human observers.
-Simplified:   <SIMPLE>Convex lenses bend light to focus it onto a single point, creating real inverted images on screens or virtual magnified images for human observers.
+Simplified:   Convex lenses bend light rays to produce real inverted images.
 
 Readability Metrics:
 Metric                 Original     Simplified   Change (%)
-Words                  29           25           -13.8%    
-Letters                168          128          -23.8%    
-Avg letters/word       5.79         5.12         -11.6%    
+Words                  29           10           -65.5%    
+Letters                168          52           -69.0%    
+Avg letters/word       5.79         5.20         -10.2%    
 
 === SIMPLE SUMMARY / எளிய சுருக்கம் ===
-N/A
+The passage explains how light behaves when passing from one medium to another.
 
 === VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
-The village elder, Mrs. Patel, was teaching her young grandson, Rohan, about the properties of convex lenses. She placed a convex lens in front of a mirror and a concave lens behind it, and then asked Rohan to focus a beam of light from a candle on the mirror. As Rohan adjusted the lenses, he noticed that the image of the candle on the mirror appeared to be inverted and magnified, a perfect example of the convex lens's ability to converge parallel incident light rays onto a focal point.
+in rural Tamil Nadu, a farmer Murugan carefully placed a bundle of freshly harvested paddy on a wooden cart. As he began to drive the cart towards his home, he noticed that the paddy seemed to be bending and converging, creating a peculiar, inverted image on the ground. The image was so real that it seemed to be staring back at him, a testament to the power of convex lenses in everyday life.
 
 === HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
-No hard words parsed.
+- refraction: light bends when passing from one medium to another -> ஒளிவிலகல் (Oli-vilagal) [verified]
+- obliquely: at an angle, not directly perpendicular -> சாய்வாக (Saaivaaga) [verified]
+- refracts: light bends, passing from one medium to another -> ஒளிவிலகல் (Oli-vilagal) [verified]
+- medium: substance that can bend light -> ஊடகம் (Oodagam) [verified]
+- normal: straight, not at an angle -> குத்துக்கோடு (Kuthukkodu) [verified]
 
 === QUIZ QUESTIONS / வினாடி வினா ===
-[Q1] What happens to light when it enters an optically different medium obliquely?
+[Q1] What is the phenomenon of light's direction changing when it enters an optically different medium obliquely?
      Answer: Refraction
      Citation: S1
      Support: FLAGGED (shared: none, suggested citation: S2)
-[Q2] What is the effect of concave lenses on incident rays?
-     Answer: Diverges
-     Citation: S6
-     Support: FLAGGED (shared: none)
+[Q2] What happens to the velocity of light when it travels from an optically rarer medium into an optically denser medium?
+     Answer: Decreases
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S3)
+[Q3] Which type of lens uses the refractive behavior of light to converge parallel incident light rays onto a focal point?
+     Answer: Convex lenses
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S5)
 
 === JUDGE PROOF TELEMETRY ===
 HOST: laptop (not Raspberry Pi)
@@ -47,8 +55,8 @@ Default route active: YES
 Offline status: ONLINE
 Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
 PTE size: 1083.33 MiB (1135951488 bytes)
-Peak RSS: 1910.16 MiB
-Inference time: 44.794 s
-Tokens generated: 519
-Tokens/sec: 11.59
+Peak RSS: 1903.39 MiB
+Inference time: 28.38 s
+Tokens generated: 337
+Tokens/sec: 11.87
 Execution mode: [REAL EXECUTORCH RUN]

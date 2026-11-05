@@ -2,32 +2,91 @@
   "passage": "optics",
   "run": 2,
   "words": 84,
-  "load_time_sec": 0.932,
-  "p1_sec": 22.965,
-  "p1_tokens": 425,
+  "load_time_sec": 0.952,
+  "baseline_rss_mib": 19.79,
+  "peak_rss_mib": 1903.69,
+  "p1_sec": 24.869,
+  "p1_tokens": 380,
+  "p1_retries": 4,
   "p1_retried": true,
-  "p1_retry_reason": "simplification guard; village relevance guard",
-  "p2_sec": 15.028,
-  "p2_tokens": 239,
+  "p1_retry_reason": "short_rewrite_guard; missing_section: summary; village_guard; missing_section: words",
+  "p1_attempts": [
+    {
+      "pass": 1,
+      "attempt": 1,
+      "tokens": 105,
+      "sec": 8.615
+    },
+    {
+      "attempt": 2,
+      "guard": "short_rewrite_guard",
+      "tokens": 18,
+      "sec": 1.251
+    },
+    {
+      "attempt": 3,
+      "guard": "missing_summary",
+      "tokens": 99,
+      "sec": 6.026
+    },
+    {
+      "attempt": 4,
+      "guard": "village_guard",
+      "tokens": 105,
+      "sec": 5.974
+    },
+    {
+      "attempt": 5,
+      "guard": "missing_words",
+      "tokens": 53,
+      "sec": 3.002
+    }
+  ],
+  "p2_sec": 15.297,
+  "p2_tokens": 244,
+  "p2_retries": 1,
   "p2_retried": true,
-  "p2_retry_reason": "quiz guards: only 0/3 valid",
-  "inf_time_sec": 37.993,
-  "tokens": 664,
-  "tok_per_sec": 17.48,
-  "peak_rss_mib": 1910.16,
-  "retries": 2,
+  "p2_retry_reason": "quiz_guard: only 2/3 valid",
+  "p2_attempts": [
+    {
+      "pass": 2,
+      "attempt": 1,
+      "valid_cnt": 2,
+      "tokens": 131,
+      "sec": 8.129
+    },
+    {
+      "attempt": 2,
+      "guard": "quiz_guard",
+      "tokens": 113,
+      "sec": 7.168
+    }
+  ],
+  "inf_time_sec": 40.167,
+  "tokens": 624,
+  "tok_per_sec": 15.54,
+  "retries": 5,
+  "retry_reasons": "short_rewrite_guard; missing_section: summary; village_guard; missing_section: words; quiz_guard: only 2/3 valid",
+  "quiz_count": 2,
+  "quiz_incomplete": true,
+  "summary_fallback": false,
+  "summary_ok": true,
   "guards": {
     "rewrite_shorter": true,
     "no_simpler_rewrite": false,
+    "summary_produced_without_fallback": true,
     "village_relevant": true,
+    "quiz_count": 2,
+    "quiz_incomplete": true,
     "quiz_supported_cnt": 1,
     "quiz_total_cnt": 2,
-    "words_explained_cnt": 0,
+    "words_explained_cnt": 4,
     "words_cand_cnt": 5,
+    "retries": 5,
     "p1_retried": true,
-    "p1_retry_reason": "simplification guard; village relevance guard",
+    "p1_retry_reason": "short_rewrite_guard; missing_section: summary; village_guard; missing_section: words",
     "p2_retried": true,
-    "p2_retry_reason": "quiz guards: only 0/3 valid"
+    "p2_retry_reason": "quiz_guard: only 2/3 valid"
   },
   "offline_status": "ONLINE",
   "telemetry": {
@@ -63,11 +122,11 @@
     "pte_size_bytes": 1135951488,
     "pte_size_mib": 1083.33,
     "pte_size_mb": 1083.33,
-    "peak_rss_mib": 1910.16,
-    "peak_rss_mb": 1910.16,
-    "inf_time_sec": 37.993,
-    "tok_cnt": 664,
-    "tok_per_sec": 17.48,
+    "peak_rss_mib": 1903.69,
+    "peak_rss_mb": 1903.69,
+    "inf_time_sec": 40.167,
+    "tok_cnt": 624,
+    "tok_per_sec": 15.54,
     "is_mock": false
   },
   "pipeline": {
@@ -107,19 +166,40 @@
       "normal"
     ],
     "parsed": {
-      "simple": "<SIMPLE>When light travels from one transparent medium into another, it deviates from its path.",
-      "summary": "",
-      "village": "The sun rises over the horizon, casting a warm glow over the village. As the light travels from the sky into the air, it encounters a layer of air with a temperature of around 20°C, which is a relatively cool temperature compared to the warm air near the ground. The light is refracted, or bent, as it passes from the air into the cooler air, causing the light to diverge and spread out.",
-      "words": [],
-      "quiz": [
+      "simple": "When light travels from one transparent medium into another, it deviates from its path.",
+      "summary": "When light travels from one transparent medium into another, it undergoes deviation due to refraction, a process that occurs when the velocity of light changes as it passes from one medium to another. Refraction is the result of the difference in the velocity of light in different media, and it causes the light to bend or change direction. The velocity of light is also affected by the density of the medium, with denser media having a greater velocity and rarer media having a lesser velocity.>",
+      "village": "in rural Tamil Nadu, a farmer Murugan was tending to his paddy field when he noticed that a ray of sunlight was bending as it passed from the sunlight-drenched field into the shade of a nearby tree. The ray of light had to travel from the bright sunlight to the shaded area, and as it did, it began to bend, or deviate, from its original path. This phenomenon was a common occurrence in the village, where the light had to adapt to the changing conditions of the environment.",
+      "words": [
         {
-          "q": "What is the name of the phenomenon that occurs when a ray of light travels from one transparent medium into another obliquely?",
-          "a": "Refraction",
-          "c": "S1"
+          "word": "refraction",
+          "meaning": "light passes from one medium to another"
         },
         {
-          "q": "When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface. S3\n\nQ: What happens to the velocity of light in a rarer medium?",
-          "a": "The velocity of light is more in a rarer medium and less in a denser medium.</QUIZ>",
+          "word": "obliquely",
+          "meaning": "at an angle other than 90 degrees"
+        },
+        {
+          "word": "refracted",
+          "meaning": "no explanation generated"
+        },
+        {
+          "word": "medium",
+          "meaning": "substance that can bend light"
+        },
+        {
+          "word": "normal",
+          "meaning": "straight line that light travels on"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "WHY does refraction occur when light travels from one transparent medium into another obliquely?",
+          "a": "due to difference in velocity",
+          "c": "S2"
+        },
+        {
+          "q": "WHICH of the following is correct about refraction?",
+          "a": "light travels faster in denser medium",
           "c": "S4"
         }
       ],
@@ -133,67 +213,180 @@
         "avg_l": 5.05
       },
       "simp": {
-        "w_cnt": 15,
-        "l_cnt": 78,
-        "avg_l": 5.2
+        "w_cnt": 14,
+        "l_cnt": 72,
+        "avg_l": 5.14
       },
       "diff": {
-        "w_chg": -25.0,
-        "l_chg": -22.8,
-        "avg_chg": 3.0
+        "w_chg": -30.0,
+        "l_chg": -28.7,
+        "avg_chg": 1.8
       }
     },
-    "words": [],
-    "quiz": [
+    "words": [
       {
-        "q": "What is the name of the phenomenon that occurs when a ray of light travels from one transparent medium into another obliquely?",
-        "a": "Refraction",
-        "c": "S1",
-        "status": "FLAGGED",
-        "shared": [],
-        "suggested": "S2"
+        "word": "refraction",
+        "meaning": "light passes from one medium to another",
+        "gl": {
+          "en": "refraction",
+          "ta": "ஒளிவிலகல்",
+          "translit": "Oli-vilagal",
+          "verified": true,
+          "source": "Samacheer Kalvi Science textbook, confirmed by team",
+          "ref": ""
+        }
       },
       {
-        "q": "When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface. S3\n\nQ: What happens to the velocity of light in a rarer medium?",
-        "a": "The velocity of light is more in a rarer medium and less in a denser medium.</QUIZ>",
+        "word": "obliquely",
+        "meaning": "at an angle other than 90 degrees",
+        "gl": {
+          "en": "obliquely",
+          "ta": "சாய்வாக",
+          "translit": "Saaivaaga",
+          "verified": true,
+          "source": "Samacheer Kalvi Science textbook, confirmed by team",
+          "ref": ""
+        }
+      },
+      {
+        "word": "refracted",
+        "meaning": "no explanation generated",
+        "gl": {
+          "en": "refraction",
+          "ta": "ஒளிவிலகல்",
+          "translit": "Oli-vilagal",
+          "verified": true,
+          "source": "Samacheer Kalvi Science textbook, confirmed by team",
+          "ref": ""
+        }
+      },
+      {
+        "word": "medium",
+        "meaning": "substance that can bend light",
+        "gl": {
+          "en": "medium",
+          "ta": "ஊடகம்",
+          "translit": "Oodagam",
+          "verified": true,
+          "source": "Samacheer Kalvi Science textbook, confirmed by team",
+          "ref": ""
+        }
+      },
+      {
+        "word": "normal",
+        "meaning": "straight line that light travels on",
+        "gl": {
+          "en": "normal",
+          "ta": "குத்துக்கோடு",
+          "translit": "Kuthukkodu",
+          "verified": true,
+          "source": "Samacheer Kalvi Science textbook, confirmed by team",
+          "ref": ""
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": "WHY does refraction occur when light travels from one transparent medium into another obliquely?",
+        "a": "due to difference in velocity",
+        "c": "S2",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S3"
+      },
+      {
+        "q": "WHICH of the following is correct about refraction?",
+        "a": "light travels faster in denser medium",
         "c": "S4",
         "status": "SUPPORTED",
         "shared": [
           "denser",
-          "less",
           "light",
-          "medium",
-          "rarer",
-          "velocity"
+          "medium"
         ],
         "suggested": null
       }
     ],
-    "tok_cnt": 664,
+    "tok_cnt": 624,
     "p1_info": {
-      "tokens": 425,
-      "seconds": 22.965,
+      "tokens": 380,
+      "seconds": 24.869,
+      "attempts": [
+        {
+          "pass": 1,
+          "attempt": 1,
+          "tokens": 105,
+          "sec": 8.615
+        },
+        {
+          "attempt": 2,
+          "guard": "short_rewrite_guard",
+          "tokens": 18,
+          "sec": 1.251
+        },
+        {
+          "attempt": 3,
+          "guard": "missing_summary",
+          "tokens": 99,
+          "sec": 6.026
+        },
+        {
+          "attempt": 4,
+          "guard": "village_guard",
+          "tokens": 105,
+          "sec": 5.974
+        },
+        {
+          "attempt": 5,
+          "guard": "missing_words",
+          "tokens": 53,
+          "sec": 3.002
+        }
+      ],
+      "retries": 4,
       "retried": true,
-      "reason": "simplification guard; village relevance guard"
+      "reason": "short_rewrite_guard; missing_section: summary; village_guard; missing_section: words",
+      "summary_fallback": false
     },
     "p2_info": {
-      "tokens": 239,
-      "seconds": 15.028,
+      "tokens": 244,
+      "seconds": 15.297,
+      "attempts": [
+        {
+          "pass": 2,
+          "attempt": 1,
+          "valid_cnt": 2,
+          "tokens": 131,
+          "sec": 8.129
+        },
+        {
+          "attempt": 2,
+          "guard": "quiz_guard",
+          "tokens": 113,
+          "sec": 7.168
+        }
+      ],
+      "retries": 1,
       "retried": true,
-      "reason": "quiz guards: only 0/3 valid"
+      "reason": "quiz_guard: only 2/3 valid",
+      "quiz_incomplete": true
     },
     "guards": {
       "rewrite_shorter": true,
       "no_simpler_rewrite": false,
+      "summary_produced_without_fallback": true,
       "village_relevant": true,
+      "quiz_count": 2,
+      "quiz_incomplete": true,
       "quiz_supported_cnt": 1,
       "quiz_total_cnt": 2,
-      "words_explained_cnt": 0,
+      "words_explained_cnt": 4,
       "words_cand_cnt": 5,
+      "retries": 5,
       "p1_retried": true,
-      "p1_retry_reason": "simplification guard; village relevance guard",
+      "p1_retry_reason": "short_rewrite_guard; missing_section: summary; village_guard; missing_section: words",
       "p2_retried": true,
-      "p2_retry_reason": "quiz guards: only 0/3 valid"
+      "p2_retry_reason": "quiz_guard: only 2/3 valid"
     },
     "is_mock": false
   }

@@ -2,32 +2,73 @@
   "passage": "photosynthesis",
   "run": 2,
   "words": 160,
-  "load_time_sec": 0.932,
-  "p1_sec": 14.293,
-  "p1_tokens": 186,
+  "load_time_sec": 1.037,
+  "baseline_rss_mib": 19.81,
+  "peak_rss_mib": 1903.55,
+  "p1_sec": 14.459,
+  "p1_tokens": 203,
+  "p1_retries": 2,
   "p1_retried": true,
-  "p1_retry_reason": "simplification guard; village relevance guard",
-  "p2_sec": 23.758,
-  "p2_tokens": 293,
-  "p2_retried": true,
-  "p2_retry_reason": "quiz guards: only 0/3 valid",
-  "inf_time_sec": 38.052,
-  "tokens": 479,
-  "tok_per_sec": 12.59,
-  "peak_rss_mib": 1910.16,
+  "p1_retry_reason": "village_guard; missing_section: words",
+  "p1_attempts": [
+    {
+      "pass": 1,
+      "attempt": 1,
+      "tokens": 77,
+      "sec": 7.972
+    },
+    {
+      "attempt": 2,
+      "guard": "village_guard",
+      "tokens": 72,
+      "sec": 3.626
+    },
+    {
+      "attempt": 3,
+      "guard": "missing_words",
+      "tokens": 54,
+      "sec": 2.861
+    }
+  ],
+  "p2_sec": 6.738,
+  "p2_tokens": 85,
+  "p2_retries": 0,
+  "p2_retried": false,
+  "p2_retry_reason": "none",
+  "p2_attempts": [
+    {
+      "pass": 2,
+      "attempt": 1,
+      "valid_cnt": 3,
+      "tokens": 85,
+      "sec": 6.738
+    }
+  ],
+  "inf_time_sec": 21.199,
+  "tokens": 288,
+  "tok_per_sec": 13.59,
   "retries": 2,
+  "retry_reasons": "village_guard; missing_section: words",
+  "quiz_count": 3,
+  "quiz_incomplete": false,
+  "summary_fallback": false,
+  "summary_ok": true,
   "guards": {
     "rewrite_shorter": true,
     "no_simpler_rewrite": false,
+    "summary_produced_without_fallback": true,
     "village_relevant": true,
-    "quiz_supported_cnt": 3,
-    "quiz_total_cnt": 4,
-    "words_explained_cnt": 0,
+    "quiz_count": 3,
+    "quiz_incomplete": false,
+    "quiz_supported_cnt": 0,
+    "quiz_total_cnt": 3,
+    "words_explained_cnt": 5,
     "words_cand_cnt": 5,
+    "retries": 2,
     "p1_retried": true,
-    "p1_retry_reason": "simplification guard; village relevance guard",
-    "p2_retried": true,
-    "p2_retry_reason": "quiz guards: only 0/3 valid"
+    "p1_retry_reason": "village_guard; missing_section: words",
+    "p2_retried": false,
+    "p2_retry_reason": "none"
   },
   "offline_status": "ONLINE",
   "telemetry": {
@@ -63,11 +104,11 @@
     "pte_size_bytes": 1135951488,
     "pte_size_mib": 1083.33,
     "pte_size_mb": 1083.33,
-    "peak_rss_mib": 1910.16,
-    "peak_rss_mb": 1910.16,
-    "inf_time_sec": 38.052,
-    "tok_cnt": 479,
-    "tok_per_sec": 12.59,
+    "peak_rss_mib": 1903.55,
+    "peak_rss_mb": 1903.55,
+    "inf_time_sec": 21.199,
+    "tok_cnt": 288,
+    "tok_per_sec": 13.59,
     "is_mock": false
   },
   "pipeline": {
@@ -112,37 +153,53 @@
       "tot": 23
     },
     "cand_words": [
-      "photosynthesis",
       "chloroplasts",
-      "chlorophyll",
-      "stomata",
-      "environmental"
+      "photosynthesis",
+      "environmental",
+      "replenishment",
+      "agricultural"
     ],
     "parsed": {
-      "simple": "<SIMPLE>Environmental factors like sunlight intensity, temperature, and moisture determine crop productivity.",
-      "summary": "",
-      "village": "The sun rises over the fields, casting a warm glow on the crops. As the temperature rises to 25°C, the photosynthetic process begins, and the crops start to produce more chlorophyll, increasing their rate of photosynthesis. By mid-morning, the crops have absorbed enough energy from the sunlight to produce 10% more oxygen than they would have without photosynthesis.",
-      "words": [],
+      "simple": "Sunlight determines the rate of photosynthesis.",
+      "summary": "Photosynthesis is the process by which plants convert sunlight into chemical energy.",
+      "village": "in rural Tamil Nadu, Murugan, a farmer, carefully tended to his paddy field, ensuring that the sunlight intensity was just right for optimal photosynthesis. As the temperature rose, he adjusted the shade of his bullock cart to prevent overheating. By doing so, he maximized the crop's productivity and ensured a bountiful harvest.",
+      "words": [
+        {
+          "word": "chloroplasts",
+          "meaning": "tiny cells in plants that make food"
+        },
+        {
+          "word": "photosynthesis",
+          "meaning": "process of plants making food from sunlight"
+        },
+        {
+          "word": "environmental",
+          "meaning": "relating to the natural world around us"
+        },
+        {
+          "word": "replenishment",
+          "meaning": "restoring or filling something"
+        },
+        {
+          "word": "agricultural",
+          "meaning": "relating to farming and growing crops"
+        }
+      ],
       "quiz": [
         {
-          "q": "What is the purpose of stomata in plants?",
-          "a": "Carbon dioxide enters the leaves through microscopic pores called stomata.",
-          "c": "S2"
+          "q": "Which microscopic pores allow carbon dioxide to enter the leaves?",
+          "a": "Stomata",
+          "c": "S1"
         },
         {
-          "q": "What is the result of photolysis in the process of photosynthesis?",
-          "a": "Water molecules are split into hydrogen and oxygen.",
-          "c": "S4"
+          "q": "What is the byproduct released into the atmosphere during photosynthesis?",
+          "a": "Oxygen",
+          "c": "S1"
         },
         {
-          "q": "What is the outcome of the hydrogen produced during photosynthesis?",
-          "a": "Glucose is synthesized, a simple carbohydrate that fuels plant respiration and vegetative growth.",
-          "c": "S5"
-        },
-        {
-          "q": "What happens to the carbon cycle if photosynthesis is not present?",
-          "a": "The carbon cycle collapses, oxygen replenishment would cease, and food webs would disintegrate completely.",
-          "c": "S7"
+          "q": "What is the result of the hydrogen combining with carbon dioxide?",
+          "a": "Glucose",
+          "c": "S1"
         }
       ],
       "no_simpler": false,
@@ -155,103 +212,138 @@
         "avg_l": 7.22
       },
       "simp": {
-        "w_cnt": 12,
-        "l_cnt": 94,
-        "avg_l": 7.83
+        "w_cnt": 6,
+        "l_cnt": 41,
+        "avg_l": 6.83
       },
       "diff": {
-        "w_chg": -47.8,
-        "l_chg": -43.4,
-        "avg_chg": 8.4
+        "w_chg": -73.9,
+        "l_chg": -75.3,
+        "avg_chg": -5.4
       }
     },
-    "words": [],
+    "words": [
+      {
+        "word": "chloroplasts",
+        "meaning": "tiny cells in plants that make food",
+        "gl": {
+          "en": "chloroplast",
+          "ta": "பசுங்கணிகம்",
+          "translit": "Pasungkanigam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "photosynthesis",
+        "meaning": "process of plants making food from sunlight",
+        "gl": null
+      },
+      {
+        "word": "environmental",
+        "meaning": "relating to the natural world around us",
+        "gl": null
+      },
+      {
+        "word": "replenishment",
+        "meaning": "restoring or filling something",
+        "gl": null
+      },
+      {
+        "word": "agricultural",
+        "meaning": "relating to farming and growing crops",
+        "gl": null
+      }
+    ],
     "quiz": [
       {
-        "q": "What is the purpose of stomata in plants?",
-        "a": "Carbon dioxide enters the leaves through microscopic pores called stomata.",
-        "c": "S2",
+        "q": "Which microscopic pores allow carbon dioxide to enter the leaves?",
+        "a": "Stomata",
+        "c": "S1",
         "status": "FLAGGED",
-        "shared": [
-          "called"
-        ],
+        "shared": [],
         "suggested": "S3"
       },
       {
-        "q": "What is the result of photolysis in the process of photosynthesis?",
-        "a": "Water molecules are split into hydrogen and oxygen.",
-        "c": "S4",
-        "status": "SUPPORTED",
-        "shared": [
-          "hydrogen",
-          "molecules",
-          "oxygen",
-          "split",
-          "water"
-        ],
-        "suggested": null
+        "q": "What is the byproduct released into the atmosphere during photosynthesis?",
+        "a": "Oxygen",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S4"
       },
       {
-        "q": "What is the outcome of the hydrogen produced during photosynthesis?",
-        "a": "Glucose is synthesized, a simple carbohydrate that fuels plant respiration and vegetative growth.",
-        "c": "S5",
-        "status": "SUPPORTED",
-        "shared": [
-          "carbohydrate",
-          "fuels",
-          "glucose",
-          "growth",
-          "plant",
-          "respiration",
-          "simple",
-          "vegetative"
-        ],
-        "suggested": null
-      },
-      {
-        "q": "What happens to the carbon cycle if photosynthesis is not present?",
-        "a": "The carbon cycle collapses, oxygen replenishment would cease, and food webs would disintegrate completely.",
-        "c": "S7",
-        "status": "SUPPORTED",
-        "shared": [
-          "carbon",
-          "cease",
-          "completely",
-          "cycle",
-          "disintegrate",
-          "food",
-          "oxygen",
-          "replenishment",
-          "webs"
-        ],
-        "suggested": null
+        "q": "What is the result of the hydrogen combining with carbon dioxide?",
+        "a": "Glucose",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S5"
       }
     ],
-    "tok_cnt": 479,
+    "tok_cnt": 288,
     "p1_info": {
-      "tokens": 186,
-      "seconds": 14.293,
+      "tokens": 203,
+      "seconds": 14.459,
+      "attempts": [
+        {
+          "pass": 1,
+          "attempt": 1,
+          "tokens": 77,
+          "sec": 7.972
+        },
+        {
+          "attempt": 2,
+          "guard": "village_guard",
+          "tokens": 72,
+          "sec": 3.626
+        },
+        {
+          "attempt": 3,
+          "guard": "missing_words",
+          "tokens": 54,
+          "sec": 2.861
+        }
+      ],
+      "retries": 2,
       "retried": true,
-      "reason": "simplification guard; village relevance guard"
+      "reason": "village_guard; missing_section: words",
+      "summary_fallback": false
     },
     "p2_info": {
-      "tokens": 293,
-      "seconds": 23.758,
-      "retried": true,
-      "reason": "quiz guards: only 0/3 valid"
+      "tokens": 85,
+      "seconds": 6.738,
+      "attempts": [
+        {
+          "pass": 2,
+          "attempt": 1,
+          "valid_cnt": 3,
+          "tokens": 85,
+          "sec": 6.738
+        }
+      ],
+      "retries": 0,
+      "retried": false,
+      "reason": "none",
+      "quiz_incomplete": false
     },
     "guards": {
       "rewrite_shorter": true,
       "no_simpler_rewrite": false,
+      "summary_produced_without_fallback": true,
       "village_relevant": true,
-      "quiz_supported_cnt": 3,
-      "quiz_total_cnt": 4,
-      "words_explained_cnt": 0,
+      "quiz_count": 3,
+      "quiz_incomplete": false,
+      "quiz_supported_cnt": 0,
+      "quiz_total_cnt": 3,
+      "words_explained_cnt": 5,
       "words_cand_cnt": 5,
+      "retries": 2,
       "p1_retried": true,
-      "p1_retry_reason": "simplification guard; village relevance guard",
-      "p2_retried": true,
-      "p2_retry_reason": "quiz guards: only 0/3 valid"
+      "p1_retry_reason": "village_guard; missing_section: words",
+      "p2_retried": false,
+      "p2_retry_reason": "none"
     },
     "is_mock": false
   }

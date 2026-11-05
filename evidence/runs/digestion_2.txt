@@ -9,32 +9,44 @@
 
 === HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
 Original ([S5]): The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
-Simplified:   <SIMPLE>The semi-digested acidic mixture, chyme, passes into the small intestine, where it's digested into its basic components.
+Simplified:   The semi-digested acidic mixture chyme passes into the small intestine.
 
 Readability Metrics:
 Metric                 Original     Simplified   Change (%)
-Words                  29           20           -31.0%    
-Letters                166          104          -37.3%    
-Avg letters/word       5.72         5.20         -9.1%     
+Words                  29           11           -62.1%    
+Letters                166          60           -63.9%    
+Avg letters/word       5.72         5.45         -4.7%     
 
 === SIMPLE SUMMARY / எளிய சுருக்கம் ===
-N/A
+The human digestive process breaks down food into nutrients.
 
 === VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
-The village of rural India is home to a young girl named Rohini, who lives with her family in a small, rural village. One morning, Rohini's mother prepares a meal of rice and lentils for breakfast, which she mixes together to create a semi-digested acidic mixture known as chyme. As Rohini eats the chyme, the partially digested mixture passes sequentially into the small intestine, where it serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
+in rural Tamil Nadu, after Murugan's bullock cart brings in a freshly harvested batch of paddy, the farmer carefully separates the grains from the chaff, allowing the paddy to pass into the small intestine, where it will be broken down into its constituent parts by the digestive enzymes. The paddy grains, now semi-digested, will then be absorbed into the bloodstream, providing the body with the necessary nutrients. As the paddy enters the small intestine, it is then passed into the large intestine, where water is absorbed and the remaining nutrients are further broken down.
 
 === HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
-No hard words parsed.
+- peristalsis: digestive -> குடல் அசைவு (Kudal-asaivu) [unverified]
+- digesting: no explanation generated -> செரிமானம் (Serimaanam) [unverified]
+- digestion: no explanation generated -> செரிமானம் (Serimaanam) [unverified]
+- digested: no explanation generated -> செரிமானம் (Serimaanam) [unverified]
+- stomach: no explanation generated -> இரைப்பை (Iraippai) [unverified]
 
 === QUIZ QUESTIONS / வினாடி வினா ===
-[Q1] What is the primary function of the stomach in the digestive process?
-     Answer: The stomach secretes hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.
-     Citation: S4
-     Support: SUPPORTED (shared: acid, acidic, activates, bacteria, destroying, digesting, enzyme, harmful, hydrochloric, ingested, medium, pepsin, protein, provides, stomach)
-[Q2] What is the main site for complete chemical digestion of carbohydrates, proteins, and fats in the small intestine?
-     Answer: The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
-     Citation: S5
-     Support: SUPPORTED (shared: acidic, carbohydrates, chemical, chyme, complete, digested, digestion, fats, intestine, known, mixture, passes, principal, proteins, semi, sequentially, serves, site, small)
+[Q1] What is the primary function of salivary amylase in the human digestive process?
+     Answer: Digests complex starch into simple sugars.
+     Citation: S1
+     Support: SUPPORTED (shared: complex, simpl)
+[Q2] Which gland secretes hydrochloric acid in the stomach?
+     Answer: Gastric glands.
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S4)
+[Q3] What is the main site for complete chemical digestion of carbohydrates, proteins, and fats?
+     Answer: Small intestine.
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S5)
+[Q4] What are finger-like microscopic vascular projections called?
+     Answer: Villi.
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S7)
 
 === JUDGE PROOF TELEMETRY ===
 HOST: laptop (not Raspberry Pi)
@@ -47,8 +59,8 @@ Default route active: YES
 Offline status: ONLINE
 Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
 PTE size: 1083.33 MiB (1135951488 bytes)
-Peak RSS: 1910.16 MiB
-Inference time: 36.084 s
-Tokens generated: 549
-Tokens/sec: 15.21
+Peak RSS: 1903.59 MiB
+Inference time: 32.946 s
+Tokens generated: 529
+Tokens/sec: 16.06
 Execution mode: [REAL EXECUTORCH RUN]

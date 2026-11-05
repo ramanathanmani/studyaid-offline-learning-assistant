@@ -1,0 +1,54 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Light propagates in straight lines through a uniform optical medium, but its direction alters abruptly whenever it enters an optically different medium obliquely.
+[S2] This phenomenon is known as refraction, occurring because the speed of electromagnetic waves changes across varying optical densities.
+[S3] When light travels from an optically rarer medium like air into an optically denser medium like glass or water, its velocity decreases, bending the ray towards the imaginary normal line perpendicular to the interface.
+[S4] Conversely, when emerging from a denser medium into a rarer one, the light accelerates and refracts away from the normal.
+[S5] Convex lenses exploit this refractive behavior to converge parallel incident light rays onto a focal point, producing real inverted images on screens or virtual magnified images for human observers.
+[S6] Concave lenses diverge incident rays outward, consistently forming upright, diminished virtual images.
+[S7] Understanding these principles explains natural occurrences such as atmospheric refraction and optical illusions in water pools.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S5]): Convex lenses exploit this refractive behavior to converge parallel incident light rays onto a focal point, producing real inverted images on screens or virtual magnified images for human observers.
+Simplified:   <SIMPLE>Convex lenses bend light to focus it onto a single point, creating real inverted images on screens or virtual magnified images for human observers.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  29           25           -13.8%    
+Letters                168          128          -23.8%    
+Avg letters/word       5.79         5.12         -11.6%    
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+N/A
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+The village elder, Mrs. Patel, was teaching her young grandson, Rohan, about the properties of convex lenses. She placed a convex lens in front of a mirror and a concave lens behind it, and then asked Rohan to focus a beam of light from a candle on the mirror. As Rohan adjusted the lenses, he noticed that the image of the candle on the mirror appeared to be inverted and magnified, a perfect example of the convex lens's ability to converge parallel incident light rays onto a focal point.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+No hard words parsed.
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] What happens to light when it enters an optically different medium obliquely?
+     Answer: Refraction
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S2)
+[Q2] What is the effect of concave lenses on incident rays?
+     Answer: Diverges
+     Citation: S6
+     Support: FLAGGED (shared: none)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP
+Default route active: YES
+Offline status: ONLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1910.16 MiB
+Inference time: 44.794 s
+Tokens generated: 519
+Tokens/sec: 11.59
+Execution mode: [REAL EXECUTORCH RUN]

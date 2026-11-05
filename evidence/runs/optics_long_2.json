@@ -2,32 +2,73 @@
   "passage": "optics_long",
   "run": 2,
   "words": 152,
-  "load_time_sec": 0.932,
-  "p1_sec": 23.621,
-  "p1_tokens": 322,
+  "load_time_sec": 1.109,
+  "baseline_rss_mib": 19.79,
+  "peak_rss_mib": 1903.91,
+  "p1_sec": 16.87,
+  "p1_tokens": 222,
+  "p1_retries": 2,
   "p1_retried": true,
-  "p1_retry_reason": "simplification guard; village relevance guard",
-  "p2_sec": 17.903,
-  "p2_tokens": 197,
-  "p2_retried": true,
-  "p2_retry_reason": "quiz guards: only 2/3 valid",
-  "inf_time_sec": 41.525,
-  "tokens": 519,
-  "tok_per_sec": 12.5,
-  "peak_rss_mib": 1910.16,
+  "p1_retry_reason": "village_guard; missing_section: words",
+  "p1_attempts": [
+    {
+      "pass": 1,
+      "attempt": 1,
+      "tokens": 75,
+      "sec": 8.622
+    },
+    {
+      "attempt": 2,
+      "guard": "village_guard",
+      "tokens": 87,
+      "sec": 5.078
+    },
+    {
+      "attempt": 3,
+      "guard": "missing_words",
+      "tokens": 60,
+      "sec": 3.169
+    }
+  ],
+  "p2_sec": 8.946,
+  "p2_tokens": 115,
+  "p2_retries": 0,
+  "p2_retried": false,
+  "p2_retry_reason": "none",
+  "p2_attempts": [
+    {
+      "pass": 2,
+      "attempt": 1,
+      "valid_cnt": 3,
+      "tokens": 115,
+      "sec": 8.946
+    }
+  ],
+  "inf_time_sec": 25.817,
+  "tokens": 337,
+  "tok_per_sec": 13.05,
   "retries": 2,
+  "retry_reasons": "village_guard; missing_section: words",
+  "quiz_count": 3,
+  "quiz_incomplete": false,
+  "summary_fallback": false,
+  "summary_ok": true,
   "guards": {
     "rewrite_shorter": true,
     "no_simpler_rewrite": false,
+    "summary_produced_without_fallback": true,
     "village_relevant": true,
+    "quiz_count": 3,
+    "quiz_incomplete": false,
     "quiz_supported_cnt": 0,
-    "quiz_total_cnt": 2,
-    "words_explained_cnt": 0,
+    "quiz_total_cnt": 3,
+    "words_explained_cnt": 5,
     "words_cand_cnt": 5,
+    "retries": 2,
     "p1_retried": true,
-    "p1_retry_reason": "simplification guard; village relevance guard",
-    "p2_retried": true,
-    "p2_retry_reason": "quiz guards: only 2/3 valid"
+    "p1_retry_reason": "village_guard; missing_section: words",
+    "p2_retried": false,
+    "p2_retry_reason": "none"
   },
   "offline_status": "ONLINE",
   "telemetry": {
@@ -63,11 +104,11 @@
     "pte_size_bytes": 1135951488,
     "pte_size_mib": 1083.33,
     "pte_size_mb": 1083.33,
-    "peak_rss_mib": 1910.16,
-    "peak_rss_mb": 1910.16,
-    "inf_time_sec": 41.525,
-    "tok_cnt": 519,
-    "tok_per_sec": 12.5,
+    "peak_rss_mib": 1903.91,
+    "peak_rss_mb": 1903.91,
+    "inf_time_sec": 25.817,
+    "tok_cnt": 337,
+    "tok_per_sec": 13.05,
     "is_mock": false
   },
   "pipeline": {
@@ -115,20 +156,46 @@
       "normal"
     ],
     "parsed": {
-      "simple": "<SIMPLE>Convex lenses bend light to focus it onto a single point, creating real inverted images on screens or virtual magnified images for human observers.",
-      "summary": "",
-      "village": "The village elder, Mrs. Patel, was teaching her young grandson, Rohan, about the properties of convex lenses. She placed a convex lens in front of a mirror and a concave lens behind it, and then asked Rohan to focus a beam of light from a candle on the mirror. As Rohan adjusted the lenses, he noticed that the image of the candle on the mirror appeared to be inverted and magnified, a perfect example of the convex lens's ability to converge parallel incident light rays onto a focal point.",
-      "words": [],
+      "simple": "Convex lenses bend light rays to produce real inverted images.",
+      "summary": "The passage explains how light behaves when passing from one medium to another.",
+      "village": "in rural Tamil Nadu, a farmer Murugan carefully placed a bundle of freshly harvested paddy on a wooden cart. As he began to drive the cart towards his home, he noticed that the paddy seemed to be bending and converging, creating a peculiar, inverted image on the ground. The image was so real that it seemed to be staring back at him, a testament to the power of convex lenses in everyday life.",
+      "words": [
+        {
+          "word": "refraction",
+          "meaning": "light bends when passing from one medium to another"
+        },
+        {
+          "word": "obliquely",
+          "meaning": "at an angle, not directly perpendicular"
+        },
+        {
+          "word": "refracts",
+          "meaning": "light bends, passing from one medium to another"
+        },
+        {
+          "word": "medium",
+          "meaning": "substance that can bend light"
+        },
+        {
+          "word": "normal",
+          "meaning": "straight, not at an angle"
+        }
+      ],
       "quiz": [
         {
-          "q": "What happens to light when it enters an optically different medium obliquely?",
+          "q": "What is the phenomenon of light's direction changing when it enters an optically different medium obliquely?",
           "a": "Refraction",
           "c": "S1"
         },
         {
-          "q": "What is the effect of concave lenses on incident rays?",
-          "a": "Diverges",
-          "c": "S6"
+          "q": "What happens to the velocity of light when it travels from an optically rarer medium into an optically denser medium?",
+          "a": "Decreases",
+          "c": "S1"
+        },
+        {
+          "q": "Which type of lens uses the refractive behavior of light to converge parallel incident light rays onto a focal point?",
+          "a": "Convex lenses",
+          "c": "S1"
         }
       ],
       "no_simpler": false,
@@ -141,20 +208,81 @@
         "avg_l": 5.79
       },
       "simp": {
-        "w_cnt": 25,
-        "l_cnt": 128,
-        "avg_l": 5.12
+        "w_cnt": 10,
+        "l_cnt": 52,
+        "avg_l": 5.2
       },
       "diff": {
-        "w_chg": -13.8,
-        "l_chg": -23.8,
-        "avg_chg": -11.6
+        "w_chg": -65.5,
+        "l_chg": -69.0,
+        "avg_chg": -10.2
       }
     },
-    "words": [],
+    "words": [
+      {
+        "word": "refraction",
+        "meaning": "light bends when passing from one medium to another",
+        "gl": {
+          "en": "refraction",
+          "ta": "ஒளிவிலகல்",
+          "translit": "Oli-vilagal",
+          "verified": true,
+          "source": "Samacheer Kalvi Science textbook, confirmed by team",
+          "ref": ""
+        }
+      },
+      {
+        "word": "obliquely",
+        "meaning": "at an angle, not directly perpendicular",
+        "gl": {
+          "en": "obliquely",
+          "ta": "சாய்வாக",
+          "translit": "Saaivaaga",
+          "verified": true,
+          "source": "Samacheer Kalvi Science textbook, confirmed by team",
+          "ref": ""
+        }
+      },
+      {
+        "word": "refracts",
+        "meaning": "light bends, passing from one medium to another",
+        "gl": {
+          "en": "refraction",
+          "ta": "ஒளிவிலகல்",
+          "translit": "Oli-vilagal",
+          "verified": true,
+          "source": "Samacheer Kalvi Science textbook, confirmed by team",
+          "ref": ""
+        }
+      },
+      {
+        "word": "medium",
+        "meaning": "substance that can bend light",
+        "gl": {
+          "en": "medium",
+          "ta": "ஊடகம்",
+          "translit": "Oodagam",
+          "verified": true,
+          "source": "Samacheer Kalvi Science textbook, confirmed by team",
+          "ref": ""
+        }
+      },
+      {
+        "word": "normal",
+        "meaning": "straight, not at an angle",
+        "gl": {
+          "en": "normal",
+          "ta": "குத்துக்கோடு",
+          "translit": "Kuthukkodu",
+          "verified": true,
+          "source": "Samacheer Kalvi Science textbook, confirmed by team",
+          "ref": ""
+        }
+      }
+    ],
     "quiz": [
       {
-        "q": "What happens to light when it enters an optically different medium obliquely?",
+        "q": "What is the phenomenon of light's direction changing when it enters an optically different medium obliquely?",
         "a": "Refraction",
         "c": "S1",
         "status": "FLAGGED",
@@ -162,39 +290,84 @@
         "suggested": "S2"
       },
       {
-        "q": "What is the effect of concave lenses on incident rays?",
-        "a": "Diverges",
-        "c": "S6",
+        "q": "What happens to the velocity of light when it travels from an optically rarer medium into an optically denser medium?",
+        "a": "Decreases",
+        "c": "S1",
         "status": "FLAGGED",
         "shared": [],
-        "suggested": null
+        "suggested": "S3"
+      },
+      {
+        "q": "Which type of lens uses the refractive behavior of light to converge parallel incident light rays onto a focal point?",
+        "a": "Convex lenses",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S5"
       }
     ],
-    "tok_cnt": 519,
+    "tok_cnt": 337,
     "p1_info": {
-      "tokens": 322,
-      "seconds": 23.621,
+      "tokens": 222,
+      "seconds": 16.87,
+      "attempts": [
+        {
+          "pass": 1,
+          "attempt": 1,
+          "tokens": 75,
+          "sec": 8.622
+        },
+        {
+          "attempt": 2,
+          "guard": "village_guard",
+          "tokens": 87,
+          "sec": 5.078
+        },
+        {
+          "attempt": 3,
+          "guard": "missing_words",
+          "tokens": 60,
+          "sec": 3.169
+        }
+      ],
+      "retries": 2,
       "retried": true,
-      "reason": "simplification guard; village relevance guard"
+      "reason": "village_guard; missing_section: words",
+      "summary_fallback": false
     },
     "p2_info": {
-      "tokens": 197,
-      "seconds": 17.903,
-      "retried": true,
-      "reason": "quiz guards: only 2/3 valid"
+      "tokens": 115,
+      "seconds": 8.946,
+      "attempts": [
+        {
+          "pass": 2,
+          "attempt": 1,
+          "valid_cnt": 3,
+          "tokens": 115,
+          "sec": 8.946
+        }
+      ],
+      "retries": 0,
+      "retried": false,
+      "reason": "none",
+      "quiz_incomplete": false
     },
     "guards": {
       "rewrite_shorter": true,
       "no_simpler_rewrite": false,
+      "summary_produced_without_fallback": true,
       "village_relevant": true,
+      "quiz_count": 3,
+      "quiz_incomplete": false,
       "quiz_supported_cnt": 0,
-      "quiz_total_cnt": 2,
-      "words_explained_cnt": 0,
+      "quiz_total_cnt": 3,
+      "words_explained_cnt": 5,
       "words_cand_cnt": 5,
+      "retries": 2,
       "p1_retried": true,
-      "p1_retry_reason": "simplification guard; village relevance guard",
-      "p2_retried": true,
-      "p2_retry_reason": "quiz guards: only 2/3 valid"
+      "p1_retry_reason": "village_guard; missing_section: words",
+      "p2_retried": false,
+      "p2_retry_reason": "none"
     },
     "is_mock": false
   }

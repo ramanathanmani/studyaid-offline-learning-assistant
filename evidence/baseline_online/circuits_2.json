@@ -1,0 +1,177 @@
+{
+  "passage": "circuits",
+  "run": 2,
+  "words": 175,
+  "load_time_sec": 0.932,
+  "p1_sec": 16.495,
+  "p1_tokens": 215,
+  "p1_retried": true,
+  "p1_retry_reason": "simplification guard; village relevance guard",
+  "p2_sec": 16.296,
+  "p2_tokens": 211,
+  "p2_retried": true,
+  "p2_retry_reason": "quiz guards: only 0/3 valid",
+  "inf_time_sec": 32.792,
+  "tokens": 426,
+  "tok_per_sec": 12.99,
+  "peak_rss_mib": 1910.16,
+  "retries": 2,
+  "guards": {
+    "rewrite_shorter": true,
+    "no_simpler_rewrite": false,
+    "village_relevant": true,
+    "quiz_supported_cnt": 0,
+    "quiz_total_cnt": 0,
+    "words_explained_cnt": 0,
+    "words_cand_cnt": 5,
+    "p1_retried": true,
+    "p1_retry_reason": "simplification guard; village relevance guard",
+    "p2_retried": true,
+    "p2_retry_reason": "quiz guards: only 0/3 valid"
+  },
+  "offline_status": "ONLINE",
+  "telemetry": {
+    "net": {
+      "method": "linux_ip_cmd",
+      "ifaces": [
+        {
+          "name": "lo",
+          "state": "UNKNOWN"
+        },
+        {
+          "name": "enp0s31f6",
+          "state": "DOWN"
+        },
+        {
+          "name": "wlp0s20f3",
+          "state": "UP"
+        }
+      ],
+      "has_def_route": true,
+      "is_offline": false
+    },
+    "host": {
+      "host_label": "HOST: laptop (not Raspberry Pi)",
+      "is_pi": false,
+      "cpu_model": "11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz",
+      "cores": 8,
+      "ram_gb": 14.3,
+      "os": "Linux 7.0.0-38-generic"
+    },
+    "model_name": "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+    "pte_path": "models/llama1b/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte",
+    "pte_size_bytes": 1135951488,
+    "pte_size_mib": 1083.33,
+    "pte_size_mb": 1083.33,
+    "peak_rss_mib": 1910.16,
+    "peak_rss_mb": 1910.16,
+    "inf_time_sec": 32.792,
+    "tok_cnt": 426,
+    "tok_per_sec": 12.99,
+    "is_mock": false
+  },
+  "pipeline": {
+    "s_list": [
+      [
+        "S1",
+        "An electric current is defined as the rate of flow of electric charges across any cross section of a conductor."
+      ],
+      [
+        "S2",
+        "In metallic wires, electrons constitute the flow of electric charges because free electrons drift when an electric potential difference is maintained by a chemical cell or battery."
+      ],
+      [
+        "S3",
+        "By convention, the direction of electric current is considered opposite to the direction of the flow of electrons, moving from the positive terminal towards the negative terminal."
+      ],
+      [
+        "S4",
+        "The continuous and closed conducting path along which an electric current flows is called an electric circuit."
+      ],
+      [
+        "S5",
+        "When a circuit is broken or a switch is turned off, the current stops flowing instantly."
+      ],
+      [
+        "S6",
+        "The electrical potential difference between two points is measured in volts using an instrument called a voltmeter, which is connected in parallel across the electrical component."
+      ],
+      [
+        "S7",
+        "According to Ohm's law, the electric current passing through a metallic conductor is directly proportional to the potential difference across its terminals, provided the temperature remains constant."
+      ],
+      [
+        "S8",
+        "Electric resistance measures the opposition offered by a conductor to the flow of electric current."
+      ]
+    ],
+    "hard_s": {
+      "id": "S7",
+      "text": "According to Ohm's law, the electric current passing through a metallic conductor is directly proportional to the potential difference across its terminals, provided the temperature remains constant.",
+      "c_cnt": 12,
+      "tot": 28
+    },
+    "cand_words": [
+      "resistance",
+      "voltmeter",
+      "circuit",
+      "current",
+      "proportional"
+    ],
+    "parsed": {
+      "simple": "<SIMPLE>According to Ohm's law, the electric current in a metallic conductor is directly proportional to the potential difference across its terminals, provided the temperature remains constant.",
+      "summary": "",
+      "village": "The village of rural India is home to a small, rural school where students are learning about Ohm's law. During a science lesson, the teacher asks the students to measure the electric current flowing through a copper wire connected to a battery. As the voltage increases, the current flowing through the wire increases, illustrating the direct proportionality between the potential difference and the electric current.",
+      "words": [],
+      "quiz": [],
+      "no_simpler": false,
+      "valid": true
+    },
+    "readab": {
+      "orig": {
+        "w_cnt": 28,
+        "l_cnt": 169,
+        "avg_l": 6.04
+      },
+      "simp": {
+        "w_cnt": 28,
+        "l_cnt": 163,
+        "avg_l": 5.82
+      },
+      "diff": {
+        "w_chg": 0.0,
+        "l_chg": -3.6,
+        "avg_chg": -3.6
+      }
+    },
+    "words": [],
+    "quiz": [],
+    "tok_cnt": 426,
+    "p1_info": {
+      "tokens": 215,
+      "seconds": 16.495,
+      "retried": true,
+      "reason": "simplification guard; village relevance guard"
+    },
+    "p2_info": {
+      "tokens": 211,
+      "seconds": 16.296,
+      "retried": true,
+      "reason": "quiz guards: only 0/3 valid"
+    },
+    "guards": {
+      "rewrite_shorter": true,
+      "no_simpler_rewrite": false,
+      "village_relevant": true,
+      "quiz_supported_cnt": 0,
+      "quiz_total_cnt": 0,
+      "words_explained_cnt": 0,
+      "words_cand_cnt": 5,
+      "p1_retried": true,
+      "p1_retry_reason": "simplification guard; village relevance guard",
+      "p2_retried": true,
+      "p2_retry_reason": "quiz guards: only 0/3 valid"
+    },
+    "is_mock": false
+  }
+}

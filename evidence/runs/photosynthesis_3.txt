@@ -10,40 +10,40 @@
 
 === HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
 Original ([S8]): In agricultural systems, environmental factors such as sunlight intensity, temperature variations, and moisture availability determine the overall rate of photosynthesis and crop productivity.
-Simplified:   <SIMPLE>Environmental factors like sunlight intensity, temperature, and moisture determine crop productivity.
+Simplified:   Sunlight determines the rate of photosynthesis.
 
 Readability Metrics:
 Metric                 Original     Simplified   Change (%)
-Words                  23           12           -47.8%    
-Letters                166          94           -43.4%    
-Avg letters/word       7.22         7.83         +8.4%     
+Words                  23           6            -73.9%    
+Letters                166          41           -75.3%    
+Avg letters/word       7.22         6.83         -5.4%     
 
 === SIMPLE SUMMARY / எளிய சுருக்கம் ===
-N/A
+Photosynthesis is the process by which plants convert sunlight into chemical energy.
 
 === VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
-The sun rises over the fields, casting a warm glow on the crops. As the temperature rises to 25°C, the photosynthetic process begins, and the crops start to produce more chlorophyll, increasing their rate of photosynthesis. By mid-morning, the crops have absorbed enough energy from the sunlight to produce 10% more oxygen than they would have without photosynthesis.
+in rural Tamil Nadu, Murugan, a farmer, carefully tended to his paddy field, ensuring that the sunlight intensity was just right for optimal photosynthesis. As the temperature rose, he adjusted the shade of his bullock cart to prevent overheating. By doing so, he maximized the crop's productivity and ensured a bountiful harvest.
 
 === HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
-No hard words parsed.
+- chloroplasts: tiny cells in plants that make food -> பசுங்கணிகம் (Pasungkanigam) [unverified]
+- photosynthesis: process of plants making food from sunlight (English only)
+- environmental: relating to the natural world around us (English only)
+- replenishment: restoring or filling something (English only)
+- agricultural: relating to farming and growing crops (English only)
 
 === QUIZ QUESTIONS / வினாடி வினா ===
-[Q1] What is the purpose of stomata in plants?
-     Answer: Carbon dioxide enters the leaves through microscopic pores called stomata.
-     Citation: S2
-     Support: FLAGGED (shared: called, suggested citation: S3)
-[Q2] What is the result of photolysis in the process of photosynthesis?
-     Answer: Water molecules are split into hydrogen and oxygen.
-     Citation: S4
-     Support: SUPPORTED (shared: hydrogen, molecules, oxygen, split, water)
-[Q3] What is the outcome of the hydrogen produced during photosynthesis?
-     Answer: Glucose is synthesized, a simple carbohydrate that fuels plant respiration and vegetative growth.
-     Citation: S5
-     Support: SUPPORTED (shared: carbohydrate, fuels, glucose, growth, plant, respiration, simple, vegetative)
-[Q4] What happens to the carbon cycle if photosynthesis is not present?
-     Answer: The carbon cycle collapses, oxygen replenishment would cease, and food webs would disintegrate completely.
-     Citation: S7
-     Support: SUPPORTED (shared: carbon, cease, completely, cycle, disintegrate, food, oxygen, replenishment, webs)
+[Q1] Which microscopic pores allow carbon dioxide to enter the leaves?
+     Answer: Stomata
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S3)
+[Q2] What is the byproduct released into the atmosphere during photosynthesis?
+     Answer: Oxygen
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S4)
+[Q3] What is the result of the hydrogen combining with carbon dioxide?
+     Answer: Glucose
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S5)
 
 === JUDGE PROOF TELEMETRY ===
 HOST: laptop (not Raspberry Pi)
@@ -56,8 +56,8 @@ Default route active: YES
 Offline status: ONLINE
 Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
 PTE size: 1083.33 MiB (1135951488 bytes)
-Peak RSS: 1910.16 MiB
-Inference time: 32.894 s
-Tokens generated: 479
-Tokens/sec: 14.56
+Peak RSS: 1903.62 MiB
+Inference time: 21.963 s
+Tokens generated: 288
+Tokens/sec: 13.11
 Execution mode: [REAL EXECUTORCH RUN]

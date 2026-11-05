@@ -2,32 +2,73 @@
   "passage": "sound",
   "run": 2,
   "words": 155,
-  "load_time_sec": 0.932,
-  "p1_sec": 23.072,
-  "p1_tokens": 409,
+  "load_time_sec": 1.118,
+  "baseline_rss_mib": 19.75,
+  "peak_rss_mib": 1903.79,
+  "p1_sec": 18.484,
+  "p1_tokens": 271,
+  "p1_retries": 2,
   "p1_retried": true,
-  "p1_retry_reason": "simplification guard; village relevance guard",
-  "p2_sec": 15.11,
-  "p2_tokens": 220,
-  "p2_retried": true,
-  "p2_retry_reason": "quiz guards: only 2/3 valid",
-  "inf_time_sec": 38.183,
-  "tokens": 629,
-  "tok_per_sec": 16.47,
-  "peak_rss_mib": 1910.16,
+  "p1_retry_reason": "village_guard; missing_section: words",
+  "p1_attempts": [
+    {
+      "pass": 1,
+      "attempt": 1,
+      "tokens": 87,
+      "sec": 9.056
+    },
+    {
+      "attempt": 2,
+      "guard": "village_guard",
+      "tokens": 118,
+      "sec": 6.142
+    },
+    {
+      "attempt": 3,
+      "guard": "missing_words",
+      "tokens": 66,
+      "sec": 3.285
+    }
+  ],
+  "p2_sec": 7.245,
+  "p2_tokens": 98,
+  "p2_retries": 0,
+  "p2_retried": false,
+  "p2_retry_reason": "none",
+  "p2_attempts": [
+    {
+      "pass": 2,
+      "attempt": 1,
+      "valid_cnt": 3,
+      "tokens": 98,
+      "sec": 7.245
+    }
+  ],
+  "inf_time_sec": 25.731,
+  "tokens": 369,
+  "tok_per_sec": 14.34,
   "retries": 2,
+  "retry_reasons": "village_guard; missing_section: words",
+  "quiz_count": 3,
+  "quiz_incomplete": false,
+  "summary_fallback": false,
+  "summary_ok": true,
   "guards": {
     "rewrite_shorter": true,
     "no_simpler_rewrite": false,
+    "summary_produced_without_fallback": true,
     "village_relevant": true,
-    "quiz_supported_cnt": 1,
-    "quiz_total_cnt": 2,
-    "words_explained_cnt": 0,
+    "quiz_count": 3,
+    "quiz_incomplete": false,
+    "quiz_supported_cnt": 0,
+    "quiz_total_cnt": 3,
+    "words_explained_cnt": 5,
     "words_cand_cnt": 5,
+    "retries": 2,
     "p1_retried": true,
-    "p1_retry_reason": "simplification guard; village relevance guard",
-    "p2_retried": true,
-    "p2_retry_reason": "quiz guards: only 2/3 valid"
+    "p1_retry_reason": "village_guard; missing_section: words",
+    "p2_retried": false,
+    "p2_retry_reason": "none"
   },
   "offline_status": "ONLINE",
   "telemetry": {
@@ -63,11 +104,11 @@
     "pte_size_bytes": 1135951488,
     "pte_size_mib": 1083.33,
     "pte_size_mb": 1083.33,
-    "peak_rss_mib": 1910.16,
-    "peak_rss_mb": 1910.16,
-    "inf_time_sec": 38.183,
-    "tok_cnt": 629,
-    "tok_per_sec": 16.47,
+    "peak_rss_mib": 1903.79,
+    "peak_rss_mb": 1903.79,
+    "inf_time_sec": 25.731,
+    "tok_cnt": 369,
+    "tok_per_sec": 14.34,
     "is_mock": false
   },
   "pipeline": {
@@ -111,20 +152,46 @@
       "compresses"
     ],
     "parsed": {
-      "simple": "<SIMPLE>When a vibrating body compresses air, it creates a region of high pressure and a region of low pressure.",
-      "summary": "",
-      "village": "The village of Greenfield is known for its annual Harvest Festival, where the villagers' dancing feet create a region of high pressure called a compression, followed by a region of low particle density known as a rarefaction, as the air particles are compressed and then released, creating a rhythmic vibration that resonates throughout the village.",
-      "words": [],
+      "simple": "When a body vibrates, it compresses air particles to create a region of high pressure.",
+      "summary": "Sound is a form of mechanical energy that travels through a material medium.",
+      "village": "in rural Tamil Nadu, Murugan's bullock cart rumbled down the dusty road, causing the air around it to compress and then expand as it passed over the paddy field, creating a series of pressure waves that echoed through the air. The villagers, who were busy tending to their daily chores, heard the vibrations and felt the pressure changes, which helped them predict the arrival of the next bullock. As the cart continued on its journey, the pressure waves continued to build and then dissipate, creating a series of gentle tremors that were felt throughout the village.",
+      "words": [
+        {
+          "word": "compressions",
+          "meaning": "When air is compressed, its pressure increases."
+        },
+        {
+          "word": "rarefactions",
+          "meaning": "Air is rarefied when it is compressed."
+        },
+        {
+          "word": "compression",
+          "meaning": "Air is compressed when its pressure increases."
+        },
+        {
+          "word": "rarefaction",
+          "meaning": "Air is rarefied when it is compressed."
+        },
+        {
+          "word": "compresses",
+          "meaning": "Air is compressed when its pressure increases."
+        }
+      ],
       "quiz": [
         {
-          "q": "What happens to lake water when it is heated by solar radiation?",
-          "a": "Evaporates",
+          "q": "Why do pressure oscillations occur in sound waves?",
+          "a": "Because sound propagation requires physical particle collisions.",
           "c": "S1"
         },
         {
-          "q": "What happens to pressure oscillations when a vibrating body oscillates back and forth?",
-          "a": "Compresses",
-          "c": "S2"
+          "q": "Which type of medium can sound travel through without physical particle displacement?",
+          "a": "Empty vacuum.",
+          "c": "S1"
+        },
+        {
+          "q": "What is the characteristic pitch of a musical sound?",
+          "a": "Frequency determines its perceived acoustic loudness and intensity.",
+          "c": "S1"
         }
       ],
       "no_simpler": false,
@@ -137,62 +204,168 @@
         "avg_l": 5.08
       },
       "simp": {
-        "w_cnt": 20,
-        "l_cnt": 90,
-        "avg_l": 4.5
+        "w_cnt": 15,
+        "l_cnt": 70,
+        "avg_l": 4.67
       },
       "diff": {
-        "w_chg": -44.4,
-        "l_chg": -50.8,
-        "avg_chg": -11.4
+        "w_chg": -58.3,
+        "l_chg": -61.7,
+        "avg_chg": -8.1
       }
     },
-    "words": [],
+    "words": [
+      {
+        "word": "compressions",
+        "meaning": "When air is compressed, its pressure increases.",
+        "gl": {
+          "en": "compression",
+          "ta": "இறுக்கம்",
+          "translit": "Irukkam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "rarefactions",
+        "meaning": "Air is rarefied when it is compressed.",
+        "gl": {
+          "en": "rarefaction",
+          "ta": "தளர்ச்சி",
+          "translit": "Thalarchi",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "compression",
+        "meaning": "Air is compressed when its pressure increases.",
+        "gl": {
+          "en": "compression",
+          "ta": "இறுக்கம்",
+          "translit": "Irukkam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "rarefaction",
+        "meaning": "Air is rarefied when it is compressed.",
+        "gl": {
+          "en": "rarefaction",
+          "ta": "தளர்ச்சி",
+          "translit": "Thalarchi",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "compresses",
+        "meaning": "Air is compressed when its pressure increases.",
+        "gl": {
+          "en": "compression",
+          "ta": "இறுக்கம்",
+          "translit": "Irukkam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      }
+    ],
     "quiz": [
       {
-        "q": "What happens to lake water when it is heated by solar radiation?",
-        "a": "Evaporates",
+        "q": "Why do pressure oscillations occur in sound waves?",
+        "a": "Because sound propagation requires physical particle collisions.",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [
+          "sound"
+        ],
+        "suggested": "S4"
+      },
+      {
+        "q": "Which type of medium can sound travel through without physical particle displacement?",
+        "a": "Empty vacuum.",
         "c": "S1",
         "status": "FLAGGED",
         "shared": [],
-        "suggested": null
+        "suggested": "S4"
       },
       {
-        "q": "What happens to pressure oscillations when a vibrating body oscillates back and forth?",
-        "a": "Compresses",
-        "c": "S2",
-        "status": "SUPPORTED (exact term)",
-        "shared": [
-          "compresses"
-        ],
-        "suggested": null
+        "q": "What is the characteristic pitch of a musical sound?",
+        "a": "Frequency determines its perceived acoustic loudness and intensity.",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S6"
       }
     ],
-    "tok_cnt": 629,
+    "tok_cnt": 369,
     "p1_info": {
-      "tokens": 409,
-      "seconds": 23.072,
+      "tokens": 271,
+      "seconds": 18.484,
+      "attempts": [
+        {
+          "pass": 1,
+          "attempt": 1,
+          "tokens": 87,
+          "sec": 9.056
+        },
+        {
+          "attempt": 2,
+          "guard": "village_guard",
+          "tokens": 118,
+          "sec": 6.142
+        },
+        {
+          "attempt": 3,
+          "guard": "missing_words",
+          "tokens": 66,
+          "sec": 3.285
+        }
+      ],
+      "retries": 2,
       "retried": true,
-      "reason": "simplification guard; village relevance guard"
+      "reason": "village_guard; missing_section: words",
+      "summary_fallback": false
     },
     "p2_info": {
-      "tokens": 220,
-      "seconds": 15.11,
-      "retried": true,
-      "reason": "quiz guards: only 2/3 valid"
+      "tokens": 98,
+      "seconds": 7.245,
+      "attempts": [
+        {
+          "pass": 2,
+          "attempt": 1,
+          "valid_cnt": 3,
+          "tokens": 98,
+          "sec": 7.245
+        }
+      ],
+      "retries": 0,
+      "retried": false,
+      "reason": "none",
+      "quiz_incomplete": false
     },
     "guards": {
       "rewrite_shorter": true,
       "no_simpler_rewrite": false,
+      "summary_produced_without_fallback": true,
       "village_relevant": true,
-      "quiz_supported_cnt": 1,
-      "quiz_total_cnt": 2,
-      "words_explained_cnt": 0,
+      "quiz_count": 3,
+      "quiz_incomplete": false,
+      "quiz_supported_cnt": 0,
+      "quiz_total_cnt": 3,
+      "words_explained_cnt": 5,
       "words_cand_cnt": 5,
+      "retries": 2,
       "p1_retried": true,
-      "p1_retry_reason": "simplification guard; village relevance guard",
-      "p2_retried": true,
-      "p2_retry_reason": "quiz guards: only 2/3 valid"
+      "p1_retry_reason": "village_guard; missing_section: words",
+      "p2_retried": false,
+      "p2_retry_reason": "none"
     },
     "is_mock": false
   }

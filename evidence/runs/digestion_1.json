@@ -2,32 +2,67 @@
   "passage": "digestion",
   "run": 1,
   "words": 164,
-  "load_time_sec": 0.932,
-  "p1_sec": 19.739,
-  "p1_tokens": 272,
+  "load_time_sec": 0.981,
+  "baseline_rss_mib": 19.84,
+  "peak_rss_mib": 1903.84,
+  "p1_sec": 25.753,
+  "p1_tokens": 439,
+  "p1_retries": 1,
   "p1_retried": true,
-  "p1_retry_reason": "simplification guard; village relevance guard",
-  "p2_sec": 20.383,
-  "p2_tokens": 277,
-  "p2_retried": true,
-  "p2_retry_reason": "quiz guards: only 2/3 valid",
-  "inf_time_sec": 40.123,
-  "tokens": 549,
-  "tok_per_sec": 13.68,
-  "peak_rss_mib": 1910.16,
-  "retries": 2,
+  "p1_retry_reason": "village_guard",
+  "p1_attempts": [
+    {
+      "pass": 1,
+      "attempt": 1,
+      "tokens": 320,
+      "sec": 20.032
+    },
+    {
+      "attempt": 2,
+      "guard": "village_guard",
+      "tokens": 119,
+      "sec": 5.72
+    }
+  ],
+  "p2_sec": 6.671,
+  "p2_tokens": 90,
+  "p2_retries": 0,
+  "p2_retried": false,
+  "p2_retry_reason": "none",
+  "p2_attempts": [
+    {
+      "pass": 2,
+      "attempt": 1,
+      "valid_cnt": 4,
+      "tokens": 90,
+      "sec": 6.671
+    }
+  ],
+  "inf_time_sec": 32.425,
+  "tokens": 529,
+  "tok_per_sec": 16.31,
+  "retries": 1,
+  "retry_reasons": "village_guard",
+  "quiz_count": 4,
+  "quiz_incomplete": false,
+  "summary_fallback": false,
+  "summary_ok": true,
   "guards": {
     "rewrite_shorter": true,
     "no_simpler_rewrite": false,
+    "summary_produced_without_fallback": true,
     "village_relevant": true,
-    "quiz_supported_cnt": 2,
-    "quiz_total_cnt": 2,
-    "words_explained_cnt": 0,
+    "quiz_count": 4,
+    "quiz_incomplete": false,
+    "quiz_supported_cnt": 1,
+    "quiz_total_cnt": 4,
+    "words_explained_cnt": 1,
     "words_cand_cnt": 5,
+    "retries": 1,
     "p1_retried": true,
-    "p1_retry_reason": "simplification guard; village relevance guard",
-    "p2_retried": true,
-    "p2_retry_reason": "quiz guards: only 2/3 valid"
+    "p1_retry_reason": "village_guard",
+    "p2_retried": false,
+    "p2_retry_reason": "none"
   },
   "offline_status": "ONLINE",
   "telemetry": {
@@ -63,11 +98,11 @@
     "pte_size_bytes": 1135951488,
     "pte_size_mib": 1083.33,
     "pte_size_mb": 1083.33,
-    "peak_rss_mib": 1910.16,
-    "peak_rss_mb": 1910.16,
-    "inf_time_sec": 40.123,
-    "tok_cnt": 549,
-    "tok_per_sec": 13.68,
+    "peak_rss_mib": 1903.84,
+    "peak_rss_mb": 1903.84,
+    "inf_time_sec": 32.425,
+    "tok_cnt": 529,
+    "tok_per_sec": 16.31,
     "is_mock": false
   },
   "pipeline": {
@@ -115,20 +150,51 @@
       "stomach"
     ],
     "parsed": {
-      "simple": "<SIMPLE>The semi-digested acidic mixture, chyme, passes into the small intestine, where it's digested into its basic components.",
-      "summary": "",
-      "village": "The village of rural India is home to a young girl named Rohini, who lives with her family in a small, rural village. One morning, Rohini's mother prepares a meal of rice and lentils for breakfast, which she mixes together to create a semi-digested acidic mixture known as chyme. As Rohini eats the chyme, the partially digested mixture passes sequentially into the small intestine, where it serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
-      "words": [],
-      "quiz": [
+      "simple": "The semi-digested acidic mixture chyme passes into the small intestine.",
+      "summary": "The human digestive process breaks down food into nutrients.",
+      "village": "in rural Tamil Nadu, after Murugan's bullock cart brings in a freshly harvested batch of paddy, the farmer carefully separates the grains from the chaff, allowing the paddy to pass into the small intestine, where it will be broken down into its constituent parts by the digestive enzymes. The paddy grains, now semi-digested, will then be absorbed into the bloodstream, providing the body with the necessary nutrients. As the paddy enters the small intestine, it is then passed into the large intestine, where water is absorbed and the remaining nutrients are further broken down.",
+      "words": [
         {
-          "q": "What is the primary function of the stomach in the digestive process?",
-          "a": "The stomach secretes hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.",
-          "c": "S4"
+          "word": "peristalsis",
+          "meaning": "digestive"
         },
         {
-          "q": "What is the main site for complete chemical digestion of carbohydrates, proteins, and fats in the small intestine?",
-          "a": "The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
-          "c": "S5"
+          "word": "digesting",
+          "meaning": "no explanation generated"
+        },
+        {
+          "word": "digestion",
+          "meaning": "no explanation generated"
+        },
+        {
+          "word": "digested",
+          "meaning": "no explanation generated"
+        },
+        {
+          "word": "stomach",
+          "meaning": "no explanation generated"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the primary function of salivary amylase in the human digestive process?",
+          "a": "Digests complex starch into simple sugars.",
+          "c": "S1"
+        },
+        {
+          "q": "Which gland secretes hydrochloric acid in the stomach?",
+          "a": "Gastric glands.",
+          "c": "S1"
+        },
+        {
+          "q": "What is the main site for complete chemical digestion of carbohydrates, proteins, and fats?",
+          "a": "Small intestine.",
+          "c": "S1"
+        },
+        {
+          "q": "What are finger-like microscopic vascular projections called?",
+          "a": "Villi.",
+          "c": "S1"
         }
       ],
       "no_simpler": false,
@@ -141,96 +207,171 @@
         "avg_l": 5.72
       },
       "simp": {
-        "w_cnt": 20,
-        "l_cnt": 104,
-        "avg_l": 5.2
+        "w_cnt": 11,
+        "l_cnt": 60,
+        "avg_l": 5.45
       },
       "diff": {
-        "w_chg": -31.0,
-        "l_chg": -37.3,
-        "avg_chg": -9.1
+        "w_chg": -62.1,
+        "l_chg": -63.9,
+        "avg_chg": -4.7
       }
     },
-    "words": [],
+    "words": [
+      {
+        "word": "peristalsis",
+        "meaning": "digestive",
+        "gl": {
+          "en": "peristalsis",
+          "ta": "குடல் அசைவு",
+          "translit": "Kudal-asaivu",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "digesting",
+        "meaning": "no explanation generated",
+        "gl": {
+          "en": "digestion",
+          "ta": "செரிமானம்",
+          "translit": "Serimaanam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "digestion",
+        "meaning": "no explanation generated",
+        "gl": {
+          "en": "digestion",
+          "ta": "செரிமானம்",
+          "translit": "Serimaanam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "digested",
+        "meaning": "no explanation generated",
+        "gl": {
+          "en": "digestion",
+          "ta": "செரிமானம்",
+          "translit": "Serimaanam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "stomach",
+        "meaning": "no explanation generated",
+        "gl": {
+          "en": "stomach",
+          "ta": "இரைப்பை",
+          "translit": "Iraippai",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      }
+    ],
     "quiz": [
       {
-        "q": "What is the primary function of the stomach in the digestive process?",
-        "a": "The stomach secretes hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.",
-        "c": "S4",
+        "q": "What is the primary function of salivary amylase in the human digestive process?",
+        "a": "Digests complex starch into simple sugars.",
+        "c": "S1",
         "status": "SUPPORTED",
         "shared": [
-          "acid",
-          "acidic",
-          "activates",
-          "bacteria",
-          "destroying",
-          "digesting",
-          "enzyme",
-          "harmful",
-          "hydrochloric",
-          "ingested",
-          "medium",
-          "pepsin",
-          "protein",
-          "provides",
-          "stomach"
+          "complex",
+          "simpl"
         ],
         "suggested": null
       },
       {
-        "q": "What is the main site for complete chemical digestion of carbohydrates, proteins, and fats in the small intestine?",
-        "a": "The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
-        "c": "S5",
-        "status": "SUPPORTED",
-        "shared": [
-          "acidic",
-          "carbohydrates",
-          "chemical",
-          "chyme",
-          "complete",
-          "digested",
-          "digestion",
-          "fats",
-          "intestine",
-          "known",
-          "mixture",
-          "passes",
-          "principal",
-          "proteins",
-          "semi",
-          "sequentially",
-          "serves",
-          "site",
-          "small"
-        ],
-        "suggested": null
+        "q": "Which gland secretes hydrochloric acid in the stomach?",
+        "a": "Gastric glands.",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S4"
+      },
+      {
+        "q": "What is the main site for complete chemical digestion of carbohydrates, proteins, and fats?",
+        "a": "Small intestine.",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S5"
+      },
+      {
+        "q": "What are finger-like microscopic vascular projections called?",
+        "a": "Villi.",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S7"
       }
     ],
-    "tok_cnt": 549,
+    "tok_cnt": 529,
     "p1_info": {
-      "tokens": 272,
-      "seconds": 19.739,
+      "tokens": 439,
+      "seconds": 25.753,
+      "attempts": [
+        {
+          "pass": 1,
+          "attempt": 1,
+          "tokens": 320,
+          "sec": 20.032
+        },
+        {
+          "attempt": 2,
+          "guard": "village_guard",
+          "tokens": 119,
+          "sec": 5.72
+        }
+      ],
+      "retries": 1,
       "retried": true,
-      "reason": "simplification guard; village relevance guard"
+      "reason": "village_guard",
+      "summary_fallback": false
     },
     "p2_info": {
-      "tokens": 277,
-      "seconds": 20.383,
-      "retried": true,
-      "reason": "quiz guards: only 2/3 valid"
+      "tokens": 90,
+      "seconds": 6.671,
+      "attempts": [
+        {
+          "pass": 2,
+          "attempt": 1,
+          "valid_cnt": 4,
+          "tokens": 90,
+          "sec": 6.671
+        }
+      ],
+      "retries": 0,
+      "retried": false,
+      "reason": "none",
+      "quiz_incomplete": false
     },
     "guards": {
       "rewrite_shorter": true,
       "no_simpler_rewrite": false,
+      "summary_produced_without_fallback": true,
       "village_relevant": true,
-      "quiz_supported_cnt": 2,
-      "quiz_total_cnt": 2,
-      "words_explained_cnt": 0,
+      "quiz_count": 4,
+      "quiz_incomplete": false,
+      "quiz_supported_cnt": 1,
+      "quiz_total_cnt": 4,
+      "words_explained_cnt": 1,
       "words_cand_cnt": 5,
+      "retries": 1,
       "p1_retried": true,
-      "p1_retry_reason": "simplification guard; village relevance guard",
-      "p2_retried": true,
-      "p2_retry_reason": "quiz guards: only 2/3 valid"
+      "p1_retry_reason": "village_guard",
+      "p2_retried": false,
+      "p2_retry_reason": "none"
     },
     "is_mock": false
   }

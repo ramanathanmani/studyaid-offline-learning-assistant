@@ -1,0 +1,54 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.
+[S2] This deviation of ray of light is called refraction.
+[S3] Refraction takes place due to the difference in the velocity of light in different media.
+[S4] The velocity of light is more in a rarer medium and less in a denser medium.
+[S5] When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S1]): When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.
+Simplified:   <SIMPLE>When light travels from one transparent medium into another, it deviates from its path.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  20           15           -25.0%    
+Letters                101          78           -22.8%    
+Avg letters/word       5.05         5.20         +3.0%     
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+N/A
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+The sun rises over the horizon, casting a warm glow over the village. As the light travels from the sky into the air, it encounters a layer of air with a temperature of around 20°C, which is a relatively cool temperature compared to the warm air near the ground. The light is refracted, or bent, as it passes from the air into the cooler air, causing the light to diverge and spread out.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+No hard words parsed.
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] What is the name of the phenomenon that occurs when a ray of light travels from one transparent medium into another obliquely?
+     Answer: Refraction
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S2)
+[Q2] When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface. S3
+
+Q: What happens to the velocity of light in a rarer medium?
+     Answer: The velocity of light is more in a rarer medium and less in a denser medium.</QUIZ>
+     Citation: S4
+     Support: SUPPORTED (shared: denser, less, light, medium, rarer, velocity)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP
+Default route active: YES
+Offline status: ONLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1910.16 MiB
+Inference time: 39.108 s
+Tokens generated: 664
+Tokens/sec: 16.98
+Execution mode: [REAL EXECUTORCH RUN]

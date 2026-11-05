@@ -1,0 +1,54 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Digestion is the biochemical breakdown of complex insoluble food substances into simple absorbable nutrient molecules required by living cells.
+[S2] The human digestive process commences inside the buccal cavity, where teeth mechanically masticate solid food and salivary glands secrete the enzyme salivary amylase to break down complex starch into simple sugars.
+[S3] The masticated food bolus travels downwards through the muscular esophagus by rhythmic waves of involuntary contraction termed peristalsis.
+[S4] Inside the stomach, gastric glands secrete hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.
+[S5] The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
+[S6] Here, bile juice secreted by the liver emulsifies large fat globules into smaller droplets, accelerating enzymatic breakdown by pancreatic lipase.
+[S7] Finger-like microscopic vascular projections called villi present along the intestinal inner lining maximize the surface area for rapid nutrient absorption into the circulating bloodstream.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S5]): The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
+Simplified:   <SIMPLE>The semi-digested acidic mixture, chyme, passes into the small intestine, where it's digested into its basic components.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  29           20           -31.0%    
+Letters                166          104          -37.3%    
+Avg letters/word       5.72         5.20         -9.1%     
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+N/A
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+The village of rural India is home to a young girl named Rohini, who lives with her family in a small, rural village. One morning, Rohini's mother prepares a meal of rice and lentils for breakfast, which she mixes together to create a semi-digested acidic mixture known as chyme. As Rohini eats the chyme, the partially digested mixture passes sequentially into the small intestine, where it serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+No hard words parsed.
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] What is the primary function of the stomach in the digestive process?
+     Answer: The stomach secretes hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.
+     Citation: S4
+     Support: SUPPORTED (shared: acid, acidic, activates, bacteria, destroying, digesting, enzyme, harmful, hydrochloric, ingested, medium, pepsin, protein, provides, stomach)
+[Q2] What is the main site for complete chemical digestion of carbohydrates, proteins, and fats in the small intestine?
+     Answer: The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
+     Citation: S5
+     Support: SUPPORTED (shared: acidic, carbohydrates, chemical, chyme, complete, digested, digestion, fats, intestine, known, mixture, passes, principal, proteins, semi, sequentially, serves, site, small)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP
+Default route active: YES
+Offline status: ONLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1910.16 MiB
+Inference time: 34.071 s
+Tokens generated: 549
+Tokens/sec: 16.11
+Execution mode: [REAL EXECUTORCH RUN]

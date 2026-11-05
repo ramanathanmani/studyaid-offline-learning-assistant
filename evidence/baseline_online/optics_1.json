@@ -1,0 +1,200 @@
+{
+  "passage": "optics",
+  "run": 1,
+  "words": 84,
+  "load_time_sec": 0.932,
+  "p1_sec": 24.335,
+  "p1_tokens": 425,
+  "p1_retried": true,
+  "p1_retry_reason": "simplification guard; village relevance guard",
+  "p2_sec": 14.772,
+  "p2_tokens": 239,
+  "p2_retried": true,
+  "p2_retry_reason": "quiz guards: only 0/3 valid",
+  "inf_time_sec": 39.108,
+  "tokens": 664,
+  "tok_per_sec": 16.98,
+  "peak_rss_mib": 1910.16,
+  "retries": 2,
+  "guards": {
+    "rewrite_shorter": true,
+    "no_simpler_rewrite": false,
+    "village_relevant": true,
+    "quiz_supported_cnt": 1,
+    "quiz_total_cnt": 2,
+    "words_explained_cnt": 0,
+    "words_cand_cnt": 5,
+    "p1_retried": true,
+    "p1_retry_reason": "simplification guard; village relevance guard",
+    "p2_retried": true,
+    "p2_retry_reason": "quiz guards: only 0/3 valid"
+  },
+  "offline_status": "ONLINE",
+  "telemetry": {
+    "net": {
+      "method": "linux_ip_cmd",
+      "ifaces": [
+        {
+          "name": "lo",
+          "state": "UNKNOWN"
+        },
+        {
+          "name": "enp0s31f6",
+          "state": "DOWN"
+        },
+        {
+          "name": "wlp0s20f3",
+          "state": "UP"
+        }
+      ],
+      "has_def_route": true,
+      "is_offline": false
+    },
+    "host": {
+      "host_label": "HOST: laptop (not Raspberry Pi)",
+      "is_pi": false,
+      "cpu_model": "11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz",
+      "cores": 8,
+      "ram_gb": 14.3,
+      "os": "Linux 7.0.0-38-generic"
+    },
+    "model_name": "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+    "pte_path": "models/llama1b/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte",
+    "pte_size_bytes": 1135951488,
+    "pte_size_mib": 1083.33,
+    "pte_size_mb": 1083.33,
+    "peak_rss_mib": 1910.16,
+    "peak_rss_mb": 1910.16,
+    "inf_time_sec": 39.108,
+    "tok_cnt": 664,
+    "tok_per_sec": 16.98,
+    "is_mock": false
+  },
+  "pipeline": {
+    "s_list": [
+      [
+        "S1",
+        "When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation."
+      ],
+      [
+        "S2",
+        "This deviation of ray of light is called refraction."
+      ],
+      [
+        "S3",
+        "Refraction takes place due to the difference in the velocity of light in different media."
+      ],
+      [
+        "S4",
+        "The velocity of light is more in a rarer medium and less in a denser medium."
+      ],
+      [
+        "S5",
+        "When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface."
+      ]
+    ],
+    "hard_s": {
+      "id": "S1",
+      "text": "When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.",
+      "c_cnt": 4,
+      "tot": 20
+    },
+    "cand_words": [
+      "refraction",
+      "obliquely",
+      "refracted",
+      "medium",
+      "normal"
+    ],
+    "parsed": {
+      "simple": "<SIMPLE>When light travels from one transparent medium into another, it deviates from its path.",
+      "summary": "",
+      "village": "The sun rises over the horizon, casting a warm glow over the village. As the light travels from the sky into the air, it encounters a layer of air with a temperature of around 20°C, which is a relatively cool temperature compared to the warm air near the ground. The light is refracted, or bent, as it passes from the air into the cooler air, causing the light to diverge and spread out.",
+      "words": [],
+      "quiz": [
+        {
+          "q": "What is the name of the phenomenon that occurs when a ray of light travels from one transparent medium into another obliquely?",
+          "a": "Refraction",
+          "c": "S1"
+        },
+        {
+          "q": "When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface. S3\n\nQ: What happens to the velocity of light in a rarer medium?",
+          "a": "The velocity of light is more in a rarer medium and less in a denser medium.</QUIZ>",
+          "c": "S4"
+        }
+      ],
+      "no_simpler": false,
+      "valid": true
+    },
+    "readab": {
+      "orig": {
+        "w_cnt": 20,
+        "l_cnt": 101,
+        "avg_l": 5.05
+      },
+      "simp": {
+        "w_cnt": 15,
+        "l_cnt": 78,
+        "avg_l": 5.2
+      },
+      "diff": {
+        "w_chg": -25.0,
+        "l_chg": -22.8,
+        "avg_chg": 3.0
+      }
+    },
+    "words": [],
+    "quiz": [
+      {
+        "q": "What is the name of the phenomenon that occurs when a ray of light travels from one transparent medium into another obliquely?",
+        "a": "Refraction",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S2"
+      },
+      {
+        "q": "When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface. S3\n\nQ: What happens to the velocity of light in a rarer medium?",
+        "a": "The velocity of light is more in a rarer medium and less in a denser medium.</QUIZ>",
+        "c": "S4",
+        "status": "SUPPORTED",
+        "shared": [
+          "denser",
+          "less",
+          "light",
+          "medium",
+          "rarer",
+          "velocity"
+        ],
+        "suggested": null
+      }
+    ],
+    "tok_cnt": 664,
+    "p1_info": {
+      "tokens": 425,
+      "seconds": 24.335,
+      "retried": true,
+      "reason": "simplification guard; village relevance guard"
+    },
+    "p2_info": {
+      "tokens": 239,
+      "seconds": 14.772,
+      "retried": true,
+      "reason": "quiz guards: only 0/3 valid"
+    },
+    "guards": {
+      "rewrite_shorter": true,
+      "no_simpler_rewrite": false,
+      "village_relevant": true,
+      "quiz_supported_cnt": 1,
+      "quiz_total_cnt": 2,
+      "words_explained_cnt": 0,
+      "words_cand_cnt": 5,
+      "p1_retried": true,
+      "p1_retry_reason": "simplification guard; village relevance guard",
+      "p2_retried": true,
+      "p2_retry_reason": "quiz guards: only 0/3 valid"
+    },
+    "is_mock": false
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "passage": "digestion",
+  "run": 2,
+  "words": 164,
+  "load_time_sec": 0.932,
+  "p1_sec": 17.624,
+  "p1_tokens": 272,
+  "p1_retried": true,
+  "p1_retry_reason": "simplification guard; village relevance guard",
+  "p2_sec": 18.459,
+  "p2_tokens": 277,
+  "p2_retried": true,
+  "p2_retry_reason": "quiz guards: only 2/3 valid",
+  "inf_time_sec": 36.084,
+  "tokens": 549,
+  "tok_per_sec": 15.21,
+  "peak_rss_mib": 1910.16,
+  "retries": 2,
+  "guards": {
+    "rewrite_shorter": true,
+    "no_simpler_rewrite": false,
+    "village_relevant": true,
+    "quiz_supported_cnt": 2,
+    "quiz_total_cnt": 2,
+    "words_explained_cnt": 0,
+    "words_cand_cnt": 5,
+    "p1_retried": true,
+    "p1_retry_reason": "simplification guard; village relevance guard",
+    "p2_retried": true,
+    "p2_retry_reason": "quiz guards: only 2/3 valid"
+  },
+  "offline_status": "ONLINE",
+  "telemetry": {
+    "net": {
+      "method": "linux_ip_cmd",
+      "ifaces": [
+        {
+          "name": "lo",
+          "state": "UNKNOWN"
+        },
+        {
+          "name": "enp0s31f6",
+          "state": "DOWN"
+        },
+        {
+          "name": "wlp0s20f3",
+          "state": "UP"
+        }
+      ],
+      "has_def_route": true,
+      "is_offline": false
+    },
+    "host": {
+      "host_label": "HOST: laptop (not Raspberry Pi)",
+      "is_pi": false,
+      "cpu_model": "11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz",
+      "cores": 8,
+      "ram_gb": 14.3,
+      "os": "Linux 7.0.0-38-generic"
+    },
+    "model_name": "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+    "pte_path": "models/llama1b/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte",
+    "pte_size_bytes": 1135951488,
+    "pte_size_mib": 1083.33,
+    "pte_size_mb": 1083.33,
+    "peak_rss_mib": 1910.16,
+    "peak_rss_mb": 1910.16,
+    "inf_time_sec": 36.084,
+    "tok_cnt": 549,
+    "tok_per_sec": 15.21,
+    "is_mock": false
+  },
+  "pipeline": {
+    "s_list": [
+      [
+        "S1",
+        "Digestion is the biochemical breakdown of complex insoluble food substances into simple absorbable nutrient molecules required by living cells."
+      ],
+      [
+        "S2",
+        "The human digestive process commences inside the buccal cavity, where teeth mechanically masticate solid food and salivary glands secrete the enzyme salivary amylase to break down complex starch into simple sugars."
+      ],
+      [
+        "S3",
+        "The masticated food bolus travels downwards through the muscular esophagus by rhythmic waves of involuntary contraction termed peristalsis."
+      ],
+      [
+        "S4",
+        "Inside the stomach, gastric glands secrete hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria."
+      ],
+      [
+        "S5",
+        "The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats."
+      ],
+      [
+        "S6",
+        "Here, bile juice secreted by the liver emulsifies large fat globules into smaller droplets, accelerating enzymatic breakdown by pancreatic lipase."
+      ],
+      [
+        "S7",
+        "Finger-like microscopic vascular projections called villi present along the intestinal inner lining maximize the surface area for rapid nutrient absorption into the circulating bloodstream."
+      ]
+    ],
+    "hard_s": {
+      "id": "S5",
+      "text": "The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
+      "c_cnt": 9,
+      "tot": 29
+    },
+    "cand_words": [
+      "peristalsis",
+      "digesting",
+      "digestion",
+      "digested",
+      "stomach"
+    ],
+    "parsed": {
+      "simple": "<SIMPLE>The semi-digested acidic mixture, chyme, passes into the small intestine, where it's digested into its basic components.",
+      "summary": "",
+      "village": "The village of rural India is home to a young girl named Rohini, who lives with her family in a small, rural village. One morning, Rohini's mother prepares a meal of rice and lentils for breakfast, which she mixes together to create a semi-digested acidic mixture known as chyme. As Rohini eats the chyme, the partially digested mixture passes sequentially into the small intestine, where it serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
+      "words": [],
+      "quiz": [
+        {
+          "q": "What is the primary function of the stomach in the digestive process?",
+          "a": "The stomach secretes hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.",
+          "c": "S4"
+        },
+        {
+          "q": "What is the main site for complete chemical digestion of carbohydrates, proteins, and fats in the small intestine?",
+          "a": "The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
+          "c": "S5"
+        }
+      ],
+      "no_simpler": false,
+      "valid": true
+    },
+    "readab": {
+      "orig": {
+        "w_cnt": 29,
+        "l_cnt": 166,
+        "avg_l": 5.72
+      },
+      "simp": {
+        "w_cnt": 20,
+        "l_cnt": 104,
+        "avg_l": 5.2
+      },
+      "diff": {
+        "w_chg": -31.0,
+        "l_chg": -37.3,
+        "avg_chg": -9.1
+      }
+    },
+    "words": [],
+    "quiz": [
+      {
+        "q": "What is the primary function of the stomach in the digestive process?",
+        "a": "The stomach secretes hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.",
+        "c": "S4",
+        "status": "SUPPORTED",
+        "shared": [
+          "acid",
+          "acidic",
+          "activates",
+          "bacteria",
+          "destroying",
+          "digesting",
+          "enzyme",
+          "harmful",
+          "hydrochloric",
+          "ingested",
+          "medium",
+          "pepsin",
+          "protein",
+          "provides",
+          "stomach"
+        ],
+        "suggested": null
+      },
+      {
+        "q": "What is the main site for complete chemical digestion of carbohydrates, proteins, and fats in the small intestine?",
+        "a": "The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
+        "c": "S5",
+        "status": "SUPPORTED",
+        "shared": [
+          "acidic",
+          "carbohydrates",
+          "chemical",
+          "chyme",
+          "complete",
+          "digested",
+          "digestion",
+          "fats",
+          "intestine",
+          "known",
+          "mixture",
+          "passes",
+          "principal",
+          "proteins",
+          "semi",
+          "sequentially",
+          "serves",
+          "site",
+          "small"
+        ],
+        "suggested": null
+      }
+    ],
+    "tok_cnt": 549,
+    "p1_info": {
+      "tokens": 272,
+      "seconds": 17.624,
+      "retried": true,
+      "reason": "simplification guard; village relevance guard"
+    },
+    "p2_info": {
+      "tokens": 277,
+      "seconds": 18.459,
+      "retried": true,
+      "reason": "quiz guards: only 2/3 valid"
+    },
+    "guards": {
+      "rewrite_shorter": true,
+      "no_simpler_rewrite": false,
+      "village_relevant": true,
+      "quiz_supported_cnt": 2,
+      "quiz_total_cnt": 2,
+      "words_explained_cnt": 0,
+      "words_cand_cnt": 5,
+      "p1_retried": true,
+      "p1_retry_reason": "simplification guard; village relevance guard",
+      "p2_retried": true,
+      "p2_retry_reason": "quiz guards: only 2/3 valid"
+    },
+    "is_mock": false
+  }
+}

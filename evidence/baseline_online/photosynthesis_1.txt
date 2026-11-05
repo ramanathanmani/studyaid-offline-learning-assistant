@@ -1,0 +1,63 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Photosynthesis is the essential biological process by which green plants, algae, and certain bacteria convert light energy into chemical energy.
+[S2] During this biochemical reaction, plants absorb sunlight using the green pigment known as chlorophyll present inside cellular organelles called chloroplasts.
+[S3] Carbon dioxide from the atmospheric air enters the leaves through microscopic pores called stomata, while roots absorb water and dissolved minerals from the moist soil.
+[S4] Using the captured solar energy, water molecules are split into hydrogen and oxygen through photolysis.
+[S5] The hydrogen combines with carbon dioxide across enzymatic cycles to synthesize glucose, a simple carbohydrate that fuels plant respiration and vegetative growth.
+[S6] Oxygen is released as a vital byproduct into the atmosphere, sustaining aerobic life across terrestrial and aquatic ecosystems.
+[S7] Without photosynthesis, the carbon cycle would collapse, oxygen replenishment would cease, and food webs would disintegrate completely.
+[S8] In agricultural systems, environmental factors such as sunlight intensity, temperature variations, and moisture availability determine the overall rate of photosynthesis and crop productivity.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S8]): In agricultural systems, environmental factors such as sunlight intensity, temperature variations, and moisture availability determine the overall rate of photosynthesis and crop productivity.
+Simplified:   <SIMPLE>Environmental factors like sunlight intensity, temperature, and moisture determine crop productivity.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  23           12           -47.8%    
+Letters                166          94           -43.4%    
+Avg letters/word       7.22         7.83         +8.4%     
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+N/A
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+The sun rises over the fields, casting a warm glow on the crops. As the temperature rises to 25°C, the photosynthetic process begins, and the crops start to produce more chlorophyll, increasing their rate of photosynthesis. By mid-morning, the crops have absorbed enough energy from the sunlight to produce 10% more oxygen than they would have without photosynthesis.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+No hard words parsed.
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] What is the purpose of stomata in plants?
+     Answer: Carbon dioxide enters the leaves through microscopic pores called stomata.
+     Citation: S2
+     Support: FLAGGED (shared: called, suggested citation: S3)
+[Q2] What is the result of photolysis in the process of photosynthesis?
+     Answer: Water molecules are split into hydrogen and oxygen.
+     Citation: S4
+     Support: SUPPORTED (shared: hydrogen, molecules, oxygen, split, water)
+[Q3] What is the outcome of the hydrogen produced during photosynthesis?
+     Answer: Glucose is synthesized, a simple carbohydrate that fuels plant respiration and vegetative growth.
+     Citation: S5
+     Support: SUPPORTED (shared: carbohydrate, fuels, glucose, growth, plant, respiration, simple, vegetative)
+[Q4] What happens to the carbon cycle if photosynthesis is not present?
+     Answer: The carbon cycle collapses, oxygen replenishment would cease, and food webs would disintegrate completely.
+     Citation: S7
+     Support: SUPPORTED (shared: carbon, cease, completely, cycle, disintegrate, food, oxygen, replenishment, webs)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP
+Default route active: YES
+Offline status: ONLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1910.16 MiB
+Inference time: 35.339 s
+Tokens generated: 479
+Tokens/sec: 13.55
+Execution mode: [REAL EXECUTORCH RUN]
