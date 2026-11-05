@@ -1,6 +1,15 @@
 # StudyAid: Offline Smart Learning Assistant
 
-Offline Study Aid using ExecuTorch and Llama 3.2 1B Instruct, tailored for Class 8-10 students in rural Tamil Nadu government schools.
+Offline Smart Learning Assistant: ExecuTorch + Llama 3.2 1B study aid for rural Tamil Nadu students (Namma AI Hackathon PoC).
+
+- **Install:** `pip install -e .`
+- **Run:** `python -m studyaid run --passage samples/optics.txt`
+- **Notice & Attribution:** See [NOTICE.md](NOTICE.md) for Llama 3.2 Community License and "Built with Llama" details.
+
+> **Built with Llama**
+> This project uses Meta Llama 3.2 1B Instruct, licensed under the [Llama 3.2 Community License Agreement](https://www.llama.com/llama3_2/license/).
+> Pre-exported 4-bit ExecuTorch model source: [`executorch-community/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8-ET`](https://huggingface.co/executorch-community/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8-ET). Model weights are not included in this repository.
+
 
 ## 1. What It Is
 StudyAid is a fully offline, zero-network Python CLI tool built for inclusive education. It processes a 150-300 word English textbook passage and generates:
@@ -135,4 +144,40 @@ studyaid/
 - **Laptop vs Raspberry Pi Telemetry:** All current measurements are taken on the development laptop host. Hardware telemetry explicitly labels the host machine. Raspberry Pi 5 measurements will be conducted at the hackathon finals upon hardware handover.
 
 ## 8. Measured Results
-*(This section stays empty until real model runs with `.pte` weights are executed on the host or Raspberry Pi hardware.)*
+
+> **Hardware Label: Development Laptop (x86_64), NOT Raspberry Pi**  
+> All measurements below were collected using real ExecuTorch runtime inference with `Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte`. Raspberry Pi 5 ARM benchmark metrics will be recorded separately during finals hardware handover.
+
+### Host Platform
+| Property | Value |
+|---|---|
+| Device / Form Factor | Development Laptop (`HOST: laptop (not Raspberry Pi)`) |
+| Processor | 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz |
+| CPU Cores | 8 |
+| Total RAM | 14.3 GB |
+| Operating System | Linux 7.0.0-38-generic (Ubuntu x86_64) |
+| Virtual Env | Python 3.14.4 (`.venv`) |
+| ExecuTorch Version | 1.6.0 |
+| PyTorch Version | 2.15.0 |
+
+### Standalone Smoke Test (`scripts/smoke_test.py`)
+- **Prompt:** "Explain in one sentence why a pencil looks bent in a glass of water."
+- **Generated Answer:** *"A pencil looks bent in a glass of water because light slows down and changes direction when it moves from air into water, causing the light rays to bend."*
+- **Model Load Time:** 2.238 s
+- **Tokens Generated:** 41 tokens
+- **Inference Time:** 4.644 s
+- **Decode Rate:** 17.70 tokens/sec (Prefill: 108.80 tokens/sec; Overall: 8.83 tokens/sec)
+- **Model `.pte` Size:** 1,083.33 MB (1,135,951,488 bytes)
+- **Peak RSS:** 1,727.76 MB
+
+### Full Pipeline End-to-End (`samples/optics.txt`)
+- **Passage:** 5 sentences on Refraction of Light (84 words)
+- **Execution Mode:** `[REAL EXECUTORCH RUN]` (Two-Pass generation)
+- **Model Load Time:** ~2.00 s
+- **Total Inference Time:** 19.432 s
+- **Total Tokens Generated:** 273 tokens
+- **Overall Inference Rate:** 14.05 tokens/sec
+  - *Pass 1 (Content Simplification & Glossary):* 173 tokens generated in 9.61 s (17.99 tokens/sec decode, 208.30 tokens/sec prefill)
+  - *Pass 2 (Grounded Quiz Generation):* 98 tokens generated in 5.17 s (18.95 tokens/sec decode, 210.74 tokens/sec prefill)
+- **Peak Process RSS:** 1,909.30 MB
+- **Run Artifacts:** Saved in `outputs/run_20261105_150929.txt` and `outputs/run_20261105_150929.json`
