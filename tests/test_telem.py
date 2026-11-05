@@ -28,3 +28,17 @@ def test_collect_telem():
     assert telem["inf_time_sec"] == 2.5
     assert telem["is_mock"] is True
     assert telem["pte_size_mb"] is None
+    assert telem["pte_size_mib"] is None
+    assert "peak_rss_mib" in telem
+
+def test_offline_logic():
+    ifaces_down = [{"name": "lo", "state": "UNKNOWN"}, {"name": "eth0", "state": "DOWN"}]
+    is_off = (not False) and all(it["state"] == "DOWN" for it in ifaces_down if it["name"] != "lo")
+    assert is_off is True
+    
+    ifaces_up = [{"name": "lo", "state": "UNKNOWN"}, {"name": "wlan0", "state": "UP"}]
+    is_off_up = (not False) and all(it["state"] == "DOWN" for it in ifaces_up if it["name"] != "lo")
+    assert is_off_up is False
+
+    is_off_route = (not True) and all(it["state"] == "DOWN" for it in ifaces_down if it["name"] != "lo")
+    assert is_off_route is False

@@ -27,14 +27,25 @@ def check_offline_cmd():
         print(f"  {it['name']}: {it['state']}")
     print(f"Default route active: {'YES' if net.get('has_def_route') else 'NO'}")
     if net.get("is_offline"):
-        print("Verdict: Confirmed OFFLINE (no active default route or interfaces)")
+        print("Verdict: OFFLINE")
     else:
-        print("Verdict: ONLINE or default route present")
+        active = [f"{it['name']}={it['state']}" for it in net.get("ifaces", []) if it["name"] != "lo" and it["state"] != "DOWN"]
+        act_str = ", ".join(active) if active else "none"
+        def_str = "YES" if net.get("has_def_route") else "NO"
+        print(f"Verdict: ONLINE (active interfaces: {act_str}, default route: {def_str})")
 
 def run_cmd(args):
     cfg = load_cfg(args.config)
     m_cfg = cfg.get("model", {})
     r_cfg = cfg.get("runtime", {})
+
+    if args.require_offline:
+        net = get_net_state()
+        if not net.get("is_offline"):
+            active = [f"{it['name']}={it['state']}" for it in net.get("ifaces", []) if it["name"] != "lo" and it["state"] != "DOWN"]
+            act_str = ", ".join(active) if active else "none"
+            def_str = "YES" if net.get("has_def_route") else "NO"
+            sys.exit(f"Error: system is ONLINE (active interfaces: {act_str}, default route: {def_str}). Offline required by --require-offline.")
 
     pass_p = args.passage or r_cfg.get("passage", "samples/optics.txt")
     if not os.path.exists(pass_p):
@@ -54,8 +65,10 @@ def run_cmd(args):
     pte_p = args.pte or m_cfg.get("pte", "")
     tok_p = args.tokenizer or m_cfg.get("tokenizer", "")
     m_name = m_cfg.get("name", "Llama-3.2-1B-Instruct")
-    max_new = int(m_cfg.get("max_new", 480))
-    two_pass = args.two_pass if args.two_pass is not None else m_cfg.get("two_pass", False)
+    max_new = int(m_cfg.get("max_new", 320))
+    p1_max = int(m_cfg.get("max_new_pass1", 320))
+    p2_max = int(m_cfg.get("max_new_pass2", 220))
+    two_pass = args.two_pass if args.two_pass is not None else m_cfg.get("two_pass", True)
 
     if is_mock or not pte_p:
         bk = MockBackend()
@@ -63,7 +76,7 @@ def run_cmd(args):
         bk = ETBackend(pte_p, tok_p)
 
     t0 = time.perf_counter()
-    pipe_res = run_pipeline(pass_txt, bk, gl, max_new=max_new, two_pass=two_pass)
+    pipe_res = run_pipeline(pass_txt, bk, gl, max_new=max_new, max_new_p1=p1_max, max_new_p2=p2_max, two_pass=two_pass)
     inf_time = time.perf_counter() - t0
 
     telem_res = collect_telem(
@@ -91,6 +104,7 @@ def main():
     r_p.add_argument("--config", default="config.toml")
     r_p.add_argument("--glossary", default="data/tamil_glossary.json")
     r_p.add_argument("--out-dir", default="outputs")
+    r_p.add_argument("--require-offline", action="store_true", default=False)
 
     sub.add_parser("check-offline")
 
