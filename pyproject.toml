@@ -23,6 +23,10 @@ executorch = [
 [project.scripts]
 studyaid = "studyaid.cli:main"
 
+[tool.setuptools.packages.find]
+include = ["studyaid*"]
+
 [tool.pytest.ini_options]
+pythonpath = ["."]
 testpaths = ["tests"]
 python_files = ["test_*.py"]

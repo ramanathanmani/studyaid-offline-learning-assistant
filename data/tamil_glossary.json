@@ -26,5 +26,117 @@
     "translit": "Saaivaaga",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
     "verified": false
+  },
+  {
+    "en": "photosynthesis",
+    "ta": "ஒளிச்சேர்க்கை",
+    "translit": "Oli-chserkkai",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "chlorophyll",
+    "ta": "பச்சையம்",
+    "translit": "Patchaiyam",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "stomata",
+    "ta": "இலைத்துளை",
+    "translit": "Ilai-thulai",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "chloroplast",
+    "ta": "பசுங்கணிகம்",
+    "translit": "Pasungkanigam",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "current",
+    "ta": "மின்னோட்டம்",
+    "translit": "Minnoattam",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "circuit",
+    "ta": "மின்சுற்று",
+    "translit": "Minsutru",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "resistance",
+    "ta": "மின்தடை",
+    "translit": "Minthadai",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "voltmeter",
+    "ta": "மின்னழுத்தமானி",
+    "translit": "Minnaluthamaani",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "digestion",
+    "ta": "செரிமானம்",
+    "translit": "Serimaanam",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "stomach",
+    "ta": "இரைப்பை",
+    "translit": "Iraippai",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "enzyme",
+    "ta": "நொதி",
+    "translit": "Nothi",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "peristalsis",
+    "ta": "குடல் அசைவு",
+    "translit": "Kudal-asaivu",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "vibration",
+    "ta": "அதிர்வு",
+    "translit": "Athirvu",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "frequency",
+    "ta": "அதிர்வெண்",
+    "translit": "Athirven",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "compression",
+    "ta": "இறுக்கம்",
+    "translit": "Irukkam",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
+  },
+  {
+    "en": "rarefaction",
+    "ta": "தளர்ச்சி",
+    "translit": "Thalarchi",
+    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "verified": false
   }
 ]

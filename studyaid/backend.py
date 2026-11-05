@@ -1,5 +1,25 @@
 import os
 import re
+import ctypes
+
+def load_et_libs():
+    try:
+        import executorch
+        pkg_dir = list(executorch.__path__)[0]
+        sos = [
+            'lib/libexecutorch.so',
+            'lib/libexecutorch_threadpool.so',
+            'lib/libexecutorch_backend_xnnpack.so',
+            'lib/libexecutorch_kernels_optimized.so',
+            'lib/libexecutorch_kernels_quantized.so',
+            'extension/llm/custom_ops/libcustom_ops_aot_lib.so',
+        ]
+        for s in sos:
+            p = os.path.join(pkg_dir, s)
+            if os.path.exists(p):
+                ctypes.CDLL(p, mode=ctypes.RTLD_GLOBAL)
+    except Exception:
+        pass
 
 class MockBackend:
     def __init__(self):
@@ -68,45 +88,46 @@ class MockBackend:
 class ETBackend:
     def __init__(self, pte_path, tok_path):
         self.is_mock = False
-        self.name = "ExecuTorch-Llama3.2-1B"
+        self.name = "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8"
         self.pte_path = pte_path
         self.tok_path = tok_path
         
         if not pte_path or not os.path.exists(pte_path):
             raise FileNotFoundError(
                 f"ExecuTorch model file (.pte) not found at: '{pte_path}'. "
-                "Export Llama 3.2 1B Instruct using scripts/export_model.sh and provide via --pte <path>, "
-                "or run with --mock for offline test mode."
+                "Provide model path via --pte <path> or config.toml."
             )
             
         if not tok_path or not os.path.exists(tok_path):
             raise FileNotFoundError(
                 f"Tokenizer file not found at: '{tok_path}'. "
-                "Provide tokenizer path via --tokenizer <path>, or run with --mock for offline test mode."
+                "Provide tokenizer path via --tokenizer <path> or config.toml."
             )
+
+        load_et_libs()
 
         try:
             from executorch.extension.llm.runner import TextLLMRunner, GenerationConfig
             self._cfg_cls = GenerationConfig
             self.runner = TextLLMRunner(model_path=pte_path, tokenizer_path=tok_path)
-        except ImportError:
-            try:
-                from examples.models.llama.runner.runner import Runner
-                self._cfg_cls = None
-                self.runner = Runner(model_path=pte_path, tokenizer_path=tok_path)
-            except ImportError as err:
-                raise RuntimeError(
-                    "ExecuTorch Python runtime is not installed or bindings are missing. "
-                    "Install ExecuTorch or run with --mock for offline testing."
-                ) from err
+        except ImportError as err:
+            raise RuntimeError(
+                "ExecuTorch Python runtime is not installed or runner is missing. "
+                "Install ExecuTorch or run with --mock for offline testing."
+            ) from err
 
     def gen(self, prompt, max_new=480):
-        if hasattr(self.runner, "generate"):
-            if self._cfg_cls:
-                cfg = self._cfg_cls(max_new_tokens=max_new, temperature=0.2)
-                res = self.runner.generate(prompt, config=cfg)
-            else:
-                res = self.runner.generate(prompt, max_seq_len=max_new)
-            n_tok = getattr(self.runner, "last_tokens_generated", len(str(res).split()))
-            return str(res), int(n_tok)
-        raise RuntimeError("ExecuTorch runner does not have a supported generate method.")
+        self.runner.reset()
+        cfg = self._cfg_cls()
+        cfg.max_new_tokens = max_new
+        cfg.temperature = 0.0
+        cfg.echo = False
+        toks = []
+        self.runner.generate(prompt=prompt, config=cfg, token_callback=lambda t: toks.append(t))
+        clean = "".join(toks).replace("<|eot_id|>", "").replace("<|end_of_text|>", "").strip()
+        if prompt.endswith("<SIMPLE>") and not clean.startswith("<SIMPLE>"):
+            clean = "<SIMPLE>" + clean
+        elif prompt.endswith("<QUIZ>\nQ:") and not clean.startswith("<QUIZ>"):
+            clean = "<QUIZ>\nQ:" + clean
+        n_tok = len(toks)
+        return clean, n_tok

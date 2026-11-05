@@ -24,12 +24,12 @@ def build_report(pipe_res, telem_res):
     if pipe_res.get("is_mock"):
         buf.append("[MOCK BACKEND: not a real model run]\n")
 
-    buf.append("=== NUMBERED PASSAGE ===")
+    buf.append("=== NUMBERED PASSAGE / பாடப்பகுதி ===")
     for sid, stxt in pipe_res["s_list"]:
         buf.append(f"[{sid}] {stxt}")
     buf.append("")
 
-    buf.append("=== HARDEST SENTENCE BEFORE / AFTER ===")
+    buf.append("=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===")
     hs = pipe_res["hard_s"]
     parsed = pipe_res["parsed"]
     buf.append(f"Original ([{hs['id']}]): {hs['text']}")
@@ -38,15 +38,15 @@ def build_report(pipe_res, telem_res):
     buf.append(fmt_table(pipe_res["readab"]))
     buf.append("")
 
-    buf.append("=== SIMPLE SUMMARY ===")
+    buf.append("=== SIMPLE SUMMARY / எளிய சுருக்கம் ===")
     buf.append(parsed["summary"] or "N/A")
     buf.append("")
 
-    buf.append("=== VILLAGE LIFE EXAMPLE ===")
+    buf.append("=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===")
     buf.append(parsed["village"] or "N/A")
     buf.append("")
 
-    buf.append("=== HARD WORDS ===")
+    buf.append("=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===")
     words = pipe_res.get("words", [])
     if words:
         for it in words:
@@ -60,7 +60,7 @@ def build_report(pipe_res, telem_res):
         buf.append("No hard words parsed.")
     buf.append("")
 
-    buf.append("=== QUIZ QUESTIONS ===")
+    buf.append("=== QUIZ QUESTIONS / வினாடி வினா ===")
     quiz = pipe_res.get("quiz", [])
     if quiz:
         for idx, q in enumerate(quiz, 1):

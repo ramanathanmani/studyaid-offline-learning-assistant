@@ -43,4 +43,11 @@ def find_gl(w, gl):
     for c in norm_cand(w):
         if c in gl:
             return gl[c]
+        for k, v in gl.items():
+            if k.startswith(c) and len(c) >= 6:
+                return v
+            if c.startswith(k) and len(k) >= 5:
+                return v
+            if k == 'medium' and c == 'media':
+                return v
     return None

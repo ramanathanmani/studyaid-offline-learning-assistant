@@ -18,17 +18,25 @@ def run_pipeline(p_txt, backend, gl, max_new=480, two_pass=False):
         tok_cnt += tc
         p_res = parse_resp(raw)
         if not p_res["valid"]:
-            r_pmt = pmt + "\n\nEnsure all tags are complete: SIMPLE, SUMMARY, VILLAGE, WORDS, QUIZ."
-            raw2, tc2 = backend.gen(r_pmt, max_new=max_new)
-            tok_cnt += tc2
-            p_res2 = parse_resp(raw2)
-            for k in ["simple", "summary", "village"]:
-                if not p_res[k] and p_res2[k]:
-                    p_res[k] = p_res2[k]
-            if not p_res["words"] and p_res2["words"]:
-                p_res["words"] = p_res2["words"]
-            if len(p_res["quiz"]) < 3 and len(p_res2["quiz"]) >= 3:
-                p_res["quiz"] = p_res2["quiz"]
+            if len(p_res["quiz"]) < 3 and p_res["simple"] and p_res["summary"] and p_res["village"] and p_res["words"]:
+                p2 = build_prompt(s_list, hard_s, cand_w, pass_mode=2)
+                raw2, tc2 = backend.gen(p2, max_new=max_new)
+                tok_cnt += tc2
+                qz2 = parse_quiz(extract_tag("QUIZ", raw2) or raw2)
+                if len(qz2) > len(p_res["quiz"]):
+                    p_res["quiz"] = qz2
+            else:
+                r_pmt = pmt + "\n\nEnsure all tags are complete: SIMPLE, SUMMARY, VILLAGE, WORDS, QUIZ."
+                raw2, tc2 = backend.gen(r_pmt, max_new=max_new)
+                tok_cnt += tc2
+                p_res2 = parse_resp(raw2)
+                for k in ["simple", "summary", "village"]:
+                    if not p_res[k] and p_res2[k]:
+                        p_res[k] = p_res2[k]
+                if not p_res["words"] and p_res2["words"]:
+                    p_res["words"] = p_res2["words"]
+                if len(p_res2["quiz"]) > len(p_res["quiz"]):
+                    p_res["quiz"] = p_res2["quiz"]
             p_res["missing"] = [k for k in ["SIMPLE", "SUMMARY", "VILLAGE", "WORDS"] if not p_res[k.lower()]]
             if len(p_res["quiz"]) < 3:
                 p_res["missing"].append("QUIZ")
@@ -74,6 +82,26 @@ def run_pipeline(p_txt, backend, gl, max_new=480, two_pass=False):
             "meaning": item["meaning"],
             "gl": gl_match
         })
+
+    seen_w = {it["word"].lower() for it in w_with_gl}
+    p_lower = p_txt.lower()
+    for gw, ginfo in gl.items():
+        if gw in p_lower and gw not in seen_w:
+            w_with_gl.append({
+                "word": gw,
+                "meaning": "key textbook term",
+                "gl": ginfo
+            })
+            seen_w.add(gw)
+
+    if not w_with_gl:
+        for cw in cand_w:
+            gl_match = find_gl(cw, gl)
+            w_with_gl.append({
+                "word": cw,
+                "meaning": "key textbook term",
+                "gl": gl_match
+            })
 
     chk_quiz = check_quiz(p_res["quiz"], s_list)
 
