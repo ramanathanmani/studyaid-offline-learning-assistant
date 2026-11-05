@@ -24,3 +24,14 @@ def test_extract_hard_words():
     assert "difference" in cands
     assert "velocity" in cands
     assert "takes" not in cands
+
+def test_optics_long_hard_words_non_empty():
+    import os
+    from studyaid.gloss import load_gl
+    gl_p = "data/tamil_glossary.json"
+    gl = load_gl(gl_p) if os.path.exists(gl_p) else {}
+    txt = open("samples/optics_long.txt").read()
+    cands = extract_hard_words(txt, gl)
+    assert len(cands) > 0
+    assert len(cands) <= 5
+    assert "refraction" in cands

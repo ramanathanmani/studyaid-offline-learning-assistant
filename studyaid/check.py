@@ -16,9 +16,47 @@ STOPWORDS = {
     "who", "whom", "why", "with", "would", "you", "your", "yours", "yourself"
 }
 
+def stem_w(w):
+    w = w.lower().strip()
+    if len(w) <= 3:
+        return w
+    if w.endswith("ies") and len(w) > 4:
+        return w[:-3] + "y"
+    if w.endswith("ly") and len(w) > 4:
+        w = w[:-2]
+    if w.endswith("ing") and len(w) > 5:
+        w = w[:-3]
+    elif w.endswith("ed") and len(w) > 4:
+        w = w[:-2]
+    elif w.endswith("es") and len(w) > 4:
+        w = w[:-2]
+    elif w.endswith("s") and not w.endswith("ss") and len(w) > 3:
+        w = w[:-1]
+    if w.endswith("e") and len(w) > 4:
+        w = w[:-1]
+    return w
+
 def get_tokens(txt):
     ws = re.findall(r'[a-zA-Z]+', txt.lower())
-    return {w for w in ws if len(w) > 1 and w not in STOPWORDS}
+    return {stem_w(w) for w in ws if len(w) > 1 and w not in STOPWORDS}
+
+def is_ans_too_long_or_copied(a_txt, c_txt):
+    ws_a = re.findall(r'[a-zA-Z]+', a_txt.lower())
+    if len(ws_a) > 12:
+        return True
+    ws_c = re.findall(r'[a-zA-Z]+', c_txt.lower())
+    if not ws_c or len(ws_c) < 5:
+        return False
+    a_set = {stem_w(w) for w in ws_a}
+    c_set = {stem_w(w) for w in ws_c}
+    ov = len(a_set & c_set) / max(len(c_set), 1)
+    if ov >= 0.90:
+        return True
+    clean_a = re.sub(r'[^a-z0-9]', '', a_txt.lower())
+    clean_c = re.sub(r'[^a-z0-9]', '', c_txt.lower())
+    if clean_c and clean_c in clean_a:
+        return True
+    return False
 
 def check_item(item, s_map):
     ans_toks = get_tokens(item["a"])
