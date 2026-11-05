@@ -20,17 +20,16 @@ def split_runs(txt):
         runs.append((''.join(curr), is_ta))
     return runs
 
-def render_terminal(txt_path=None, out_png="outputs/terminal_run_screenshot.png"):
-    if not txt_path:
-        txt_files = sorted([f for f in os.listdir("outputs") if f.startswith("run_") and f.endswith(".txt")])
-        txt_path = os.path.join("outputs", txt_files[-1]) if txt_files else "outputs/run_20261105_151403.txt"
+def render_terminal(txt_path="evidence/runs/optics_long_1.txt", out_png="evidence/terminal_run_screenshot.png"):
+    if not os.path.exists(txt_path):
+        txt_files = sorted([f for f in os.listdir("evidence/runs") if f.endswith(".txt")])
+        txt_path = os.path.join("evidence/runs", txt_files[0]) if txt_files else "evidence/runs/optics_long_1.txt"
 
     with open(txt_path, "r", encoding="utf-8") as f:
         content = f.read()
 
     lines = [
-        "rock@laptop:~/studyaid$ .venv/bin/python -m studyaid run --passage samples/optics.txt",
-        "Warning: passage word count (84) is outside the recommended 150-300 word range.",
+        "rock@laptop:~/studyaid$ .venv/bin/python -m studyaid run --passage samples/optics_long.txt",
         ""
     ] + content.splitlines() + [
         "",
