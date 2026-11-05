@@ -6,32 +6,45 @@ def extract_tag(tag, txt):
         return m.group(1).strip()
     return None
 
-def parse_words(txt):
+def parse_words(txt, cand_words=None):
     if not txt:
         return []
-    res = []
+    cand_set = {c.strip().lower() for c in (cand_words or [])}
+    parsed = {}
     for line in txt.strip().splitlines():
         line = line.strip()
         if not line:
             continue
         if '|' in line:
-            parts = [p.strip() for p in line.split('|') if p.strip()]
-            if len(parts) > 2 and all(len(p.split()) <= 3 for p in parts):
-                for p in parts:
-                    if p.lower() not in ["simple", "meaning", "one line each"]:
-                        res.append({"word": p, "meaning": "key textbook term"})
-            elif len(parts) >= 2:
-                res.append({"word": parts[0], "meaning": parts[1]})
-            elif len(parts) == 1:
-                res.append({"word": parts[0], "meaning": "key textbook term"})
+            parts = [p.strip() for p in line.split('|')]
+            if len(parts) >= 2:
+                w = parts[0].strip().lower()
+                m = parts[1].strip()
+                if cand_set and w in cand_set:
+                    parsed[w] = m
+                elif not cand_set:
+                    parsed[w] = m
         elif ':' in line:
-            parts = line.split(':', 1)
-            w = parts[0].strip()
-            m = parts[1].strip()
-            if w and m:
-                res.append({"word": w, "meaning": m})
-        elif line:
-            res.append({"word": line.strip("-*• "), "meaning": "key textbook term"})
+            parts = [p.strip() for p in line.split(':', 1)]
+            if len(parts) >= 2:
+                w = parts[0].strip().lower()
+                m = parts[1].strip()
+                if cand_set and w in cand_set:
+                    parsed[w] = m
+                elif not cand_set:
+                    parsed[w] = m
+
+    res = []
+    if cand_words:
+        for cw in cand_words:
+            c_low = cw.strip().lower()
+            m = parsed.get(c_low)
+            if not m or m.lower() in ["simple", "meaning", "one line each"]:
+                m = "no explanation generated"
+            res.append({"word": cw, "meaning": m})
+    else:
+        for w, m in parsed.items():
+            res.append({"word": w, "meaning": m or "no explanation generated"})
     return res
 
 def parse_quiz(txt):
@@ -51,7 +64,34 @@ def parse_quiz(txt):
         })
     return items
 
-def parse_resp(raw):
+def validate_quiz(items, s_list):
+    valid = []
+    seen_ans = set()
+    s_word_sets = [set(re.findall(r'[a-zA-Z]+', txt.lower())) for _, txt in s_list]
+    for it in items:
+        q = it["q"].strip()
+        a = it["a"].strip()
+        if not q.endswith("?"):
+            continue
+        ans_norm = a.lower()
+        if ans_norm in seen_ans:
+            continue
+        q_words = set(re.findall(r'[a-zA-Z]+', q.lower()))
+        if not q_words:
+            continue
+        is_copied = False
+        for s_words in s_word_sets:
+            ov = len(q_words & s_words) / len(q_words)
+            if ov >= 0.8:
+                is_copied = True
+                break
+        if is_copied:
+            continue
+        seen_ans.add(ans_norm)
+        valid.append(it)
+    return valid
+
+def parse_resp(raw, cand_words=None):
     simple = extract_tag("SIMPLE", raw)
     summary = extract_tag("SUMMARY", raw)
     village = extract_tag("VILLAGE", raw)
@@ -60,7 +100,7 @@ def parse_resp(raw):
     if not quiz_raw and "<QUIZ>" in raw:
         quiz_raw = raw.split("<QUIZ>", 1)[1].split("</QUIZ>")[0]
     
-    words = parse_words(words_raw) if words_raw else []
+    words = parse_words(words_raw, cand_words) if words_raw else []
     quiz = parse_quiz(quiz_raw) if quiz_raw else []
     
     missing = []

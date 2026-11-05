@@ -1,4 +1,4 @@
-from studyaid.parse import parse_resp
+from studyaid.parse import parse_resp, parse_words, validate_quiz
 
 def test_parse_good_reply():
     raw = (
@@ -28,6 +28,62 @@ def test_parse_good_reply():
     assert len(res["words"]) == 2
     assert len(res["quiz"]) == 3
     assert res["quiz"][0]["c"] == "S2"
+
+def test_parse_words_candidate_filter():
+    raw_words = (
+        "refraction | light bending at boundary\n"
+        "rural | village life\n"
+        "Tamil Nadu | southern state\n"
+        "medium | optical material\n"
+    )
+    cands = ["refraction", "medium", "obliquely"]
+    res = parse_words(raw_words, cand_words=cands)
+    assert len(res) == 3
+    assert res[0]["word"] == "refraction"
+    assert res[0]["meaning"] == "light bending at boundary"
+    assert res[1]["word"] == "medium"
+    assert res[1]["meaning"] == "optical material"
+    assert res[2]["word"] == "obliquely"
+    assert res[2]["meaning"] == "no explanation generated"
+
+def test_validate_quiz_guards():
+    s_list = [
+        ("S1", "When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation."),
+        ("S2", "This deviation of ray of light is called refraction.")
+    ]
+    items = [
+        {
+            "q": "When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.",
+            "a": "Refraction",
+            "c": "S1"
+        },
+        {
+            "q": "What is refraction",
+            "a": "Refraction",
+            "c": "S2"
+        },
+        {
+            "q": "What is the deviation of light called?",
+            "a": "Refraction",
+            "c": "S2"
+        },
+        {
+            "q": "What causes light to bend at an interface?",
+            "a": "Refraction",
+            "c": "S2"
+        },
+        {
+            "q": "Why does the path of light change across media?",
+            "a": "Difference in velocity",
+            "c": "S2"
+        }
+    ]
+    val = validate_quiz(items, s_list)
+    assert len(val) == 2
+    assert val[0]["q"] == "What is the deviation of light called?"
+    assert val[0]["a"] == "Refraction"
+    assert val[1]["q"] == "Why does the path of light change across media?"
+    assert val[1]["a"] == "Difference in velocity"
 
 def test_parse_truncated_reply():
     raw = (

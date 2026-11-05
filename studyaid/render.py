@@ -33,7 +33,10 @@ def build_report(pipe_res, telem_res):
     hs = pipe_res["hard_s"]
     parsed = pipe_res["parsed"]
     buf.append(f"Original ([{hs['id']}]): {hs['text']}")
-    buf.append(f"Simplified:   {parsed['simple'] or 'N/A'}")
+    if parsed.get("no_simpler"):
+        buf.append(f"Simplified:   {parsed['simple']} (no simpler rewrite produced)")
+    else:
+        buf.append(f"Simplified:   {parsed['simple'] or 'N/A'}")
     buf.append("\nReadability Metrics:")
     buf.append(fmt_table(pipe_res["readab"]))
     buf.append("")
@@ -68,7 +71,9 @@ def build_report(pipe_res, telem_res):
             buf.append(f"     Answer: {q['a']}")
             buf.append(f"     Citation: {q['c']}")
             sh_str = ", ".join(q["shared"]) if q["shared"] else "none"
-            if q["status"] == "supported":
+            if q["status"] == "SUPPORTED (exact term)":
+                buf.append(f"     Support: SUPPORTED (exact term)")
+            elif q["status"].upper() == "SUPPORTED":
                 buf.append(f"     Support: SUPPORTED (shared: {sh_str})")
             else:
                 sug_str = f", suggested citation: {q['suggested']}" if q.get("suggested") else ""
@@ -89,11 +94,14 @@ def build_report(pipe_res, telem_res):
     iface_str = ", ".join(f"{it['name']}={it['state']}" for it in net.get("ifaces", []))
     buf.append(f"Network interfaces: {iface_str or 'none detected'}")
     buf.append(f"Default route active: {'YES' if net.get('has_def_route') else 'NO'}")
-    buf.append(f"Offline status: {'OFFLINE' if net.get('is_offline') else 'ONLINE / UNCONFIRMED'}")
+    buf.append(f"Offline status: {'OFFLINE' if net.get('is_offline') else 'ONLINE'}")
     
     buf.append(f"Model name: {telem_res['model_name']}")
-    buf.append(f"PTE size: {telem_res['pte_size_mb']} MB" if telem_res.get("pte_size_mb") else "PTE size: N/A (mock run)")
-    buf.append(f"Peak RSS: {telem_res['peak_rss_mb']} MB")
+    if telem_res.get("pte_size_mib"):
+        buf.append(f"PTE size: {telem_res['pte_size_mib']} MiB ({telem_res.get('pte_size_bytes', 0)} bytes)")
+    else:
+        buf.append("PTE size: N/A (mock run)")
+    buf.append(f"Peak RSS: {telem_res['peak_rss_mib']} MiB")
     buf.append(f"Inference time: {telem_res['inf_time_sec']} s")
     buf.append(f"Tokens generated: {telem_res['tok_cnt']}")
     buf.append(f"Tokens/sec: {telem_res['tok_per_sec']}")

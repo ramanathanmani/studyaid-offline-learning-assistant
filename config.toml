@@ -2,9 +2,12 @@
 name = "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8"
 pte = "models/llama1b/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte"
 tokenizer = "models/llama1b/tokenizer.model"
-max_new = 480
+max_new_pass1 = 320
+max_new_pass2 = 220
+max_new = 320
 two_pass = true
+temperature = 0.0
 
 [runtime]
 mock = false
-passage = "samples/optics.txt"
+passage = "samples/optics_long.txt"

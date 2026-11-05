@@ -27,12 +27,39 @@ def check_item(item, s_map):
     cited_toks = get_tokens(cited_txt)
     sh = sorted(list(ans_toks & cited_toks))
     
+    if len(ans_toks) == 1:
+        w = list(ans_toks)[0]
+        if w in cited_toks:
+            return {
+                "q": item["q"],
+                "a": item["a"],
+                "c": cid,
+                "status": "SUPPORTED (exact term)",
+                "shared": sh,
+                "suggested": None
+            }
+        best_sid = None
+        for sid, txt in s_map.items():
+            if sid == cid:
+                continue
+            if w in get_tokens(txt):
+                best_sid = sid
+                break
+        return {
+            "q": item["q"],
+            "a": item["a"],
+            "c": cid,
+            "status": "FLAGGED",
+            "shared": sh,
+            "suggested": best_sid
+        }
+    
     if len(sh) >= 2:
         return {
             "q": item["q"],
             "a": item["a"],
             "c": cid,
-            "status": "supported",
+            "status": "SUPPORTED",
             "shared": sh,
             "suggested": None
         }
@@ -53,7 +80,7 @@ def check_item(item, s_map):
         "q": item["q"],
         "a": item["a"],
         "c": cid,
-        "status": "flagged",
+        "status": "FLAGGED",
         "shared": sh,
         "suggested": sug
     }

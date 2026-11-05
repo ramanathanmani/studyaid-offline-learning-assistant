@@ -27,63 +27,40 @@ class MockBackend:
         self.name = "MockBackend"
 
     def gen(self, prompt, max_new=480):
-        if "pass 2" in prompt.lower() or "only the quiz" in prompt.lower():
+        p_low = prompt.lower()
+        if "rewrite in fewer words" in p_low:
+            txt = "<SIMPLE>Light bends at a slant.</SIMPLE>"
+        elif "village-life example" in p_low:
+            txt = "<VILLAGE>A bullock cart slows down in thick mud, causing the path of travel to deviate and bend.</VILLAGE>"
+        elif "create exactly 3 quiz questions" in p_low or ("<quiz>" in p_low and "<simple>" not in p_low):
             txt = (
                 "<QUIZ>\n"
                 "Q: What causes refraction to occur?\n"
                 "A: difference in the velocity of light in different media\n"
-                "C: S3\n"
+                "C: S3\n\n"
                 "Q: What is the deviation of a ray of light called?\n"
                 "A: deviation of ray of light is called refraction\n"
-                "C: S2\n"
+                "C: S2\n\n"
                 "Q: How does the refracted ray bend when entering a rarer medium from a denser medium?\n"
                 "A: refracted ray is bent away from the normal\n"
                 "C: S5\n"
                 "</QUIZ>"
-            )
-        elif "pass 1" in prompt.lower() or "do not include quiz" in prompt.lower():
-            txt = (
-                "<SIMPLE>When light enters water or glass at a slant, its path bends.</SIMPLE>\n"
-                "<SUMMARY>Light bends when it passes from one clear material to another at an angle. This bending happens because light travels at different speeds in different materials. When light goes from water or glass into air, it bends away from the straight vertical line.</SUMMARY>\n"
-                "<VILLAGE>Think of walking a bullock cart from a smooth tar road into a muddy field at an angle. As the first wheel hits the thick mud, it slows down while the other wheel on the tar road is still moving fast. This difference in speed makes the entire cart turn or bend off its straight path. In the same way, a ray of light slows down and bends when it enters water from air.</VILLAGE>\n"
-                "<WORDS>\n"
-                "deviation | bending or turning away from a straight line\n"
-                "interface | boundary surface where two materials meet\n"
-                "medium | material through which light travels\n"
-                "obliquely | at a slant or angle\n"
-                "refraction | the bending of light as it moves between materials\n"
-                "transparent | see-through material that allows light to pass\n"
-                "velocity | speed in a given direction\n"
-                "</WORDS>"
             )
         else:
             txt = (
                 "<SIMPLE>When light enters water or glass at a slant, its path bends.</SIMPLE>\n"
-                "<SUMMARY>Light bends when it passes from one clear material to another at an angle. This bending happens because light travels at different speeds in different materials. When light goes from water or glass into air, it bends away from the straight vertical line.</SUMMARY>\n"
-                "<VILLAGE>Think of walking a bullock cart from a smooth tar road into a muddy field at an angle. As the first wheel hits the thick mud, it slows down while the other wheel on the tar road is still moving fast. This difference in speed makes the entire cart turn or bend off its straight path. In the same way, a ray of light slows down and bends when it enters water from air.</VILLAGE>\n"
+                "<SUMMARY>Light bends when it passes from one clear material to another at an angle. This bending happens because light travels at different speeds in different materials.</SUMMARY>\n"
+                "<VILLAGE>When a bullock cart travels from a smooth road into mud, the path of travel undergoes deviation and the cart is bent away from the normal straight line.</VILLAGE>\n"
                 "<WORDS>\n"
-                "deviation | bending or turning away from a straight line\n"
-                "interface | boundary surface where two materials meet\n"
-                "medium | material through which light travels\n"
-                "obliquely | at a slant or angle\n"
-                "refraction | the bending of light as it moves between materials\n"
-                "transparent | see-through material that allows light to pass\n"
-                "velocity | speed in a given direction\n"
-                "</WORDS>\n"
-                "<QUIZ>\n"
-                "Q: What causes refraction to occur?\n"
-                "A: difference in the velocity of light in different media\n"
-                "C: S3\n"
-                "Q: What is the deviation of a ray of light called?\n"
-                "A: deviation of ray of light is called refraction\n"
-                "C: S2\n"
-                "Q: How does the refracted ray bend when entering a rarer medium from a denser medium?\n"
-                "A: refracted ray is bent away from the normal\n"
-                "C: S5\n"
-                "</QUIZ>"
+                "refraction | bending of light\n"
+                "medium | substance light travels through\n"
+                "normal | perpendicular line\n"
+                "obliquely | at an angle\n"
+                "transparent | clear substance\n"
+                "</WORDS>"
             )
-        n_tok = len(txt.split())
-        return txt, n_tok
+        tok_cnt = len(txt.split())
+        return txt, tok_cnt
 
 class ETBackend:
     def __init__(self, pte_path, tok_path):
