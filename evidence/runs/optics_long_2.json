@@ -1,0 +1,201 @@
+{
+  "passage": "optics_long",
+  "run": 2,
+  "words": 152,
+  "load_time_sec": 0.932,
+  "p1_sec": 23.621,
+  "p1_tokens": 322,
+  "p1_retried": true,
+  "p1_retry_reason": "simplification guard; village relevance guard",
+  "p2_sec": 17.903,
+  "p2_tokens": 197,
+  "p2_retried": true,
+  "p2_retry_reason": "quiz guards: only 2/3 valid",
+  "inf_time_sec": 41.525,
+  "tokens": 519,
+  "tok_per_sec": 12.5,
+  "peak_rss_mib": 1910.16,
+  "retries": 2,
+  "guards": {
+    "rewrite_shorter": true,
+    "no_simpler_rewrite": false,
+    "village_relevant": true,
+    "quiz_supported_cnt": 0,
+    "quiz_total_cnt": 2,
+    "words_explained_cnt": 0,
+    "words_cand_cnt": 5,
+    "p1_retried": true,
+    "p1_retry_reason": "simplification guard; village relevance guard",
+    "p2_retried": true,
+    "p2_retry_reason": "quiz guards: only 2/3 valid"
+  },
+  "offline_status": "ONLINE",
+  "telemetry": {
+    "net": {
+      "method": "linux_ip_cmd",
+      "ifaces": [
+        {
+          "name": "lo",
+          "state": "UNKNOWN"
+        },
+        {
+          "name": "enp0s31f6",
+          "state": "DOWN"
+        },
+        {
+          "name": "wlp0s20f3",
+          "state": "UP"
+        }
+      ],
+      "has_def_route": true,
+      "is_offline": false
+    },
+    "host": {
+      "host_label": "HOST: laptop (not Raspberry Pi)",
+      "is_pi": false,
+      "cpu_model": "11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz",
+      "cores": 8,
+      "ram_gb": 14.3,
+      "os": "Linux 7.0.0-38-generic"
+    },
+    "model_name": "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+    "pte_path": "models/llama1b/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte",
+    "pte_size_bytes": 1135951488,
+    "pte_size_mib": 1083.33,
+    "pte_size_mb": 1083.33,
+    "peak_rss_mib": 1910.16,
+    "peak_rss_mb": 1910.16,
+    "inf_time_sec": 41.525,
+    "tok_cnt": 519,
+    "tok_per_sec": 12.5,
+    "is_mock": false
+  },
+  "pipeline": {
+    "s_list": [
+      [
+        "S1",
+        "Light propagates in straight lines through a uniform optical medium, but its direction alters abruptly whenever it enters an optically different medium obliquely."
+      ],
+      [
+        "S2",
+        "This phenomenon is known as refraction, occurring because the speed of electromagnetic waves changes across varying optical densities."
+      ],
+      [
+        "S3",
+        "When light travels from an optically rarer medium like air into an optically denser medium like glass or water, its velocity decreases, bending the ray towards the imaginary normal line perpendicular to the interface."
+      ],
+      [
+        "S4",
+        "Conversely, when emerging from a denser medium into a rarer one, the light accelerates and refracts away from the normal."
+      ],
+      [
+        "S5",
+        "Convex lenses exploit this refractive behavior to converge parallel incident light rays onto a focal point, producing real inverted images on screens or virtual magnified images for human observers."
+      ],
+      [
+        "S6",
+        "Concave lenses diverge incident rays outward, consistently forming upright, diminished virtual images."
+      ],
+      [
+        "S7",
+        "Understanding these principles explains natural occurrences such as atmospheric refraction and optical illusions in water pools."
+      ]
+    ],
+    "hard_s": {
+      "id": "S5",
+      "text": "Convex lenses exploit this refractive behavior to converge parallel incident light rays onto a focal point, producing real inverted images on screens or virtual magnified images for human observers.",
+      "c_cnt": 9,
+      "tot": 29
+    },
+    "cand_words": [
+      "refraction",
+      "obliquely",
+      "refracts",
+      "medium",
+      "normal"
+    ],
+    "parsed": {
+      "simple": "<SIMPLE>Convex lenses bend light to focus it onto a single point, creating real inverted images on screens or virtual magnified images for human observers.",
+      "summary": "",
+      "village": "The village elder, Mrs. Patel, was teaching her young grandson, Rohan, about the properties of convex lenses. She placed a convex lens in front of a mirror and a concave lens behind it, and then asked Rohan to focus a beam of light from a candle on the mirror. As Rohan adjusted the lenses, he noticed that the image of the candle on the mirror appeared to be inverted and magnified, a perfect example of the convex lens's ability to converge parallel incident light rays onto a focal point.",
+      "words": [],
+      "quiz": [
+        {
+          "q": "What happens to light when it enters an optically different medium obliquely?",
+          "a": "Refraction",
+          "c": "S1"
+        },
+        {
+          "q": "What is the effect of concave lenses on incident rays?",
+          "a": "Diverges",
+          "c": "S6"
+        }
+      ],
+      "no_simpler": false,
+      "valid": true
+    },
+    "readab": {
+      "orig": {
+        "w_cnt": 29,
+        "l_cnt": 168,
+        "avg_l": 5.79
+      },
+      "simp": {
+        "w_cnt": 25,
+        "l_cnt": 128,
+        "avg_l": 5.12
+      },
+      "diff": {
+        "w_chg": -13.8,
+        "l_chg": -23.8,
+        "avg_chg": -11.6
+      }
+    },
+    "words": [],
+    "quiz": [
+      {
+        "q": "What happens to light when it enters an optically different medium obliquely?",
+        "a": "Refraction",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S2"
+      },
+      {
+        "q": "What is the effect of concave lenses on incident rays?",
+        "a": "Diverges",
+        "c": "S6",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": null
+      }
+    ],
+    "tok_cnt": 519,
+    "p1_info": {
+      "tokens": 322,
+      "seconds": 23.621,
+      "retried": true,
+      "reason": "simplification guard; village relevance guard"
+    },
+    "p2_info": {
+      "tokens": 197,
+      "seconds": 17.903,
+      "retried": true,
+      "reason": "quiz guards: only 2/3 valid"
+    },
+    "guards": {
+      "rewrite_shorter": true,
+      "no_simpler_rewrite": false,
+      "village_relevant": true,
+      "quiz_supported_cnt": 0,
+      "quiz_total_cnt": 2,
+      "words_explained_cnt": 0,
+      "words_cand_cnt": 5,
+      "p1_retried": true,
+      "p1_retry_reason": "simplification guard; village relevance guard",
+      "p2_retried": true,
+      "p2_retry_reason": "quiz guards: only 2/3 valid"
+    },
+    "is_mock": false
+  }
+}

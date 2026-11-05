@@ -1,0 +1,65 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Sound is a form of mechanical energy that propagates through a material medium in the form of longitudinal waves produced by vibrating objects.
+[S2] When a vibrating body oscillates back and forth, it compresses the surrounding air particles to generate a region of high pressure called a compression, followed by a region of low particle density known as a rarefaction.
+[S3] These successive alternating compressions and rarefactions travel through elastic media such as air, water, or solid steel, transferring energy without the permanent physical displacement of the medium particles themselves.
+[S4] Because sound propagation requires physical particle collisions to transmit acoustic disturbances, sound cannot travel across an empty vacuum.
+[S5] The human ear detects these pressure oscillations through the vibration of the tympanic membrane, which transmits mechanical impulses through three delicate auditory ossicles to the cochlea inside the inner ear.
+[S6] Frequency determines the characteristic pitch of a musical sound, whereas wave amplitude determines its perceived acoustic loudness and intensity.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S2]): When a vibrating body oscillates back and forth, it compresses the surrounding air particles to generate a region of high pressure called a compression, followed by a region of low particle density known as a rarefaction.
+Simplified:   When a vibrating body oscillates back and forth, it compresses the surrounding air particles to generate a region of high pressure called a compression, followed by a region of low particle density known as a rarefaction.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  36           36           +0.0%     
+Letters                183          183          +0.0%     
+Avg letters/word       5.08         5.08         +0.0%     
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+Sound is a form of mechanical energy that propagates through a material medium in the form of longitudinal waves produced by vibrating objects.
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+Everyday life in rural Tamil Nadu, where students like you study for their Class 8-10 exams.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- medium: key textbook term -> ஊடகம் (Oodagam) [unverified]
+- vibration: key textbook term -> அதிர்வு (Athirvu) [unverified]
+- frequency: key textbook term -> அதிர்வெண் (Athirven) [unverified]
+- compression: key textbook term -> இறுக்கம் (Irukkam) [unverified]
+- rarefaction: key textbook term -> தளர்ச்சி (Thalarchi) [unverified]
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] What type of waves are sound waves produced by vibrating objects?
+     Answer: Longitudinal waves
+     Citation: S1
+     Support: SUPPORTED (shared: longitudinal, waves)
+[Q2] What happens to the air particles when a vibrating body oscillates back and forth?
+     Answer: Compresses
+     Citation: S2
+     Support: FLAGGED (shared: compresses)
+[Q3] What is the purpose of sound propagation in an elastic medium?
+     Answer: Transfers energy without permanent physical displacement
+     Citation: S3
+     Support: SUPPORTED (shared: displacement, energy, permanent, physical, without)
+[Q4] What is the role of the tympanic membrane in sound detection?
+     Answer: Transmits mechanical impulses
+     Citation: S5
+     Support: SUPPORTED (shared: impulses, mechanical, transmits)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP
+Default route active: YES
+Offline status: ONLINE / UNCONFIRMED
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MB
+Peak RSS: 1909.51 MB
+Inference time: 70.086 s
+Tokens generated: 1074
+Tokens/sec: 15.32
+Execution mode: [REAL EXECUTORCH RUN]

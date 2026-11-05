@@ -1,0 +1,59 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Digestion is the biochemical breakdown of complex insoluble food substances into simple absorbable nutrient molecules required by living cells.
+[S2] The human digestive process commences inside the buccal cavity, where teeth mechanically masticate solid food and salivary glands secrete the enzyme salivary amylase to break down complex starch into simple sugars.
+[S3] The masticated food bolus travels downwards through the muscular esophagus by rhythmic waves of involuntary contraction termed peristalsis.
+[S4] Inside the stomach, gastric glands secrete hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.
+[S5] The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
+[S6] Here, bile juice secreted by the liver emulsifies large fat globules into smaller droplets, accelerating enzymatic breakdown by pancreatic lipase.
+[S7] Finger-like microscopic vascular projections called villi present along the intestinal inner lining maximize the surface area for rapid nutrient absorption into the circulating bloodstream.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S5]): The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
+Simplified:   N/A
+
+Readability Metrics:
+N/A
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+N/A
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+N/A
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- medium: key textbook term -> ஊடகம் (Oodagam) [unverified]
+- digestion: key textbook term -> செரிமானம் (Serimaanam) [unverified]
+- stomach: key textbook term -> இரைப்பை (Iraippai) [unverified]
+- enzyme: key textbook term -> நொதி (Nothi) [unverified]
+- peristalsis: key textbook term -> குடல் அசைவு (Kudal-asaivu) [unverified]
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] What is the primary function of the stomach in the digestive process?
+     Answer: The stomach secretes hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.
+     Citation: S5
+     Support: FLAGGED (shared: acidic, suggested citation: S4)
+[Q2] What is the primary function of the small intestine in the digestive process?
+     Answer: The small intestine serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
+     Citation: S5
+     Support: SUPPORTED (shared: carbohydrates, chemical, complete, digestion, fats, intestine, principal, proteins, serves, site, small)
+[Q3] What is the primary function of the villi in the small intestine?
+     Answer: Finger-like microscopic vascular projections called villi present along the intestinal inner lining maximize the surface area for rapid nutrient absorption into the circulating bloodstream.
+     Citation: S7
+     Support: SUPPORTED (shared: absorption, along, area, bloodstream, called, circulating, finger, inner, intestinal, like, lining, maximize, microscopic, nutrient, present, projections, rapid, surface, vascular, villi)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP
+Default route active: YES
+Offline status: ONLINE / UNCONFIRMED
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MB
+Peak RSS: 1909.34 MB
+Inference time: 74.288 s
+Tokens generated: 1105
+Tokens/sec: 14.87
+Execution mode: [REAL EXECUTORCH RUN]

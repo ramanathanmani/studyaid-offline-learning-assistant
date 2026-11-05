@@ -35,7 +35,8 @@ def load_gl(path):
             'ta': item['ta'],
             'translit': item['translit'],
             'verified': item.get('verified', False),
-            'source': item.get('source', '')
+            'source': item.get('source', ''),
+            'ref': item.get('ref', '')
         }
     return gl
 

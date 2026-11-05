@@ -1,0 +1,70 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.
+[S2] This deviation of ray of light is called refraction.
+[S3] Refraction takes place due to the difference in the velocity of light in different media.
+[S4] The velocity of light is more in a rarer medium and less in a denser medium.
+[S5] When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S1]): When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.
+Simplified:   When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation and the refracted ray is bent away from the normal drawn to the interface.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  20           34           +70.0%    
+Letters                101          161          +59.4%    
+Avg letters/word       5.05         4.74         -6.1%     
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+Light travels from one medium to another, and when it does, it changes direction.
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+When a farmer in rural Tamil Nadu uses a makeshift tool to plow the soil, the tool's surface is not smooth, so the light from the sun hits it at an angle, causing the light to bend away from the normal drawn to the interface.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- refraction: key textbook term -> ஒளிவிலகல் (Oli-vilagal) [unverified]
+- difference: key textbook term (English only)
+- different: key textbook term (English only)
+- interface: key textbook term (English only)
+- obliquely: key textbook term -> சாய்வாக (Saaivaaga) [unverified]
+- deviation: key textbook term (English only)
+- rarer: key textbook term (English only)
+- denser: key textbook term (English only)
+- bent: key textbook term (English only)
+- normal: key textbook term -> குத்துக்கோடு (Kuthukkodu) [unverified]
+- example: key textbook term (English only)
+- everyday: key textbook term (English only)
+- rural: key textbook term (English only)
+- Tamil Nadu: key textbook term (English only)
+- medium: key textbook term -> ஊடகம் (Oodagam) [unverified]
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.
+     Answer: Refraction
+     Citation: S3
+     Support: FLAGGED (shared: refraction)
+[Q2] This deviation of ray of light is called refraction.
+     Answer: Refraction
+     Citation: S2
+     Support: FLAGGED (shared: refraction)
+[Q3] When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface.
+     Answer: Refraction
+     Citation: S5
+     Support: FLAGGED (shared: none)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP
+Default route active: YES
+Offline status: ONLINE / UNCONFIRMED
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MB
+Peak RSS: 1909.45 MB
+Inference time: 19.649 s
+Tokens generated: 273
+Tokens/sec: 13.89
+Execution mode: [REAL EXECUTORCH RUN]

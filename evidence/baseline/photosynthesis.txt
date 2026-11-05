@@ -1,0 +1,66 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Photosynthesis is the essential biological process by which green plants, algae, and certain bacteria convert light energy into chemical energy.
+[S2] During this biochemical reaction, plants absorb sunlight using the green pigment known as chlorophyll present inside cellular organelles called chloroplasts.
+[S3] Carbon dioxide from the atmospheric air enters the leaves through microscopic pores called stomata, while roots absorb water and dissolved minerals from the moist soil.
+[S4] Using the captured solar energy, water molecules are split into hydrogen and oxygen through photolysis.
+[S5] The hydrogen combines with carbon dioxide across enzymatic cycles to synthesize glucose, a simple carbohydrate that fuels plant respiration and vegetative growth.
+[S6] Oxygen is released as a vital byproduct into the atmosphere, sustaining aerobic life across terrestrial and aquatic ecosystems.
+[S7] Without photosynthesis, the carbon cycle would collapse, oxygen replenishment would cease, and food webs would disintegrate completely.
+[S8] In agricultural systems, environmental factors such as sunlight intensity, temperature variations, and moisture availability determine the overall rate of photosynthesis and crop productivity.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S8]): In agricultural systems, environmental factors such as sunlight intensity, temperature variations, and moisture availability determine the overall rate of photosynthesis and crop productivity.
+Simplified:   The rate of photosynthesis in agricultural systems is influenced by factors such as sunlight intensity, temperature variations, and moisture availability.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  23           20           -13.0%    
+Letters                166          132          -20.5%    
+Avg letters/word       7.22         6.60         -8.6%     
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+Photosynthesis is the process by which plants convert sunlight into energy, and it is affected by various environmental factors.
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+Every morning, farmers in rural Tamil Nadu wake up early to tend to their crops, ensuring that the plants receive the necessary sunlight and water to grow healthy and strong.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- photosynthesis: key textbook term -> ஒளிச்சேர்க்கை (Oli-chserkkai) [unverified]
+- chlorophyll: key textbook term -> பச்சையம் (Patchaiyam) [unverified]
+- stomata: key textbook term -> இலைத்துளை (Ilai-thulai) [unverified]
+- chloroplast: key textbook term -> பசுங்கணிகம் (Pasungkanigam) [unverified]
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] What is the green pigment used by plants to absorb sunlight during photosynthesis?
+     Answer: Chlorophyll
+     Citation: S2
+     Support: FLAGGED (shared: chlorophyll)
+[Q2] What is the primary function of stomata in plants?
+     Answer: To absorb water and dissolved minerals from the soil
+     Citation: S3
+     Support: SUPPORTED (shared: absorb, dissolved, minerals, soil, water)
+[Q3] What is the result of the photolysis of water molecules during photosynthesis?
+     Answer: Hydrogen and oxygen
+     Citation: S4
+     Support: SUPPORTED (shared: hydrogen, oxygen)
+[Q4] What is the primary product of the enzymatic cycle that combines hydrogen with carbon dioxide to synthesize glucose?
+     Answer: Glucose
+     Citation: S5
+     Support: FLAGGED (shared: glucose)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP
+Default route active: YES
+Offline status: ONLINE / UNCONFIRMED
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MB
+Peak RSS: 1909.48 MB
+Inference time: 27.787 s
+Tokens generated: 393
+Tokens/sec: 14.14
+Execution mode: [REAL EXECUTORCH RUN]

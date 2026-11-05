@@ -1,0 +1,273 @@
+{
+  "timestamp": "20261105_162113",
+  "pipeline": {
+    "s_list": [
+      [
+        "S1",
+        "Photosynthesis is the essential biological process by which green plants, algae, and certain bacteria convert light energy into chemical energy."
+      ],
+      [
+        "S2",
+        "During this biochemical reaction, plants absorb sunlight using the green pigment known as chlorophyll present inside cellular organelles called chloroplasts."
+      ],
+      [
+        "S3",
+        "Carbon dioxide from the atmospheric air enters the leaves through microscopic pores called stomata, while roots absorb water and dissolved minerals from the moist soil."
+      ],
+      [
+        "S4",
+        "Using the captured solar energy, water molecules are split into hydrogen and oxygen through photolysis."
+      ],
+      [
+        "S5",
+        "The hydrogen combines with carbon dioxide across enzymatic cycles to synthesize glucose, a simple carbohydrate that fuels plant respiration and vegetative growth."
+      ],
+      [
+        "S6",
+        "Oxygen is released as a vital byproduct into the atmosphere, sustaining aerobic life across terrestrial and aquatic ecosystems."
+      ],
+      [
+        "S7",
+        "Without photosynthesis, the carbon cycle would collapse, oxygen replenishment would cease, and food webs would disintegrate completely."
+      ],
+      [
+        "S8",
+        "In agricultural systems, environmental factors such as sunlight intensity, temperature variations, and moisture availability determine the overall rate of photosynthesis and crop productivity."
+      ]
+    ],
+    "hard_s": {
+      "id": "S8",
+      "text": "In agricultural systems, environmental factors such as sunlight intensity, temperature variations, and moisture availability determine the overall rate of photosynthesis and crop productivity.",
+      "c_cnt": 11,
+      "tot": 23
+    },
+    "cand_words": [
+      "agricultural",
+      "atmosphere",
+      "atmospheric",
+      "availability",
+      "bacteria",
+      "biochemical",
+      "biological",
+      "byproduct",
+      "captured",
+      "carbohydrate",
+      "cellular",
+      "chemical",
+      "chlorophyll",
+      "chloroplasts",
+      "collapse",
+      "combines",
+      "completely",
+      "determine",
+      "disintegrate",
+      "dissolved",
+      "ecosystems",
+      "environmental",
+      "enzymatic",
+      "essential",
+      "hydrogen",
+      "intensity",
+      "microscopic",
+      "minerals",
+      "moisture",
+      "molecules",
+      "organelles",
+      "photolysis",
+      "photosynthesis",
+      "productivity",
+      "reaction",
+      "released",
+      "replenishment",
+      "respiration",
+      "sunlight",
+      "sustaining",
+      "synthesize",
+      "temperature",
+      "terrestrial",
+      "variations",
+      "vegetative"
+    ],
+    "parsed": {
+      "simple": "The rate of photosynthesis in agricultural systems is influenced by factors such as sunlight intensity, temperature variations, and moisture availability.",
+      "summary": "Photosynthesis is the process by which plants convert sunlight into energy, and it is affected by various environmental factors.",
+      "village": "Every morning, farmers in rural Tamil Nadu wake up early to tend to their crops, ensuring that the plants receive the necessary sunlight and water to grow healthy and strong.",
+      "words": [],
+      "quiz": [
+        {
+          "q": "What is the green pigment used by plants to absorb sunlight during photosynthesis?",
+          "a": "Chlorophyll",
+          "c": "S2"
+        },
+        {
+          "q": "What is the primary function of stomata in plants?",
+          "a": "To absorb water and dissolved minerals from the soil",
+          "c": "S3"
+        },
+        {
+          "q": "What is the result of the photolysis of water molecules during photosynthesis?",
+          "a": "Hydrogen and oxygen",
+          "c": "S4"
+        },
+        {
+          "q": "What is the primary product of the enzymatic cycle that combines hydrogen with carbon dioxide to synthesize glucose?",
+          "a": "Glucose",
+          "c": "S5"
+        }
+      ],
+      "missing": [
+        "WORDS"
+      ],
+      "valid": false
+    },
+    "readab": {
+      "orig": {
+        "w_cnt": 23,
+        "l_cnt": 166,
+        "avg_l": 7.22
+      },
+      "simp": {
+        "w_cnt": 20,
+        "l_cnt": 132,
+        "avg_l": 6.6
+      },
+      "diff": {
+        "w_chg": -13.0,
+        "l_chg": -20.5,
+        "avg_chg": -8.6
+      }
+    },
+    "words": [
+      {
+        "word": "photosynthesis",
+        "meaning": "key textbook term",
+        "gl": {
+          "en": "photosynthesis",
+          "ta": "ஒளிச்சேர்க்கை",
+          "translit": "Oli-chserkkai",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page"
+        }
+      },
+      {
+        "word": "chlorophyll",
+        "meaning": "key textbook term",
+        "gl": {
+          "en": "chlorophyll",
+          "ta": "பச்சையம்",
+          "translit": "Patchaiyam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page"
+        }
+      },
+      {
+        "word": "stomata",
+        "meaning": "key textbook term",
+        "gl": {
+          "en": "stomata",
+          "ta": "இலைத்துளை",
+          "translit": "Ilai-thulai",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page"
+        }
+      },
+      {
+        "word": "chloroplast",
+        "meaning": "key textbook term",
+        "gl": {
+          "en": "chloroplast",
+          "ta": "பசுங்கணிகம்",
+          "translit": "Pasungkanigam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page"
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": "What is the green pigment used by plants to absorb sunlight during photosynthesis?",
+        "a": "Chlorophyll",
+        "c": "S2",
+        "status": "flagged",
+        "shared": [
+          "chlorophyll"
+        ],
+        "suggested": null
+      },
+      {
+        "q": "What is the primary function of stomata in plants?",
+        "a": "To absorb water and dissolved minerals from the soil",
+        "c": "S3",
+        "status": "supported",
+        "shared": [
+          "absorb",
+          "dissolved",
+          "minerals",
+          "soil",
+          "water"
+        ],
+        "suggested": null
+      },
+      {
+        "q": "What is the result of the photolysis of water molecules during photosynthesis?",
+        "a": "Hydrogen and oxygen",
+        "c": "S4",
+        "status": "supported",
+        "shared": [
+          "hydrogen",
+          "oxygen"
+        ],
+        "suggested": null
+      },
+      {
+        "q": "What is the primary product of the enzymatic cycle that combines hydrogen with carbon dioxide to synthesize glucose?",
+        "a": "Glucose",
+        "c": "S5",
+        "status": "flagged",
+        "shared": [
+          "glucose"
+        ],
+        "suggested": null
+      }
+    ],
+    "tok_cnt": 393,
+    "is_mock": false
+  },
+  "telemetry": {
+    "net": {
+      "method": "linux_ip_cmd",
+      "ifaces": [
+        {
+          "name": "lo",
+          "state": "UNKNOWN"
+        },
+        {
+          "name": "enp0s31f6",
+          "state": "DOWN"
+        },
+        {
+          "name": "wlp0s20f3",
+          "state": "UP"
+        }
+      ],
+      "has_def_route": true,
+      "is_offline": false
+    },
+    "host": {
+      "host_label": "HOST: laptop (not Raspberry Pi)",
+      "is_pi": false,
+      "cpu_model": "11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz",
+      "cores": 8,
+      "ram_gb": 14.3,
+      "os": "Linux 7.0.0-38-generic"
+    },
+    "model_name": "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+    "pte_path": "models/llama1b/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte",
+    "pte_size_mb": 1083.33,
+    "peak_rss_mb": 1909.48,
+    "inf_time_sec": 27.787,
+    "tok_cnt": 393,
+    "tok_per_sec": 14.14,
+    "is_mock": false
+  }
+}

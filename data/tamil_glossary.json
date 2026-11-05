@@ -3,35 +3,40 @@
     "en": "refraction",
     "ta": "ஒளிவிலகல்",
     "translit": "Oli-vilagal",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "verified": false
+    "source": "Samacheer Kalvi Science textbook, confirmed by team",
+    "ref": "",
+    "verified": true
   },
   {
     "en": "medium",
     "ta": "ஊடகம்",
     "translit": "Oodagam",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "verified": false
+    "source": "Samacheer Kalvi Science textbook, confirmed by team",
+    "ref": "",
+    "verified": true
   },
   {
     "en": "normal",
     "ta": "குத்துக்கோடு",
     "translit": "Kuthukkodu",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "verified": false
+    "source": "Samacheer Kalvi Science textbook, confirmed by team",
+    "ref": "",
+    "verified": true
   },
   {
     "en": "obliquely",
     "ta": "சாய்வாக",
     "translit": "Saaivaaga",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "verified": false
+    "source": "Samacheer Kalvi Science textbook, confirmed by team",
+    "ref": "",
+    "verified": true
   },
   {
     "en": "photosynthesis",
     "ta": "ஒளிச்சேர்க்கை",
     "translit": "Oli-chserkkai",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -39,6 +44,7 @@
     "ta": "பச்சையம்",
     "translit": "Patchaiyam",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -46,6 +52,7 @@
     "ta": "இலைத்துளை",
     "translit": "Ilai-thulai",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -53,6 +60,7 @@
     "ta": "பசுங்கணிகம்",
     "translit": "Pasungkanigam",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -60,6 +68,7 @@
     "ta": "மின்னோட்டம்",
     "translit": "Minnoattam",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -67,6 +76,7 @@
     "ta": "மின்சுற்று",
     "translit": "Minsutru",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -74,6 +84,7 @@
     "ta": "மின்தடை",
     "translit": "Minthadai",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -81,6 +92,7 @@
     "ta": "மின்னழுத்தமானி",
     "translit": "Minnaluthamaani",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -88,6 +100,7 @@
     "ta": "செரிமானம்",
     "translit": "Serimaanam",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -95,6 +108,7 @@
     "ta": "இரைப்பை",
     "translit": "Iraippai",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -102,6 +116,7 @@
     "ta": "நொதி",
     "translit": "Nothi",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -109,6 +124,7 @@
     "ta": "குடல் அசைவு",
     "translit": "Kudal-asaivu",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -116,6 +132,7 @@
     "ta": "அதிர்வு",
     "translit": "Athirvu",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -123,6 +140,7 @@
     "ta": "அதிர்வெண்",
     "translit": "Athirven",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -130,6 +148,7 @@
     "ta": "இறுக்கம்",
     "translit": "Irukkam",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   },
   {
@@ -137,6 +156,7 @@
     "ta": "தளர்ச்சி",
     "translit": "Thalarchi",
     "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+    "ref": "",
     "verified": false
   }
 ]

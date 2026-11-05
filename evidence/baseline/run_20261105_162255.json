@@ -1,0 +1,283 @@
+{
+  "timestamp": "20261105_162255",
+  "pipeline": {
+    "s_list": [
+      [
+        "S1",
+        "Digestion is the biochemical breakdown of complex insoluble food substances into simple absorbable nutrient molecules required by living cells."
+      ],
+      [
+        "S2",
+        "The human digestive process commences inside the buccal cavity, where teeth mechanically masticate solid food and salivary glands secrete the enzyme salivary amylase to break down complex starch into simple sugars."
+      ],
+      [
+        "S3",
+        "The masticated food bolus travels downwards through the muscular esophagus by rhythmic waves of involuntary contraction termed peristalsis."
+      ],
+      [
+        "S4",
+        "Inside the stomach, gastric glands secrete hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria."
+      ],
+      [
+        "S5",
+        "The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats."
+      ],
+      [
+        "S6",
+        "Here, bile juice secreted by the liver emulsifies large fat globules into smaller droplets, accelerating enzymatic breakdown by pancreatic lipase."
+      ],
+      [
+        "S7",
+        "Finger-like microscopic vascular projections called villi present along the intestinal inner lining maximize the surface area for rapid nutrient absorption into the circulating bloodstream."
+      ]
+    ],
+    "hard_s": {
+      "id": "S5",
+      "text": "The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
+      "c_cnt": 9,
+      "tot": 29
+    },
+    "cand_words": [
+      "absorbable",
+      "absorption",
+      "accelerating",
+      "activates",
+      "bacteria",
+      "biochemical",
+      "bloodstream",
+      "breakdown",
+      "carbohydrates",
+      "chemical",
+      "circulating",
+      "commences",
+      "complete",
+      "contraction",
+      "destroying",
+      "digested",
+      "digesting",
+      "digestion",
+      "digestive",
+      "downwards",
+      "droplets",
+      "emulsifies",
+      "enzymatic",
+      "esophagus",
+      "globules",
+      "hydrochloric",
+      "ingested",
+      "insoluble",
+      "intestinal",
+      "intestine",
+      "involuntary",
+      "masticate",
+      "masticated",
+      "maximize",
+      "mechanically",
+      "microscopic",
+      "molecules",
+      "muscular",
+      "nutrient",
+      "pancreatic",
+      "peristalsis",
+      "principal",
+      "projections",
+      "proteins",
+      "provides",
+      "required",
+      "rhythmic",
+      "salivary",
+      "secreted",
+      "sequentially",
+      "substances",
+      "vascular"
+    ],
+    "parsed": {
+      "simple": "",
+      "summary": "",
+      "village": "",
+      "words": [],
+      "quiz": [
+        {
+          "q": "What is the primary function of the stomach in the digestive process?",
+          "a": "The stomach secretes hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.",
+          "c": "S5"
+        },
+        {
+          "q": "What is the primary function of the small intestine in the digestive process?",
+          "a": "The small intestine serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
+          "c": "S5"
+        },
+        {
+          "q": "What is the primary function of the villi in the small intestine?",
+          "a": "Finger-like microscopic vascular projections called villi present along the intestinal inner lining maximize the surface area for rapid nutrient absorption into the circulating bloodstream.",
+          "c": "S7"
+        }
+      ],
+      "missing": [
+        "SIMPLE",
+        "SUMMARY",
+        "VILLAGE",
+        "WORDS"
+      ],
+      "valid": false
+    },
+    "readab": null,
+    "words": [
+      {
+        "word": "medium",
+        "meaning": "key textbook term",
+        "gl": {
+          "en": "medium",
+          "ta": "ஊடகம்",
+          "translit": "Oodagam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page"
+        }
+      },
+      {
+        "word": "digestion",
+        "meaning": "key textbook term",
+        "gl": {
+          "en": "digestion",
+          "ta": "செரிமானம்",
+          "translit": "Serimaanam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page"
+        }
+      },
+      {
+        "word": "stomach",
+        "meaning": "key textbook term",
+        "gl": {
+          "en": "stomach",
+          "ta": "இரைப்பை",
+          "translit": "Iraippai",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page"
+        }
+      },
+      {
+        "word": "enzyme",
+        "meaning": "key textbook term",
+        "gl": {
+          "en": "enzyme",
+          "ta": "நொதி",
+          "translit": "Nothi",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page"
+        }
+      },
+      {
+        "word": "peristalsis",
+        "meaning": "key textbook term",
+        "gl": {
+          "en": "peristalsis",
+          "ta": "குடல் அசைவு",
+          "translit": "Kudal-asaivu",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page"
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": "What is the primary function of the stomach in the digestive process?",
+        "a": "The stomach secretes hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.",
+        "c": "S5",
+        "status": "flagged",
+        "shared": [
+          "acidic"
+        ],
+        "suggested": "S4"
+      },
+      {
+        "q": "What is the primary function of the small intestine in the digestive process?",
+        "a": "The small intestine serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
+        "c": "S5",
+        "status": "supported",
+        "shared": [
+          "carbohydrates",
+          "chemical",
+          "complete",
+          "digestion",
+          "fats",
+          "intestine",
+          "principal",
+          "proteins",
+          "serves",
+          "site",
+          "small"
+        ],
+        "suggested": null
+      },
+      {
+        "q": "What is the primary function of the villi in the small intestine?",
+        "a": "Finger-like microscopic vascular projections called villi present along the intestinal inner lining maximize the surface area for rapid nutrient absorption into the circulating bloodstream.",
+        "c": "S7",
+        "status": "supported",
+        "shared": [
+          "absorption",
+          "along",
+          "area",
+          "bloodstream",
+          "called",
+          "circulating",
+          "finger",
+          "inner",
+          "intestinal",
+          "like",
+          "lining",
+          "maximize",
+          "microscopic",
+          "nutrient",
+          "present",
+          "projections",
+          "rapid",
+          "surface",
+          "vascular",
+          "villi"
+        ],
+        "suggested": null
+      }
+    ],
+    "tok_cnt": 1105,
+    "is_mock": false
+  },
+  "telemetry": {
+    "net": {
+      "method": "linux_ip_cmd",
+      "ifaces": [
+        {
+          "name": "lo",
+          "state": "UNKNOWN"
+        },
+        {
+          "name": "enp0s31f6",
+          "state": "DOWN"
+        },
+        {
+          "name": "wlp0s20f3",
+          "state": "UP"
+        }
+      ],
+      "has_def_route": true,
+      "is_offline": false
+    },
+    "host": {
+      "host_label": "HOST: laptop (not Raspberry Pi)",
+      "is_pi": false,
+      "cpu_model": "11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz",
+      "cores": 8,
+      "ram_gb": 14.3,
+      "os": "Linux 7.0.0-38-generic"
+    },
+    "model_name": "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+    "pte_path": "models/llama1b/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte",
+    "pte_size_mb": 1083.33,
+    "peak_rss_mb": 1909.34,
+    "inf_time_sec": 74.288,
+    "tok_cnt": 1105,
+    "tok_per_sec": 14.87,
+    "is_mock": false
+  }
+}
