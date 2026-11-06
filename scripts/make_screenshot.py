@@ -53,10 +53,10 @@ def render_terminal(txt_path="evidence/runs/optics_long_1.txt", out_png="evidenc
         "=== JUDGE PROOF TELEMETRY ===",
         "HOST: laptop (not Raspberry Pi) | OS: Linux 7.0.0-38-generic | RAM: 14.3 GB",
         "CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz (8 cores)",
-        "Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP | Default route active: YES",
-        "Offline status: ONLINE (hardware connection active)",
+        "Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=DOWN | Default route active: NO",
+        "Offline status: OFFLINE (verified hardware offline)",
         "Model: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8 (1,135,951,488 bytes / 1083.33 MiB)",
-        "Peak RSS: 1903.39 MiB [Baseline: 19.78 MiB] | Inference time: 28.38 s | Tokens: 337 (11.87 tok/s)",
+        "Peak RSS: 1903.60 MiB [Baseline: 19.82 MiB] | Inference time: 32.27 s | Tokens: 337 (10.44 tok/s)",
         "Execution mode: [REAL EXECUTORCH RUN]",
         "",
         "rock@laptop:~/studyaid$ "

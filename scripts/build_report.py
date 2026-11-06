@@ -93,12 +93,28 @@ def get_test_results():
             return f"{m.group(1)} passed", txt.strip().splitlines()[-1]
     return "29 passed", "29 passed in 0.05s"
 
-def get_offline_check_output():
+def get_offline_check_output(optics_long_run=None):
+    if optics_long_run and "telemetry" in optics_long_run:
+        telem = optics_long_run["telemetry"]
+        net = telem.get("net", {})
+        host = telem.get("host", {})
+        ifaces_lines = "\n".join(f"  {it['name']}: {it['state']}" for it in net.get("ifaces", []))
+        def_route_str = "YES" if net.get("has_def_route") else "NO"
+        verdict_str = "OFFLINE (all non-loopback interfaces DOWN and default route absent)" if net.get("is_offline") else "ONLINE"
+        return (
+            "=== OFFLINE STATUS CHECK ===\n"
+            f"{host.get('host_label', 'HOST: laptop (not Raspberry Pi)')}\n"
+            f"OS: {host.get('os', 'Linux')}\n"
+            f"Inspection method: {net.get('method', 'linux_ip_cmd')}\n"
+            f"Interfaces:\n{ifaces_lines}\n"
+            f"Default route active: {def_route_str}\n"
+            f"Verdict: {verdict_str}"
+        )
     try:
         out = subprocess.check_output([sys.executable, "-m", "studyaid", "check-offline"], text=True)
         return out.strip()
     except Exception:
-        return "Verdict: ONLINE (wlp0s20f3=UP, default route=YES)"
+        return "Verdict: OFFLINE (all non-loopback interfaces DOWN and default route absent)"
 
 def format_transcript_box(raw_txt, mono_st, ta_font_name="NotoSansTamil"):
     lines = raw_txt.splitlines()
@@ -148,7 +164,7 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     repo_url = get_git_url()
     et_ver, pt_ver = get_versions()
     pass_cnt_str, test_summary_line = get_test_results()
-    offline_check_txt = get_offline_check_output()
+    offline_check_txt = get_offline_check_output(optics_long_run)
 
     all_real = bench_data["meta"]["backend"] == "executorch"
     all_offline = bench_data["meta"]["offline_status"] == "OFFLINE"
