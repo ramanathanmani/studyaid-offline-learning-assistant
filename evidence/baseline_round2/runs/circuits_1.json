@@ -1,0 +1,352 @@
+{
+  "passage": "circuits",
+  "run": 1,
+  "words": 175,
+  "load_time_sec": 1.392,
+  "baseline_rss_mib": 19.73,
+  "peak_rss_mib": 1903.55,
+  "p1_sec": 14.225,
+  "p1_tokens": 187,
+  "p1_retries": 1,
+  "p1_retried": true,
+  "p1_retry_reason": "village_guard",
+  "p1_attempts": [
+    {
+      "pass": 1,
+      "attempt": 1,
+      "tokens": 104,
+      "sec": 10.137
+    },
+    {
+      "attempt": 2,
+      "guard": "village_guard",
+      "tokens": 83,
+      "sec": 4.087
+    }
+  ],
+  "p2_sec": 17.87,
+  "p2_tokens": 286,
+  "p2_retries": 1,
+  "p2_retried": true,
+  "p2_retry_reason": "quiz_guard: only 1/3 valid",
+  "p2_attempts": [
+    {
+      "pass": 2,
+      "attempt": 1,
+      "valid_cnt": 1,
+      "tokens": 118,
+      "sec": 7.711
+    },
+    {
+      "attempt": 2,
+      "guard": "quiz_guard",
+      "tokens": 168,
+      "sec": 10.159
+    }
+  ],
+  "inf_time_sec": 32.096,
+  "tokens": 473,
+  "tok_per_sec": 14.74,
+  "retries": 2,
+  "retry_reasons": "village_guard; quiz_guard: only 1/3 valid",
+  "quiz_count": 1,
+  "quiz_incomplete": true,
+  "summary_fallback": false,
+  "summary_ok": true,
+  "guards": {
+    "rewrite_shorter": true,
+    "no_simpler_rewrite": false,
+    "summary_produced_without_fallback": true,
+    "village_relevant": true,
+    "quiz_count": 1,
+    "quiz_incomplete": true,
+    "quiz_supported_cnt": 1,
+    "quiz_total_cnt": 1,
+    "words_explained_cnt": 5,
+    "words_cand_cnt": 5,
+    "retries": 2,
+    "p1_retried": true,
+    "p1_retry_reason": "village_guard",
+    "p2_retried": true,
+    "p2_retry_reason": "quiz_guard: only 1/3 valid"
+  },
+  "offline_status": "OFFLINE",
+  "telemetry": {
+    "net": {
+      "method": "linux_ip_cmd",
+      "ifaces": [
+        {
+          "name": "lo",
+          "state": "UNKNOWN"
+        },
+        {
+          "name": "enp0s31f6",
+          "state": "DOWN"
+        },
+        {
+          "name": "wlp0s20f3",
+          "state": "DOWN"
+        }
+      ],
+      "has_def_route": false,
+      "is_offline": true
+    },
+    "host": {
+      "host_label": "HOST: laptop (not Raspberry Pi)",
+      "is_pi": false,
+      "cpu_model": "11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz",
+      "cores": 8,
+      "ram_gb": 14.3,
+      "os": "Linux 7.0.0-38-generic"
+    },
+    "model_name": "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+    "pte_path": "models/llama1b/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte",
+    "pte_size_bytes": 1135951488,
+    "pte_size_mib": 1083.33,
+    "pte_size_mb": 1083.33,
+    "peak_rss_mib": 1903.55,
+    "peak_rss_mb": 1903.55,
+    "inf_time_sec": 32.096,
+    "tok_cnt": 473,
+    "tok_per_sec": 14.74,
+    "is_mock": false
+  },
+  "pipeline": {
+    "s_list": [
+      [
+        "S1",
+        "An electric current is defined as the rate of flow of electric charges across any cross section of a conductor."
+      ],
+      [
+        "S2",
+        "In metallic wires, electrons constitute the flow of electric charges because free electrons drift when an electric potential difference is maintained by a chemical cell or battery."
+      ],
+      [
+        "S3",
+        "By convention, the direction of electric current is considered opposite to the direction of the flow of electrons, moving from the positive terminal towards the negative terminal."
+      ],
+      [
+        "S4",
+        "The continuous and closed conducting path along which an electric current flows is called an electric circuit."
+      ],
+      [
+        "S5",
+        "When a circuit is broken or a switch is turned off, the current stops flowing instantly."
+      ],
+      [
+        "S6",
+        "The electrical potential difference between two points is measured in volts using an instrument called a voltmeter, which is connected in parallel across the electrical component."
+      ],
+      [
+        "S7",
+        "According to Ohm's law, the electric current passing through a metallic conductor is directly proportional to the potential difference across its terminals, provided the temperature remains constant."
+      ],
+      [
+        "S8",
+        "Electric resistance measures the opposition offered by a conductor to the flow of electric current."
+      ]
+    ],
+    "hard_s": {
+      "id": "S7",
+      "text": "According to Ohm's law, the electric current passing through a metallic conductor is directly proportional to the potential difference across its terminals, provided the temperature remains constant.",
+      "c_cnt": 12,
+      "tot": 28
+    },
+    "cand_words": [
+      "resistance",
+      "voltmeter",
+      "circuit",
+      "current",
+      "proportional"
+    ],
+    "parsed": {
+      "simple": "The electric current is the rate of flow of electric charges.",
+      "summary": "Electric current is the rate of flow of electric charges.",
+      "village": "in rural Tamil Nadu, Murugan, a farmer, used a metal bucket to irrigate his paddy field. He filled the bucket with water from the well and connected it to a metal pipe that led to the field. As he turned the handle, the bucket filled with water, and the electric current flowing through the pipe caused the water level in the bucket to rise, illustrating Ohm's law.",
+      "words": [
+        {
+          "word": "resistance",
+          "meaning": "opposition to flow"
+        },
+        {
+          "word": "voltmeter",
+          "meaning": "device to measure voltage"
+        },
+        {
+          "word": "circuit",
+          "meaning": "path of electric current"
+        },
+        {
+          "word": "current",
+          "meaning": "flow of electric charges"
+        },
+        {
+          "word": "proportional",
+          "meaning": "directly related"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "WHY DOES THE ELECTRICAL POTENTIAL DIFFERENCE BETWEEN TWO POINTS NEED TO BE MEASURED IN VOLTS?",
+          "a": "It is measured in volts using an instrument called a voltmeter.",
+          "c": "S6"
+        }
+      ],
+      "no_simpler": false,
+      "valid": true
+    },
+    "readab": {
+      "orig": {
+        "w_cnt": 28,
+        "l_cnt": 169,
+        "avg_l": 6.04
+      },
+      "simp": {
+        "w_cnt": 11,
+        "l_cnt": 50,
+        "avg_l": 4.55
+      },
+      "diff": {
+        "w_chg": -60.7,
+        "l_chg": -70.4,
+        "avg_chg": -24.7
+      }
+    },
+    "words": [
+      {
+        "word": "resistance",
+        "meaning": "opposition to flow",
+        "gl": {
+          "en": "resistance",
+          "ta": "மின்தடை",
+          "translit": "Minthadai",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "voltmeter",
+        "meaning": "device to measure voltage",
+        "gl": {
+          "en": "voltmeter",
+          "ta": "மின்னழுத்தமானி",
+          "translit": "Minnaluthamaani",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "circuit",
+        "meaning": "path of electric current",
+        "gl": {
+          "en": "circuit",
+          "ta": "மின்சுற்று",
+          "translit": "Minsutru",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "current",
+        "meaning": "flow of electric charges",
+        "gl": {
+          "en": "current",
+          "ta": "மின்னோட்டம்",
+          "translit": "Minnoattam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "proportional",
+        "meaning": "directly related",
+        "gl": null
+      }
+    ],
+    "quiz": [
+      {
+        "q": "WHY DOES THE ELECTRICAL POTENTIAL DIFFERENCE BETWEEN TWO POINTS NEED TO BE MEASURED IN VOLTS?",
+        "a": "It is measured in volts using an instrument called a voltmeter.",
+        "c": "S6",
+        "status": "SUPPORTED",
+        "shared": [
+          "call",
+          "instrument",
+          "measur",
+          "using",
+          "volt",
+          "voltmeter"
+        ],
+        "suggested": null
+      }
+    ],
+    "tok_cnt": 473,
+    "p1_info": {
+      "tokens": 187,
+      "seconds": 14.225,
+      "attempts": [
+        {
+          "pass": 1,
+          "attempt": 1,
+          "tokens": 104,
+          "sec": 10.137
+        },
+        {
+          "attempt": 2,
+          "guard": "village_guard",
+          "tokens": 83,
+          "sec": 4.087
+        }
+      ],
+      "retries": 1,
+      "retried": true,
+      "reason": "village_guard",
+      "summary_fallback": false
+    },
+    "p2_info": {
+      "tokens": 286,
+      "seconds": 17.87,
+      "attempts": [
+        {
+          "pass": 2,
+          "attempt": 1,
+          "valid_cnt": 1,
+          "tokens": 118,
+          "sec": 7.711
+        },
+        {
+          "attempt": 2,
+          "guard": "quiz_guard",
+          "tokens": 168,
+          "sec": 10.159
+        }
+      ],
+      "retries": 1,
+      "retried": true,
+      "reason": "quiz_guard: only 1/3 valid",
+      "quiz_incomplete": true
+    },
+    "guards": {
+      "rewrite_shorter": true,
+      "no_simpler_rewrite": false,
+      "summary_produced_without_fallback": true,
+      "village_relevant": true,
+      "quiz_count": 1,
+      "quiz_incomplete": true,
+      "quiz_supported_cnt": 1,
+      "quiz_total_cnt": 1,
+      "words_explained_cnt": 5,
+      "words_cand_cnt": 5,
+      "retries": 2,
+      "p1_retried": true,
+      "p1_retry_reason": "village_guard",
+      "p2_retried": true,
+      "p2_retry_reason": "quiz_guard: only 1/3 valid"
+    },
+    "is_mock": false
+  }
+}

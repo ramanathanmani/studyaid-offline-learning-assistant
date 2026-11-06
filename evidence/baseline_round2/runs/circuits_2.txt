@@ -1,0 +1,56 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] An electric current is defined as the rate of flow of electric charges across any cross section of a conductor.
+[S2] In metallic wires, electrons constitute the flow of electric charges because free electrons drift when an electric potential difference is maintained by a chemical cell or battery.
+[S3] By convention, the direction of electric current is considered opposite to the direction of the flow of electrons, moving from the positive terminal towards the negative terminal.
+[S4] The continuous and closed conducting path along which an electric current flows is called an electric circuit.
+[S5] When a circuit is broken or a switch is turned off, the current stops flowing instantly.
+[S6] The electrical potential difference between two points is measured in volts using an instrument called a voltmeter, which is connected in parallel across the electrical component.
+[S7] According to Ohm's law, the electric current passing through a metallic conductor is directly proportional to the potential difference across its terminals, provided the temperature remains constant.
+[S8] Electric resistance measures the opposition offered by a conductor to the flow of electric current.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S7]): According to Ohm's law, the electric current passing through a metallic conductor is directly proportional to the potential difference across its terminals, provided the temperature remains constant.
+Simplified:   The electric current is the rate of flow of electric charges.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  28           11           -60.7%    
+Letters                169          50           -70.4%    
+Avg letters/word       6.04         4.55         -24.7%    
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+Electric current is the rate of flow of electric charges.
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+in rural Tamil Nadu, Murugan, a farmer, used a metal bucket to irrigate his paddy field. He filled the bucket with water from the well and connected it to a metal pipe that led to the field. As he turned the handle, the bucket filled with water, and the electric current flowing through the pipe caused the water level in the bucket to rise, illustrating Ohm's law.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- resistance: opposition to flow -> மின்தடை (Minthadai) [unverified]
+- voltmeter: device to measure voltage -> மின்னழுத்தமானி (Minnaluthamaani) [unverified]
+- circuit: path of electric current -> மின்சுற்று (Minsutru) [unverified]
+- current: flow of electric charges -> மின்னோட்டம் (Minnoattam) [unverified]
+- proportional: directly related (English only)
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+quiz incomplete (1 of 3)
+[Q1] WHY DOES THE ELECTRICAL POTENTIAL DIFFERENCE BETWEEN TWO POINTS NEED TO BE MEASURED IN VOLTS?
+     Answer: It is measured in volts using an instrument called a voltmeter.
+     Citation: S6
+     Support: SUPPORTED (shared: call, instrument, measur, using, volt, voltmeter)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=DOWN
+Default route active: NO
+Offline status: OFFLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1903.32 MiB
+Inference time: 31.066 s
+Tokens generated: 473
+Tokens/sec: 15.23
+Execution mode: [REAL EXECUTORCH RUN]

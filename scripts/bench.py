@@ -66,9 +66,10 @@ def compute_benchmark_stats(raw_runs, m_name="", pte_p="", is_mock=False, runs_p
         tot_quiz = [r["guards"]["quiz_total_cnt"] for r in runs]
         sum_ok = [1 if r.get("summary_ok", True) else 0 for r in runs]
         shorter_cnts = [1 if r["guards"]["rewrite_shorter"] else 0 for r in runs]
-        vil_cnts = [1 if r["guards"]["village_relevant"] else 0 for r in runs]
+        vil_cnts = [1 if r["guards"].get("village_format_ok", r["guards"].get("village_relevant", True)) else 0 for r in runs]
         exp_cnts = [r["guards"]["words_explained_cnt"] for r in runs]
         cand_cnts = [r["guards"]["words_cand_cnt"] for r in runs]
+        model_cites = [r["guards"].get("quiz_model_cite_cnt", 0) for r in runs]
 
         reasons_list = [r.get("p1_retry_reason", "") for r in runs if r.get("p1_retried")]
         reasons_list += [r.get("p2_retry_reason", "") for r in runs if r.get("p2_retried")]
@@ -93,9 +94,11 @@ def compute_benchmark_stats(raw_runs, m_name="", pte_p="", is_mock=False, runs_p
             "retries_mean": round(sum(retries) / len(retries), 1),
             "reasons": r_str,
             "quiz_items": round(sum(quiz_cnts) / len(runs), 1),
+            "quiz_model_cite": f"{sum(model_cites)}/{sum(tot_quiz)}",
             "quiz_sup": f"{sum(sup_cnts)}/{sum(tot_quiz)}",
             "summary_ok": f"{sum(sum_ok)}/{len(runs)}",
             "shorter": f"{sum(shorter_cnts)}/{len(runs)}",
+            "village_fmt": f"{sum(vil_cnts)}/{len(runs)}",
             "village_rel": f"{sum(vil_cnts)}/{len(runs)}",
             "words_exp": f"{sum(exp_cnts)}/{sum(cand_cnts)}",
             "offline_status": "OFFLINE" if all(r.get("offline_status") == "OFFLINE" for r in runs) else "ONLINE"
@@ -108,11 +111,12 @@ def compute_benchmark_stats(raw_runs, m_name="", pte_p="", is_mock=False, runs_p
     all_base = [r.get("baseline_rss_mib", 0.0) for r in raw_runs]
     all_retries = [r["retries"] for r in raw_runs]
     all_quiz_cnts = [r.get("quiz_count", len(r["pipeline"]["quiz"])) for r in raw_runs]
+    all_model_cites = [r["guards"].get("quiz_model_cite_cnt", 0) for r in raw_runs]
     all_sup = sum(r["guards"]["quiz_supported_cnt"] for r in raw_runs)
     all_quiz = sum(r["guards"]["quiz_total_cnt"] for r in raw_runs)
     all_sum_ok = sum(1 if r.get("summary_ok", True) else 0 for r in raw_runs)
     all_shorter = sum(1 if r["guards"]["rewrite_shorter"] else 0 for r in raw_runs)
-    all_vil = sum(1 if r["guards"]["village_relevant"] else 0 for r in raw_runs)
+    all_vil = sum(1 if r["guards"].get("village_format_ok", r["guards"].get("village_relevant", True)) else 0 for r in raw_runs)
     all_exp = sum(r["guards"]["words_explained_cnt"] for r in raw_runs)
     all_cands = sum(r["guards"]["words_cand_cnt"] for r in raw_runs)
 
@@ -137,11 +141,13 @@ def compute_benchmark_stats(raw_runs, m_name="", pte_p="", is_mock=False, runs_p
         "rss": fmt_stat(all_rss, 1),
         "base_rss": fmt_stat(all_base, 1),
         "retries": fmt_stat(all_retries, 1),
-        "reasons": all_r_str,
+        "reasons": "mean count across passages",
         "quiz_items": round(sum(all_quiz_cnts) / len(raw_runs), 1) if raw_runs else 0,
+        "quiz_model_cite": f"{sum(all_model_cites)}/{all_quiz}",
         "quiz_sup": f"{all_sup}/{all_quiz}",
         "summary_ok": f"{all_sum_ok}/{len(raw_runs)}",
         "shorter": f"{all_shorter}/{len(raw_runs)}",
+        "village_fmt": f"{all_vil}/{len(raw_runs)}",
         "village_rel": f"{all_vil}/{len(raw_runs)}",
         "words_exp": f"{all_exp}/{all_cands}",
         "offline_status": "OFFLINE" if (raw_runs and all(r.get("offline_status") == "OFFLINE" for r in raw_runs)) else "ONLINE"
@@ -345,16 +351,16 @@ def run_bench(args):
         f"**Runs per passage:** {args.runs}  ",
         f"**Status:** {full_bench['meta']['offline_status']}  ",
         "",
-        "| Passage | Words | Latency (s) | Tokens | Tokens/s | Peak RSS (MiB) [Base] | Retries (Reasons) | Quizzes | Quiz Sup | Summary OK | Shorter | Village | Words Exp | Offline |",
-        "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"
+        "| Passage | Words | Latency (s) | Tokens | Tokens/s | Peak RSS (MiB) [Base] | Retries (Reasons) | Quizzes | Model Cite | Quiz Sup | Summary OK | Shorter | Village | Words Exp | Offline |",
+        "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for row in full_bench["summary"]:
         md_lines.append(
-            f"| {row['passage']} | {row['words']} | {row['inf_time']} | {row['tokens']} | {row['tps']} | {row['rss']} [{row['base_rss']}] | {row['retries']} ({row['reasons']}) | {row['quiz_items']} | {row['quiz_sup']} | {row['summary_ok']} | {row['shorter']} | {row['village_rel']} | {row['words_exp']} | {row['offline_status']} |"
+            f"| {row['passage']} | {row['words']} | {row['inf_time']} | {row['tokens']} | {row['tps']} | {row['rss']} [{row['base_rss']}] | {row['retries']} ({row['reasons']}) | {row['quiz_items']} | {row.get('quiz_model_cite', '-')} | {row['quiz_sup']} | {row['summary_ok']} | {row['shorter']} | {row['village_fmt']} | {row['words_exp']} | {row['offline_status']} |"
         )
     ov = full_bench["overall"]
     md_lines.append(
-        f"| **{ov['passage']}** | **{ov['words']}** | **{ov['inf_time']}** | **{ov['tokens']}** | **{ov['tps']}** | **{ov['rss']} [{ov['base_rss']}]** | **{ov['retries']} ({ov['reasons']})** | **{ov['quiz_items']}** | **{ov['quiz_sup']}** | **{ov['summary_ok']}** | **{ov['shorter']}** | **{ov['village_rel']}** | **{ov['words_exp']}** | **{ov['offline_status']}** |"
+        f"| **{ov['passage']}** | **{ov['words']}** | **{ov['inf_time']}** | **{ov['tokens']}** | **{ov['tps']}** | **{ov['rss']} [{ov['base_rss']}]** | **{ov['retries']}** | **{ov['quiz_items']}** | {ov.get('quiz_model_cite', '-')} | {ov['quiz_sup']} | **{ov['summary_ok']}** | **{ov['shorter']}** | **{ov['village_fmt']}** | **{ov['words_exp']}** | **{ov['offline_status']}** |"
     )
     md_lines.append("")
 

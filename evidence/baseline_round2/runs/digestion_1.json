@@ -1,0 +1,378 @@
+{
+  "passage": "digestion",
+  "run": 1,
+  "words": 164,
+  "load_time_sec": 1.37,
+  "baseline_rss_mib": 19.69,
+  "peak_rss_mib": 1903.56,
+  "p1_sec": 26.423,
+  "p1_tokens": 439,
+  "p1_retries": 1,
+  "p1_retried": true,
+  "p1_retry_reason": "village_guard",
+  "p1_attempts": [
+    {
+      "pass": 1,
+      "attempt": 1,
+      "tokens": 320,
+      "sec": 20.809
+    },
+    {
+      "attempt": 2,
+      "guard": "village_guard",
+      "tokens": 119,
+      "sec": 5.613
+    }
+  ],
+  "p2_sec": 6.163,
+  "p2_tokens": 90,
+  "p2_retries": 0,
+  "p2_retried": false,
+  "p2_retry_reason": "none",
+  "p2_attempts": [
+    {
+      "pass": 2,
+      "attempt": 1,
+      "valid_cnt": 4,
+      "tokens": 90,
+      "sec": 6.163
+    }
+  ],
+  "inf_time_sec": 32.587,
+  "tokens": 529,
+  "tok_per_sec": 16.23,
+  "retries": 1,
+  "retry_reasons": "village_guard",
+  "quiz_count": 4,
+  "quiz_incomplete": false,
+  "summary_fallback": false,
+  "summary_ok": true,
+  "guards": {
+    "rewrite_shorter": true,
+    "no_simpler_rewrite": false,
+    "summary_produced_without_fallback": true,
+    "village_relevant": true,
+    "quiz_count": 4,
+    "quiz_incomplete": false,
+    "quiz_supported_cnt": 1,
+    "quiz_total_cnt": 4,
+    "words_explained_cnt": 1,
+    "words_cand_cnt": 5,
+    "retries": 1,
+    "p1_retried": true,
+    "p1_retry_reason": "village_guard",
+    "p2_retried": false,
+    "p2_retry_reason": "none"
+  },
+  "offline_status": "OFFLINE",
+  "telemetry": {
+    "net": {
+      "method": "linux_ip_cmd",
+      "ifaces": [
+        {
+          "name": "lo",
+          "state": "UNKNOWN"
+        },
+        {
+          "name": "enp0s31f6",
+          "state": "DOWN"
+        },
+        {
+          "name": "wlp0s20f3",
+          "state": "DOWN"
+        }
+      ],
+      "has_def_route": false,
+      "is_offline": true
+    },
+    "host": {
+      "host_label": "HOST: laptop (not Raspberry Pi)",
+      "is_pi": false,
+      "cpu_model": "11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz",
+      "cores": 8,
+      "ram_gb": 14.3,
+      "os": "Linux 7.0.0-38-generic"
+    },
+    "model_name": "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+    "pte_path": "models/llama1b/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte",
+    "pte_size_bytes": 1135951488,
+    "pte_size_mib": 1083.33,
+    "pte_size_mb": 1083.33,
+    "peak_rss_mib": 1903.56,
+    "peak_rss_mb": 1903.56,
+    "inf_time_sec": 32.587,
+    "tok_cnt": 529,
+    "tok_per_sec": 16.23,
+    "is_mock": false
+  },
+  "pipeline": {
+    "s_list": [
+      [
+        "S1",
+        "Digestion is the biochemical breakdown of complex insoluble food substances into simple absorbable nutrient molecules required by living cells."
+      ],
+      [
+        "S2",
+        "The human digestive process commences inside the buccal cavity, where teeth mechanically masticate solid food and salivary glands secrete the enzyme salivary amylase to break down complex starch into simple sugars."
+      ],
+      [
+        "S3",
+        "The masticated food bolus travels downwards through the muscular esophagus by rhythmic waves of involuntary contraction termed peristalsis."
+      ],
+      [
+        "S4",
+        "Inside the stomach, gastric glands secrete hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria."
+      ],
+      [
+        "S5",
+        "The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats."
+      ],
+      [
+        "S6",
+        "Here, bile juice secreted by the liver emulsifies large fat globules into smaller droplets, accelerating enzymatic breakdown by pancreatic lipase."
+      ],
+      [
+        "S7",
+        "Finger-like microscopic vascular projections called villi present along the intestinal inner lining maximize the surface area for rapid nutrient absorption into the circulating bloodstream."
+      ]
+    ],
+    "hard_s": {
+      "id": "S5",
+      "text": "The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.",
+      "c_cnt": 9,
+      "tot": 29
+    },
+    "cand_words": [
+      "peristalsis",
+      "digesting",
+      "digestion",
+      "digested",
+      "stomach"
+    ],
+    "parsed": {
+      "simple": "The semi-digested acidic mixture chyme passes into the small intestine.",
+      "summary": "The human digestive process breaks down food into nutrients.",
+      "village": "in rural Tamil Nadu, after Murugan's bullock cart brings in a freshly harvested batch of paddy, the farmer carefully separates the grains from the chaff, allowing the paddy to pass into the small intestine, where it will be broken down into its constituent parts by the digestive enzymes. The paddy grains, now semi-digested, will then be absorbed into the bloodstream, providing the body with the necessary nutrients. As the paddy enters the small intestine, it is then passed into the large intestine, where water is absorbed and the remaining nutrients are further broken down.",
+      "words": [
+        {
+          "word": "peristalsis",
+          "meaning": "digestive"
+        },
+        {
+          "word": "digesting",
+          "meaning": "no explanation generated"
+        },
+        {
+          "word": "digestion",
+          "meaning": "no explanation generated"
+        },
+        {
+          "word": "digested",
+          "meaning": "no explanation generated"
+        },
+        {
+          "word": "stomach",
+          "meaning": "no explanation generated"
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the primary function of salivary amylase in the human digestive process?",
+          "a": "Digests complex starch into simple sugars.",
+          "c": "S1"
+        },
+        {
+          "q": "Which gland secretes hydrochloric acid in the stomach?",
+          "a": "Gastric glands.",
+          "c": "S1"
+        },
+        {
+          "q": "What is the main site for complete chemical digestion of carbohydrates, proteins, and fats?",
+          "a": "Small intestine.",
+          "c": "S1"
+        },
+        {
+          "q": "What are finger-like microscopic vascular projections called?",
+          "a": "Villi.",
+          "c": "S1"
+        }
+      ],
+      "no_simpler": false,
+      "valid": true
+    },
+    "readab": {
+      "orig": {
+        "w_cnt": 29,
+        "l_cnt": 166,
+        "avg_l": 5.72
+      },
+      "simp": {
+        "w_cnt": 11,
+        "l_cnt": 60,
+        "avg_l": 5.45
+      },
+      "diff": {
+        "w_chg": -62.1,
+        "l_chg": -63.9,
+        "avg_chg": -4.7
+      }
+    },
+    "words": [
+      {
+        "word": "peristalsis",
+        "meaning": "digestive",
+        "gl": {
+          "en": "peristalsis",
+          "ta": "குடல் அசைவு",
+          "translit": "Kudal-asaivu",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "digesting",
+        "meaning": "no explanation generated",
+        "gl": {
+          "en": "digestion",
+          "ta": "செரிமானம்",
+          "translit": "Serimaanam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "digestion",
+        "meaning": "no explanation generated",
+        "gl": {
+          "en": "digestion",
+          "ta": "செரிமானம்",
+          "translit": "Serimaanam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "digested",
+        "meaning": "no explanation generated",
+        "gl": {
+          "en": "digestion",
+          "ta": "செரிமானம்",
+          "translit": "Serimaanam",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      },
+      {
+        "word": "stomach",
+        "meaning": "no explanation generated",
+        "gl": {
+          "en": "stomach",
+          "ta": "இரைப்பை",
+          "translit": "Iraippai",
+          "verified": false,
+          "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
+          "ref": ""
+        }
+      }
+    ],
+    "quiz": [
+      {
+        "q": "What is the primary function of salivary amylase in the human digestive process?",
+        "a": "Digests complex starch into simple sugars.",
+        "c": "S1",
+        "status": "SUPPORTED",
+        "shared": [
+          "complex",
+          "simpl"
+        ],
+        "suggested": null
+      },
+      {
+        "q": "Which gland secretes hydrochloric acid in the stomach?",
+        "a": "Gastric glands.",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S4"
+      },
+      {
+        "q": "What is the main site for complete chemical digestion of carbohydrates, proteins, and fats?",
+        "a": "Small intestine.",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S5"
+      },
+      {
+        "q": "What are finger-like microscopic vascular projections called?",
+        "a": "Villi.",
+        "c": "S1",
+        "status": "FLAGGED",
+        "shared": [],
+        "suggested": "S7"
+      }
+    ],
+    "tok_cnt": 529,
+    "p1_info": {
+      "tokens": 439,
+      "seconds": 26.423,
+      "attempts": [
+        {
+          "pass": 1,
+          "attempt": 1,
+          "tokens": 320,
+          "sec": 20.809
+        },
+        {
+          "attempt": 2,
+          "guard": "village_guard",
+          "tokens": 119,
+          "sec": 5.613
+        }
+      ],
+      "retries": 1,
+      "retried": true,
+      "reason": "village_guard",
+      "summary_fallback": false
+    },
+    "p2_info": {
+      "tokens": 90,
+      "seconds": 6.163,
+      "attempts": [
+        {
+          "pass": 2,
+          "attempt": 1,
+          "valid_cnt": 4,
+          "tokens": 90,
+          "sec": 6.163
+        }
+      ],
+      "retries": 0,
+      "retried": false,
+      "reason": "none",
+      "quiz_incomplete": false
+    },
+    "guards": {
+      "rewrite_shorter": true,
+      "no_simpler_rewrite": false,
+      "summary_produced_without_fallback": true,
+      "village_relevant": true,
+      "quiz_count": 4,
+      "quiz_incomplete": false,
+      "quiz_supported_cnt": 1,
+      "quiz_total_cnt": 4,
+      "words_explained_cnt": 1,
+      "words_cand_cnt": 5,
+      "retries": 1,
+      "p1_retried": true,
+      "p1_retry_reason": "village_guard",
+      "p2_retried": false,
+      "p2_retry_reason": "none"
+    },
+    "is_mock": false
+  }
+}

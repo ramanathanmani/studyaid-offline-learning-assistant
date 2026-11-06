@@ -1,0 +1,63 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Photosynthesis is the essential biological process by which green plants, algae, and certain bacteria convert light energy into chemical energy.
+[S2] During this biochemical reaction, plants absorb sunlight using the green pigment known as chlorophyll present inside cellular organelles called chloroplasts.
+[S3] Carbon dioxide from the atmospheric air enters the leaves through microscopic pores called stomata, while roots absorb water and dissolved minerals from the moist soil.
+[S4] Using the captured solar energy, water molecules are split into hydrogen and oxygen through photolysis.
+[S5] The hydrogen combines with carbon dioxide across enzymatic cycles to synthesize glucose, a simple carbohydrate that fuels plant respiration and vegetative growth.
+[S6] Oxygen is released as a vital byproduct into the atmosphere, sustaining aerobic life across terrestrial and aquatic ecosystems.
+[S7] Without photosynthesis, the carbon cycle would collapse, oxygen replenishment would cease, and food webs would disintegrate completely.
+[S8] In agricultural systems, environmental factors such as sunlight intensity, temperature variations, and moisture availability determine the overall rate of photosynthesis and crop productivity.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S8]): In agricultural systems, environmental factors such as sunlight intensity, temperature variations, and moisture availability determine the overall rate of photosynthesis and crop productivity.
+Simplified:   Sunlight determines the rate of photosynthesis.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  23           6            -73.9%    
+Letters                166          41           -75.3%    
+Avg letters/word       7.22         6.83         -5.4%     
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+Photosynthesis is the process by which plants convert sunlight into chemical energy.
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+in rural Tamil Nadu, Murugan, a farmer, carefully tended to his paddy field, ensuring that the sunlight intensity was just right for optimal photosynthesis. As the temperature rose, he adjusted the shade of his bullock cart to prevent overheating. By doing so, he maximized the crop's productivity and ensured a bountiful harvest.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- chloroplasts: tiny cells in plants that make food -> பசுங்கணிகம் (Pasungkanigam) [unverified]
+- photosynthesis: process of plants making food from sunlight (English only)
+- environmental: relating to the natural world around us (English only)
+- replenishment: restoring or filling something (English only)
+- agricultural: relating to farming and growing crops (English only)
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] Which microscopic pores allow carbon dioxide to enter the leaves?
+     Answer: Stomata
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S3)
+[Q2] What is the byproduct released into the atmosphere during photosynthesis?
+     Answer: Oxygen
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S4)
+[Q3] What is the result of the hydrogen combining with carbon dioxide?
+     Answer: Glucose
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S5)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=DOWN
+Default route active: NO
+Offline status: OFFLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1903.71 MiB
+Inference time: 21.574 s
+Tokens generated: 288
+Tokens/sec: 13.35
+Execution mode: [REAL EXECUTORCH RUN]

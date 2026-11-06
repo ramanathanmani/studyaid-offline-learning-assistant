@@ -1,0 +1,62 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Light propagates in straight lines through a uniform optical medium, but its direction alters abruptly whenever it enters an optically different medium obliquely.
+[S2] This phenomenon is known as refraction, occurring because the speed of electromagnetic waves changes across varying optical densities.
+[S3] When light travels from an optically rarer medium like air into an optically denser medium like glass or water, its velocity decreases, bending the ray towards the imaginary normal line perpendicular to the interface.
+[S4] Conversely, when emerging from a denser medium into a rarer one, the light accelerates and refracts away from the normal.
+[S5] Convex lenses exploit this refractive behavior to converge parallel incident light rays onto a focal point, producing real inverted images on screens or virtual magnified images for human observers.
+[S6] Concave lenses diverge incident rays outward, consistently forming upright, diminished virtual images.
+[S7] Understanding these principles explains natural occurrences such as atmospheric refraction and optical illusions in water pools.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S5]): Convex lenses exploit this refractive behavior to converge parallel incident light rays onto a focal point, producing real inverted images on screens or virtual magnified images for human observers.
+Simplified:   Convex lenses bend light rays to produce real inverted images.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  29           10           -65.5%    
+Letters                168          52           -69.0%    
+Avg letters/word       5.79         5.20         -10.2%    
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+The passage explains how light behaves when passing from one medium to another.
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+in rural Tamil Nadu, a farmer Murugan carefully placed a bundle of freshly harvested paddy on a wooden cart. As he began to drive the cart towards his home, he noticed that the paddy seemed to be bending and converging, creating a peculiar, inverted image on the ground. The image was so real that it seemed to be staring back at him, a testament to the power of convex lenses in everyday life.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- refraction: light bends when passing from one medium to another -> ஒளிவிலகல் (Oli-vilagal) [verified]
+- obliquely: at an angle, not directly perpendicular -> சாய்வாக (Saaivaaga) [verified]
+- refracts: light bends, passing from one medium to another -> ஒளிவிலகல் (Oli-vilagal) [verified]
+- medium: substance that can bend light -> ஊடகம் (Oodagam) [verified]
+- normal: straight, not at an angle -> குத்துக்கோடு (Kuthukkodu) [verified]
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] What is the phenomenon of light's direction changing when it enters an optically different medium obliquely?
+     Answer: Refraction
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S2)
+[Q2] What happens to the velocity of light when it travels from an optically rarer medium into an optically denser medium?
+     Answer: Decreases
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S3)
+[Q3] Which type of lens uses the refractive behavior of light to converge parallel incident light rays onto a focal point?
+     Answer: Convex lenses
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S5)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=DOWN
+Default route active: NO
+Offline status: OFFLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1903.41 MiB
+Inference time: 31.029 s
+Tokens generated: 337
+Tokens/sec: 10.86
+Execution mode: [REAL EXECUTORCH RUN]

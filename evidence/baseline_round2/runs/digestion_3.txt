@@ -1,0 +1,66 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Digestion is the biochemical breakdown of complex insoluble food substances into simple absorbable nutrient molecules required by living cells.
+[S2] The human digestive process commences inside the buccal cavity, where teeth mechanically masticate solid food and salivary glands secrete the enzyme salivary amylase to break down complex starch into simple sugars.
+[S3] The masticated food bolus travels downwards through the muscular esophagus by rhythmic waves of involuntary contraction termed peristalsis.
+[S4] Inside the stomach, gastric glands secrete hydrochloric acid, which provides an acidic medium and activates the protein-digesting enzyme pepsin while destroying harmful ingested bacteria.
+[S5] The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
+[S6] Here, bile juice secreted by the liver emulsifies large fat globules into smaller droplets, accelerating enzymatic breakdown by pancreatic lipase.
+[S7] Finger-like microscopic vascular projections called villi present along the intestinal inner lining maximize the surface area for rapid nutrient absorption into the circulating bloodstream.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S5]): The semi-digested acidic mixture known as chyme passes sequentially into the small intestine, which serves as the principal site for complete chemical digestion of carbohydrates, proteins, and fats.
+Simplified:   The semi-digested acidic mixture chyme passes into the small intestine.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  29           11           -62.1%    
+Letters                166          60           -63.9%    
+Avg letters/word       5.72         5.45         -4.7%     
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+The human digestive process breaks down food into nutrients.
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+in rural Tamil Nadu, after Murugan's bullock cart brings in a freshly harvested batch of paddy, the farmer carefully separates the grains from the chaff, allowing the paddy to pass into the small intestine, where it will be broken down into its constituent parts by the digestive enzymes. The paddy grains, now semi-digested, will then be absorbed into the bloodstream, providing the body with the necessary nutrients. As the paddy enters the small intestine, it is then passed into the large intestine, where water is absorbed and the remaining nutrients are further broken down.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- peristalsis: digestive -> குடல் அசைவு (Kudal-asaivu) [unverified]
+- digesting: no explanation generated -> செரிமானம் (Serimaanam) [unverified]
+- digestion: no explanation generated -> செரிமானம் (Serimaanam) [unverified]
+- digested: no explanation generated -> செரிமானம் (Serimaanam) [unverified]
+- stomach: no explanation generated -> இரைப்பை (Iraippai) [unverified]
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] What is the primary function of salivary amylase in the human digestive process?
+     Answer: Digests complex starch into simple sugars.
+     Citation: S1
+     Support: SUPPORTED (shared: complex, simpl)
+[Q2] Which gland secretes hydrochloric acid in the stomach?
+     Answer: Gastric glands.
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S4)
+[Q3] What is the main site for complete chemical digestion of carbohydrates, proteins, and fats?
+     Answer: Small intestine.
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S5)
+[Q4] What are finger-like microscopic vascular projections called?
+     Answer: Villi.
+     Citation: S1
+     Support: FLAGGED (shared: none, suggested citation: S7)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=DOWN
+Default route active: NO
+Offline status: OFFLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1903.42 MiB
+Inference time: 33.922 s
+Tokens generated: 529
+Tokens/sec: 15.59
+Execution mode: [REAL EXECUTORCH RUN]

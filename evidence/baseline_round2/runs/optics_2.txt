@@ -1,0 +1,57 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.
+[S2] This deviation of ray of light is called refraction.
+[S3] Refraction takes place due to the difference in the velocity of light in different media.
+[S4] The velocity of light is more in a rarer medium and less in a denser medium.
+[S5] When light travels from a denser medium into a rarer medium, the refracted ray is bent away from the normal drawn to the interface.
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S1]): When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation.
+Simplified:   When light travels from one transparent medium into another, it deviates from its path.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  20           14           -30.0%    
+Letters                101          72           -28.7%    
+Avg letters/word       5.05         5.14         +1.8%     
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+When light travels from one transparent medium into another, it undergoes deviation due to refraction, a process that occurs when the velocity of light changes as it passes from one medium to another. Refraction is the result of the difference in the velocity of light in different media, and it causes the light to bend or change direction. The velocity of light is also affected by the density of the medium, with denser media having a greater velocity and rarer media having a lesser velocity.>
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+in rural Tamil Nadu, a farmer Murugan was tending to his paddy field when he noticed that a ray of sunlight was bending as it passed from the sunlight-drenched field into the shade of a nearby tree. The ray of light had to travel from the bright sunlight to the shaded area, and as it did, it began to bend, or deviate, from its original path. This phenomenon was a common occurrence in the village, where the light had to adapt to the changing conditions of the environment.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- refraction: light passes from one medium to another -> ஒளிவிலகல் (Oli-vilagal) [verified]
+- obliquely: at an angle other than 90 degrees -> சாய்வாக (Saaivaaga) [verified]
+- refracted: no explanation generated -> ஒளிவிலகல் (Oli-vilagal) [verified]
+- medium: substance that can bend light -> ஊடகம் (Oodagam) [verified]
+- normal: straight line that light travels on -> குத்துக்கோடு (Kuthukkodu) [verified]
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+quiz incomplete (2 of 3)
+[Q1] WHY does refraction occur when light travels from one transparent medium into another obliquely?
+     Answer: due to difference in velocity
+     Citation: S2
+     Support: FLAGGED (shared: none, suggested citation: S3)
+[Q2] WHICH of the following is correct about refraction?
+     Answer: light travels faster in denser medium
+     Citation: S4
+     Support: SUPPORTED (shared: denser, light, medium)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-38-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=DOWN
+Default route active: NO
+Offline status: OFFLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1903.27 MiB
+Inference time: 36.544 s
+Tokens generated: 624
+Tokens/sec: 17.08
+Execution mode: [REAL EXECUTORCH RUN]

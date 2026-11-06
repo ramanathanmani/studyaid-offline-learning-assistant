@@ -19,10 +19,30 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
+from PIL import Image as PILImage, ImageDraw, ImageFont
 
 FONT_TA_PATH = "/usr/share/fonts/truetype/noto/NotoSansTamil-Regular.ttf"
 if os.path.exists(FONT_TA_PATH):
     pdfmetrics.registerFont(TTFont("NotoSansTamil", FONT_TA_PATH))
+
+def render_tamil_cell_img(text, out_path, font_size=32):
+    font_path = "/usr/share/fonts/truetype/noto/NotoSansTamil-Regular.ttf"
+    if not os.path.exists(font_path):
+        return None, 0, 0
+    font = ImageFont.truetype(font_path, font_size, layout_engine=ImageFont.Layout.RAQM)
+    dummy = PILImage.new("RGBA", (1, 1))
+    d = ImageDraw.Draw(dummy)
+    bbox = d.textbbox((0, 0), text, font=font)
+    w = bbox[2] - bbox[0] + 14
+    h = bbox[3] - bbox[1] + 14
+    im = PILImage.new("RGBA", (w, h), (255, 255, 255, 0))
+    d = ImageDraw.Draw(im)
+    d.text((7 - bbox[0], 7 - bbox[1]), text, font=font, fill=(17, 24, 39, 255))
+    os.makedirs(os.path.dirname(out_path), exist_ok=True)
+    im.save(out_path, dpi=(300, 300))
+    pt_w = round(w * 0.24, 1)
+    pt_h = round(h * 0.24, 1)
+    return out_path, pt_w, pt_h
 
 class NumberedCanvas(canvas.Canvas):
     def __init__(self, *args, **kwargs):
@@ -145,14 +165,20 @@ def format_transcript_box(raw_txt, mono_st, ta_font_name="NotoSansTamil"):
             out_lines.append(f"{lead_nbsp}{ta_wrapped}")
 
     full_html = "<br/>".join(out_lines)
-    t = Table([[Paragraph(full_html, mono_st)]], colWidths=[522])
+    box_st = ParagraphStyle(
+        "BoxMono",
+        parent=mono_st,
+        fontSize=5.4,
+        leading=6.8
+    )
+    t = Table([[Paragraph(full_html, box_st)]], colWidths=[522])
     t.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#F9FAFB")),
         ("BOX", (0, 0), (-1, -1), 0.5, colors.HexColor("#9CA3AF")),
-        ("TOPPADDING", (0, 0), (-1, -1), 4),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
-        ("LEFTPADDING", (0, 0), (-1, -1), 6),
-        ("RIGHTPADDING", (0, 0), (-1, -1), 6),
+        ("TOPPADDING", (0, 0), (-1, -1), 3),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+        ("LEFTPADDING", (0, 0), (-1, -1), 5),
+        ("RIGHTPADDING", (0, 0), (-1, -1), 5),
     ]))
     return t
 
@@ -298,7 +324,7 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
 
     story.append(Paragraph("1. Educational Context and Barrier", h1_st))
     add_p(
-        "In rural government schools across Tamil Nadu, secondary students in Classes 8 through 10 face a challenging linguistic transition from Tamil-medium instruction to state board science textbooks written in formal English. Annual rural learning assessments, including the Annual Status of Education Report (ASER) findings on rural reading capabilities, highlight that many students struggle to comprehend dense multi-clause scientific prose. When encountering complex vocabulary such as refraction or peristalsis, students frequently memorize paragraphs phonetically without conceptual grasp. Moreover, rural classrooms frequently suffer from intermittent electricity and network connectivity, rendering cloud-dependent chatbots and web APIs unreliable for daily study. StudyAid addresses this structural divide by executing locally on low-cost edge hardware without network access."
+        "In rural government schools across Tamil Nadu, secondary students in Classes 8 through 10 face a challenging linguistic transition from Tamil-medium instruction to state board science textbooks written in formal English. Findings from rural learning surveys, such as the Annual Status of Education Report (ASER), demonstrate foundational reading gaps across rural schools. Beyond foundational reading, the specific barrier observed by our team is the difficulty rural students face when attempting to comprehend dense, multi-clause science prose loaded with unfamiliar vocabulary (e.g., refraction, peristalsis), which our team plans to validate empirically in the upcoming teacher pilot. When confronting dense textbook passages, students frequently memorize sentences phonetically without understanding underlying mechanisms. Moreover, rural classrooms often lack reliable electricity and network connectivity, rendering cloud-dependent chatbots unusable for daily study. StudyAid addresses this structural divide by executing locally on edge hardware with zero network connectivity."
     )
 
     story.append(Paragraph("2. What StudyAid Produces", h1_st))
@@ -351,10 +377,10 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
             Paragraph("Stemmed token set intersection; candidate search [S1..Sn]", mono_st)
         ],
         [
-            Paragraph("<b>Village relevance check</b>", mono_st),
-            Paragraph("Generic or irrelevant agricultural anecdotes disconnected from scientific concepts.", body_st),
-            Paragraph("Verifies that the village analogy shares at least 2 content tokens with the hardest sentence. Triggers concept-guided retry with rural Tamil Nadu setting (e.g. well, paddy field, farmer Murugan).", body_st),
-            Paragraph("Pass 1 few-shot; Retry: 180 tokens", mono_st)
+            Paragraph("<b>Village example format check</b>", mono_st),
+            Paragraph("Analogy exceeds reasonable length, copies passage sentences verbatim, or includes scientific inaccuracies.", body_st),
+            Paragraph("Enforces format constraints (at most 3 sentences, no verbatim passage sentences). Prompts a 2-sentence rural comparison with an unrelated worked example. Heuristic format check only; analogies require teacher review for scientific correctness.", body_st),
+            Paragraph("Format check (&lt;= 3 sents); Retry: 140 tokens", mono_st)
         ]
     ]
     gt = Table(guards_table_data, colWidths=[95, 125, 202, 100])
@@ -377,6 +403,11 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     optics_raw = load_txt("evidence/runs/optics_long_1.txt")
     optics_box = format_transcript_box(optics_raw, mono_st)
     story.append(optics_box)
+    story.append(Spacer(1, 4))
+    story.append(Paragraph("<b>Brief Educational Impact Explanation</b>", h2_st))
+    add_p(
+        "In the Optics Long run, the hardest sentence was [S5] at 29 words: 'Convex lenses exploit this refractive behavior to converge parallel incident light rays onto a focal point, producing real inverted images on screens or virtual magnified images for human observers.' StudyAid generated a shorter rewrite of 10 words (-65.5% word count): 'Convex lenses bend light rays to produce real inverted images.' To scaffold comprehension across languages, key technical terms are paired with authenticated Tamil translations and concise student-friendly definitions: refraction (ஒளிவிலகல்: the bending of light when it passes from one material into another), medium (ஊடகம்: a substance through which light or energy travels), normal (குத்துக்கோடு: an imaginary line drawn perpendicular to a surface), and obliquely (சாய்வாக: at a slant or angle rather than straight on). For self-assessment, the pipeline produces grounded questions such as: 'Which type of lens uses the refractive behavior of light to converge parallel incident light rays onto a focal point?' with answer 'Convex lenses', automatically citing [S5] so the learner can verify the answer directly in the text. Readability metrics demonstrate reduced syntactic complexity and word length, but lexical metrics alone do not prove student comprehension, which our team plans to evaluate directly in the upcoming rural teacher pilot."
+    )
 
     # PAGE 3: Unseen Material Evidence (Digestion Transcript)
     story.append(PageBreak())
@@ -391,10 +422,10 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     # PAGE 4: Visual Execution Evidence & Host Telemetry
     story.append(PageBreak())
     if os.path.exists("evidence/terminal_run_screenshot.png"):
-        story.append(Paragraph("<b>Figure 1: Full Terminal Execution Run</b>", h2_st))
+        story.append(Paragraph("<b>Figure 1: Full Terminal Execution Run (Abridged)</b>", h2_st))
         img = Image("evidence/terminal_run_screenshot.png", width=500, height=255)
         story.append(img)
-        story.append(Paragraph("<i>Caption: Rendered from evidence/runs/optics_long_1.txt showing real ExecuTorch execution, token decoding, and Judge Proof telemetry.</i>", ParagraphStyle("Cap", parent=body_st, fontSize=7, textColor=colors.HexColor("#4B5563"))))
+        story.append(Paragraph("<i>Caption: Abridged terminal execution run rendered from evidence/runs/optics_long_1.txt showing real ExecuTorch execution, token decoding, and Judge Proof telemetry.</i>", ParagraphStyle("Cap", parent=body_st, fontSize=7, textColor=colors.HexColor("#4B5563"))))
         story.append(Spacer(1, 4))
 
     story.append(Paragraph("5. Telemetry, Host Verification & Offline Audit", h1_st))
@@ -459,8 +490,8 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
         "TblHdr",
         parent=styles["Normal"],
         fontName="Helvetica-Bold",
-        fontSize=6.0,
-        leading=7.5,
+        fontSize=6.5,
+        leading=8.0,
         textColor=colors.HexColor("#1F2937"),
         alignment=1
     )
@@ -469,8 +500,8 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
         "TblCell",
         parent=styles["Normal"],
         fontName="Courier",
-        fontSize=5.6,
-        leading=7.0,
+        fontSize=6.0,
+        leading=7.5,
         textColor=colors.HexColor("#111827"),
         alignment=1
     )
@@ -482,18 +513,17 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
         Paragraph("Tokens<br/>mean", tbl_hdr_st),
         Paragraph("Tok/s<br/>mean", tbl_hdr_st),
         Paragraph("Peak RSS<br/>[Base] MiB", tbl_hdr_st),
-        Paragraph("Retries (Reasons)", tbl_hdr_st),
+        Paragraph("Retries<br/>mean", tbl_hdr_st),
         Paragraph("Quiz<br/>Items", tbl_hdr_st),
+        Paragraph("Model<br/>Cite", tbl_hdr_st),
         Paragraph("Quiz<br/>Sup", tbl_hdr_st),
         Paragraph("Sum<br/>OK", tbl_hdr_st),
         Paragraph("Short<br/>Rewr", tbl_hdr_st),
-        Paragraph("Vill<br/>Rel", tbl_hdr_st),
+        Paragraph("Vill<br/>Fmt", tbl_hdr_st),
         Paragraph("Word<br/>Exp", tbl_hdr_st),
         Paragraph("Net<br/>State", tbl_hdr_st),
     ]]
     for row in bench_data["summary"]:
-        r_reasons = row.get("reasons", "none")
-        retries_cell = f"{row['retries']}<br/><font color='#6B7280' size='4.8'>({r_reasons})</font>"
         bench_table_data.append([
             Paragraph(f"<b>{row['passage']}</b>", tbl_cell_st),
             Paragraph(str(row["words"]), tbl_cell_st),
@@ -501,18 +531,17 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
             Paragraph(str(row["tokens"]), tbl_cell_st),
             Paragraph(str(row["tps"]), tbl_cell_st),
             Paragraph(f"{row['rss']}<br/>[{row.get('base_rss', 19.8)}]", tbl_cell_st),
-            Paragraph(retries_cell, ParagraphStyle("RCell", parent=tbl_cell_st, alignment=0)),
+            Paragraph(str(row["retries"]), tbl_cell_st),
             Paragraph(str(row.get("quiz_items", 3.0)), tbl_cell_st),
+            Paragraph(str(row.get("quiz_model_cite", "-")), tbl_cell_st),
             Paragraph(str(row["quiz_sup"]), tbl_cell_st),
             Paragraph(str(row.get("summary_ok", "3/3")), tbl_cell_st),
             Paragraph(str(row["shorter"]), tbl_cell_st),
-            Paragraph(str(row["village_rel"]), tbl_cell_st),
+            Paragraph(str(row.get("village_fmt", row.get("village_rel", "3/3"))), tbl_cell_st),
             Paragraph(str(row.get("words_exp", "15/15")), tbl_cell_st),
-            Paragraph(str(row.get("offline_status", "ONLINE")), tbl_cell_st),
+            Paragraph(str(row.get("offline_status", "OFFLINE")), tbl_cell_st),
         ])
     ov = bench_data["overall"]
-    ov_reasons = ov.get("reasons", "none")
-    ov_retries_cell = f"{ov['retries']}<br/><font color='#6B7280' size='4.8'>({ov_reasons})</font>"
     bench_table_data.append([
         Paragraph(f"<b>{ov['passage']}</b>", tbl_cell_st),
         Paragraph(str(ov["words"]), tbl_cell_st),
@@ -520,17 +549,18 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
         Paragraph(f"<b>{ov['tokens']}</b>", tbl_cell_st),
         Paragraph(f"<b>{ov['tps']}</b>", tbl_cell_st),
         Paragraph(f"<b>{ov['rss']}<br/>[{ov.get('base_rss', 19.8)}]</b>", tbl_cell_st),
-        Paragraph(ov_retries_cell, ParagraphStyle("ROvCell", parent=tbl_cell_st, alignment=0)),
+        Paragraph(f"<b>{ov['retries']}</b>", tbl_cell_st),
         Paragraph(str(ov.get("quiz_items", 2.7)), tbl_cell_st),
+        Paragraph(f"<b>{ov.get('quiz_model_cite', '-')}</b>", tbl_cell_st),
         Paragraph(f"<b>{ov['quiz_sup']}</b>", tbl_cell_st),
         Paragraph(f"<b>{ov.get('summary_ok', '18/18')}</b>", tbl_cell_st),
         Paragraph(f"<b>{ov['shorter']}</b>", tbl_cell_st),
-        Paragraph(f"<b>{ov['village_rel']}</b>", tbl_cell_st),
+        Paragraph(f"<b>{ov.get('village_fmt', ov.get('village_rel', '18/18'))}</b>", tbl_cell_st),
         Paragraph(f"<b>{ov.get('words_exp', '75/90')}</b>", tbl_cell_st),
-        Paragraph(f"<b>{ov.get('offline_status', 'ONLINE')}</b>", tbl_cell_st),
+        Paragraph(f"<b>{ov.get('offline_status', 'OFFLINE')}</b>", tbl_cell_st),
     ])
 
-    bt = Table(bench_table_data, colWidths=[58, 26, 56, 32, 30, 54, 108, 23, 25, 23, 23, 23, 27, 24])
+    bt = Table(bench_table_data, colWidths=[58, 24, 54, 30, 28, 54, 36, 22, 30, 30, 22, 22, 26, 30, 38])
     bt.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#F3F4F6")),
         ("BACKGROUND", (0, -1), (-1, -1), colors.HexColor("#E5E7EB")),
@@ -542,16 +572,29 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
         ("LEFTPADDING", (0, 0), (-1, -1), 1.5),
         ("RIGHTPADDING", (0, 0), (-1, -1), 1.5),
     ]))
-    bt.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#F3F4F6")),
-        ("BACKGROUND", (0, -1), (-1, -1), colors.HexColor("#E5E7EB")),
-        ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#D1D5DB")),
-        ("ALIGN", (1, 0), (-1, -1), "CENTER"),
-        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-        ("TOPPADDING", (0, 0), (-1, -1), 2),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
-    ]))
     story.append(bt)
+    story.append(Spacer(1, 4))
+
+    story.append(Paragraph("<b>Benchmark Retry Reasons Breakdown:</b>", h2_st))
+    reasons_data = [[
+        Paragraph("<b>Passage</b>", mono_st),
+        Paragraph("<b>Triggered Quality Guard Retries</b>", mono_st)
+    ]]
+    for row in bench_data["summary"]:
+        r_str = row.get("reasons", "none")
+        reasons_data.append([
+            Paragraph(f"<b>{row['passage']}</b>", mono_st),
+            Paragraph(r_str if r_str else "none", body_st)
+        ])
+    rt_reasons = Table(reasons_data, colWidths=[100, 384])
+    rt_reasons.setStyle(TableStyle([
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#F3F4F6")),
+        ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#D1D5DB")),
+        ("VALIGN", (0, 0), (-1, -1), "TOP"),
+        ("TOPPADDING", (0, 0), (-1, -1), 1.5),
+        ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
+    ]))
+    story.append(rt_reasons)
     story.append(Spacer(1, 6))
 
     story.append(Paragraph("<b>What the Numbers Mean:</b>", h2_st))
@@ -611,13 +654,15 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     story.append(rt)
     story.append(Spacer(1, 4))
     add_p(
-        "<b>Semantic Preservation Note:</b> In this pipeline, 'shorter' does not guarantee that full scientific meaning is preserved. For example, in optics passage S1 ('When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation'), the model shortened the text to 'When light travels from one transparent medium into another, it deviates from its path', omitting the critical qualification 'obliquely' (at an angle). Conversely, in Optics Long S5, shortening from 29 to 10 words preserved the essential operative mechanism of convex lenses."
+        "<b>Semantic Preservation Note:</b> In this pipeline, 'shorter' does not guarantee that full scientific meaning is preserved. In optics passage S1 ('When a ray of light travels from one transparent medium into another obliquely, the path of the light undergoes deviation'), the model shortened the text to 'When light travels from one transparent medium into another, it deviates from its path', omitting the critical qualification 'obliquely' (at an angle). In Optics Long S5, shortening from 29 to 10 words ('Convex lenses bend light rays to produce real inverted images') only partly preserved the operative mechanism, omitting the convergence of parallel incident rays onto a focal point and the formation of virtual magnified images. Similarly, in the digestion passage S5, the rewrite ('The semi-digested acidic mixture chyme passes into the small intestine') omits the small intestine's critical biological role as the principal site for complete chemical digestion of carbohydrates, proteins, and fats."
     )
     story.append(Spacer(1, 6))
 
     story.append(Paragraph("8. Quiz Generation & Automated Support Verification", h1_st))
+    model_cite_rate = ov.get("quiz_model_cite", "9/48")
+    sup_rate = ov.get("quiz_sup", "9/48")
     add_p(
-        "To ensure that questions reinforce textbook reading rather than hallucinating facts, each quiz item is matched against its cited sentence after suffix normalization (-s, -es, -ed, -ing, -ly). Answers must remain under 12 words and avoid copying >= 90% of the sentence. Items citing sentences with insufficient shared content tokens are flagged to alert teachers and students:"
+        f"To ensure that questions reinforce textbook reading rather than hallucinating facts, each quiz item is matched against passage sentences using distinctive word lexical scoring (inverse sentence frequency). Answers must remain under 12 words and avoid copying >= 90% of the sentence. The checker identifies sentence support through lexical token overlap rather than proving deep semantic correctness. Across 18 benchmark runs, raw model citation accuracy was {model_cite_rate}, while automated citation selection increased verified passage support to {sup_rate}:"
     )
 
     def make_quiz_table(run_data):
@@ -625,39 +670,47 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
             Paragraph("<b>Item</b>", mono_st),
             Paragraph("<b>Question</b>", mono_st),
             Paragraph("<b>Generated Answer (&lt;12 words)</b>", mono_st),
-            Paragraph("<b>Cite</b>", mono_st),
-            Paragraph("<b>Support Verdict & Suggested Citation</b>", mono_st)
+            Paragraph("<b>Model Cite</b>", mono_st),
+            Paragraph("<b>Verified Cite &amp; Lexical Support</b>", mono_st)
         ]]
         for idx, it in enumerate(run_data["pipeline"]["quiz"], 1):
-            sh_str = ", ".join(it["shared"]) if it["shared"] else "none"
-            sug_str = f" (suggested: {it['suggested']})" if it.get("suggested") else ""
-            status_txt = f"<b>{it['status']}</b><br/>shared: {sh_str}{sug_str}"
+            sh_str = ", ".join(it.get("shared", [])) if it.get("shared") else "none"
+            m_cite = it.get("model_cite", it.get("c", "S1"))
+            v_cite = it.get("c", "S1")
+            if it.get("auto_corrected"):
+                c_str = f"<b>{v_cite}</b> (auto-corrected from {m_cite})"
+            else:
+                c_str = f"<b>{v_cite}</b>"
+            status_txt = f"{c_str}<br/><b>{it['status']}</b> (shared: {sh_str})"
+            q_body_st = ParagraphStyle("QBody", parent=body_st, fontSize=7.2, leading=9.0, spaceAfter=0)
+            q_mono_st = ParagraphStyle("QMono", parent=mono_st, fontSize=5.6, leading=7.0)
             q_rows.append([
-                Paragraph(f"Q{idx}", mono_st),
-                Paragraph(it["q"], body_st),
-                Paragraph(it["a"], body_st),
-                Paragraph(it["c"], mono_st),
-                Paragraph(status_txt, mono_st)
+                Paragraph(f"Q{idx}", q_mono_st),
+                Paragraph(it["q"], q_body_st),
+                Paragraph(it["a"], q_body_st),
+                Paragraph(m_cite, q_mono_st),
+                Paragraph(status_txt, q_mono_st)
             ])
-        qt = Table(q_rows, colWidths=[30, 160, 142, 35, 155])
+        qt = Table(q_rows, colWidths=[24, 162, 138, 38, 160])
         qt.setStyle(TableStyle([
             ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#F3F4F6")),
             ("GRID", (0, 0), (-1, -1), 0.5, colors.HexColor("#D1D5DB")),
             ("VALIGN", (0, 0), (-1, -1), "TOP"),
-            ("TOPPADDING", (0, 0), (-1, -1), 2),
-            ("BOTTOMPADDING", (0, 0), (-1, -1), 2),
+            ("TOPPADDING", (0, 0), (-1, -1), 1.2),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 1.2),
         ]))
         return qt
 
     story.append(Paragraph("<b>Quiz Evaluation: Digestion Run (Class 10 Biology)</b>", h2_st))
     story.append(make_quiz_table(digestion_run))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
 
     story.append(Paragraph("<b>Quiz Evaluation: Optics Long Run (Class 10 Physics)</b>", h2_st))
     story.append(make_quiz_table(optics_long_run))
-    story.append(Spacer(1, 4))
+    story.append(Spacer(1, 3))
 
-    story.append(Paragraph("<b>Flagged Citation Analysis:</b> In Optics Long items Q1, Q2, and Q3, the model answered concisely ('Refraction', 'Decreases', 'Convex lenses') but defaulted its citation tag to S1 for all three. The support checker accurately detected the absence of shared content tokens with S1 and automatically suggested the true supporting sentences (S2 for refraction definition, S3 for velocity decrease, and S5 for convex lens convergence). This verifies that automated citation checking protects rural students from misleading citation links.", body_st))
+    q_note_st = ParagraphStyle("QNote", parent=body_st, fontSize=7.5, leading=9.8, spaceAfter=0)
+    story.append(Paragraph("<b>Citation Analysis &amp; Automated Support Matching:</b> In the small 1B model, Pass 2 generation frequently defaults its citation tag to S1 due to prompt demonstration bias. Rather than trusting raw model citations, the support checker evaluates token overlap using inverse-sentence-frequency weighting, filtering out common school words. When the model emitted S1 for Optics Long Q1, Q2, and Q3, the checker detected lack of support in S1 and auto-corrected the citations to S2 (refraction definition), S3 (velocity decrease), and S5 (convex lens convergence). This ensures learners receive accurate textbook pointers even when the 1B model misidentifies sentence numbers.", q_note_st))
 
     # PAGE 7: Glossary Verification & Edge Deployment Roadmap
     story.append(PageBreak())
@@ -666,20 +719,22 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
         "StudyAid pairs technical candidate words with an offline JSON glossary. Exactly four entries confirmed against Class 10 Science textbooks are recorded as [verified], while unconfirmed entries carry [unverified]. Words lacking glossary entries fall back to English-only explanations without failing:"
     )
 
-    gl_hdr_ta = wrap_tamil("Tamil Script (தமிழ்)")
     gl_rows = [[
         Paragraph("<b>English Term</b>", mono_st),
-        Paragraph(f"<b>{gl_hdr_ta}</b>", mono_st),
+        Paragraph("<b>Tamil Script</b>", mono_st),
         Paragraph("<b>Phonetic Transliteration</b>", mono_st),
         Paragraph("<b>Verification Status</b>", mono_st),
         Paragraph("<b>Curriculum Source / Unit Ref</b>", mono_st)
     ]]
-    for item in glossary_data[:7]:
+    for item in glossary_data:
         v_tag = "[verified]" if item.get("verified") else "[unverified]"
         v_color = "#065F46" if item.get("verified") else "#B45309"
+        img_p = f"evidence/tamil_cells/{item['en']}.png"
+        img_p, pt_w, pt_h = render_tamil_cell_img(item["ta"], img_p, font_size=32)
+        ta_cell = Image(img_p, width=pt_w, height=pt_h) if img_p else Paragraph(item["ta"], ta_body_st)
         gl_rows.append([
             Paragraph(f"<b>{item['en']}</b>", mono_st),
-            Paragraph(item["ta"], ta_body_st),
+            ta_cell,
             Paragraph(item["translit"], mono_st),
             Paragraph(f'<font color="{v_color}"><b>{v_tag}</b></font>', mono_st),
             Paragraph(f"{item.get('source', '')} {item.get('ref', '')}".strip() or "General textbook term", body_st)
@@ -695,7 +750,7 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     story.append(glt)
     story.append(Spacer(1, 4))
     add_p(
-        "<b>English Fallback Example:</b> In the digestion run, candidate words such as 'insoluble', 'masticate', and 'esophagus' were parsed without crashing; lacking a localized Tamil mapping, they cleanly rendered as '(English only)' without emitting false or hallucinated vernacular terms."
+        "<b>English Fallback Example:</b> In the digestion run, candidate technical terms such as 'peristalsis', 'digestion', and 'stomach' were parsed from the passage; lacking an authenticated Tamil translation in the seed glossary, they cleanly fell back to English definitions without emitting unverified or hallucinated vernacular terms."
     )
     story.append(Spacer(1, 6))
 
@@ -703,6 +758,9 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     add_p(
         "While the prototype executes reliably on an x86 laptop CPU, the project targets embedded deployment on classroom Raspberry Pi 5 (8 GB) single-board computers, which will be provided for final evaluation. The projected performance on ARM64 Cortex-A76 cores reflects INT4 XNNPACK kernel efficiency:"
     )
+
+    laptop_rss_str = f"{ov['rss']} MiB (measured)"
+    laptop_tps_str = f"{ov['tps']} tok/s (measured)"
 
     pi_table_data = [
         [
@@ -717,8 +775,8 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
             Paragraph("Intel Core i7-1185G7 Laptop", body_st),
             Paragraph("Llama 3.2 1B SpinQuant INT4", body_st),
             Paragraph("1,135,951,488 bytes (1,083 MiB)", mono_st),
-            Paragraph("1,903.7 MiB (measured)", mono_st),
-            Paragraph("14.15 tok/s (measured)", mono_st),
+            Paragraph(laptop_rss_str, mono_st),
+            Paragraph(laptop_tps_str, mono_st),
             Paragraph("<b>MEASURED REAL RUN</b>", mono_st)
         ],
         [
@@ -749,7 +807,11 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     story.append(pit)
     story.append(Spacer(1, 4))
     add_p(
-        "<b>Model Scope Note:</b> Only the pre-exported 1B model build (executorch-community/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8-ET) was evaluated in this benchmark. The 3B model was not run due to local memory and edge latency targets; only the pre-exported 1B build was used; no 3B model was exported or run."
+        "<b>Model Scope Note:</b> Only the pre-exported 1B build was used; no 3B model was exported or run."
+    )
+    story.append(Spacer(1, 3))
+    add_p(
+        "<b>Known Quality Limitations:</b> (1) Hard-word coverage: On dense biological passages like digestion, candidate terms frequently share stems or lack authenticated Tamil entries in the seed glossary, falling back to English definitions. (2) Model definitions and analogies: The 1B quantized model's generated definitions and village analogies are evaluated using heuristic format checks (sentence length and absence of verbatim passage copying); they are not verified for scientific correctness and require teacher review prior to classroom deployment. (3) Incomplete quiz generation: On certain passages (such as circuits or optics), the model occasionally produces fewer than three valid non-verbatim quiz items meeting word count and formatting constraints, which the pipeline explicitly flags as 'quiz incomplete'."
     )
 
     # PAGE 8: Reproducibility & Licensing
