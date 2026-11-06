@@ -73,8 +73,8 @@ def parse_quiz(txt):
     pat = r'Q:\s*(.*?)\s*\nA:\s*(.*?)(?:\s*\nC:\s*(.*?))?(?=\nQ:|\Z)'
     matches = re.findall(pat, txt.strip() + '\n', re.DOTALL | re.IGNORECASE)
     for q, a, c in matches:
-        cid_match = re.search(r'S\d+', c or a, re.IGNORECASE)
-        cid = cid_match.group(0).upper() if cid_match else "S1"
+        cid_match = re.search(r'S\d+', c or "", re.IGNORECASE)
+        cid = cid_match.group(0).upper() if cid_match else ""
         clean_a = re.sub(r'\(?\s*S\d+\s*\)?', '', a).strip()
         items.append({
             "q": q.strip(),

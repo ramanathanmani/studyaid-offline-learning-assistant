@@ -71,8 +71,13 @@ def build_report(pipe_res, telem_res):
         for idx, q in enumerate(quiz, 1):
             buf.append(f"[Q{idx}] {q['q']}")
             buf.append(f"     Answer: {q['a']}")
-            buf.append(f"     Citation: {q['c']}")
-            sh_str = ", ".join(q["shared"]) if q["shared"] else "none"
+            model_c = q.get("model_cite")
+            c_val = q.get("c")
+            if q.get("auto_corrected") and c_val and model_c:
+                buf.append(f"     Citation: {c_val} (auto-corrected from {model_c})")
+            else:
+                buf.append(f"     Citation: {c_val or model_c}")
+            sh_str = ", ".join(q.get("shared", [])) if q.get("shared") else "none"
             if q["status"] == "SUPPORTED (exact term)":
                 buf.append(f"     Support: SUPPORTED (exact term)")
             elif q["status"].upper() == "SUPPORTED":

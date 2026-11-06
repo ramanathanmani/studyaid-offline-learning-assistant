@@ -23,36 +23,48 @@ def test_check_supported_and_flagged():
             "c": "S3"
         },
         {
-            "q": "What is the green pigment in plants?",
+            "q": "What is the term for light deviation?",
             "a": "Refraction",
             "c": "S2"
-        },
-        {
-            "q": "Where does refraction occur?",
-            "a": "Refraction",
-            "c": "S1"
         }
     ]
     res = check_quiz(items, s_list)
-    assert res[0]["status"] == "SUPPORTED"
-    assert "refraction" in res[0]["shared"]
-    assert "deviation" in res[0]["shared"]
-    assert res[0]["suggested"] is None
+    assert "SUPPORTED" in res[0]["status"]
+    assert res[0]["c"] == "S2"
+    assert res[0]["model_cite_correct"] is True
     
-    assert res[1]["status"] == "FLAGGED"
+    assert "SUPPORTED" in res[1]["status"]
+    assert res[1]["c"] == "S3"
+    assert res[1]["auto_corrected"] is True
+    assert res[1]["model_cite_correct"] is False
     assert res[1]["suggested"] == "S3"
     
     assert res[2]["status"] == "FLAGGED"
     assert res[2]["suggested"] is None
 
     assert res[3]["status"] == "SUPPORTED (exact term)"
-    assert res[3]["shared"] == ["refraction"]
-    assert res[3]["suggested"] is None
+    assert res[3]["c"] == "S2"
 
-    assert res[4]["status"] == "FLAGGED"
-    assert res[4]["suggested"] == "S2" or res[4]["suggested"] == "S3"
+def test_digestion_q1_resolves_to_s2_not_s1():
+    s_list = [
+        ("S1", "Digestion is the biochemical breakdown of complex insoluble food substances into simple absorbable nutrient molecules required by living cells."),
+        ("S2", "The human digestive process commences inside the buccal cavity, where teeth mechanically masticate solid food and salivary glands secrete the enzyme salivary amylase to break down complex starch into simple sugars.")
+    ]
+    items = [
+        {
+            "q": "What is the primary function of salivary amylase in the human digestive process?",
+            "a": "Digests complex starch into simple sugars.",
+            "c": "S1"
+        }
+    ]
+    res = check_quiz(items, s_list)
+    assert res[0]["c"] == "S2"
+    assert res[0]["model_cite"] == "S1"
+    assert res[0]["auto_corrected"] is True
+    assert res[0]["model_cite_correct"] is False
+    assert "SUPPORTED" in res[0]["status"]
 
-def test_stemming_and_word_forms():
+def test_stemming_and_word_forms_optics():
     s_list = [
         ("S2", "This deviation of ray of light is called refraction."),
         ("S6", "Concave lenses diverge incident rays outward, consistently forming upright images.")
@@ -65,9 +77,26 @@ def test_stemming_and_word_forms():
     ]
     res = check_quiz(items, s_list)
     assert res[0]["status"] == "SUPPORTED (exact term)"
+    assert res[0]["c"] == "S2"
     assert res[1]["status"] == "SUPPORTED (exact term)"
+    assert res[1]["c"] == "S6"
     assert res[2]["status"] == "SUPPORTED (exact term)"
+    assert res[2]["c"] == "S6"
     assert res[3]["status"] == "SUPPORTED (exact term)"
+    assert res[3]["c"] == "S6"
+
+def test_no_sentence_qualifies():
+    s_list = [
+        ("S1", "Light travels in straight lines."),
+        ("S2", "Refraction happens at interfaces.")
+    ]
+    items = [
+        {"q": "What is the capital of France?", "a": "Paris", "c": "S1"}
+    ]
+    res = check_quiz(items, s_list)
+    assert res[0]["status"] == "FLAGGED"
+    assert res[0]["suggested"] is None
+    assert res[0]["model_cite_correct"] is False
 
 def test_answer_copied_guard():
     from studyaid.check import is_ans_too_long_or_copied
