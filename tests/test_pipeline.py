@@ -25,7 +25,7 @@ def test_pipeline_with_mock():
     assert res["readab"] is not None
     assert res["readab"]["orig"]["w_cnt"] == 20
     assert res["guards"]["rewrite_shorter"] is True
-    assert res["guards"]["village_relevant"] is True
+    assert res["guards"]["village_format_ok"] is True
     assert res["guards"]["quiz_supported_cnt"] >= 2
     assert res["guards"]["words_explained_cnt"] <= 5
 
