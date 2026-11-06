@@ -2,10 +2,10 @@
   "passage": "photosynthesis",
   "run": 3,
   "words": 160,
-  "load_time_sec": 1.119,
-  "baseline_rss_mib": 19.71,
-  "peak_rss_mib": 1903.62,
-  "p1_sec": 14.768,
+  "load_time_sec": 1.42,
+  "baseline_rss_mib": 19.77,
+  "peak_rss_mib": 1903.67,
+  "p1_sec": 15.081,
   "p1_tokens": 203,
   "p1_retries": 2,
   "p1_retried": true,
@@ -15,22 +15,22 @@
       "pass": 1,
       "attempt": 1,
       "tokens": 77,
-      "sec": 8.487
+      "sec": 8.79
     },
     {
       "attempt": 2,
       "guard": "village_guard",
       "tokens": 72,
-      "sec": 3.623
+      "sec": 3.544
     },
     {
       "attempt": 3,
       "guard": "missing_words",
       "tokens": 54,
-      "sec": 2.658
+      "sec": 2.746
     }
   ],
-  "p2_sec": 7.194,
+  "p2_sec": 6.091,
   "p2_tokens": 85,
   "p2_retries": 0,
   "p2_retried": false,
@@ -41,12 +41,12 @@
       "attempt": 1,
       "valid_cnt": 3,
       "tokens": 85,
-      "sec": 7.194
+      "sec": 6.09
     }
   ],
-  "inf_time_sec": 21.963,
+  "inf_time_sec": 21.172,
   "tokens": 288,
-  "tok_per_sec": 13.11,
+  "tok_per_sec": 13.6,
   "retries": 2,
   "retry_reasons": "village_guard; missing_section: words",
   "quiz_count": 3,
@@ -70,7 +70,7 @@
     "p2_retried": false,
     "p2_retry_reason": "none"
   },
-  "offline_status": "ONLINE",
+  "offline_status": "OFFLINE",
   "telemetry": {
     "net": {
       "method": "linux_ip_cmd",
@@ -85,11 +85,11 @@
         },
         {
           "name": "wlp0s20f3",
-          "state": "UP"
+          "state": "DOWN"
         }
       ],
-      "has_def_route": true,
-      "is_offline": false
+      "has_def_route": false,
+      "is_offline": true
     },
     "host": {
       "host_label": "HOST: laptop (not Raspberry Pi)",
@@ -104,11 +104,11 @@
     "pte_size_bytes": 1135951488,
     "pte_size_mib": 1083.33,
     "pte_size_mb": 1083.33,
-    "peak_rss_mib": 1903.62,
-    "peak_rss_mb": 1903.62,
-    "inf_time_sec": 21.963,
+    "peak_rss_mib": 1903.67,
+    "peak_rss_mb": 1903.67,
+    "inf_time_sec": 21.172,
     "tok_cnt": 288,
-    "tok_per_sec": 13.11,
+    "tok_per_sec": 13.6,
     "is_mock": false
   },
   "pipeline": {
@@ -285,25 +285,25 @@
     "tok_cnt": 288,
     "p1_info": {
       "tokens": 203,
-      "seconds": 14.768,
+      "seconds": 15.081,
       "attempts": [
         {
           "pass": 1,
           "attempt": 1,
           "tokens": 77,
-          "sec": 8.487
+          "sec": 8.79
         },
         {
           "attempt": 2,
           "guard": "village_guard",
           "tokens": 72,
-          "sec": 3.623
+          "sec": 3.544
         },
         {
           "attempt": 3,
           "guard": "missing_words",
           "tokens": 54,
-          "sec": 2.658
+          "sec": 2.746
         }
       ],
       "retries": 2,
@@ -313,14 +313,14 @@
     },
     "p2_info": {
       "tokens": 85,
-      "seconds": 7.194,
+      "seconds": 6.091,
       "attempts": [
         {
           "pass": 2,
           "attempt": 1,
           "valid_cnt": 3,
           "tokens": 85,
-          "sec": 7.194
+          "sec": 6.09
         }
       ],
       "retries": 0,

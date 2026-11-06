@@ -2,10 +2,10 @@
   "passage": "optics",
   "run": 1,
   "words": 84,
-  "load_time_sec": 0.933,
-  "baseline_rss_mib": 19.76,
-  "peak_rss_mib": 1903.68,
-  "p1_sec": 21.069,
+  "load_time_sec": 1.563,
+  "baseline_rss_mib": 19.65,
+  "peak_rss_mib": 1903.53,
+  "p1_sec": 23.096,
   "p1_tokens": 380,
   "p1_retries": 4,
   "p1_retried": true,
@@ -15,34 +15,34 @@
       "pass": 1,
       "attempt": 1,
       "tokens": 105,
-      "sec": 7.992
+      "sec": 9.574
     },
     {
       "attempt": 2,
       "guard": "short_rewrite_guard",
       "tokens": 18,
-      "sec": 1.036
+      "sec": 1.079
     },
     {
       "attempt": 3,
       "guard": "missing_summary",
       "tokens": 99,
-      "sec": 4.853
+      "sec": 5.149
     },
     {
       "attempt": 4,
       "guard": "village_guard",
       "tokens": 105,
-      "sec": 4.769
+      "sec": 4.859
     },
     {
       "attempt": 5,
       "guard": "missing_words",
       "tokens": 53,
-      "sec": 2.418
+      "sec": 2.435
     }
   ],
-  "p2_sec": 13.957,
+  "p2_sec": 14.062,
   "p2_tokens": 244,
   "p2_retries": 1,
   "p2_retried": true,
@@ -53,18 +53,18 @@
       "attempt": 1,
       "valid_cnt": 2,
       "tokens": 131,
-      "sec": 7.329
+      "sec": 7.246
     },
     {
       "attempt": 2,
       "guard": "quiz_guard",
       "tokens": 113,
-      "sec": 6.627
+      "sec": 6.815
     }
   ],
-  "inf_time_sec": 35.026,
+  "inf_time_sec": 37.159,
   "tokens": 624,
-  "tok_per_sec": 17.82,
+  "tok_per_sec": 16.79,
   "retries": 5,
   "retry_reasons": "short_rewrite_guard; missing_section: summary; village_guard; missing_section: words; quiz_guard: only 2/3 valid",
   "quiz_count": 2,
@@ -88,7 +88,7 @@
     "p2_retried": true,
     "p2_retry_reason": "quiz_guard: only 2/3 valid"
   },
-  "offline_status": "ONLINE",
+  "offline_status": "OFFLINE",
   "telemetry": {
     "net": {
       "method": "linux_ip_cmd",
@@ -103,11 +103,11 @@
         },
         {
           "name": "wlp0s20f3",
-          "state": "UP"
+          "state": "DOWN"
         }
       ],
-      "has_def_route": true,
-      "is_offline": false
+      "has_def_route": false,
+      "is_offline": true
     },
     "host": {
       "host_label": "HOST: laptop (not Raspberry Pi)",
@@ -122,11 +122,11 @@
     "pte_size_bytes": 1135951488,
     "pte_size_mib": 1083.33,
     "pte_size_mb": 1083.33,
-    "peak_rss_mib": 1903.68,
-    "peak_rss_mb": 1903.68,
-    "inf_time_sec": 35.026,
+    "peak_rss_mib": 1903.53,
+    "peak_rss_mb": 1903.53,
+    "inf_time_sec": 37.159,
     "tok_cnt": 624,
-    "tok_per_sec": 17.82,
+    "tok_per_sec": 16.79,
     "is_mock": false
   },
   "pipeline": {
@@ -310,37 +310,37 @@
     "tok_cnt": 624,
     "p1_info": {
       "tokens": 380,
-      "seconds": 21.069,
+      "seconds": 23.096,
       "attempts": [
         {
           "pass": 1,
           "attempt": 1,
           "tokens": 105,
-          "sec": 7.992
+          "sec": 9.574
         },
         {
           "attempt": 2,
           "guard": "short_rewrite_guard",
           "tokens": 18,
-          "sec": 1.036
+          "sec": 1.079
         },
         {
           "attempt": 3,
           "guard": "missing_summary",
           "tokens": 99,
-          "sec": 4.853
+          "sec": 5.149
         },
         {
           "attempt": 4,
           "guard": "village_guard",
           "tokens": 105,
-          "sec": 4.769
+          "sec": 4.859
         },
         {
           "attempt": 5,
           "guard": "missing_words",
           "tokens": 53,
-          "sec": 2.418
+          "sec": 2.435
         }
       ],
       "retries": 4,
@@ -350,20 +350,20 @@
     },
     "p2_info": {
       "tokens": 244,
-      "seconds": 13.957,
+      "seconds": 14.062,
       "attempts": [
         {
           "pass": 2,
           "attempt": 1,
           "valid_cnt": 2,
           "tokens": 131,
-          "sec": 7.329
+          "sec": 7.246
         },
         {
           "attempt": 2,
           "guard": "quiz_guard",
           "tokens": 113,
-          "sec": 6.627
+          "sec": 6.815
         }
       ],
       "retries": 1,

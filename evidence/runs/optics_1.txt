@@ -45,13 +45,13 @@ OS: Linux 7.0.0-38-generic
 CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
 Cores: 8
 Total RAM: 14.3 GB
-Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP
-Default route active: YES
-Offline status: ONLINE
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=DOWN
+Default route active: NO
+Offline status: OFFLINE
 Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
 PTE size: 1083.33 MiB (1135951488 bytes)
-Peak RSS: 1903.68 MiB
-Inference time: 35.026 s
+Peak RSS: 1903.53 MiB
+Inference time: 37.159 s
 Tokens generated: 624
-Tokens/sec: 17.82
+Tokens/sec: 16.79
 Execution mode: [REAL EXECUTORCH RUN]
