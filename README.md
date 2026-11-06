@@ -21,6 +21,12 @@ StudyAid is a fully offline, zero-network Python CLI tool built for inclusive ed
 6. Three passage-grounded quiz questions with automated citation support checking.
 7. A "JUDGE PROOF" telemetry block with verified offline hardware and execution metrics.
 
+## Offline Terminal Execution
+
+![Offline Terminal Run Screenshot](evidence/terminal_run_screenshot.png)
+
+*Figure: Verifiable end-to-end execution of StudyAid under verified offline conditions (`wlp0s20f3=DOWN`, `default route=NO`) on an adapted 152-word Class 10 Physics passage (`samples/optics_long.txt`) using the pre-exported 4-bit ExecuTorch Llama-3.2-1B-Instruct model.*
+
 ## 2. Setup
 Requires Python 3.10+ (Standard library first).
 
@@ -109,6 +115,14 @@ studyaid/
   scripts/
     export_model.sh
     demo.sh
+    make_screenshot.py
+    build_report.py
+  evidence/
+    StudyAid_Evidence_Report.pdf
+    terminal_run_screenshot.png
+    benchmark.json
+    benchmark.md
+    runs/
   studyaid/
     __init__.py
     __main__.py
@@ -181,3 +195,12 @@ studyaid/
   - *Pass 2 (Grounded Quiz Generation):* 98 tokens generated in 5.17 s (18.95 tokens/sec decode, 210.74 tokens/sec prefill)
 - **Peak Process RSS:** 1,909.30 MB
 - **Run Artifacts:** Saved in `outputs/run_20261105_150929.txt` and `outputs/run_20261105_150929.json`
+
+### Real Offline Run Evidence (152-Word Adapted Class 10 Passage)
+- **Passage:** 7 sentences on Refraction of Light (`samples/optics_long.txt`, 152 words)
+- **Offline Telemetry:** Wi-Fi radio disabled (`wlp0s20f3=DOWN`), default route `NO`, status `OFFLINE`
+- **Execution Mode:** `[REAL EXECUTORCH RUN]`
+- **Inference Time:** 32.27 s (337 tokens, 10.44 tok/s)
+- **Peak RSS:** 1,903.60 MiB (weights: 1,083.33 MiB)
+- **Terminal Capture:** [`evidence/terminal_run_screenshot.png`](evidence/terminal_run_screenshot.png) / [`terminal_run_screenshot.png`](terminal_run_screenshot.png)
+- **Evidence Report:** Comprehensive evaluation report in [`evidence/StudyAid_Evidence_Report.pdf`](evidence/StudyAid_Evidence_Report.pdf)

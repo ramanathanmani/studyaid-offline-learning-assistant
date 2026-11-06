@@ -13,6 +13,7 @@ tokenizer*
 .env
 outputs/*
 !outputs/.gitkeep
+!outputs/terminal_run_screenshot.png
 .pytest_cache/
 *.egg-info/
 .DS_Store

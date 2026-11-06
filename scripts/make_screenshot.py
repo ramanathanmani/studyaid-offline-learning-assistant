@@ -124,5 +124,13 @@ def render_terminal(txt_path="evidence/runs/optics_long_1.txt", out_png="evidenc
     img.save(out_png)
     print(f"Generated screenshot: {out_png} ({os.path.getsize(out_png)} bytes, {w}x{h})")
 
+    # Also keep root and outputs copies in sync
+    for extra_path in ["terminal_run_screenshot.png", "outputs/terminal_run_screenshot.png"]:
+        try:
+            img.save(extra_path)
+            print(f"Synced copy to: {extra_path}")
+        except Exception as e:
+            pass
+
 if __name__ == "__main__":
     render_terminal()
