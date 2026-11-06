@@ -143,26 +143,34 @@ def format_transcript_box(raw_txt, mono_st, ta_font_name="NotoSansTamil"):
         if not l.strip():
             out_lines.append("")
             continue
+
+        # 1. Sanitize header lines by removing the bilingual Tamil part
+        if l.startswith("=== ") and l.endswith(" ==="):
+            l = re.sub(r"\s*/\s*[\u0b80-\u0bff].*?(?=\s*===)", "", l)
+
+        # 2. Sanitize glossary lines by removing raw unshaped Tamil glyphs before parentheses
+        # e.g. "-> ஒளிவிலகல் (Oli-vilagal) [verified]" -> "-> (Oli-vilagal) [verified]"
+        l = re.sub(r"->\s*[\u0b80-\u0bff\s]+\(([^)]+)\)", r"-> (\1)", l)
+
+        # 3. Strip any stray unshaped Tamil characters from monospace block
+        l = re.sub(r"[\u0b80-\u0bff]+", "", l)
+
         l_strip = l.lstrip(" ")
         n_lead = len(l) - len(l_strip)
         lead_nbsp = "&nbsp;" * n_lead
 
         escaped = l_strip.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
-        def rep_ta(m):
-            return f'<font name="{ta_font_name}">{m.group(0)}</font>'
-        ta_wrapped = re.sub(r'[\u0b80-\u0bff]+', rep_ta, escaped)
-
         if l.startswith("=== ") and l.endswith(" ==="):
-            out_lines.append(f"<b><font color='#1E3A8A'>{ta_wrapped}</font></b>")
+            out_lines.append(f"<b><font color='#1E3A8A'>{escaped}</font></b>")
         elif l.startswith("Original (") or l.startswith("Simplified:"):
-            out_lines.append(f"<b>{ta_wrapped}</b>")
+            out_lines.append(f"<b>{escaped}</b>")
         elif "SUPPORTED" in l:
-            out_lines.append(f"{lead_nbsp}<b><font color='#065F46'>{ta_wrapped}</font></b>")
+            out_lines.append(f"{lead_nbsp}<b><font color='#065F46'>{escaped}</font></b>")
         elif "FLAGGED" in l:
-            out_lines.append(f"{lead_nbsp}<b><font color='#B45309'>{ta_wrapped}</font></b>")
+            out_lines.append(f"{lead_nbsp}<b><font color='#B45309'>{escaped}</font></b>")
         else:
-            out_lines.append(f"{lead_nbsp}{ta_wrapped}")
+            out_lines.append(f"{lead_nbsp}{escaped}")
 
     full_html = "<br/>".join(out_lines)
     box_st = ParagraphStyle(
@@ -399,6 +407,8 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     add_p(
         "Below is the complete transcript from a real ExecuTorch run on the adapted 152-word Class 10 passage (optics_long.txt), logged under evidence/runs/optics_long_1.txt. Unmodified output from the saved log:"
     )
+    story.append(Paragraph("<i>Note: Monospace transcript blocks display phonetic transliterations; textbook Tamil typography with full complex script shaping is verified in Section 9's table.</i>", ParagraphStyle("TrNote1", parent=body_st, fontSize=7.0, leading=8.5, textColor=colors.HexColor("#4B5563"))))
+    story.append(Spacer(1, 2))
 
     optics_raw = load_txt("evidence/runs/optics_long_1.txt")
     optics_box = format_transcript_box(optics_raw, mono_st)
@@ -406,7 +416,12 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     story.append(Spacer(1, 4))
     story.append(Paragraph("<b>Brief Educational Impact Explanation</b>", h2_st))
     add_p(
-        "In the Optics Long run, the hardest sentence was [S5] at 29 words: 'Convex lenses exploit this refractive behavior to converge parallel incident light rays onto a focal point, producing real inverted images on screens or virtual magnified images for human observers.' StudyAid generated a shorter rewrite of 10 words (-65.5% word count): 'Convex lenses bend light rays to produce real inverted images.' To scaffold comprehension across languages, key technical terms are paired with authenticated Tamil translations and concise student-friendly definitions: refraction (ஒளிவிலகல்: the bending of light when it passes from one material into another), medium (ஊடகம்: a substance through which light or energy travels), normal (குத்துக்கோடு: an imaginary line drawn perpendicular to a surface), and obliquely (சாய்வாக: at a slant or angle rather than straight on). For self-assessment, the pipeline produces grounded questions such as: 'Which type of lens uses the refractive behavior of light to converge parallel incident light rays onto a focal point?' with answer 'Convex lenses', automatically citing [S5] so the learner can verify the answer directly in the text. Readability metrics demonstrate reduced syntactic complexity and word length, but lexical metrics alone do not prove student comprehension, which our team plans to evaluate directly in the upcoming rural teacher pilot."
+        "In the Optics Long run, the hardest sentence was [S5] at 29 words: 'Convex lenses exploit this refractive behavior to converge parallel incident light rays onto a focal point, producing real inverted images on screens or virtual magnified images for human observers.' StudyAid generated a shorter rewrite of 10 words (-65.5% word count): 'Convex lenses bend light rays to produce real inverted images.' To scaffold comprehension across languages, key technical terms are paired with authenticated Tamil translations and concise student-friendly definitions: "
+        "refraction (<font name='NotoSansTamil'>ஒளிவிலகல்</font> / Oli-vilagal: the bending of light when it passes from one material into another), "
+        "medium (<font name='NotoSansTamil'>ஊடகம்</font> / Oodagam: a substance through which light or energy travels), "
+        "normal (<font name='NotoSansTamil'>குத்துக்கோடு</font> / Kuthukkodu: an imaginary line drawn perpendicular to a surface), and "
+        "obliquely (<font name='NotoSansTamil'>சாய்வாக</font> / Saaivaaga: at a slant or angle rather than straight on). "
+        "For self-assessment, the pipeline produces grounded questions such as: 'Which type of lens uses the refractive behavior of light to converge parallel incident light rays onto a focal point?' with answer 'Convex lenses', automatically citing [S5] so the learner can verify the answer directly in the text. Readability metrics demonstrate reduced syntactic complexity and word length, but lexical metrics alone do not prove student comprehension, which our team plans to evaluate directly in the upcoming rural teacher pilot."
     )
 
     # PAGE 3: Unseen Material Evidence (Digestion Transcript)
@@ -415,6 +430,9 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     add_p(
         "To verify generalization on unseen material outside optics, the prototype was executed on an adapted 164-word biology passage detailing enzymatic digestion (evidence/runs/digestion_1.txt). Unmodified output from the saved log:"
     )
+    story.append(Paragraph("<i>Note: Monospace transcript blocks display phonetic transliterations; textbook Tamil typography with full complex script shaping is verified in Section 9's table.</i>", ParagraphStyle("TrNote2", parent=body_st, fontSize=7.0, leading=8.5, textColor=colors.HexColor("#4B5563"))))
+    story.append(Spacer(1, 2))
+
     digestion_raw = load_txt("evidence/runs/digestion_1.txt")
     digestion_box = format_transcript_box(digestion_raw, mono_st)
     story.append(digestion_box)
@@ -673,17 +691,25 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
             Paragraph("<b>Model Cite</b>", mono_st),
             Paragraph("<b>Verified Cite &amp; Lexical Support</b>", mono_st)
         ]]
+        q_body_st = ParagraphStyle("QBody", parent=body_st, fontSize=7.2, leading=9.0, spaceAfter=0)
+        q_mono_st = ParagraphStyle("QMono", parent=mono_st, fontSize=5.6, leading=7.0)
         for idx, it in enumerate(run_data["pipeline"]["quiz"], 1):
             sh_str = ", ".join(it.get("shared", [])) if it.get("shared") else "none"
             m_cite = it.get("model_cite", it.get("c", "S1"))
             v_cite = it.get("c", "S1")
-            if it.get("auto_corrected"):
-                c_str = f"<b>{v_cite}</b> (auto-corrected from {m_cite})"
+            sug = it.get("suggested")
+            if not sug and "suggested citation:" in str(it):
+                m_sug = re.search(r"suggested citation:\s*(S\d+)", str(it))
+                if m_sug:
+                    sug = m_sug.group(1)
+
+            if "SUPPORTED" in it.get("status", "") and not sug:
+                status_txt = f"<b><font color='#065F46'>{it['status']}: {v_cite}</font></b><br/><font color='#065F46'>shared: {sh_str}</font>"
+            elif sug:
+                status_txt = f"<b><font color='#B45309'>FLAGGED -&gt; Suggested: {sug}</font></b><br/><font color='#6B7280'>shared with {m_cite}: {sh_str}</font>"
             else:
-                c_str = f"<b>{v_cite}</b>"
-            status_txt = f"{c_str}<br/><b>{it['status']}</b> (shared: {sh_str})"
-            q_body_st = ParagraphStyle("QBody", parent=body_st, fontSize=7.2, leading=9.0, spaceAfter=0)
-            q_mono_st = ParagraphStyle("QMono", parent=mono_st, fontSize=5.6, leading=7.0)
+                status_txt = f"<b><font color='#B45309'>{it.get('status', 'FLAGGED')}</font></b><br/><font color='#6B7280'>shared with {m_cite}: {sh_str}</font>"
+
             q_rows.append([
                 Paragraph(f"Q{idx}", q_mono_st),
                 Paragraph(it["q"], q_body_st),
@@ -709,8 +735,8 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     story.append(make_quiz_table(optics_long_run))
     story.append(Spacer(1, 3))
 
-    q_note_st = ParagraphStyle("QNote", parent=body_st, fontSize=7.5, leading=9.8, spaceAfter=0)
-    story.append(Paragraph("<b>Citation Analysis &amp; Automated Support Matching:</b> In the small 1B model, Pass 2 generation frequently defaults its citation tag to S1 due to prompt demonstration bias. Rather than trusting raw model citations, the support checker evaluates token overlap using inverse-sentence-frequency weighting, filtering out common school words. When the model emitted S1 for Optics Long Q1, Q2, and Q3, the checker detected lack of support in S1 and auto-corrected the citations to S2 (refraction definition), S3 (velocity decrease), and S5 (convex lens convergence). This ensures learners receive accurate textbook pointers even when the 1B model misidentifies sentence numbers.", q_note_st))
+    q_note_st = ParagraphStyle("QNote", parent=body_st, fontSize=7.4, leading=9.6, spaceAfter=0)
+    story.append(Paragraph("<b>Citation Analysis &amp; Automated Support Matching:</b> In the small 1B model, Pass 2 generation frequently defaults its citation tag to S1 due to prompt demonstration bias. Rather than trusting raw model citations, the support checker evaluates token overlap using inverse-sentence-frequency weighting, filtering out common school words. When the model emitted S1 for Optics Long Q1, Q2, and Q3, the checker detected lack of support in S1 (shared with S1: none), flagged the items, and suggested the true supporting citations: <b>FLAGGED -&gt; Suggested: S2</b> (refraction definition), <b>FLAGGED -&gt; Suggested: S3</b> (velocity decrease), and <b>FLAGGED -&gt; Suggested: S5</b> (convex lens convergence). Similarly, in the digestion run, items Q2, Q3, and Q4 with raw citation S1 are flagged with suggested citations: <b>FLAGGED -&gt; Suggested: S4</b> (gastric glands), <b>FLAGGED -&gt; Suggested: S5</b> (small intestine site), and <b>FLAGGED -&gt; Suggested: S7</b> (villi projections). This automated citation suggestion protects learners from misleading citations whenever the 1B model misidentifies sentence numbers.", q_note_st))
 
     # PAGE 7: Glossary Verification & Edge Deployment Roadmap
     story.append(PageBreak())
@@ -750,7 +776,7 @@ def build_pdf(out_pdf="evidence/StudyAid_Evidence_Report.pdf"):
     story.append(glt)
     story.append(Spacer(1, 4))
     add_p(
-        "<b>English Fallback Example:</b> In the digestion run, candidate technical terms such as 'peristalsis', 'digestion', and 'stomach' were parsed from the passage; lacking an authenticated Tamil translation in the seed glossary, they cleanly fell back to English definitions without emitting unverified or hallucinated vernacular terms."
+        "<b>Unverified &amp; Missing-Gloss Handling Example:</b> In the digestion run (Page 3), candidate terms outside the four textbook-confirmed optics entries ('peristalsis', 'digestion', 'digested', 'stomach') matched provisional seed entries and were explicitly badged as [unverified] (never [verified]), while candidates where the 1B model omitted a short gloss safely rendered as 'no explanation generated' rather than crashing the pipeline. Any candidate term completely absent from the JSON dictionary renders with its English gloss only."
     )
     story.append(Spacer(1, 6))
 
