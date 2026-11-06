@@ -3,6 +3,7 @@
     "en": "refraction",
     "ta": "ஒளிவிலகல்",
     "translit": "Oli-vilagal",
+    "meaning": "the bending of light when it passes from one material into another",
     "source": "Samacheer Kalvi Science textbook, confirmed by team",
     "ref": "",
     "verified": true
@@ -11,6 +12,7 @@
     "en": "medium",
     "ta": "ஊடகம்",
     "translit": "Oodagam",
+    "meaning": "the material light travels through, such as air, water or glass",
     "source": "Samacheer Kalvi Science textbook, confirmed by team",
     "ref": "",
     "verified": true
@@ -19,6 +21,7 @@
     "en": "normal",
     "ta": "குத்துக்கோடு",
     "translit": "Kuthukkodu",
+    "meaning": "an imaginary line at 90 degrees to the surface where light hits",
     "source": "Samacheer Kalvi Science textbook, confirmed by team",
     "ref": "",
     "verified": true
@@ -27,112 +30,9 @@
     "en": "obliquely",
     "ta": "சாய்வாக",
     "translit": "Saaivaaga",
+    "meaning": "at a slant, not straight on",
     "source": "Samacheer Kalvi Science textbook, confirmed by team",
     "ref": "",
     "verified": true
-  },
-  {
-    "en": "chloroplast",
-    "ta": "பசுங்கணிகம்",
-    "translit": "Pasungkanigam",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "current",
-    "ta": "மின்னோட்டம்",
-    "translit": "Minnoattam",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "circuit",
-    "ta": "மின்சுற்று",
-    "translit": "Minsutru",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "resistance",
-    "ta": "மின்தடை",
-    "translit": "Minthadai",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "voltmeter",
-    "ta": "மின்னழுத்தமானி",
-    "translit": "Minnaluthamaani",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "digestion",
-    "ta": "செரிமானம்",
-    "translit": "Serimaanam",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "stomach",
-    "ta": "இரைப்பை",
-    "translit": "Iraippai",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "enzyme",
-    "ta": "நொதி",
-    "translit": "Nothi",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "peristalsis",
-    "ta": "குடல் அசைவு",
-    "translit": "Kudal-asaivu",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "vibration",
-    "ta": "அதிர்வு",
-    "translit": "Athirvu",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "frequency",
-    "ta": "அதிர்வெண்",
-    "translit": "Athirven",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "compression",
-    "ta": "இறுக்கம்",
-    "translit": "Irukkam",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
-  },
-  {
-    "en": "rarefaction",
-    "ta": "தளர்ச்சி",
-    "translit": "Thalarchi",
-    "source": "to be confirmed against Samacheer Kalvi, class/unit/page",
-    "ref": "",
-    "verified": false
   }
 ]
