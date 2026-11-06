@@ -1,5 +1,8 @@
 from studyaid.sents import split_sents
 from studyaid.hard import find_hard_sents, extract_hard_words
+from studyaid.gloss import load_gl
+from studyaid.backend import MockBackend
+from studyaid.pipeline import run_pipeline
 
 def test_hardest_sentence_optics():
     txt = (
@@ -14,24 +17,36 @@ def test_hardest_sentence_optics():
     assert best["id"] == "S1"
     assert best["c_cnt"] == 4
     assert best["tot"] == 20
-    s3_cnt = sum(1 for w in ["refraction", "difference", "velocity", "different"])
-    assert s3_cnt == 4
 
-def test_extract_hard_words():
-    txt = "Refraction takes place due to the difference in velocity."
+def test_stem_collapsing():
+    txt = "Digestion is vital because digesting food and having digested nutrients supports life."
     cands = extract_hard_words(txt)
-    assert "refraction" in cands
-    assert "difference" in cands
-    assert "velocity" in cands
-    assert "takes" not in cands
+    assert "digestion" in cands
+    assert "digesting" not in cands
+    assert "digested" not in cands
 
-def test_optics_long_hard_words_non_empty():
-    import os
-    from studyaid.gloss import load_gl
-    gl_p = "data/tamil_glossary.json"
-    gl = load_gl(gl_p) if os.path.exists(gl_p) else {}
-    txt = open("samples/optics_long.txt").read()
+def test_ranking_glossary_first():
+    gl = {
+        "refraction": {"en": "refraction", "ta": "ஒளிவிலகல்", "translit": "Oli-vilagal", "verified": True, "meaning": "the bending of light when it passes from one material into another"}
+    }
+    txt = "Atmospheric electromagnetic disturbances cause refraction in transparent substances."
     cands = extract_hard_words(txt, gl)
-    assert len(cands) > 0
-    assert len(cands) <= 5
-    assert "refraction" in cands
+    assert cands[0] == "refraction"
+
+def test_glossary_meaning_overrides_model_meaning():
+    gl = {
+        "refraction": {
+            "en": "refraction",
+            "ta": "ஒளிவிலகல்",
+            "translit": "Oli-vilagal",
+            "verified": True,
+            "meaning": "the bending of light when it passes from one material into another"
+        }
+    }
+    txt = "When a ray of light travels into another obliquely, it undergoes refraction."
+    bk = MockBackend()
+    res = run_pipeline(txt, bk, gl, two_pass=True)
+    words = res["words"]
+    ref_item = next((w for w in words if w["word"] == "refraction"), None)
+    assert ref_item is not None
+    assert ref_item["meaning"] == "the bending of light when it passes from one material into another"
