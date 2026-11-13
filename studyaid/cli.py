@@ -47,14 +47,48 @@ def run_cmd(args):
             def_str = "YES" if net.get("has_def_route") else "NO"
             sys.exit(f"Error: system is ONLINE (active interfaces: {act_str}, default route: {def_str}). Offline required by --require-offline.")
 
-    pass_p = args.passage or r_cfg.get("passage", "samples/optics.txt")
-    if pass_p == "-":
+    pass_txt = ""
+    if args.interactive or (args.passage is None and sys.stdin.isatty()):
+        print("\n" + "=" * 64)
+        print("   StudyAid: Offline Smart Learning Assistant (PoC)")
+        print("=" * 64)
+        print("Please enter or paste the educational passage below.")
+        print("When finished, type 'DONE' on a new line and press Enter (or press Ctrl+D):")
+        print("-" * 64)
+        lines = []
+        try:
+            while True:
+                line = input()
+                if line.strip() in ("DONE", "EOF", "done", "eof"):
+                    break
+                lines.append(line)
+        except EOFError:
+            pass
+        pass_txt = "\n".join(lines).strip()
+        print("-" * 64 + "\n")
+        if not pass_txt:
+            print("[StudyAid] No passage entered. Falling back to configured default passage.\n", file=sys.stderr)
+            pass_p = r_cfg.get("passage", "samples/optics_long.txt")
+            if os.path.exists(pass_p):
+                with open(pass_p, "r", encoding="utf-8") as f:
+                    pass_txt = f.read()
+    elif args.passage == "-":
         pass_txt = sys.stdin.read()
-    else:
-        if not os.path.exists(pass_p):
-            sys.exit(f"Passage file not found: {pass_p}")
-        with open(pass_p, "r", encoding="utf-8") as f:
+    elif args.passage:
+        if not os.path.exists(args.passage):
+            sys.exit(f"Passage file not found: {args.passage}")
+        with open(args.passage, "r", encoding="utf-8") as f:
             pass_txt = f.read()
+    else:
+        if not sys.stdin.isatty():
+            pass_txt = sys.stdin.read()
+        if not pass_txt.strip():
+            pass_p = r_cfg.get("passage", "samples/optics_long.txt")
+            if os.path.exists(pass_p):
+                with open(pass_p, "r", encoding="utf-8") as f:
+                    pass_txt = f.read()
+            else:
+                sys.exit("Error: No passage provided. Please specify --passage <path> or use interactive mode.")
 
     w_cnt = len(pass_txt.split())
     if w_cnt < 150 or w_cnt > 300:
@@ -98,7 +132,8 @@ def main():
     sub = p.add_subparsers(dest="cmd", required=True)
 
     r_p = sub.add_parser("run")
-    r_p.add_argument("--passage", default=None)
+    r_p.add_argument("--passage", default=None, help="Path to passage text file, or '-' for stdin")
+    r_p.add_argument("--interactive", "-i", action="store_true", default=False, help="Prompt interactively in terminal for passage input")
     r_p.add_argument("--pte", default=None)
     r_p.add_argument("--tokenizer", default=None)
     r_p.add_argument("--two-pass", action="store_true", default=None)
