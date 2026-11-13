@@ -100,64 +100,13 @@ Tests require no model weights and no network access:
 pytest tests/
 ```
 
-## 6. Project Structure
-```
-studyaid/
-  README.md
-  pyproject.toml
-  config.toml
-  data/
-    tamil_glossary.json
-  samples/
-    optics.txt
-    expected_optics.txt
-    photosynthesis.txt
-  scripts/
-    export_model.sh
-    demo.sh
-    make_screenshot.py
-    build_report.py
-  evidence/
-    StudyAid_Evidence_Report.pdf
-    terminal_run_screenshot.png
-    benchmark.json
-    benchmark.md
-    runs/
-  studyaid/
-    __init__.py
-    __main__.py
-    cli.py
-    sents.py
-    hard.py
-    gloss.py
-    backend.py
-    prompt.py
-    parse.py
-    check.py
-    readab.py
-    telem.py
-    pipeline.py
-    render.py
-  tests/
-    test_sents.py
-    test_hard.py
-    test_gloss.py
-    test_parse.py
-    test_check.py
-    test_readab.py
-    test_telem.py
-    test_pipeline.py
-  outputs/
-    .gitkeep
-```
-
-## 7. Honest Limitations
+## 6. Honest Limitations
 - **Small-Model Errors:** Llama 3.2 1B Instruct is lightweight for edge devices; it can occasionally omit tags or hallucinate citations. The pipeline includes automatic retry and tag recovery, but small models remain susceptible to generation variance.
 - **Keyword-Overlap Verification:** Quiz citation support is determined by lexical token overlap between answer tokens and the cited sentence. This is an efficient edge heuristic, not formal semantic or logical proof.
 - **Unverified Seed Glossary:** All seed Tamil entries in `data/tamil_glossary.json` are marked `"verified": false`. They must be independently validated against Samacheer Kalvi state curriculum textbooks by a Tamil-speaking educator before classroom deployment.
 - **Laptop vs Raspberry Pi Telemetry:** All current measurements are taken on the development laptop host. Hardware telemetry explicitly labels the host machine. Raspberry Pi 5 measurements will be conducted at the hackathon finals upon hardware handover.
 
-## 8. Measured Results
+## 7. Measured Results
 
 > **Hardware Label: Development Laptop (x86_64), NOT Raspberry Pi**  
 > All measurements below were collected using real ExecuTorch runtime inference with `Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte`. Raspberry Pi 5 ARM benchmark metrics will be recorded separately during finals hardware handover.
