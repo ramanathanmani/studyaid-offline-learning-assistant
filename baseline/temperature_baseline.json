@@ -1,0 +1,291 @@
+{
+  "timestamp": "20261113_231659",
+  "pipeline": {
+    "is_mock": false,
+    "s_list": [
+      [
+        "S1",
+        "Temperature is the measure of\nhotness or coldness of a body."
+      ],
+      [
+        "S2",
+        "SI unit of\ntemperature is kelvin (K)."
+      ],
+      [
+        "S3",
+        "One kelvin is the\nfraction (1/273.16) of the thermodynamic\ntemperature of the triple point of water\n(The temperature at which saturated water\nvapour, pure water and melting ice are in\nequilibrium)."
+      ],
+      [
+        "S4",
+        "Zero kelvin (0 K) is commonly\nknown as absolute zero."
+      ],
+      [
+        "S5",
+        "The other units for\nmeasuring temperature are degree celsius\n(°C) and fahrenheit (F)"
+      ]
+    ],
+    "hard_s": {
+      "id": "S3",
+      "text": "One kelvin is the\nfraction (1/273.16) of the thermodynamic\ntemperature of the triple point of water\n(The temperature at which saturated water\nvapour, pure water and melting ice are in\nequilibrium).",
+      "c_cnt": 6,
+      "tot": 30
+    },
+    "cand_words": [
+      "thermodynamic",
+      "equilibrium",
+      "temperature",
+      "fahrenheit",
+      "saturated"
+    ],
+    "parsed": {
+      "simple": "One kelvin is the fraction (1/273.16) of the thermodynamic temperature of the triple point of water.",
+      "summary": "The passage explains the concept of temperature and its units.",
+      "village": "The village of Kumbakonam is famous for its hot springs, which are a popular tourist attraction.",
+      "words": [
+        {
+          "word": "thermodynamic",
+          "meaning": "study of heat and energy",
+          "gl": null
+        },
+        {
+          "word": "equilibrium",
+          "meaning": "balance of temperature and pressure",
+          "gl": null
+        },
+        {
+          "word": "temperature",
+          "meaning": "measure of hot or cold",
+          "gl": null
+        },
+        {
+          "word": "fahrenheit",
+          "meaning": "temperature scale with 100 as base",
+          "gl": null
+        },
+        {
+          "word": "saturated",
+          "meaning": "liquid or gas that is completely dissolved",
+          "gl": null
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the other unit for measuring temperature besides kelvin (K)?",
+          "a": "Degree Celsius (°C) and Fahrenheit (F)",
+          "model_cite": "S5",
+          "c": "S5",
+          "status": "SUPPORTED",
+          "model_cite_correct": true,
+          "auto_corrected": false,
+          "shared": [
+            "celsiu",
+            "degre",
+            "fahrenheit"
+          ],
+          "suggested": null
+        },
+        {
+          "q": "What is absolute zero commonly known as?",
+          "a": "Zero kelvin (0 K)",
+          "model_cite": "S4",
+          "c": "S4",
+          "status": "SUPPORTED",
+          "model_cite_correct": true,
+          "auto_corrected": false,
+          "shared": [
+            "kelvin",
+            "zero"
+          ],
+          "suggested": null
+        }
+      ],
+      "no_simpler": false,
+      "valid": true
+    },
+    "readab": {
+      "orig": {
+        "w_cnt": 30,
+        "l_cnt": 153,
+        "avg_l": 5.1
+      },
+      "simp": {
+        "w_cnt": 15,
+        "l_cnt": 74,
+        "avg_l": 4.93
+      },
+      "diff": {
+        "w_chg": -50.0,
+        "l_chg": -51.6,
+        "avg_chg": -3.3
+      }
+    },
+    "words": [
+      {
+        "word": "thermodynamic",
+        "meaning": "study of heat and energy",
+        "gl": null
+      },
+      {
+        "word": "equilibrium",
+        "meaning": "balance of temperature and pressure",
+        "gl": null
+      },
+      {
+        "word": "temperature",
+        "meaning": "measure of hot or cold",
+        "gl": null
+      },
+      {
+        "word": "fahrenheit",
+        "meaning": "temperature scale with 100 as base",
+        "gl": null
+      },
+      {
+        "word": "saturated",
+        "meaning": "liquid or gas that is completely dissolved",
+        "gl": null
+      }
+    ],
+    "quiz": [
+      {
+        "q": "What is the other unit for measuring temperature besides kelvin (K)?",
+        "a": "Degree Celsius (°C) and Fahrenheit (F)",
+        "model_cite": "S5",
+        "c": "S5",
+        "status": "SUPPORTED",
+        "model_cite_correct": true,
+        "auto_corrected": false,
+        "shared": [
+          "celsiu",
+          "degre",
+          "fahrenheit"
+        ],
+        "suggested": null
+      },
+      {
+        "q": "What is absolute zero commonly known as?",
+        "a": "Zero kelvin (0 K)",
+        "model_cite": "S4",
+        "c": "S4",
+        "status": "SUPPORTED",
+        "model_cite_correct": true,
+        "auto_corrected": false,
+        "shared": [
+          "kelvin",
+          "zero"
+        ],
+        "suggested": null
+      }
+    ],
+    "tok_cnt": 402,
+    "p1_info": {
+      "tokens": 145,
+      "seconds": 12.294,
+      "attempts": [
+        {
+          "pass": 1,
+          "attempt": 1,
+          "tokens": 66,
+          "sec": 7.944
+        },
+        {
+          "attempt": 2,
+          "guard": "short_rewrite_guard",
+          "tokens": 26,
+          "sec": 1.614
+        },
+        {
+          "attempt": 3,
+          "guard": "missing_words",
+          "tokens": 53,
+          "sec": 2.735
+        }
+      ],
+      "retries": 2,
+      "retried": true,
+      "reason": "short_rewrite_guard; missing_section: words",
+      "summary_fallback": false
+    },
+    "p2_info": {
+      "tokens": 257,
+      "seconds": 16.721,
+      "attempts": [
+        {
+          "pass": 2,
+          "attempt": 1,
+          "valid_cnt": 2,
+          "tokens": 130,
+          "sec": 8.346
+        },
+        {
+          "attempt": 2,
+          "guard": "quiz_guard",
+          "tokens": 127,
+          "sec": 8.374
+        }
+      ],
+      "retries": 1,
+      "retried": true,
+      "reason": "quiz_guard: only 2/3 valid"
+    },
+    "guards": {
+      "rewrite_shorter": true,
+      "no_simpler_rewrite": false,
+      "summary_produced_without_fallback": true,
+      "village_format_ok": true,
+      "village_relevant": true,
+      "quiz_count": 2,
+      "quiz_incomplete": true,
+      "quiz_model_cite_cnt": 2,
+      "quiz_supported_cnt": 2,
+      "quiz_total_cnt": 2,
+      "words_explained_cnt": 5,
+      "words_cand_cnt": 5,
+      "retries": 3,
+      "p1_retried": true,
+      "p1_retry_reason": "short_rewrite_guard; missing_section: words",
+      "p2_retried": true,
+      "p2_retry_reason": "quiz_guard: only 2/3 valid"
+    }
+  },
+  "telemetry": {
+    "net": {
+      "method": "linux_ip_cmd",
+      "ifaces": [
+        {
+          "name": "lo",
+          "state": "UNKNOWN"
+        },
+        {
+          "name": "enp0s31f6",
+          "state": "DOWN"
+        },
+        {
+          "name": "wlp0s20f3",
+          "state": "UP"
+        }
+      ],
+      "has_def_route": true,
+      "is_offline": false
+    },
+    "host": {
+      "host_label": "HOST: laptop (not Raspberry Pi)",
+      "is_pi": false,
+      "cpu_model": "11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz",
+      "cores": 8,
+      "ram_gb": 14.3,
+      "os": "Linux 7.0.0-43-generic"
+    },
+    "model_name": "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+    "pte_path": "models/llama1b/Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8.pte",
+    "pte_size_bytes": 1135951488,
+    "pte_size_mib": 1083.33,
+    "pte_size_mb": 1083.33,
+    "peak_rss_mib": 1937.8,
+    "peak_rss_mb": 1937.8,
+    "inf_time_sec": 29.016,
+    "tok_cnt": 402,
+    "tok_per_sec": 13.85,
+    "is_mock": false
+  }
+}

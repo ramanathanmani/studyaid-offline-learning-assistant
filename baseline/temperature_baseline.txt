@@ -1,0 +1,72 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Temperature is the measure of
+hotness or coldness of a body.
+[S2] SI unit of
+temperature is kelvin (K).
+[S3] One kelvin is the
+fraction (1/273.16) of the thermodynamic
+temperature of the triple point of water
+(The temperature at which saturated water
+vapour, pure water and melting ice are in
+equilibrium).
+[S4] Zero kelvin (0 K) is commonly
+known as absolute zero.
+[S5] The other units for
+measuring temperature are degree celsius
+(°C) and fahrenheit (F)
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S3]): One kelvin is the
+fraction (1/273.16) of the thermodynamic
+temperature of the triple point of water
+(The temperature at which saturated water
+vapour, pure water and melting ice are in
+equilibrium).
+Simplified:   One kelvin is the fraction (1/273.16) of the thermodynamic temperature of the triple point of water.
+
+Readability Metrics:
+Metric                 Original     Simplified   Change (%)
+Words                  30           15           -50.0%    
+Letters                153          74           -51.6%    
+Avg letters/word       5.10         4.93         -3.3%     
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+The passage explains the concept of temperature and its units.
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+The village of Kumbakonam is famous for its hot springs, which are a popular tourist attraction.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- thermodynamic: study of heat and energy (English only)
+- equilibrium: balance of temperature and pressure (English only)
+- temperature: measure of hot or cold (English only)
+- fahrenheit: temperature scale with 100 as base (English only)
+- saturated: liquid or gas that is completely dissolved (English only)
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+quiz incomplete (2 of 3)
+[Q1] What is the other unit for measuring temperature besides kelvin (K)?
+     Answer: Degree Celsius (°C) and Fahrenheit (F)
+     Citation: S5
+     Support: SUPPORTED (shared: celsiu, degre, fahrenheit)
+[Q2] What is absolute zero commonly known as?
+     Answer: Zero kelvin (0 K)
+     Citation: S4
+     Support: SUPPORTED (shared: kelvin, zero)
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-43-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=UP
+Default route active: YES
+Offline status: ONLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1937.8 MiB
+Inference time: 29.016 s
+Tokens generated: 402
+Tokens/sec: 13.85
+Execution mode: [REAL EXECUTORCH RUN]
