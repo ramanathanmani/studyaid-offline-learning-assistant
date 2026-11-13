@@ -94,7 +94,12 @@ def run_cmd(args):
     if w_cnt < 150 or w_cnt > 300:
         print(f"Warning: passage word count ({w_cnt}) is outside the recommended 150-300 word range.\n", file=sys.stderr)
 
-    gl_p = args.glossary or "data/tamil_glossary.json"
+    gl_p = args.glossary
+    if not gl_p or gl_p == "data/tamil_glossary.json":
+        if os.path.exists("data/glossary.json"):
+            gl_p = "data/glossary.json"
+        else:
+            gl_p = "data/tamil_glossary.json"
     gl = load_gl(gl_p) if os.path.exists(gl_p) else {}
 
     is_mock = args.mock or r_cfg.get("mock", False)
@@ -120,7 +125,8 @@ def run_cmd(args):
         pte_path=pte_p,
         tok_cnt=pipe_res["tok_cnt"],
         inf_time=inf_time,
-        is_mock=getattr(bk, "is_mock", False)
+        is_mock=getattr(bk, "is_mock", False),
+        backend=bk
     )
 
     rep, txt_p, json_p = render_all(pipe_res, telem_res, out_dir=args.out_dir)

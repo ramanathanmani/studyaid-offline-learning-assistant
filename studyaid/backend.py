@@ -1,5 +1,6 @@
 import os
 import re
+import time
 import ctypes
 
 def load_et_libs():
@@ -25,10 +26,16 @@ class MockBackend:
     def __init__(self):
         self.is_mock = True
         self.name = "MockBackend"
+        self.threads = 4
+        self.load_time = 0.01
+        self.total_prefill = 0.0
+        self.total_decode = 0.0
+        self.total_gen = 0.0
 
     def gen(self, prompt, max_new=480):
+        t0 = time.perf_counter()
         p_low = prompt.lower()
-        if "rewrite in fewer words" in p_low:
+        if "rewrite in fewer words" in p_low or "<simple>" in p_low:
             txt = "<SIMPLE>Light bends at a slant.</SIMPLE>"
         elif "summary of the main scientific points" in p_low or "summary of the passage" in p_low:
             txt = "<SUMMARY>Light bends when it passes between different transparent media. Its speed alters across different optical densities.</SUMMARY>"
@@ -67,14 +74,22 @@ class MockBackend:
                 "</WORDS>"
             )
         tok_cnt = len(txt.split())
+        dur = time.perf_counter() - t0
+        self.total_prefill += 0.001
+        self.total_decode += max(0.0, dur - 0.001)
+        self.total_gen += dur
         return txt, tok_cnt
 
 class ETBackend:
-    def __init__(self, pte_path, tok_path):
+    def __init__(self, pte_path, tok_path, threads=4):
         self.is_mock = False
         self.name = "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8"
         self.pte_path = pte_path
         self.tok_path = tok_path
+        self.threads = threads
+        self.total_prefill = 0.0
+        self.total_decode = 0.0
+        self.total_gen = 0.0
         
         if not pte_path or not os.path.exists(pte_path):
             raise FileNotFoundError(
@@ -91,9 +106,17 @@ class ETBackend:
         load_et_libs()
 
         try:
+            import torch
+            torch.set_num_threads(threads)
+        except Exception:
+            pass
+
+        try:
             from executorch.extension.llm.runner import TextLLMRunner, GenerationConfig
             self._cfg_cls = GenerationConfig
+            t0 = time.perf_counter()
             self.runner = TextLLMRunner(model_path=pte_path, tokenizer_path=tok_path)
+            self.load_time = time.perf_counter() - t0
         except ImportError as err:
             raise RuntimeError(
                 "ExecuTorch Python runtime is not installed or runner is missing. "
@@ -107,7 +130,23 @@ class ETBackend:
         cfg.temperature = 0.0
         cfg.echo = False
         toks = []
-        self.runner.generate(prompt=prompt, config=cfg, token_callback=lambda t: toks.append(t))
+        t0 = time.perf_counter()
+        t_first = [None]
+
+        def on_token(t):
+            if t_first[0] is None:
+                t_first[0] = time.perf_counter()
+            toks.append(t)
+
+        self.runner.generate(prompt=prompt, config=cfg, token_callback=on_token)
+        t_end = time.perf_counter()
+        dur = t_end - t0
+        prefill = (t_first[0] - t0) if t_first[0] else dur
+        decode = (t_end - t_first[0]) if t_first[0] else 0.0
+        self.total_prefill += prefill
+        self.total_decode += decode
+        self.total_gen += dur
+
         clean = "".join(toks).replace("<|eot_id|>", "").replace("<|end_of_text|>", "").strip()
         if prompt.endswith("<SIMPLE>") and not clean.startswith("<SIMPLE>"):
             clean = "<SIMPLE>" + clean

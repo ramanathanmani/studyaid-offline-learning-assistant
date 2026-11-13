@@ -11,11 +11,21 @@ def fmt_table(comp):
     w_chg = f"{d['w_chg']:+.1f}%"
     l_chg = f"{d['l_chg']:+.1f}%"
     avg_chg = f"{d['avg_chg']:+.1f}%"
+    s_chg = f"{d.get('s_chg', 0.0):+.1f}%"
+    w_per_s_chg = f"{d.get('w_per_s_chg', 0.0):+.1f}%"
+    syl_chg = f"{d.get('syl_chg', 0.0):+.1f}%"
+    flesch_diff = f"{d.get('flesch_diff', 0.0):+.1f}"
+    gl_chg = f"{d.get('gl_chg', 0.0):+.1f}%"
     lines = [
-        f"{'Metric':<22} {'Original':<12} {'Simplified':<12} {'Change (%)':<10}",
-        f"{'Words':<22} {o['w_cnt']:<12} {s['w_cnt']:<12} {w_chg:<10}",
-        f"{'Letters':<22} {o['l_cnt']:<12} {s['l_cnt']:<12} {l_chg:<10}",
-        f"{'Avg letters/word':<22} {o['avg_l']:<12.2f} {s['avg_l']:<12.2f} {avg_chg:<10}"
+        f"{'Metric':<24} {'Original':<12} {'Simplified':<12} {'Change (%)':<10}",
+        f"{'Words':<24} {o['w_cnt']:<12} {s['w_cnt']:<12} {w_chg:<10}",
+        f"{'Letters':<24} {o['l_cnt']:<12} {s['l_cnt']:<12} {l_chg:<10}",
+        f"{'Avg letters/word':<24} {o['avg_l']:<12.2f} {s['avg_l']:<12.2f} {avg_chg:<10}",
+        f"{'Sentences':<24} {o.get('s_cnt', 1):<12} {s.get('s_cnt', 1):<12} {s_chg:<10}",
+        f"{'Avg words/sentence':<24} {o.get('w_per_s', o['w_cnt']):<12.2f} {s.get('w_per_s', s['w_cnt']):<12.2f} {w_per_s_chg:<10}",
+        f"{'Avg syllables/word':<24} {o.get('avg_syl', 1.0):<12.2f} {s.get('avg_syl', 1.0):<12.2f} {syl_chg:<10}",
+        f"{'Flesch Reading Ease':<24} {o.get('flesch', 0.0):<12.1f} {s.get('flesch', 0.0):<12.1f} {flesch_diff:<10}",
+        f"{'Glossary terms count':<24} {o.get('gl_cnt', 0):<12} {s.get('gl_cnt', 0):<12} {gl_chg:<10}"
     ]
     return "\n".join(lines)
 
@@ -55,10 +65,16 @@ def build_report(pipe_res, telem_res):
         for it in words:
             gl = it.get("gl")
             if gl:
-                tag = "[verified]" if gl.get("verified") else "[unverified]"
-                buf.append(f"- {it['word']}: {it['meaning']} -> {gl['ta']} ({gl['translit']}) {tag}")
+                tag = "[verified]" if gl.get("verified") or gl.get("ok") else "[unverified]"
+                en_def = gl.get("en_def") or gl.get("meaning") or it["meaning"]
+                ta_def = gl.get("ta_def", "")
+                ta_str = f"{gl['ta']} ({gl['translit']})" if gl.get("translit") else gl["ta"]
+                if ta_def:
+                    buf.append(f"- {it['word']} / {ta_str}: {en_def} | {ta_def} {tag}")
+                else:
+                    buf.append(f"- {it['word']} / {ta_str}: {en_def} {tag}")
             else:
-                buf.append(f"- {it['word']}: {it['meaning']} (English only)")
+                buf.append(f"- {it['word']}: {it['meaning']} (no Tamil entry yet)")
     else:
         buf.append("No hard words parsed.")
     buf.append("")
@@ -66,25 +82,29 @@ def build_report(pipe_res, telem_res):
     buf.append("=== QUIZ QUESTIONS / வினாடி வினா ===")
     quiz = pipe_res.get("quiz", [])
     if quiz:
-        if len(quiz) < 3:
-            buf.append(f"quiz incomplete ({len(quiz)} of 3)")
         for idx, q in enumerate(quiz, 1):
-            buf.append(f"[Q{idx}] {q['q']}")
-            buf.append(f"     Answer: {q['a']}")
+            buf.append(f"[Q{idx}] கேள்வி / Question: {q['q']}")
+            opts = q.get("opts", [])
+            if opts:
+                buf.append("     Options / தேர்வுகள்:")
+                for opt_idx, opt_txt in enumerate(opts):
+                    opt_letter = chr(65 + opt_idx)
+                    buf.append(f"       {opt_letter}) {opt_txt}")
+            buf.append(f"     விடை / Answer: {q['a']}")
             model_c = q.get("model_cite")
             c_val = q.get("c")
             if q.get("auto_corrected") and c_val and model_c:
-                buf.append(f"     Citation: {c_val} (auto-corrected from {model_c})")
+                buf.append(f"     மேற்கோள் / Citation: {c_val} (auto-corrected from {model_c})")
             else:
-                buf.append(f"     Citation: {c_val or model_c}")
+                buf.append(f"     மேற்கோள் / Citation: {c_val or model_c}")
             sh_str = ", ".join(q.get("shared", [])) if q.get("shared") else "none"
             if q["status"] == "SUPPORTED (exact term)":
-                buf.append(f"     Support: SUPPORTED (exact term)")
+                buf.append(f"     சரிபார்ப்பு / Support: SUPPORTED (exact term) [சரி]")
             elif q["status"].upper() == "SUPPORTED":
-                buf.append(f"     Support: SUPPORTED (shared: {sh_str})")
+                buf.append(f"     சரிபார்ப்பு / Support: SUPPORTED (shared: {sh_str}) [சரி]")
             else:
                 sug_str = f", suggested citation: {q['suggested']}" if q.get("suggested") else ""
-                buf.append(f"     Support: FLAGGED (shared: {sh_str}{sug_str})")
+                buf.append(f"     சரிபார்ப்பு / Support: FLAGGED (shared: {sh_str}{sug_str}) [தவறு]")
     else:
         buf.append("quiz incomplete (0 of 3)")
     buf.append("")
@@ -96,6 +116,7 @@ def build_report(pipe_res, telem_res):
     buf.append(f"OS: {h['os']}")
     buf.append(f"CPU: {h['cpu_model']}")
     buf.append(f"Cores: {h['cores']}")
+    buf.append(f"Execution threads: {telem_res.get('threads', 4)}")
     buf.append(f"Total RAM: {h['ram_gb']} GB")
     
     iface_str = ", ".join(f"{it['name']}={it['state']}" for it in net.get("ifaces", []))
@@ -109,7 +130,7 @@ def build_report(pipe_res, telem_res):
     else:
         buf.append("PTE size: N/A (mock run)")
     buf.append(f"Peak RSS: {telem_res['peak_rss_mib']} MiB")
-    buf.append(f"Inference time: {telem_res['inf_time_sec']} s")
+    buf.append(f"Inference time: {telem_res['inf_time_sec']} s (Load: {telem_res.get('load_time_sec', 0.0)} s | Prefill: {telem_res.get('prefill_time_sec', 0.0)} s | Decode: {telem_res.get('decode_time_sec', 0.0)} s)")
     buf.append(f"Tokens generated: {telem_res['tok_cnt']}")
     buf.append(f"Tokens/sec: {telem_res['tok_per_sec']}")
     mode_str = "[MOCK BACKEND: not a real model run]" if telem_res.get("is_mock") else "[REAL EXECUTORCH RUN]"

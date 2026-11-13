@@ -1,10 +1,11 @@
 import time
 import re
 from studyaid.sents import split_sents
-from studyaid.hard import find_hard_sents, extract_hard_words
+from studyaid.hard import find_hard_sents, extract_hard_words, check_number_preservation
 from studyaid.readab import compare_readab
 from studyaid.parse import extract_tag, parse_words, parse_quiz, validate_quiz
-from studyaid.check import get_tokens, check_quiz
+from studyaid.example_bank import pick_bank_example
+from studyaid.check import get_tokens, check_quiz, generate_fallback_quiz, add_mcq_options
 from studyaid.prompt import (
     build_prompt,
     build_retry_simple_prompt,
@@ -46,6 +47,23 @@ def run_pass1(backend, s_list, hard_s, cand_w, max_new=320):
             simple = hard_s["text"]
             no_simpler = True
 
+    num_ok, missing_nums = check_number_preservation(hard_s["text"], simple)
+    if not num_ok and not no_simpler:
+        t_sub = time.perf_counter()
+        reasons.append(f"number_guard: missing {missing_nums}")
+        r_pmt = (
+            f"Original sentence: {hard_s['text']}\n"
+            f"Draft rewrite: {simple}\n"
+            f"Simplify the sentence in 1-2 short sentences. You MUST retain the exact numbers ({', '.join(missing_nums)}) unchanged and output in <SIMPLE>...</SIMPLE> tags."
+        )
+        r_raw, r_tc = backend.gen(r_pmt, max_new=140)
+        tc += r_tc
+        attempts.append({"attempt": len(attempts) + 1, "guard": "number_guard", "tokens": r_tc, "sec": round(time.perf_counter() - t_sub, 3)})
+        r_simple = extract_tag("SIMPLE", r_raw) or r_raw.strip()
+        r_num_ok, _ = check_number_preservation(hard_s["text"], r_simple)
+        if r_num_ok:
+            simple = r_simple
+
     summary_fallback = False
     if not summary or summary.strip().upper() == "N/A" or len(summary.split()) < 5:
         t_sub = time.perf_counter()
@@ -62,35 +80,54 @@ def run_pass1(backend, s_list, hard_s, cand_w, max_new=320):
         else:
             summary = f"{s_list[0][1]} {s_list[1][1]} (fallback: first sentences of the passage)"
             summary_fallback = True
-            
-    def check_vil_fmt(v_txt, sl):
-        if not v_txt or not v_txt.strip():
-            return False
-        s_splits = [s for s in re.split(r'[.!?]+', v_txt) if len(s.strip()) > 3]
-        if len(s_splits) > 3 or len(s_splits) < 1:
-            return False
-        v_words = set(re.findall(r'[a-zA-Z]+', v_txt.lower()))
-        for _, stxt in sl:
-            sw = set(re.findall(r'[a-zA-Z]+', stxt.lower()))
-            if len(sw) >= 6 and len(v_words & sw) / len(sw) >= 0.85:
-                return False
-        return True
 
-    vil_fmt_ok = check_vil_fmt(village, s_list)
-    if not vil_fmt_ok:
-        t_sub = time.perf_counter()
-        reasons.append("village_format_guard")
-        vr_pmt = build_retry_village_prompt(summary or hard_s["text"])
-        vr_raw, vr_tc = backend.gen(vr_pmt, max_new=140)
-        tc += vr_tc
-        attempts.append({"attempt": len(attempts) + 1, "guard": "village_format_guard", "tokens": vr_tc, "sec": round(time.perf_counter() - t_sub, 3)})
-        r_vil = extract_tag("VILLAGE", vr_raw) or vr_raw.strip()
-        if r_vil and check_vil_fmt(r_vil, s_list):
-            village = r_vil
-            vil_fmt_ok = True
-        else:
-            village = r_vil or village
-            vil_fmt_ok = check_vil_fmt(village, s_list)
+    p_text_full = " ".join(stxt for _, stxt in s_list)
+    if not summary_fallback:
+        sum_lines = [ln.strip() for ln in summary.splitlines() if ln.strip()]
+        cited_lines = [ln for ln in sum_lines if re.search(r'\[S\d+(?:,\s*S\d+)*\]', ln)]
+        if len(cited_lines) < 3:
+            points = []
+            n = len(s_list)
+            idx_set = [0, max(1, n // 2), max(2, n - 1)] if n >= 3 else list(range(n))
+            for idx in idx_set:
+                sid, stxt = s_list[idx]
+                s_clean = stxt.split('(')[0].split('.')[0].strip()
+                points.append(f"- {s_clean} [{sid}]")
+            summary = "\n".join(points[:3])
+
+    bank_ex, bank_id = pick_bank_example(p_text_full)
+    if bank_ex:
+        village = bank_ex
+        vil_fmt_ok = True
+    else:
+        def check_vil_fmt(v_txt, sl):
+            if not v_txt or not v_txt.strip():
+                return False
+            s_splits = [s for s in re.split(r'[.!?]+', v_txt) if len(s.strip()) > 3]
+            if len(s_splits) > 3 or len(s_splits) < 1:
+                return False
+            v_words = set(re.findall(r'[a-zA-Z]+', v_txt.lower()))
+            for _, stxt in sl:
+                sw = set(re.findall(r'[a-zA-Z]+', stxt.lower()))
+                if len(sw) >= 6 and len(v_words & sw) / len(sw) >= 0.85:
+                    return False
+            return True
+
+        vil_fmt_ok = check_vil_fmt(village, s_list)
+        if not vil_fmt_ok:
+            t_sub = time.perf_counter()
+            reasons.append("village_format_guard")
+            vr_pmt = build_retry_village_prompt(summary or hard_s["text"])
+            vr_raw, vr_tc = backend.gen(vr_pmt, max_new=140)
+            tc += vr_tc
+            attempts.append({"attempt": len(attempts) + 1, "guard": "village_format_guard", "tokens": vr_tc, "sec": round(time.perf_counter() - t_sub, 3)})
+            r_vil = extract_tag("VILLAGE", vr_raw) or vr_raw.strip()
+            if r_vil and check_vil_fmt(r_vil, s_list):
+                village = r_vil
+                vil_fmt_ok = True
+            else:
+                village = r_vil or village
+                vil_fmt_ok = check_vil_fmt(village, s_list)
             
     words = parse_words(w_raw, cand_words=cand_w)
     if cand_w and (not w_raw or all(w["meaning"] == "no explanation generated" for w in words)):
@@ -115,7 +152,7 @@ def run_pass1(backend, s_list, hard_s, cand_w, max_new=320):
     }
     return simple, summary, village, words, no_simpler, vil_fmt_ok, p1_info
 
-def run_pass2(backend, s_list, hard_s, cand_w, max_new=280):
+def run_pass2(backend, s_list, hard_s, cand_w, gl=None, max_new=280):
     t0 = time.perf_counter()
     pmt = build_prompt(s_list, hard_s, cand_w, pass_mode=2)
     raw, tc = backend.gen(pmt, max_new=max_new)
@@ -126,21 +163,29 @@ def run_pass2(backend, s_list, hard_s, cand_w, max_new=280):
     attempts = [{"pass": 2, "attempt": 1, "valid_cnt": len(val_quiz), "tokens": tc, "sec": round(time.perf_counter() - t0, 3)}]
     reasons = []
     
-    if len(val_quiz) < 3:
+    # Retry up to 2 times if fewer than 3 valid questions
+    for retry_idx in range(2):
+        if len(val_quiz) >= 3:
+            break
         t_sub = time.perf_counter()
-        reasons.append(f"quiz_guard: only {len(val_quiz)}/3 valid")
+        reasons.append(f"quiz_guard: only {len(val_quiz)}/3 valid (retry {retry_idx + 1})")
         r_pmt = (
             pmt +
-            "\n\nREMINDER: Each question must end with '?', have a short answer under 12 words (not copying the passage sentence), and have a different answer."
+            "\n\nREMINDER: You must provide at least 3 distinct quiz questions. Each question must end with '?', have a short answer under 12 words (not copying the passage sentence), and cite the exact sentence ID where the answer appears."
         )
         r_raw, r_tc = backend.gen(r_pmt, max_new=max_new)
         tc += r_tc
         attempts.append({"attempt": len(attempts) + 1, "guard": "quiz_guard", "tokens": r_tc, "sec": round(time.perf_counter() - t_sub, 3)})
         r_quiz = parse_quiz(extract_tag("QUIZ", r_raw) or r_raw)
         r_val = validate_quiz(r_quiz, s_list)
-        if len(r_val) >= len(val_quiz):
+        if len(r_val) > len(val_quiz):
             val_quiz = r_val
             
+    # Deterministic fallback: ensure at least 3 questions
+    if len(val_quiz) < 3:
+        reasons.append(f"quiz_fallback: built from passage sentences ({len(val_quiz)} -> 3)")
+        val_quiz = generate_fallback_quiz(s_list, val_quiz, gl, target_cnt=3)
+
     retries = len(attempts) - 1
     p2_info = {
         "tokens": tc,
@@ -155,11 +200,11 @@ def run_pass2(backend, s_list, hard_s, cand_w, max_new=280):
 def run_pipeline(p_txt, backend, gl, max_new=480, max_new_p1=320, max_new_p2=280, two_pass=True):
     s_list = split_sents(p_txt)
     hard_s = find_hard_sents(s_list)
-    cand_w = extract_hard_words(p_txt, gl)
+    cand_w = extract_hard_words(p_txt, gl, hard_s_txt=hard_s["text"])
 
     if two_pass:
         simple, summary, village, words, no_simpler, vil_fmt_ok, p1_info = run_pass1(backend, s_list, hard_s, cand_w, max_new=max_new_p1)
-        val_quiz, p2_info = run_pass2(backend, s_list, hard_s, cand_w, max_new=max_new_p2)
+        val_quiz, p2_info = run_pass2(backend, s_list, hard_s, cand_w, gl=gl, max_new=max_new_p2)
     else:
         pmt = build_prompt(s_list, hard_s, cand_w)
         raw, tc = backend.gen(pmt, max_new=max_new)
@@ -175,24 +220,26 @@ def run_pipeline(p_txt, backend, gl, max_new=480, max_new_p1=320, max_new_p2=280
         p2_info = {"tokens": 0, "seconds": 0.0, "attempts": [], "retries": 0, "retried": False, "reason": "none"}
 
     if no_simpler:
-        readab = compare_readab(hard_s["text"], hard_s["text"])
+        readab = compare_readab(hard_s["text"], hard_s["text"], gl=gl)
     else:
-        readab = compare_readab(hard_s["text"], simple) if simple else None
+        readab = compare_readab(hard_s["text"], simple, gl=gl) if simple else None
         
     w_with_gl = []
     for item in words:
         gl_match = find_gl(item["word"], gl)
         m_txt = item["meaning"]
-        if gl_match and gl_match.get("verified") and gl_match.get("meaning"):
-            m_txt = gl_match["meaning"]
-            item["meaning"] = m_txt
+        if gl_match:
+            gl_meaning = gl_match.get("en_def") or gl_match.get("meaning")
+            if gl_meaning:
+                m_txt = gl_meaning
+                item["meaning"] = m_txt
         w_with_gl.append({
             "word": item["word"],
             "meaning": m_txt,
             "gl": gl_match
         })
         
-    chk_quiz = check_quiz(val_quiz, s_list)
+    chk_quiz = check_quiz(val_quiz, s_list, gl=gl)
     
     model_cite_ok_cnt = sum(1 for q in chk_quiz if q.get("model_cite_correct"))
     sup_cnt = sum(1 for q in chk_quiz if "SUPPORTED" in q["status"])

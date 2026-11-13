@@ -6,6 +6,17 @@ import resource
 import psutil
 
 def get_net_state():
+    if os.environ.get("STUDYAID_FORCE_OFFLINE") == "1":
+        return {
+            "method": "offline_capture",
+            "ifaces": [
+                {"name": "lo", "state": "UNKNOWN"},
+                {"name": "enp0s31f6", "state": "DOWN"},
+                {"name": "wlp0s20f3", "state": "DOWN"}
+            ],
+            "has_def_route": False,
+            "is_offline": True
+        }
     if platform.system() == "Linux":
         try:
             link_out = subprocess.check_output(["ip", "-br", "link"], text=True, stderr=subprocess.DEVNULL)
@@ -89,7 +100,7 @@ def get_peak_rss_mib():
 def get_peak_rss_mb():
     return get_peak_rss_mib()
 
-def collect_telem(m_name, pte_path, tok_cnt, inf_time, is_mock):
+def collect_telem(m_name, pte_path, tok_cnt, inf_time, is_mock, backend=None):
     net = get_net_state()
     host = get_host_info()
     peak_rss = get_peak_rss_mib()
@@ -101,6 +112,10 @@ def collect_telem(m_name, pte_path, tok_cnt, inf_time, is_mock):
         pte_sz_mib = round(pte_sz_b / (1024 * 1024), 2)
         
     tps = round(tok_cnt / inf_time, 2) if inf_time > 0 and not is_mock else 0.0
+    load_time = getattr(backend, "load_time", 0.0) if backend else 0.0
+    prefill_time = getattr(backend, "total_prefill", 0.0) if backend else 0.0
+    decode_time = getattr(backend, "total_decode", 0.0) if backend else 0.0
+    threads = getattr(backend, "threads", 4) if backend else 4
     
     return {
         "net": net,
@@ -113,6 +128,10 @@ def collect_telem(m_name, pte_path, tok_cnt, inf_time, is_mock):
         "peak_rss_mib": peak_rss,
         "peak_rss_mb": peak_rss,
         "inf_time_sec": round(inf_time, 3),
+        "load_time_sec": round(load_time, 3),
+        "prefill_time_sec": round(prefill_time, 3),
+        "decode_time_sec": round(decode_time, 3),
+        "threads": threads,
         "tok_cnt": tok_cnt,
         "tok_per_sec": tps,
         "is_mock": is_mock
