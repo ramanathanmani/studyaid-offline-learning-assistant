@@ -48,11 +48,13 @@ def run_cmd(args):
             sys.exit(f"Error: system is ONLINE (active interfaces: {act_str}, default route: {def_str}). Offline required by --require-offline.")
 
     pass_p = args.passage or r_cfg.get("passage", "samples/optics.txt")
-    if not os.path.exists(pass_p):
-        sys.exit(f"Passage file not found: {pass_p}")
-
-    with open(pass_p, "r", encoding="utf-8") as f:
-        pass_txt = f.read()
+    if pass_p == "-":
+        pass_txt = sys.stdin.read()
+    else:
+        if not os.path.exists(pass_p):
+            sys.exit(f"Passage file not found: {pass_p}")
+        with open(pass_p, "r", encoding="utf-8") as f:
+            pass_txt = f.read()
 
     w_cnt = len(pass_txt.split())
     if w_cnt < 150 or w_cnt > 300:
