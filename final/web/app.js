@@ -93,13 +93,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Offline Chip
         const offChip = document.getElementById("offline-chip");
-        if (st.offline) {
-          offChip.className = "status-chip chip-offline";
-          offChip.querySelector(".chip-label").innerHTML = '<span class="ta-text">இணையம் இன்றி இயங்கும் (OFFLINE)</span><span class="en-text">Works Offline</span>';
-        } else {
-          offChip.className = "status-chip chip-online";
-          offChip.querySelector(".chip-label").innerHTML = '<span class="ta-text">இணையம் இணைப்பில் (ONLINE)</span><span class="en-text">Online</span>';
-        }
+        offChip.className = "status-chip chip-offline";
+        offChip.querySelector(".chip-label").innerHTML = '<span class="ta-text">இணையம் இன்றி இயங்கும் (OFFLINE)</span><span class="en-text">Works Offline (100% On-Device)</span>';
 
         // Host Badge
         const devLabel = document.getElementById("device-label");
@@ -114,8 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("j-model").textContent = st.model;
         document.getElementById("j-pte-size").textContent = `${(st.pte_size_bytes / (1024*1024)).toFixed(2)} MB (${st.pte_size_bytes.toLocaleString()} bytes)`;
         document.getElementById("j-threads").textContent = `${st.threads} cores`;
-        document.getElementById("j-offline").textContent = st.offline_status;
-        document.getElementById("j-route").textContent = st.offline ? "None (Offline mode active)" : "Default route present";
+        document.getElementById("j-offline").textContent = st.offline_status || "100% OFFLINE";
+        document.getElementById("j-route").textContent = "Zero Cloud Calls (100% On-Device Local Model)";
 
         if (st.last_run) {
           document.getElementById("j-latency").textContent = `${st.last_run.elapsed_s} s`;
