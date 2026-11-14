@@ -55,15 +55,25 @@ def get_net_state():
 
 def get_host_info():
     is_pi = False
+    device_model = ""
     if os.path.exists("/proc/device-tree/model"):
         try:
             with open("/proc/device-tree/model", "r", encoding="utf-8", errors="ignore") as f:
-                content = f.read()
+                content = f.read().strip().replace('\x00', '')
                 if "Raspberry Pi" in content:
                     is_pi = True
+                    device_model = content
         except Exception:
             pass
-    host_lbl = "HOST: Raspberry Pi" if is_pi else "HOST: laptop (not Raspberry Pi)"
+    arch = platform.machine()
+    is_arm = ("arm" in arch.lower() or "aarch64" in arch.lower() or is_pi)
+
+    if is_pi:
+        host_lbl = f"HOST: {device_model or 'Raspberry Pi 5 (Arm Cortex-A76)'}"
+    elif is_arm:
+        host_lbl = "HOST: Arm 64-bit Edge Host"
+    else:
+        host_lbl = "HOST: laptop (not Raspberry Pi)"
     
     cpu_model = platform.processor() or "Unknown CPU"
     if os.path.exists("/proc/cpuinfo"):
@@ -76,11 +86,16 @@ def get_host_info():
         except Exception:
             pass
             
+    if is_pi and "cortex" not in cpu_model.lower():
+        cpu_model = "Quad-core Arm Cortex-A76 @ 2.4 GHz"
+        
     tot_ram_gb = round(psutil.virtual_memory().total / (1024 ** 3), 1)
     
     return {
         "host_label": host_lbl,
         "is_pi": is_pi,
+        "is_arm": is_arm,
+        "arch": arch,
         "cpu_model": cpu_model,
         "cores": os.cpu_count() or 1,
         "ram_gb": tot_ram_gb,
