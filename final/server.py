@@ -96,6 +96,11 @@ def worker_supervisor():
                     jobs[jid]["result"] = resp.get("result")
                     jobs[jid]["elapsed_s"] = resp.get("elapsed_s")
                     jobs[jid]["rss"] = resp.get("rss")
+                    try:
+                        with open(Path(__file__).resolve().parent / "gw_result.json", "w", encoding="utf-8") as f:
+                            json.dump(resp.get("result"), f, ensure_ascii=False, indent=2)
+                    except Exception:
+                        pass
                     last_run_telemetry = {
                         "elapsed_s": resp.get("elapsed_s"),
                         "rss_mb": resp.get("rss"),
@@ -189,6 +194,18 @@ class AppHandler(BaseHTTPRequestHandler):
                     self.send_json(json.load(f))
             else:
                 self.send_json([])
+            return
+        elif p == "/api/latest_result":
+            with lock:
+                done_jobs = [v for v in jobs.values() if v.get("stage") == "done" and v.get("result")]
+                if done_jobs:
+                    self.send_json(done_jobs[-1]["result"])
+                else:
+                    self.send_json({"error": "No completed jobs yet"}, 404)
+            return
+        elif p == "/api/jobs":
+            with lock:
+                self.send_json({k: {"stage": v["stage"], "elapsed_s": v.get("elapsed_s"), "has_result": v.get("result") is not None} for k, v in jobs.items()})
             return
         elif p.startswith("/api/job/"):
             jid = p.split("/api/job/")[1].strip()

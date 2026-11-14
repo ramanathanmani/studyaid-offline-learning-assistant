@@ -14,6 +14,9 @@ if gl_path.exists():
         glossary = json.load(f)
 
 ADVANCED_TERMS = {
+    "greenhouse gases": 24, "greenhouse effect": 22, "global warming": 20,
+    "fossil fuels": 18, "deforestation": 18, "renewable energy": 18,
+    "carbon dioxide": 16, "nitrous oxide": 16, "methane": 16,
     "equilibrium": 15, "thermal equilibrium": 20, "energy in transit": 12,
     "absolute zero": 10, "triple point": 15, "thermodynamic": 15,
     "photosynthesis": 15, "chloroplast": 15, "chlorophyll": 12, "stomata": 15,
@@ -25,9 +28,12 @@ ADVANCED_TERMS = {
 
 COMMON_INTRO_PENALTY = [
     r"\bis a physical quantity that expresses\b",
+    r"\bis one of the most serious\b",
     r"\bin everyday life\b",
     r"\bthe si unit of\b",
-    r"\bis commonly measured\b"
+    r"\bis commonly measured\b",
+    r"\bin conclusion\b",
+    r"\bevery individual has\b"
 ]
 
 def score_sentence(s):
@@ -71,6 +77,16 @@ def find_hardest_sentence(sents):
 def simplify_sentence(orig, txt=""):
     s = orig.strip()
     subs = [
+        # Global Warming & Climate Change
+        (r"\bOver the past few decades, the Earth's temperature has increased significantly due to the excessive release of greenhouse gases such as carbon dioxide, methane, and nitrous oxide\.?\b",
+         "In recent decades, Earth's temperature has increased significantly due to human release of greenhouse gases like carbon dioxide and methane."),
+        (r"\bAlthough the greenhouse effect is a natural process that helps maintain the Earth's temperature, human activities have intensified it, resulting in climate change and environmental imbalance\.?\b",
+         "While the natural greenhouse effect helps maintain Earth's temperature, human activities have increased it, resulting in climate change."),
+        (r"\bOne of the major causes of global warming is the burning of fossil fuels such as coal, petrol, diesel, and natural gas\.?\b",
+         "A major cause of global warming is burning fossil fuels like coal, petrol, diesel, and natural gas."),
+        (r"\bOne of the most visible impacts is the melting of glaciers and polar ice caps, which causes sea levels to rise\.?\b",
+         "A visible impact is melting glaciers and polar ice caps, which causes sea levels to rise."),
+
         # Equilibrium & Heat
         (r"\bHeat is energy in transit that flows from a higher temperature body to a lower temperature body until thermal equilibrium is reached\.?\b",
          "Heat is energy that moves from a hotter object to a colder object until both reach the same temperature."),
@@ -148,8 +164,16 @@ def simplify_sentence(orig, txt=""):
 def enrich_example(out, txt):
     low = txt.lower()
     
+    # 0. Global Warming & Climate Change
+    if any(k in low for k in ["global warming", "greenhouse effect", "greenhouse gases", "climate change", "fossil fuels", "deforestation"]):
+        return {
+            "id": "photosynthesis_solar_crops",
+            "en": "When student Meena leaves her father's tractor covered with a clear polythene tarpaulin under the blazing midday sun, the air inside traps solar heat and becomes intensely hot compared to outside air; similarly, greenhouse gases in our atmosphere act like a transparent sheet around Earth, trapping solar heat and causing global warming.",
+            "ta": "மாணவி மீனா தன் தந்தையின் டிராக்டரை நண்பகல் வெயிலில் நிறுத்தி அதன் மேல் ஒளிபுகும் பாலீத்தீன் தார்ப்பாய் போர்த்தும்போது, சூரிய வெப்பம் உள்ளே சிக்கி காற்று மிகச் சூடாவதைப் பார்க்கிறார்; அதேபோல், பூமியின் வளிமண்டலத்தில் உள்ள பசுமைக்குடில் வாயுக்கள் பூமிக்கு ஒரு கண்ணாடி கூரை போலச் செயல்பட்டு வெப்பத்தைத் தக்கவைத்து புவி வெப்பமயமாதலை ஏற்படுத்துகின்றன.",
+            "txt": "When student Meena leaves her father's tractor covered with a clear polythene tarpaulin under the blazing midday sun, the air inside traps solar heat and becomes intensely hot compared to outside air; similarly, greenhouse gases in our atmosphere act like a transparent sheet around Earth, trapping solar heat and causing global warming."
+        }
     # 1. Heat & Temperature
-    if any(k in low for k in ["temperature", "kelvin", "celsius", "fahrenheit", "heat", "thermal"]):
+    elif any(k in low for k in ["temperature", "kelvin", "celsius", "fahrenheit", "heat", "thermal"]):
         return {
             "id": "heat_village_stove",
             "en": "When student Meena boils goat milk on a village firewood stove, heat flows from the hot bronze pot into her metal stirring spoon until both reach the same temperature (thermal equilibrium).",
@@ -227,7 +251,9 @@ def enrich_quiz(raw_quiz, sents, txt, terms):
     low_txt = txt.lower()
     
     # Domain-specific distractor pool
-    if any(k in low_txt for k in ["photosynthesis", "chloroplast", "chlorophyll", "stomata", "leaf", "plant"]):
+    if any(k in low_txt for k in ["global warming", "greenhouse", "climate", "fossil fuel", "deforestation"]):
+        domain_pool = ["Greenhouse gases", "Fossil fuels", "Renewable energy", "Deforestation", "Carbon dioxide", "Solar energy", "Glaciers", "Methane", "Atmosphere", "Hydropower", "Nitrous oxide", "Recycling"]
+    elif any(k in low_txt for k in ["photosynthesis", "chloroplast", "chlorophyll", "stomata", "leaf", "plant"]):
         domain_pool = ["Chloroplast", "Stomata", "Chlorophyll", "Glucose", "Mitochondria", "Epidermis", "Transpiration", "Oxygen", "Carbon dioxide"]
     elif any(k in low_txt for k in ["archaeolog", "fossil", "evolution", "hominin", "ancestor", "prehistory"]):
         domain_pool = ["Hominins", "Archaeologists", "Fossils", "Palaeoanthropologists", "Prehistory", "Stone tools", "Excavations", "Stratigraphy"]
@@ -257,9 +283,12 @@ def enrich_quiz(raw_quiz, sents, txt, terms):
         ans_str = opts[ans_idx] if 0 <= ans_idx < len(opts) else (opts[0] if opts else "")
         if not ans_str:
             continue
+        if ans_str.islower():
+            ans_str = ans_str.capitalize()
 
         has_generic = any(d in ["Kelvin", "Degree Celsius", "Fahrenheit"] for d in opts)
-        needs_context = has_generic and not any(k in low_txt for k in ["temperature", "heat", "kelvin", "celsius", "fahrenheit"])
+        is_pure_temp_topic = any(k in low_txt for k in ["kelvin", "celsius", "fahrenheit"]) and not any(k in low_txt for k in ["global warming", "greenhouse", "climate", "fossil"])
+        needs_context = has_generic and not is_pure_temp_topic
 
         cands = [d for d in domain_pool if d.lower() != ans_str.lower() and d.lower() not in ans_str.lower() and ans_str.lower() not in d.lower()]
         
@@ -360,6 +389,16 @@ def enrich_output(out, txt):
                 "ta": v.get("ta", ""),
                 "def": v.get("def", "") or v.get("ta_def", "") or v.get("en_def", "")
             })
+    
+    # Priority sorting for pedagogical importance
+    priority_order = [
+        "global warming", "greenhouse effect", "greenhouse gases", "fossil fuels",
+        "deforestation", "renewable energy", "carbon dioxide", "methane",
+        "nitrous oxide", "glaciers", "climate change", "solar energy", "atmosphere",
+        "hydropower", "recycling", "thermal equilibrium", "photosynthesis",
+        "palaeoanthropologists", "vernier", "least count", "zero error"
+    ]
+    matched.sort(key=lambda m: (priority_order.index(m["en"].lower()) if m["en"].lower() in priority_order else 99, -len(m["en"])))
     
     final_terms = []
     seen = set()
