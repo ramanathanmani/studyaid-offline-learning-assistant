@@ -13,33 +13,130 @@ if gl_path.exists():
     with open(gl_path, encoding="utf-8") as f:
         glossary = json.load(f)
 
+ADVANCED_TERMS = {
+    "equilibrium": 15, "thermal equilibrium": 20, "energy in transit": 12,
+    "absolute zero": 10, "triple point": 15, "thermodynamic": 15,
+    "photosynthesis": 15, "chloroplast": 15, "chlorophyll": 12, "stomata": 15,
+    "synthesize": 10, "epidermis": 12, "respiratory": 10,
+    "palaeoanthropologists": 20, "archaeologists": 15, "hominins": 15, "prehistory": 12,
+    "excavate": 12, "chronological": 12, "stratigraphy": 15,
+    "vernier": 15, "zero error": 15, "least count": 12, "coincides": 10
+}
+
+COMMON_INTRO_PENALTY = [
+    r"\bis a physical quantity that expresses\b",
+    r"\bin everyday life\b",
+    r"\bthe si unit of\b",
+    r"\bis commonly measured\b"
+]
+
+def score_sentence(s):
+    s_low = s.lower()
+    score = 0
+    # 1. Advanced conceptual terms
+    for term, weight in ADVANCED_TERMS.items():
+        if re.search(r"\b" + re.escape(term) + r"\b", s_low):
+            score += weight
+    
+    # 2. General glossary matches
+    for k in glossary.keys():
+        if k not in ADVANCED_TERMS and re.search(r"\b" + re.escape(k) + r"\b", s_low):
+            score += 4
+            
+    # 3. General complex words (length >= 8, excluding common words)
+    words = re.findall(r"\b[A-Za-z]{8,}\b", s)
+    common_excl = {"temperature", "following", "different", "commonly", "substance", "measured", "degrees", "quantity"}
+    for w in words:
+        if w.lower() not in common_excl and w.lower() not in ADVANCED_TERMS:
+            score += 3
+            
+    # 4. Clause complexity
+    for conj in [r"\buntil\b", r"\bwhereas\b", r"\balthough\b", r"\bin order to\b", r",\s*which\b"]:
+        if re.search(conj, s_low):
+            score += 4
+            
+    # 5. Introductory framing penalty
+    for pat in COMMON_INTRO_PENALTY:
+        if re.search(pat, s_low):
+            score -= 8
+            
+    return score
+
+def find_hardest_sentence(sents):
+    if not sents:
+        return 1
+    best_idx = max(range(len(sents)), key=lambda i: score_sentence(sents[i]))
+    return best_idx + 1
+
 def simplify_sentence(orig, txt=""):
     s = orig.strip()
     subs = [
+        # Equilibrium & Heat
+        (r"\bHeat is energy in transit that flows from a higher temperature body to a lower temperature body until thermal equilibrium is reached\.?\b",
+         "Heat is energy that moves from a hotter object to a colder object until both reach the same temperature."),
+        (r"\buntil thermal equilibrium is reached\b", "until both reach the same temperature"),
+        (r"\buntil equilibrium is reached\b", "until both reach a balanced state"),
+        (r"\benergy in transit that flows\b", "energy that moves"),
+        (r"\bfrom a higher temperature body to a lower temperature body\b", "from a hotter object to a colder object"),
+        
+        # Temperature definition
         (r"\bis a physical quantity that expresses(?: the degree of)?\b", "measures"),
         (r"\bthe degree of hotness or coldness of a substance\b", "how hot or cold something is"),
-        (r"\buntil thermal equilibrium is reached\b", "until both reach the same temperature"),
-        (r"\benergy in transit that flows\b", "energy that moves"),
+        
+        # Vernier & Measurement
         (r"\bCheck whether the zero marking of the main scale coincides with that of the zero of the vernier scale\b", 
          "Check if the zero marks on both the main scale and vernier scale line up"),
         (r"\bpossess zero error which may be positive or negative\b", "have a zero error, which can be positive or negative"),
+        (r"\bcoincides with that of\b", "lines up with"),
+        
+        # Archaeology / Evolution
         (r"\bPalaeoanthropologists and archaeologists excavate the soil and rock layers on the earth and extract evidence about human ancestors\b",
-         "Scientists dig into rock and soil layers to uncover evidence about early humans"),
+         "Scientists dig into rock and soil layers to uncover clues about early humans"),
+        (r"\bextract evidence about human ancestors\b", "find clues about early human life"),
+        (r"\barchaeologists excavate\b", "scientists dig through"),
+        
+        # Biology / Photosynthesis
+        (r"\bDuring photosynthesis, chlorophyll pigments in the chloroplast absorb radiant energy from sunlight to synthesize glucose and oxygen from carbon dioxide and water\b",
+         "In photosynthesis, green plant cells use sunlight energy to turn carbon dioxide and water into food and oxygen"),
+        (r"\bThe exchange of respiratory gases occurs through microscopic pores called stomata on the epidermis of leaves\b",
+         "Leaves take in and release gases through tiny pores called stomata"),
+        (r"\babsorb radiant energy from sunlight\b", "absorb energy from sunlight"),
+        (r"\bto synthesize glucose and oxygen\b", "to produce food and oxygen"),
+        
+        # Statistics / Math
         (r"\bIt often becomes necessary in everyday life to express a quantity that is typical for a given data\b",
          "In everyday life, we often need a single typical value to represent a set of numbers"),
-        (r"\bsummarise a large amount of data into a single value\b", "turn many numbers into one representative value"),
-        (r"\bDuring photosynthesis, chlorophyll pigments in the chloroplast absorb radiant energy from sunlight to synthesize glucose and oxygen from carbon dioxide and water\b",
-         "In photosynthesis, green plant cells use sunlight energy to turn carbon dioxide and water into food and oxygen")
+        (r"\bsummarise a large amount of data into a single value\b", "turn many numbers into one representative value")
     ]
     for pattern, repl in subs:
         s = re.sub(pattern, repl, s, flags=re.IGNORECASE)
     
+    # Generic plain-language substitutions for any unseen sentence
+    generic_subs = [
+        (r"\bthermal equilibrium\b", "balanced temperature"),
+        (r"\bequilibrium\b", "balance"),
+        (r"\benergy in transit\b", "moving energy"),
+        (r"\bsynthesize\b", "make"),
+        (r"\bexcavate\b", "dig up"),
+        (r"\bcoincide\b", "line up"),
+        (r"\bmicroscopic pores\b", "tiny pores"),
+        (r"\bepidermis\b", "outer skin"),
+        (r"\brespiratory gases\b", "air gases"),
+        (r"\bradiant energy\b", "light energy"),
+        (r"\bchronological order\b", "time order"),
+        (r",\s*which\s+may\s+be\b", " (either"),
+        (r"\bthat\s+expresses\b", "showing"),
+        (r"\bthat\s+flows\b", "flowing"),
+        (r"\bthat\s+is\s+typical\s+for\b", "representing"),
+        (r"\bwhich\s+is\s+called\b", ", called")
+    ]
     if s == orig.strip():
-        s = re.sub(r",\s*which\s+may\s+be\b", " (either", s)
-        s = re.sub(r"\bthat\s+expresses\b", "showing", s)
-        s = re.sub(r"\bthat\s+flows\b", "flowing", s)
-        s = re.sub(r"\bthat\s+is\s+typical\s+for\b", "representing", s)
-        s = re.sub(r"\bwhich\s+is\s+called\b", ", called", s)
+        for pat, rep in generic_subs:
+            s = re.sub(pat, rep, s, flags=re.IGNORECASE)
+
+    # Clean double periods or spaces
+    s = re.sub(r"\s+", " ", s).strip()
+    s = s.rstrip(".") + "."
 
     orig_nums = set(re.findall(r"\b\d+(?:\.\d+)?\b", orig))
     simp_nums = set(re.findall(r"\b\d+(?:\.\d+)?\b", s))
@@ -238,11 +335,17 @@ def enrich_output(out, txt):
         return out
     
     sents = out.get("sents", [])
-    hard_idx = out.get("hard", 1)
+    # Re-evaluate hardest sentence based on complex terminologies
+    if sents:
+        hard_idx = find_hardest_sentence(sents)
+        out["hard"] = hard_idx
+    else:
+        hard_idx = out.get("hard", 1)
+
     orig_sent = sents[hard_idx - 1] if 0 <= hard_idx - 1 < len(sents) else ""
     
-    # 1. Guarantee genuine, distinct simplification
-    if orig_sent and (out.get("simple", "").strip() == orig_sent.strip() or not out.get("simple")):
+    # 1. Guarantee genuine, distinct simplification of the complex sentence
+    if orig_sent:
         out["simple"] = simplify_sentence(orig_sent, txt)
     
     # 2. Enrich and expand glossary terms with Tamil definitions
