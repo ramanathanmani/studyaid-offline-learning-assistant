@@ -24,14 +24,19 @@
         <span id="device-label">Detecting host...</span>
       </div>
       <button id="lang-toggle" class="btn-secondary btn-sm" aria-label="Toggle Language"><span class="ta-text">English / தமிழ்</span><span class="en-text">தமிழ் / English</span></button>
-      <button id="judge-toggle" class="btn-secondary btn-sm">⚖️ <span class="ta-text">நடுவர் பகுதி</span><span class="en-text">For Judges</span></button>
+      <button id="judge-toggle" class="btn-secondary btn-sm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg> <span class="ta-text">நடுவர் பகுதி</span><span class="en-text">For Judges</span></button>
     </div>
   </header>
 
   <main class="main-content">
     <!-- Student Journey Intro Banner -->
     <section class="persona-card">
-      <div class="persona-icon">👩‍🎓</div>
+      <div class="persona-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      </div>
       <div class="persona-info">
         <h2 class="persona-title"><span class="ta-text">மாணவி மீனா · 9-ஆம் வகுப்பு, தமிழ் வழி கல்வி</span><span class="en-text">Student Persona: Meena · Class 9, Tamil Medium</span></h2>
         <p class="persona-desc"><span class="ta-text">மின்வெட்டு மற்றும் மொபைல் டேட்டா இல்லாத கிராமப்புறச் சூழலிலும் பாடப்புத்தகக் கடினப் பத்திகளை எளிதாகப் படித்து சுயமாகப் புரிந்துகொள்ளும் கற்பனை மாணவி பயணம்.</span><span class="en-text">Studying textbook paragraphs independently at home during a power cut with no internet access or mobile data.</span></p>
@@ -53,7 +58,8 @@
       <div class="textarea-wrapper">
         <div class="textarea-tools">
           <button id="btn-sample" class="btn-sample" title="Click to instantly paste a standard Class 9 physics sample paragraph">
-            ✨ <span class="ta-text">மாதிரி பத்தி ஒட்டு (Sample Passage)</span><span class="en-text">Paste Sample Passage</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
+            <span class="ta-text">மாதிரி பத்தி ஒட்டு (Sample Passage)</span><span class="en-text">Paste Sample Passage</span>
           </button>
           <span id="word-count" class="word-counter">0 சொற்கள் / words</span>
         </div>
@@ -62,7 +68,11 @@
 
       <div class="action-bar">
         <button id="btn-analyze" class="btn-primary">
-          <span class="btn-icon">⚡</span>
+          <span class="btn-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </span>
           <span class="ta-text">எளிதாக்கு (Make it easier)</span>
           <span class="en-text">Simplify Passage</span>
         </button>
@@ -85,7 +95,13 @@
 
     <!-- Step 3: Error Display -->
     <section id="error-section" class="card error-card hidden">
-      <div class="error-icon">⚠️</div>
+      <div class="error-icon" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      </div>
       <div class="error-details">
         <h4 class="error-title"><span class="ta-text">பிழை ஏற்பட்டது</span><span class="en-text">Unable to Process</span></h4>
         <p id="error-msg" class="error-msg"></p>
@@ -165,7 +181,13 @@
           <h3 class="card-title"><span class="ta-text">நமது சூழல் சார்ந்த எளிய ஒப்பீடு</span><span class="en-text">Everyday Familiar Example</span></h3>
         </div>
         <div class="example-box">
-          <div class="example-icon">🌾</div>
+          <div class="example-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-1 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+            </svg>
+          </div>
           <p id="example-text" class="example-text"></p>
         </div>
       </div>
@@ -180,7 +202,13 @@
           <!-- interactive questions populated here -->
         </div>
         <div id="quiz-score-banner" class="quiz-score-banner hidden">
-          <span class="score-icon">🎯</span>
+          <span class="score-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -3px; margin-right: 4px;">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="6"/>
+              <circle cx="12" cy="12" r="2"/>
+            </svg>
+          </span>
           <span id="quiz-score-text" class="score-text">மதிப்பெண்: 3 / 3</span>
         </div>
       </div>
@@ -191,7 +219,7 @@
   <!-- Judge Drawer Modal / Panel -->
   <aside id="judge-drawer" class="judge-drawer hidden">
     <div class="drawer-header">
-      <h3 class="drawer-title">⚖️ For Judges (நடுவர் தொழில்நுட்ப அறிக்கை)</h3>
+      <h3 class="drawer-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -3px; margin-right: 6px;"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg> For Judges (நடுவர் தொழில்நுட்ப அறிக்கை)</h3>
       <button id="btn-close-judge" class="btn-close">&times;</button>
     </div>
     <div class="drawer-body">
@@ -223,7 +251,7 @@
       </div>
 
       <div class="judge-metric-card alert-box">
-        <strong>⚠️ What Automatic Scores Do Not Measure:</strong>
+        <strong><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> What Automatic Scores Do Not Measure:</strong>
         <p>Automatic checks verify groundedness, sentence citation validity, zero number hallucination, and glossary fidelity. They do not evaluate pedagogy or intuitive teaching clarity—which is validated via the 30-sample human check in gold.csv.</p>
       </div>
     </div>

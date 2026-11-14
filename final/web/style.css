@@ -236,7 +236,20 @@ button {
 }
 
 .persona-icon {
-  font-size: 36px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #dbeafe;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.persona-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--primary);
 }
 .persona-title {
   font-size: 16px;
@@ -358,7 +371,20 @@ textarea:focus {
   background: var(--danger-bg);
   border: 1px solid #fecaca;
 }
-.error-icon { font-size: 28px; }
+.error-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--danger);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.error-icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--danger);
+}
 .error-title { font-size: 16px; font-weight: 700; color: var(--danger); }
 .error-msg { font-size: 14px; color: #7f1d1d; margin-bottom: 8px; }
 
@@ -525,7 +551,20 @@ textarea:focus {
   align-items: center;
 }
 .example-icon {
-  font-size: 36px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffedd5;
+  color: #c2410c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.example-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #c2410c;
 }
 .example-text {
   font-size: 15px;
