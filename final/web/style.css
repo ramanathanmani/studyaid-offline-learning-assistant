@@ -445,8 +445,43 @@ textarea:focus {
   font-weight: 700;
 }
 .sentence-cited-highlight {
-  border: 2px solid var(--success);
-  background: var(--success-bg);
+  border: 3px solid #16a34a !important;
+  background: #dcfce7 !important;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.25), 0 4px 14px rgba(22, 163, 74, 0.2) !important;
+  transform: scale(1.015);
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+.sentence-cited-highlight .sentence-num {
+  color: #15803d !important;
+  font-weight: 800 !important;
+}
+.sentence-cited-highlight .sentence-text {
+  color: #14532d !important;
+  font-weight: 700 !important;
+}
+.cited-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #15803d;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.35), 0 4px 12px rgba(22, 163, 74, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(22, 163, 74, 0.15), 0 6px 18px rgba(22, 163, 74, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.35), 0 4px 12px rgba(22, 163, 74, 0.15);
+  }
 }
 
 /* Comparison Grid */

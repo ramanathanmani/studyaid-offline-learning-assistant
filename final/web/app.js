@@ -155,13 +155,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Highlight Sentence in Reading View
   function highlightSentence(idx) {
+    if (typeof idx === "string") {
+      const m = idx.match(/\d+/);
+      idx = m ? parseInt(m[0], 10) : 1;
+    } else if (Array.isArray(idx)) {
+      idx = idx[0] || 1;
+    }
+    idx = parseInt(idx, 10) || 1;
+
     document.querySelectorAll(".sentence-item").forEach(el => {
       el.classList.remove("sentence-cited-highlight");
+      const b = el.querySelector(".cited-badge");
+      if (b) b.remove();
     });
+
     const target = document.getElementById(`sent-${idx}`);
     if (target) {
       target.classList.add("sentence-cited-highlight");
-      target.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      if (!target.querySelector(".cited-badge")) {
+        const badge = document.createElement("span");
+        badge.className = "cited-badge";
+        badge.innerHTML = '<span class="ta-text">✓ விடை ஆதாரம்</span><span class="en-text">✓ Answer Source</span>';
+        target.appendChild(badge);
+      }
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   }
 
