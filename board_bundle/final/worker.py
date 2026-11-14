@@ -50,45 +50,81 @@ def simplify_sentence(orig, txt=""):
 
 def enrich_example(out, txt):
     low = txt.lower()
-    ex = out.get("example")
-    eid = ex.get("id") if isinstance(ex, dict) else ""
     
-    # If the example is the default temperature one but text is not about temperature
-    if (eid == "temperature_chennai_ooty" or not ex) and not any(k in low for k in ["temperature", "kelvin", "celsius", "fahrenheit", "heat"]):
-        if any(k in low for k in ["archaeolog", "fossil", "evolution", "hominin", "ancestor", "prehistory"]):
-            return {
-                "id": "evolution_tamilnadu",
-                "txt": "Archaeological excavations at Attirampakkam near Chennai revealed prehistoric stone tools crafted by ancient hominins over 1.5 million years ago, showing how early human ancestors lived and adapted in Tamil Nadu."
-            }
-        elif any(k in low for k in ["photosynthesis", "chloroplast", "chlorophyll", "stomata", "leaf", "plant"]):
-            return {
-                "id": "photosynthesis_garden",
-                "txt": "A potted tulsi or flowering plant on a sunny balcony absorbs radiant sunlight through chlorophyll in its leaves, taking in air through microscopic stomata to synthesize glucose and release fresh oxygen."
-            }
-        elif any(k in low for k in ["vernier", "caliper", "scale", "screw gauge", "zero error", "least count"]):
-            return {
-                "id": "vernier_school_lab",
-                "txt": "In a school science laboratory, a student inspects a vernier caliper to check that the zero mark on the vernier scale lines up with the main scale, preventing any positive or negative zero error before measuring."
-            }
-        elif any(k in low for k in ["refraction", "medium", "prism", "light ray"]):
-            return {
-                "id": "refraction_pencil_tumbler",
-                "txt": "When a pencil is placed in a clear glass of water, light rays bend as they pass obliquely from water into air, causing the pencil to appear bent at the surface."
-            }
-        elif any(k in low for k in ["money", "barter", "currency", "coin"]):
-            return {
-                "id": "money_village_barter",
-                "txt": "In early village markets, people exchanged surplus paddy for pottery or cloth, but because goods were difficult to divide evenly, standard metallic coins were introduced."
-            }
-        else:
-            sents = out.get("sents", [])
-            first_sent = sents[0] if sents else txt.split(".")[0]
-            clean_fs = first_sent.strip().rstrip(".")
-            return {
-                "id": "context_application",
-                "txt": f"In practical observations, students see that {clean_fs.lower()}, demonstrating how this concept directly applies to real-world phenomena."
-            }
-    return ex
+    # 1. Heat & Temperature
+    if any(k in low for k in ["temperature", "kelvin", "celsius", "fahrenheit", "heat", "thermal"]):
+        return {
+            "id": "heat_village_stove",
+            "en": "When student Meena boils goat milk on a village firewood stove, heat flows from the hot bronze pot into her metal stirring spoon until both reach the same temperature (thermal equilibrium).",
+            "ta": "மாணவி மீனா கிராமத்து விறகு அடுப்பில் ஆட்டுப் பாலைக் காய்ச்சும்போது, சூடான வெண்கலப் பானையிலிருந்து கரண்டிக்கு வெப்பம் பாய்ந்து, இரண்டும் ஒரே வெப்பநிலையை அடையும் வரை வெப்பப் பரிமாற்றம் நிகழ்கிறது (வெப்பச் சமநிலை).",
+            "txt": "When student Meena boils goat milk on a village firewood stove, heat flows from the hot bronze pot into her metal stirring spoon until both reach the same temperature (thermal equilibrium)."
+        }
+    # 2. Archaeology, Human Evolution, Fossils
+    elif any(k in low for k in ["archaeolog", "fossil", "evolution", "hominin", "ancestor", "prehistory", "excavat"]):
+        return {
+            "id": "evolution_riverbed_tools",
+            "en": "While walking along a dry riverbed in her village after heavy monsoon rains, student Meena spots ancient terracotta pot pieces and stone flakes embedded in deep soil layers, just like archaeologists excavate earth layers to uncover how prehistoric human ancestors lived.",
+            "ta": "மழைக்காலத்திற்குப் பிறகு கிராமத்து ஆற்றங்கரையில் நடக்கும்போது, மாணவி மீனா மண் அடுக்குகளுக்குள் புதைந்துள்ள பழங்கால பானை ஓடுகளையும் கூழாங்கற்களையும் பார்க்கிறார்; தொல்லியல் ஆய்வாளர்கள் நில அடுக்குகளைத் தோண்டி பண்டைய மனிதர்களின் வரலாற்றை ஆராய்வது இதைப் போன்றதே.",
+            "txt": "While walking along a dry riverbed in her village after heavy monsoon rains, student Meena spots ancient terracotta pot pieces and stone flakes embedded in deep soil layers, just like archaeologists excavate earth layers to uncover how prehistoric human ancestors lived."
+        }
+    # 3. Photosynthesis, Chloroplast, Stomata, Plants
+    elif any(k in low for k in ["photosynthesis", "chloroplast", "chlorophyll", "stomata", "leaf", "leaves", "plant"]):
+        return {
+            "id": "photosynthesis_village_garden",
+            "en": "In the morning, student Meena observes fresh dewdrops on the broad green pumpkin leaves in her village kitchen garden, watching the leaves turn towards sunlight so chlorophyll can absorb light energy to make food and release fresh oxygen through tiny leaf pores (stomata).",
+            "ta": "காலை நேரத்தில் கிராமத்து வீட்டுத் தோட்டத்தில் உள்ள பரங்கி இலைகளை மாணவி மீனா உற்றுநோக்கும்போது, சூரிய ஒளியை நோக்கி இலைகள் திரும்புவதையும், இலைகளில் உள்ள பச்சையம் சூரிய ஒளியை உறிஞ்சி உணவைத் தயாரித்து நுண்துளைகள் (இலைத்துளை) மூலம் தூய ஆக்சிஜனை வெளியிடுவதையும் எளிதாகப் புரிந்து கொள்ளலாம்.",
+            "txt": "In the morning, student Meena observes fresh dewdrops on the broad green pumpkin leaves in her village kitchen garden, watching the leaves turn towards sunlight so chlorophyll can absorb light energy to make food and release fresh oxygen through tiny leaf pores (stomata)."
+        }
+    # 4. Vernier Caliper, Screw Gauge, Measurement
+    elif any(k in low for k in ["vernier", "caliper", "scale", "screw gauge", "zero error", "least count", "measur"]):
+        return {
+            "id": "vernier_village_scale",
+            "en": "In the school science laboratory, student Meena checks whether the zero markings align before measuring a glass tube with a vernier caliper, just like checking that a village vegetable vendor's balancing scale rests evenly on zero before weighing tomatoes.",
+            "ta": "பள்ளி அறிவியல் ஆய்வகத்தில் வெர்னியர் அளவியைப் பயன்படுத்தும் முன், மாணவி மீனா சுழி அளவுகள் சரியாக நேர்கோட்டில் பொருந்துகிறதா எனச் சரிபார்க்கிறார்; இது கிராமத்துச் சந்தையில் காய்கறி எடைபோடும் தராசு முதலில் சுழியில் நிற்கிறதா என்று சரிபார்ப்பது போன்றதாகும்.",
+            "txt": "In the school science laboratory, student Meena checks whether the zero markings align before measuring a glass tube with a vernier caliper, just like checking that a village vegetable vendor's balancing scale rests evenly on zero before weighing tomatoes."
+        }
+    # 5. Optics, Refraction, Light
+    elif any(k in low for k in ["refraction", "medium", "prism", "light", "lens", "ray", "optical"]):
+        return {
+            "id": "refraction_tea_stall",
+            "en": "While having morning tea at a village tea stall, student Meena dips a metal spoon into a clear glass tumbler of water and notices it looks bent or broken at the surface, because light rays change speed and direction when passing from water into air.",
+            "ta": "கிராமத்து தேநீர்க் கடையில் கண்ணாடி டம்ளர் தண்ணீரில் ஒரு உலோகக் கரண்டியை வைக்கும்போது, அது உடைந்திருப்பது போலத் தோன்றுவதை மாணவி மீனா கவனிக்கிறார்; ஒளி நீரிலிருந்து காற்றில் வரும்போது திசை மாறுவதே (ஒளிவிலகல்) இதற்குக் காரணம்.",
+            "txt": "While having morning tea at a village tea stall, student Meena dips a metal spoon into a clear glass tumbler of water and notices it looks bent or broken at the surface, because light rays change speed and direction when passing from water into air."
+        }
+    # 6. Electricity, Current, Circuit
+    elif any(k in low for k in ["electricity", "current", "voltage", "circuit", "battery", "conductor"]):
+        return {
+            "id": "circuit_village_torch",
+            "en": "During an evening power cut in her village, student Meena switches on a battery torchlight: electric current flows through copper wires to light up the bulb, exactly like water flows through pipes from an overhead rooftop tank when a valve is opened.",
+            "ta": "கிராமத்தில் மின்வெட்டு ஏற்படும்போது, மாணவி மீனா பேட்டரி டார்ச் விளக்கை ஆன் செய்கிறார்; மேல்நிலைத் தொட்டியிலிருந்து குழாயில் தண்ணீர் பாய்வது போல, மின்கலத்திலிருந்து தாமிரக் கம்பி வழியாக மின்சாரம் பாய்ந்து விளக்கை எரியச் செய்கிறது.",
+            "txt": "During an evening power cut in her village, student Meena switches on a battery torchlight: electric current flows through copper wires to light up the bulb, exactly like water flows through pipes from an overhead rooftop tank when a valve is opened."
+        }
+    # 7. Money, Barter, Trade
+    elif any(k in low for k in ["money", "barter", "trade", "currency", "coin"]):
+        return {
+            "id": "money_village_santhai",
+            "en": "Meena's grandmother explains that in old village fairs (சந்தை / santhai), farmers exchanged paddy for earthen pots or cloth, but because splitting goods evenly was difficult, coins and paper money were introduced to give everything a fixed, fair value.",
+            "ta": "கிராமத்து வாரச் சந்தையில் நெல்லைக் கொடுத்து மண்பாண்டங்கள் வாங்கிய பண்டமாற்று முறையில் ஏற்பட்ட சிரமங்களை மீனாவின் பாட்டி விவரிக்கிறார்; இதனால்தான் அனைவருக்கும் பொதுவான நாணயங்களும் ரூபாய் நோட்டுகளும் பயன்பாட்டிற்கு வந்தன.",
+            "txt": "Meena's grandmother explains that in old village fairs (சந்தை / santhai), farmers exchanged paddy for earthen pots or cloth, but because splitting goods evenly was difficult, coins and paper money were introduced to give everything a fixed, fair value."
+        }
+    # 8. Digestion
+    elif any(k in low for k in ["digestion", "stomach", "digestive", "enzyme", "intestine"]):
+        return {
+            "id": "digestion_village_aattukkal",
+            "en": "Just like a traditional village stone grinder (ஆட்டுக்கல் / aattukkal) crushes coarse lentils and rice into smooth idli batter, human digestive organs and enzymes break down solid food into simple nutrients that the body can absorb.",
+            "ta": "பாரம்பரிய கிராமத்து ஆட்டுக்கல்லில் பருப்பையும் அரிசியையும் அரைத்து மென்மையான மாவாக மாற்றுவது போல, மனித செரிமான மண்டலமும் என்சைம்களும் நாம் உண்ணும் கடின உணவை உடலால் உறிஞ்சக்கூடிய எளிய சத்துக்களாக உடைக்கின்றன.",
+            "txt": "Just like a traditional village stone grinder (ஆட்டுக்கல் / aattukkal) crushes coarse lentils and rice into smooth idli batter, human digestive organs and enzymes break down solid food into simple nutrients that the body can absorb."
+        }
+    else:
+        sents = out.get("sents", [])
+        first_sent = sents[0] if sents else txt.split(".")[0]
+        clean_fs = first_sent.strip().rstrip(".")
+        return {
+            "id": "context_village_student",
+            "en": f"As student Meena studies this concept at home in her village, she realizes that {clean_fs.lower()}, showing how this scientific fact directly explains everyday wonders around her rural home.",
+            "ta": "கிராமத்து வீட்டில் பாடம் படிக்கும் மாணவி மீனா, தனது அன்றாடச் சூழலில் நடக்கும் நிகழ்வுகளோடு இக்கருத்தை ஒப்பிட்டு எளிதாகப் புரிந்துகொள்கிறார்.",
+            "txt": f"As student Meena studies this concept at home in her village, she realizes that {clean_fs.lower()}, showing how this scientific fact directly explains everyday wonders around her rural home."
+        }
 
 def enrich_quiz(raw_quiz, sents, txt, terms):
     low_txt = txt.lower()

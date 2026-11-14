@@ -332,7 +332,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 5. Example
     const ex = res.example || {};
-    exampleText.textContent = ex.txt || "No everyday example found.";
+    if (ex.ta && (ex.en || ex.txt)) {
+      exampleText.innerHTML = `<span class="ta-text">${escapeHtml(ex.ta)}</span><span class="en-text">${escapeHtml(ex.en || ex.txt)}</span>`;
+    } else {
+      exampleText.textContent = ex.txt || ex.ta || "No everyday example found.";
+    }
 
     // 6. Interactive Quiz
     renderQuiz(res.quiz || [], sents);
