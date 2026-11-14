@@ -152,3 +152,11 @@ def scan_textbook_passage(device_path="/dev/video0", out_img="textbook_capture.j
     print(cleaned_text)
     print("-" * 64 + "\n")
     return cleaned_text
+
+if __name__ == "__main__":
+    text = scan_textbook_passage()
+    if text:
+        print("[StudyAid Camera] Text extracted successfully. Ready to run through StudyAid!")
+    else:
+        print("[StudyAid Camera] Done.")
+
