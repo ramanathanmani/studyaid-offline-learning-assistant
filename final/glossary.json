@@ -1,292 +1,1688 @@
 {
   "refraction": {
-    "ta": "ஒளிவிலகல்",
-    "translit": "Oli-vilagal",
-    "en_def": "The bending of light when it passes from one material into another.",
-    "ta_def": "ஒளி ஒரு ஊடகத்திலிருந்து மற்றொரு ஊடகத்திற்கு செல்லும்போது ஏற்படும் விலகல்.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Science Unit 2",
-    "ref": "Unit 2"
+    "en": "refraction",
+    "ta": "ஒளி வில்கல்",
+    "def": "",
+    "sub": ""
   },
   "medium": {
+    "en": "medium",
     "ta": "ஊடகம்",
-    "translit": "Oodagam",
-    "en_def": "The material light travels through, such as air, water or glass.",
-    "ta_def": "ஒளி அல்லது ஆற்றல் பரவும் பொருள்.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Science Unit 2",
-    "ref": "Unit 2"
+    "def": "ஒளி அல்லது ஆற்றல் பரவும் பொருள்.",
+    "sub": "physics"
   },
   "normal": {
+    "en": "normal",
     "ta": "குத்துக்கோடு",
-    "translit": "Kuthukkodu",
-    "en_def": "An imaginary line at 90 degrees to the surface where light hits.",
-    "ta_def": "ஒளிபடும் தளத்திற்கு செங்குத்தாக வரையப்படும் கற்பனைக் கோடு.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Science Unit 2",
-    "ref": "Unit 2"
+    "def": "ஒளிபடும் தளத்திற்கு செங்குத்தாக வரையப்படும் கற்பனைக் கோடு.",
+    "sub": "physics"
   },
   "obliquely": {
+    "en": "obliquely",
     "ta": "சாய்வாக",
-    "translit": "Saaivaaga",
-    "en_def": "At a slant, not straight on.",
-    "ta_def": "நேராக இல்லாமல் ஒரு குறிப்பிட்ட கோணத்தில் அல்லது சாய்வாக.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Science Unit 2",
-    "ref": "Unit 2"
+    "def": "நேராக இல்லாமல் ஒரு குறிப்பிட்ட கோணத்தில் அல்லது சாய்வாக.",
+    "sub": "physics"
   },
   "temperature": {
+    "en": "temperature",
     "ta": "வெப்பநிலை",
-    "translit": "Veppanilai",
-    "en_def": "How hot or cold something is.",
-    "ta_def": "ஒரு பொருள் எவ்வளவு சூடாக அல்லது குளிராக உள்ளது என்பதன் அளவு.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 8 Science Unit 1",
-    "ref": "Unit 1"
+    "def": "ஒரு பொருள் எவ்வளவு சூடாக அல்லது குளிராக உள்ளது என்பதன் அளவு.",
+    "sub": "physics"
   },
   "kelvin": {
+    "en": "kelvin",
     "ta": "கெல்வின்",
-    "translit": "Kelvin",
-    "en_def": "The SI unit of temperature.",
-    "ta_def": "வெப்பநிலையின் SI அலகு.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 8 Science Unit 1",
-    "ref": "Unit 1"
+    "def": "வெப்பநிலையின் SI அலகு.",
+    "sub": "physics"
   },
   "absolute zero": {
+    "en": "absolute zero",
     "ta": "தனிச் சுழி வெப்பநிலை",
-    "translit": "Thanich-chuzhi veppanilai",
-    "en_def": "The lowest possible temperature, 0 K.",
-    "ta_def": "மிகக் குறைந்த சாத்தியமான வெப்பநிலை, 0 K.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 9 Science Unit 7",
-    "ref": "Unit 7"
+    "def": "மிகக் குறைந்த சாத்தியமான வெப்பநிலை, 0 K.",
+    "sub": "physics"
   },
   "triple point": {
+    "en": "triple point",
     "ta": "மும்மைப் புள்ளி",
-    "translit": "Mummaip-pulli",
-    "en_def": "The one temperature where ice, water and vapour stay together.",
-    "ta_def": "பனிக்கட்டி, நீர் மற்றும் நீராவி ஆகியவை சமநிலையில் இருக்கும் ஒரு குறிப்பிட்ட வெப்பநிலை.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 9 Science Unit 7",
-    "ref": "Unit 7"
+    "def": "பனிக்கட்டி, நீர் மற்றும் நீராவி ஆகியவை சமநிலையில் இருக்கும் ஒரு குறிப்பிட்ட வெப்பநிலை.",
+    "sub": "physics"
   },
   "thermodynamic": {
+    "en": "thermodynamic",
     "ta": "வெப்ப இயக்கவியல்",
-    "translit": "Veppa iyakkaviyal",
-    "en_def": "About how heat and energy move and change.",
-    "ta_def": "வெப்பம் மற்றும் ஆற்றல் எவ்வாறு நகர்கிறது மற்றும் மாறுகிறது என்பது பற்றிய ஆய்வு.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Science Unit 3",
-    "ref": "Unit 3"
+    "def": "வெப்பம் மற்றும் ஆற்றல் எவ்வாறு நகர்கிறது மற்றும் மாறுகிறது என்பது பற்றிய ஆய்வு.",
+    "sub": "physics"
   },
   "equilibrium": {
+    "en": "equilibrium",
     "ta": "சமநிலை",
-    "translit": "Samanilai",
-    "en_def": "State where nothing changes any more because everything is balanced.",
-    "ta_def": "அனைத்தும் சமநிலையில் இருப்பதால் எதுவும் மாறாத நிலை.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 9 Science Unit 7",
-    "ref": "Unit 7"
+    "def": "அனைத்தும் சமநிலையில் இருப்பதால் எதுவும் மாறாத நிலை.",
+    "sub": "physics"
   },
   "saturated vapour": {
+    "en": "saturated vapour",
     "ta": "நிறைவுற்ற நீராவி",
-    "translit": "Niraivutra neeraavi",
-    "en_def": "Holding the maximum amount of vapour possible at that temperature.",
-    "ta_def": "அந்த வெப்பநிலையில் அதிகபட்ச நீராவியைக் கொண்டிருக்கும் நிலை.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 9 Science Unit 7",
-    "ref": "Unit 7"
+    "def": "அந்த வெப்பநிலையில் அதிகபட்ச நீராவியைக் கொண்டிருக்கும் நிலை.",
+    "sub": "physics"
   },
   "saturated": {
+    "en": "saturated",
     "ta": "நிறைவுற்ற",
-    "translit": "Niraivutra",
-    "en_def": "Holding the maximum amount of vapour possible at that temperature.",
-    "ta_def": "அதிகபட்ச நீராவியைக் கொண்டிருக்கும் நிலை.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 9 Science Unit 7",
-    "ref": "Unit 7"
+    "def": "அதிகபட்ச நீராவியைக் கொண்டிருக்கும் நிலை.",
+    "sub": "physics"
   },
   "degree celsius": {
+    "en": "degree celsius",
     "ta": "டிகிரி செல்சியஸ்",
-    "translit": "Degree Celsius",
-    "en_def": "Scale where water freezes at 0 °C and boils at 100 °C.",
-    "ta_def": "நீர் 0 °C இல் உறைந்து 100 °C இல் கொதிக்கும் வெப்பநிலை அளவுகோல்.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 8 Science Unit 1",
-    "ref": "Unit 1"
+    "def": "நீர் 0 °C இல் உறைந்து 100 °C இல் கொதிக்கும் வெப்பநிலை அளவுகோல்.",
+    "sub": "physics"
   },
   "celsius": {
+    "en": "celsius",
     "ta": "செல்சியஸ்",
-    "translit": "Celsius",
-    "en_def": "Scale where water freezes at 0 °C and boils at 100 °C.",
-    "ta_def": "நீர் 0 °C இல் உறைந்து 100 °C இல் கொதிக்கும் வெப்பநிலை அளவுகோல்.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 8 Science Unit 1",
-    "ref": "Unit 1"
+    "def": "நீர் 0 °C இல் உறைந்து 100 °C இல் கொதிக்கும் வெப்பநிலை அளவுகோல்.",
+    "sub": "physics"
   },
   "fahrenheit": {
+    "en": "fahrenheit",
     "ta": "பாரன்ஹீட்",
-    "translit": "Fahrenheit",
-    "en_def": "Scale where water freezes at 32 °F and boils at 212 °F.",
-    "ta_def": "நீர் 32 °F இல் உறைந்து 212 °F இல் கொதிக்கும் வெப்பநிலை அளவுகோல்.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 8 Science Unit 1",
-    "ref": "Unit 1"
+    "def": "நீர் 32 °F இல் உறைந்து 212 °F இல் கொதிக்கும் வெப்பநிலை அளவுகோல்.",
+    "sub": "physics"
   },
   "melting ice": {
+    "en": "melting ice",
     "ta": "உருகும் பனிக்கட்டி",
-    "translit": "Urugum panikkatti",
-    "en_def": "Ice that is turning into water.",
-    "ta_def": "நீராக மாறிக்கொண்டிருக்கும் பனிக்கட்டி.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 9 Science Unit 7",
-    "ref": "Unit 7"
+    "def": "நீராக மாறிக்கொண்டிருக்கும் பனிக்கட்டி.",
+    "sub": "physics"
   },
   "chloroplast": {
+    "en": "chloroplast",
     "ta": "பசுங்கணிகம்",
-    "translit": "Pasungkanigam",
-    "en_def": "Cell structure where photosynthesis occurs.",
-    "ta_def": "ஒளிச்சேர்க்கை நடைபெறும் செல்லின் பகுதி.",
-    "sub": "biology",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
-    "ref": "Unit 12"
+    "def": "தாவர செல்களில் ஒளிச்சேர்க்கை நடைபெறும் பச்சை நிற நுண்ணுறுப்பு.",
+    "sub": "general"
   },
   "photosynthesis": {
+    "en": "photosynthesis",
     "ta": "ஒளிச்சேர்க்கை",
-    "translit": "Olicherkkai",
-    "en_def": "Process by which green plants make food using sunlight.",
-    "ta_def": "தாவரங்கள் சூரிய ஒளியைப் பயன்படுத்தி உணவு தயாரிக்கும் முறை.",
-    "sub": "biology",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
-    "ref": "Unit 12"
+    "def": "தாவரங்கள் சூரிய ஒளி மற்றும் பச்சையம் உதவியுடன் உணவைத் தயாரிக்கும் செயல்முறை.",
+    "sub": "general"
   },
   "chlorophyll": {
+    "en": "chlorophyll",
     "ta": "பச்சையம்",
-    "translit": "Pachaiyam",
-    "en_def": "Green pigment that absorbs sunlight for photosynthesis.",
-    "ta_def": "ஒளிச்சேர்க்கைக்கு உதவும் பச்சைக் நிறமி.",
-    "sub": "biology",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
-    "ref": "Unit 12"
+    "def": "தாவரங்கள் சூரிய ஒளியை உறிஞ்சுவதற்கு உதவும் முதன்மை நிறமி.",
+    "sub": "general"
   },
   "stomata": {
+    "en": "stomata",
     "ta": "இலைத்துளை",
-    "translit": "Ilaithulai",
-    "en_def": "Microscopic openings on leaves for gas exchange.",
-    "ta_def": "வாயுப் பரிமாற்றத்திற்கு உதவும் இலைகளின் நுண்ணிய துளைகள்.",
-    "sub": "biology",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
-    "ref": "Unit 12"
+    "def": "தாவர இலைகளில் வாயு பரிமாற்றம் மற்றும் நீராவிப்போக்கிற்கு உதவும் நுண்துளைகள்.",
+    "sub": "general"
   },
   "peristalsis": {
+    "en": "peristalsis",
     "ta": "குடல் அசைவு",
-    "translit": "Kudal-asaivu",
-    "en_def": "Involuntary muscle contractions pushing food along digestive tract.",
-    "ta_def": "உணவை முன்னோக்கி நகர்த்தும் அலை போன்ற தசை இயக்கம்.",
-    "sub": "biology",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
-    "ref": "Unit 12"
+    "def": "உணவை முன்னோக்கி நகர்த்தும் அலை போன்ற தசை இயக்கம்.",
+    "sub": "biology"
   },
   "digestion": {
+    "en": "digestion",
     "ta": "செரிமானம்",
-    "translit": "Serimaanam",
-    "en_def": "Breakdown of food into absorbable nutrients.",
-    "ta_def": "உணவு எளிய ஊட்டச்சத்துக்களாக உடைக்கப்படும் செயல்முறை.",
-    "sub": "biology",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
-    "ref": "Unit 12"
+    "def": "உணவு எளிய ஊட்டச்சத்துக்களாக உடைக்கப்படும் செயல்முறை.",
+    "sub": "biology"
   },
   "stomach": {
+    "en": "stomach",
     "ta": "இரைப்பை",
-    "translit": "Iraippai",
-    "en_def": "Organ where gastric acid and enzymes digest food.",
-    "ta_def": "உணவை செரிக்கும் அமில சுரப்பி கொண்ட உறுப்பு.",
-    "sub": "biology",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
-    "ref": "Unit 12"
+    "def": "உணவை செரிக்கும் அமில சுரப்பி கொண்ட உறுப்பு.",
+    "sub": "biology"
   },
   "current": {
+    "en": "current",
     "ta": "மின்னோட்டம்",
-    "translit": "Minnotam",
-    "en_def": "The flow of electric charge through a conductor.",
-    "ta_def": "கடத்தி வழியே பாயும் மின் கட்டுகளின் ஓட்டம்.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Physics Unit 4",
-    "ref": "Unit 4"
+    "def": "கடத்தி வழியே பாயும் மின் கட்டுகளின் ஓட்டம்.",
+    "sub": "physics"
   },
   "circuit": {
+    "en": "circuit",
     "ta": "மின்சுற்று",
-    "translit": "Minsutru",
-    "en_def": "A closed loop through which electric current can flow.",
-    "ta_def": "மின்னோட்டம் பாய்வதற்கான ஒரு மூடிய பாதை.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 10 Physics Unit 4",
-    "ref": "Unit 4"
+    "def": "மின்னோட்டம் பாய்வதற்கான ஒரு மூடிய பாதை.",
+    "sub": "physics"
   },
   "frequency": {
-    "ta": "அதிர்வெண்",
-    "translit": "Athirven",
-    "en_def": "Number of wave oscillations per second (Hz).",
-    "ta_def": "ஒரு வினாடியில் ஏற்படும் அலைவு சுழற்சிகளின் எண்ணிக்கை.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 9 Physics Unit 8",
-    "ref": "Unit 8"
+    "en": "frequency",
+    "ta": "அதிரகவண்",
+    "def": "",
+    "sub": ""
   },
   "vibration": {
+    "en": "vibration",
     "ta": "அதிர்வு",
-    "translit": "Athirvu",
-    "en_def": "Rapid back-and-forth motion of an object.",
-    "ta_def": "முன்னும் பின்னும் விரைவாக நிகழும் இயக்கம்.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 9 Physics Unit 8",
-    "ref": "Unit 8"
+    "def": "முன்னும் பின்னும் விரைவாக நிகழும் இயக்கம்.",
+    "sub": "physics"
   },
   "amplitude": {
+    "en": "amplitude",
     "ta": "வீச்சு",
-    "translit": "Veechu",
-    "en_def": "Maximum displacement of a wave from its rest position.",
-    "ta_def": "அலையின் அதிகபட்ச இடப்பெயர்ச்சி.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 9 Physics Unit 8",
-    "ref": "Unit 8"
+    "def": "அலையின் அதிகபட்ச இடப்பெயர்ச்சி.",
+    "sub": "physics"
   },
   "wavelength": {
+    "en": "wavelength",
     "ta": "அலைநீளம்",
-    "translit": "Alaineelam",
-    "en_def": "Distance between two consecutive crests or compressions.",
-    "ta_def": "அடுத்தடுத்த இரண்டு முகடுகளுக்கு இடைப்பட்ட தூரம்.",
-    "sub": "physics",
-    "ok": true,
-    "src": "Samacheer Kalvi Class 9 Physics Unit 8",
-    "ref": "Unit 8"
+    "def": "அடுத்தடுத்த இரண்டு முகடுகளுக்கு இடைப்பட்ட தூரம்.",
+    "sub": "physics"
+  },
+  "compound surds": {
+    "en": "compound surds",
+    "ta": "கூட்டு முறுடுகள்",
+    "def": "",
+    "sub": ""
+  },
+  "acute triangle": {
+    "en": "acute triangle",
+    "ta": "குறுங்கோண முக்கோணம்",
+    "def": "",
+    "sub": ""
+  },
+  "complement of a set": {
+    "en": "complement of a set",
+    "ta": "நிரப்புக் கணம்",
+    "def": "",
+    "sub": ""
+  },
+  "complementary events": {
+    "en": "complementary events",
+    "ta": "நிரப்பு நிகழ்ச்சிகள்",
+    "def": "",
+    "sub": ""
+  },
+  "altitudes of a triangle": {
+    "en": "altitudes of a triangle",
+    "ta": "முக்கோணத்தின்",
+    "def": "",
+    "sub": ""
+  },
+  "arithmetic mean": {
+    "en": "arithmetic mean",
+    "ta": "கூட்டுச் சராசரி",
+    "def": "",
+    "sub": ""
+  },
+  "conjugate": {
+    "en": "conjugate",
+    "ta": "இணை",
+    "def": "",
+    "sub": ""
+  },
+  "consistent": {
+    "en": "consistent",
+    "ta": "ஒருங்கமைவன",
+    "def": "",
+    "sub": ""
+  },
+  "associative property": {
+    "en": "associative property",
+    "ta": "சேர்ப்புப் பண்பு",
+    "def": "",
+    "sub": ""
+  },
+  "constant": {
+    "en": "constant",
+    "ta": "மாறிலி",
+    "def": "",
+    "sub": ""
+  },
+  "assumed mean": {
+    "en": "assumed mean",
+    "ta": "ஊகச் சராசரி",
+    "def": "",
+    "sub": ""
+  },
+  "coordinate axes": {
+    "en": "coordinate axes",
+    "ta": "ஆய அச்சுகள்",
+    "def": "",
+    "sub": ""
+  },
+  "cuboid": {
+    "en": "cuboid",
+    "ta": "கனச் செவ்வகம்",
+    "def": "",
+    "sub": ""
+  },
+  "cartesian plane": {
+    "en": "cartesian plane",
+    "ta": "கார்டீசியன் தளம்",
+    "def": "",
+    "sub": ""
+  },
+  "cyclic quadrilateral": {
+    "en": "cyclic quadrilateral",
+    "ta": "வட்ட நாற்கரம்",
+    "def": "",
+    "sub": ""
+  },
+  "circumcentre of a": {
+    "en": "circumcentre of a",
+    "ta": "முக்கோணத்தின்",
+    "def": "",
+    "sub": ""
+  },
+  "division algorithm": {
+    "en": "division algorithm",
+    "ta": "வகுத்தல் படிமுறை",
+    "def": "",
+    "sub": ""
+  },
+  "co-efficient": {
+    "en": "co-efficient",
+    "ta": "கெழு",
+    "def": "",
+    "sub": ""
+  },
+  "expression": {
+    "en": "expression",
+    "ta": "நேரியப் பல்லுறுப்புக்கோவை",
+    "def": "",
+    "sub": ""
+  },
+  "equivalent sets": {
+    "en": "equivalent sets",
+    "ta": "சமான கணங்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "major sector": {
+    "en": "major sector",
+    "ta": "பெரிய வட்டக்கோணப்பகுதி",
+    "def": "",
+    "sub": ""
+  },
+  "event": {
+    "en": "event",
+    "ta": "நிகழ்ச்சி",
+    "def": "",
+    "sub": ""
+  },
+  "tendency": {
+    "en": "tendency",
+    "ta": "மையப்போக்கு அளவைகள்",
+    "def": "",
+    "sub": ""
+  },
+  "externally": {
+    "en": "externally",
+    "ta": "வெளிப்புறமாக",
+    "def": "",
+    "sub": ""
+  },
+  "median": {
+    "en": "median",
+    "ta": "இடைநிலை",
+    "def": "",
+    "sub": ""
+  },
+  "face of a solid": {
+    "en": "face of a solid",
+    "ta": "ஒரு திண்மத்தின் முகப்பு",
+    "def": "",
+    "sub": ""
+  },
+  "median of a triangle": {
+    "en": "median of a triangle",
+    "ta": "முக்கோணத்தின் நடுக்கோடு",
+    "def": "",
+    "sub": ""
+  },
+  "factor theorem": {
+    "en": "factor theorem",
+    "ta": "காரணித் தேற்றம்",
+    "def": "",
+    "sub": ""
+  },
+  "mid point": {
+    "en": "mid point",
+    "ta": "நடுப்புள்ளி",
+    "def": "",
+    "sub": ""
+  },
+  "factorisation": {
+    "en": "factorisation",
+    "ta": "காரணிப்படுத்துதல்",
+    "def": "",
+    "sub": ""
+  },
+  "finite set": {
+    "en": "finite set",
+    "ta": "முடிவுறு கணம்",
+    "def": "",
+    "sub": ""
+  },
+  "mixed surds": {
+    "en": "mixed surds",
+    "ta": "கலப்பு முறுடுகள்",
+    "def": "",
+    "sub": ""
+  },
+  "frequency table": {
+    "en": "frequency table",
+    "ta": "நிகழ்வெண் பட்டியல்",
+    "def": "",
+    "sub": ""
+  },
+  "mode": {
+    "en": "mode",
+    "ta": "முகடு",
+    "def": "",
+    "sub": ""
+  },
+  "triangle": {
+    "en": "triangle",
+    "ta": "செங்கோட்டு மையம்",
+    "def": "",
+    "sub": ""
+  },
+  "indices": {
+    "en": "indices",
+    "ta": "அடுக்குகள்",
+    "def": "",
+    "sub": ""
+  },
+  "outcome": {
+    "en": "outcome",
+    "ta": "விளைவு",
+    "def": "",
+    "sub": ""
+  },
+  "infinite set": {
+    "en": "infinite set",
+    "ta": "முடிவிலி கணம்",
+    "def": "",
+    "sub": ""
+  },
+  "overlapping sets": {
+    "en": "overlapping sets",
+    "ta": "வெட்டும் கணங்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "inradius": {
+    "en": "inradius",
+    "ta": "உள்வட்ட ஆரம்",
+    "def": "",
+    "sub": ""
+  },
+  "interior angles": {
+    "en": "interior angles",
+    "ta": "உட்கோணங்கள் தசம எண்களின்",
+    "def": "",
+    "sub": ""
+  },
+  "internally": {
+    "en": "internally",
+    "ta": "உட்புறமாக",
+    "def": "",
+    "sub": ""
+  },
+  "polynomial equation": {
+    "en": "polynomial equation",
+    "ta": "பல்லுறுப்புக்கோவைச்",
+    "def": "",
+    "sub": ""
+  },
+  "intersection of two sets": {
+    "en": "intersection of two sets",
+    "ta": "கணங்களின் வெட்டு சமன்பாடு",
+    "def": "",
+    "sub": ""
+  },
+  "of sets": {
+    "en": "of sets",
+    "ta": "வித்தியாசம்",
+    "def": "",
+    "sub": ""
+  },
+  "radicand": {
+    "en": "radicand",
+    "ta": "மூல அடிமானம்",
+    "def": "",
+    "sub": ""
+  },
+  "terminating decimals": {
+    "en": "terminating decimals",
+    "ta": "முடிவுறு தசம எண்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "rational numbers": {
+    "en": "rational numbers",
+    "ta": "விகிதமுறு எண்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "trigonometry": {
+    "en": "trigonometry",
+    "ta": "முக்கோணவியல்",
+    "def": "",
+    "sub": ""
+  },
+  "remainder theroem": {
+    "en": "remainder theroem",
+    "ta": "மீதித் தேற்றம்",
+    "def": "",
+    "sub": ""
+  },
+  "right triangle": {
+    "en": "right triangle",
+    "ta": "செங்கோண முக்கோணம்",
+    "def": "",
+    "sub": ""
+  },
+  "set complementation": {
+    "en": "set complementation",
+    "ta": "கண நிரப்பி",
+    "def": "",
+    "sub": ""
+  },
+  "zeros of polynomial": {
+    "en": "zeros of polynomial",
+    "ta": "பல்லுறுப்புக்கோவையின்",
+    "def": "",
+    "sub": ""
+  },
+  "set difference": {
+    "en": "set difference",
+    "ta": "கண வித்தியாசம் பூச்சியங்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "cartesian coordinate": {
+    "en": "cartesian coordinate",
+    "ta": "தசம எண்களின்",
+    "def": "",
+    "sub": ""
+  },
+  "system": {
+    "en": "system",
+    "ta": "காலமுறைமை",
+    "def": "",
+    "sub": ""
+  },
+  "abundant elements": {
+    "en": "abundant elements",
+    "ta": "அதி்க அளவு ்காணப்படும் ்தனிமம்",
+    "def": "",
+    "sub": ""
+  },
+  "acceleration": {
+    "en": "acceleration",
+    "ta": "முடுக்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "adulteration": {
+    "en": "adulteration",
+    "ta": "்கலப்படம்",
+    "def": "",
+    "sub": ""
+  },
+  "aestivation": {
+    "en": "aestivation",
+    "ta": "க்காழட்கால உறக்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "alkalis": {
+    "en": "alkalis",
+    "ta": "எரி்காரங்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "allotropes": {
+    "en": "allotropes",
+    "ta": "புறகவற்றுழம வடிவம்",
+    "def": "",
+    "sub": ""
+  },
+  "alloys": {
+    "en": "alloys",
+    "ta": "உகலா்கக ்கலழவ்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "alternating current": {
+    "en": "alternating current",
+    "ta": "மாறு மினகனாடடம்",
+    "def": "",
+    "sub": ""
+  },
+  "amorphous": {
+    "en": "amorphous",
+    "ta": "்படி்க வடிவமற்ற",
+    "def": "",
+    "sub": ""
+  },
+  "animals": {
+    "en": "animals",
+    "ta": "விலஙகு்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "anion": {
+    "en": "anion",
+    "ta": "எதிரமின அயனி",
+    "def": "",
+    "sub": ""
+  },
+  "aquaregia": {
+    "en": "aquaregia",
+    "ta": "இராஜதிராவ்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "asteroid": {
+    "en": "asteroid",
+    "ta": "சிறுக்காள்்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "atomic number": {
+    "en": "atomic number",
+    "ta": "அணு எண்",
+    "def": "",
+    "sub": ""
+  },
+  "atomic structure": {
+    "en": "atomic structure",
+    "ta": "அணு அழமபபு",
+    "def": "",
+    "sub": ""
+  },
+  "autotrophic": {
+    "en": "autotrophic",
+    "ta": "்தற்்சாரபு",
+    "def": "",
+    "sub": ""
+  },
+  "bell jar": {
+    "en": "bell jar",
+    "ta": "மணி ஜாடி",
+    "def": "",
+    "sub": ""
+  },
+  "bilateral symmetry": {
+    "en": "bilateral symmetry",
+    "ta": "இரு ்பக்கச ்சமசசீர",
+    "def": "",
+    "sub": ""
+  },
+  "biogeochemical cycle": {
+    "en": "biogeochemical cycle",
+    "ta": "உயிர புவி கவதியியல் சுைற்சி",
+    "def": "",
+    "sub": ""
+  },
+  "biological oxidation": {
+    "en": "biological oxidation",
+    "ta": "உயிரியியல் ஆகஸி்சகனற்றம்",
+    "def": "",
+    "sub": ""
+  },
+  "buccal cavity": {
+    "en": "buccal cavity",
+    "ta": "வாய்ககுழி",
+    "def": "",
+    "sub": ""
+  },
+  "canning": {
+    "en": "canning",
+    "ta": "்கலனழடத்்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "cardiac muscle": {
+    "en": "cardiac muscle",
+    "ta": "இ்தயத்்தழ்ச",
+    "def": "",
+    "sub": ""
+  },
+  "cartilage": {
+    "en": "cartilage",
+    "ta": "குருத்க்தலும்பு",
+    "def": "",
+    "sub": ""
+  },
+  "catenation": {
+    "en": "catenation",
+    "ta": "சுய ்ச்கபபிழணபபு",
+    "def": "",
+    "sub": ""
+  },
+  "cation": {
+    "en": "cation",
+    "ta": "கேரமின அயனி",
+    "def": "",
+    "sub": ""
+  },
+  "centrifugal force": {
+    "en": "centrifugal force",
+    "ta": "ழமய விலககு விழ்ச",
+    "def": "",
+    "sub": ""
+  },
+  "centripetal force": {
+    "en": "centripetal force",
+    "ta": "ழமயகோககு விழ்ச",
+    "def": "",
+    "sub": ""
+  },
+  "chemical bond": {
+    "en": "chemical bond",
+    "ta": "கவதிபபிழணபபு",
+    "def": "",
+    "sub": ""
+  },
+  "chemotherapy": {
+    "en": "chemotherapy",
+    "ta": "கவதிய சிகிசழ்ச முழற",
+    "def": "",
+    "sub": ""
+  },
+  "coelom": {
+    "en": "coelom",
+    "ta": "உடற்குழி",
+    "def": "",
+    "sub": ""
+  },
+  "colloidal solution": {
+    "en": "colloidal solution",
+    "ta": "கூழம ்கழர்சல்",
+    "def": "",
+    "sub": ""
+  },
+  "complex tissue": {
+    "en": "complex tissue",
+    "ta": "கூடடுத்திசு",
+    "def": "",
+    "sub": ""
+  },
+  "compound epithelium": {
+    "en": "compound epithelium",
+    "ta": "கூடடு புறப்படலம்",
+    "def": "",
+    "sub": ""
+  },
+  "compounds": {
+    "en": "compounds",
+    "ta": "க்சரமம்",
+    "def": "",
+    "sub": ""
+  },
+  "computer": {
+    "en": "computer",
+    "ta": "்கணினி",
+    "def": "",
+    "sub": ""
+  },
+  "coordinate covalent bond": {
+    "en": "coordinate covalent bond",
+    "ta": "ஈ்தல் ்ச்கபிழணபபு",
+    "def": "",
+    "sub": ""
+  },
+  "covalent bond": {
+    "en": "covalent bond",
+    "ta": "்ச்க பிழணபபு",
+    "def": "",
+    "sub": ""
+  },
+  "crystallization": {
+    "en": "crystallization",
+    "ta": "்படி்கமா்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "deformation": {
+    "en": "deformation",
+    "ta": "உருககுழலவு",
+    "def": "",
+    "sub": ""
+  },
+  "dental formula": {
+    "en": "dental formula",
+    "ta": "்பற்சூத்திரம்",
+    "def": "",
+    "sub": ""
+  },
+  "dialysis": {
+    "en": "dialysis",
+    "ta": "கூழமபபிரிபபு",
+    "def": "",
+    "sub": ""
+  },
+  "diploblastic": {
+    "en": "diploblastic",
+    "ta": "ஈரடுககு",
+    "def": "",
+    "sub": ""
+  },
+  "direct current": {
+    "en": "direct current",
+    "ta": "கேர மினகனாடடம்",
+    "def": "",
+    "sub": ""
+  },
+  "displacement": {
+    "en": "displacement",
+    "ta": "இடபக்பயரசசி",
+    "def": "",
+    "sub": ""
+  },
+  "distillation": {
+    "en": "distillation",
+    "ta": "வடி்கடடு்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "ductile": {
+    "en": "ductile",
+    "ta": "்கம்பியா்க நீடடக கூடிய",
+    "def": "",
+    "sub": ""
+  },
+  "echolocation": {
+    "en": "echolocation",
+    "ta": "எதிகராளியிடம்",
+    "def": "",
+    "sub": ""
+  },
+  "ectoderm": {
+    "en": "ectoderm",
+    "ta": "புறஅடுககு",
+    "def": "",
+    "sub": ""
+  },
+  "electric cell": {
+    "en": "electric cell",
+    "ta": "மின்கலம்",
+    "def": "",
+    "sub": ""
+  },
+  "electric circuit": {
+    "en": "electric circuit",
+    "ta": "மினசுற்று",
+    "def": "",
+    "sub": ""
+  },
+  "electric energy": {
+    "en": "electric energy",
+    "ta": "மினனாற்றல்",
+    "def": "",
+    "sub": ""
+  },
+  "electrical resistance": {
+    "en": "electrical resistance",
+    "ta": "மின்தழட",
+    "def": "",
+    "sub": ""
+  },
+  "electrochemical cell": {
+    "en": "electrochemical cell",
+    "ta": "மினகவதிக்கலம்",
+    "def": "",
+    "sub": ""
+  },
+  "electrode": {
+    "en": "electrode",
+    "ta": "மினவாய்",
+    "def": "",
+    "sub": ""
+  },
+  "electrolyte": {
+    "en": "electrolyte",
+    "ta": "மின்பகு திரவம்",
+    "def": "",
+    "sub": ""
+  },
+  "electromagnet": {
+    "en": "electromagnet",
+    "ta": "மின்காந்தம்",
+    "def": "",
+    "sub": ""
+  },
+  "electrostatic": {
+    "en": "electrostatic",
+    "ta": "நிழலமினனியல்",
+    "def": "",
+    "sub": ""
+  },
+  "elements": {
+    "en": "elements",
+    "ta": "்தனிமம்",
+    "def": "",
+    "sub": ""
+  },
+  "endangered species": {
+    "en": "endangered species",
+    "ta": "அழிவின விளிம்பில் உள்ள சிற்றினங்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "endoderm": {
+    "en": "endoderm",
+    "ta": "அ்கஅடுககு",
+    "def": "",
+    "sub": ""
+  },
+  "equator": {
+    "en": "equator",
+    "ta": "பூமத்திய கரழ்க",
+    "def": "",
+    "sub": ""
+  },
+  "excretion": {
+    "en": "excretion",
+    "ta": "்கழிவு நீக்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "fixed resistor": {
+    "en": "fixed resistor",
+    "ta": "நிழலயான மின்தழட",
+    "def": "",
+    "sub": ""
+  },
+  "flame cell": {
+    "en": "flame cell",
+    "ta": "சுடர க்சல்",
+    "def": "",
+    "sub": ""
+  },
+  "force": {
+    "en": "force",
+    "ta": "விழ்ச",
+    "def": "",
+    "sub": ""
+  },
+  "forensic chemistry": {
+    "en": "forensic chemistry",
+    "ta": "்தடய கவதியியல்",
+    "def": "",
+    "sub": ""
+  },
+  "fossil water": {
+    "en": "fossil water",
+    "ta": "புழ்த்படிவ நீர",
+    "def": "",
+    "sub": ""
+  },
+  "fuse": {
+    "en": "fuse",
+    "ta": "மினனுருகு இழை",
+    "def": "",
+    "sub": ""
+  },
+  "generator": {
+    "en": "generator",
+    "ta": "மினனியற்றி",
+    "def": "",
+    "sub": ""
+  },
+  "genus": {
+    "en": "genus",
+    "ta": "க்பரினம்",
+    "def": "",
+    "sub": ""
+  },
+  "geotropism": {
+    "en": "geotropism",
+    "ta": "புவிோடடம்",
+    "def": "",
+    "sub": ""
+  },
+  "glomerular filtration": {
+    "en": "glomerular filtration",
+    "ta": "குளாமருலர வடி்கடடு்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "heterogeneous": {
+    "en": "heterogeneous",
+    "ta": "்பல ்படித்்தான ்தனழம",
+    "def": "",
+    "sub": ""
+  },
+  "heterotrophic": {
+    "en": "heterotrophic",
+    "ta": "பிற்சாரபு",
+    "def": "",
+    "sub": ""
+  },
+  "hibernation": {
+    "en": "hibernation",
+    "ta": "குளிர்கால உறக்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "homoeothermic animal": {
+    "en": "homoeothermic animal",
+    "ta": "கவப்ப இரத்்த விலஙகு",
+    "def": "",
+    "sub": ""
+  },
+  "homogenous": {
+    "en": "homogenous",
+    "ta": "ஒரு ்படித்்தான ்தனழம",
+    "def": "",
+    "sub": ""
+  },
+  "hydrophytes": {
+    "en": "hydrophytes",
+    "ta": "நீரவாழத் ்தாவரங்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "hydrotropism": {
+    "en": "hydrotropism",
+    "ta": "நீர ோடடம்",
+    "def": "",
+    "sub": ""
+  },
+  "immunization": {
+    "en": "immunization",
+    "ta": "கோய்த்்தடுபபு",
+    "def": "",
+    "sub": ""
+  },
+  "inner transition elements": {
+    "en": "inner transition elements",
+    "ta": "உள் இழட நிழலத் ்தனிமம்",
+    "def": "",
+    "sub": ""
+  },
+  "input": {
+    "en": "input",
+    "ta": "உள்ளீடட்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "internal energy": {
+    "en": "internal energy",
+    "ta": "அ்கஆற்றல",
+    "def": "",
+    "sub": ""
+  },
+  "iron filings": {
+    "en": "iron filings",
+    "ta": "இரும்புத் து்கள்்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "iupac": {
+    "en": "iupac",
+    "ta": "தூய மற்றும் ்பயன்பாடடு கவதியலுக்கான ்சரவக்த்சக ்கை்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "kingdom": {
+    "en": "kingdom",
+    "ta": "உல்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "lamp black": {
+    "en": "lamp black",
+    "ta": "விளககு ்கரி",
+    "def": "",
+    "sub": ""
+  },
+  "latent heat": {
+    "en": "latent heat",
+    "ta": "உள்ளுழற கவப்பம்",
+    "def": "",
+    "sub": ""
+  },
+  "least count": {
+    "en": "least count",
+    "ta": "மீசசிற்றளவு",
+    "def": "",
+    "sub": ""
+  },
+  "levitate": {
+    "en": "levitate",
+    "ta": "மி்தத்்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "longitudinal waves": {
+    "en": "longitudinal waves",
+    "ta": "கேடடழல்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "malleable": {
+    "en": "malleable",
+    "ta": "்த்கடாகும் ்தனழமயுழடய",
+    "def": "",
+    "sub": ""
+  },
+  "mantle": {
+    "en": "mantle",
+    "ta": "கமனடல் உழற",
+    "def": "",
+    "sub": ""
+  },
+  "mass number": {
+    "en": "mass number",
+    "ta": "நிழற எண்",
+    "def": "",
+    "sub": ""
+  },
+  "melting": {
+    "en": "melting",
+    "ta": "உருகு்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "mesoglea": {
+    "en": "mesoglea",
+    "ta": "ேடு அடுககு",
+    "def": "",
+    "sub": ""
+  },
+  "metalloids": {
+    "en": "metalloids",
+    "ta": "உகலா்கப க்பாலி்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "meteorological": {
+    "en": "meteorological",
+    "ta": "வானிழல ஆய்வு",
+    "def": "",
+    "sub": ""
+  },
+  "mixture": {
+    "en": "mixture",
+    "ta": "்கலழவ",
+    "def": "",
+    "sub": ""
+  },
+  "momentum": {
+    "en": "momentum",
+    "ta": "உந்தம்",
+    "def": "",
+    "sub": ""
+  },
+  "motion": {
+    "en": "motion",
+    "ta": "இயக்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "nocturnal": {
+    "en": "nocturnal",
+    "ta": "இரவில் இயஙகும்",
+    "def": "",
+    "sub": ""
+  },
+  "non polar solvant": {
+    "en": "non polar solvant",
+    "ta": "முழனவற்ற ்கழரப்பான",
+    "def": "",
+    "sub": ""
+  },
+  "notochord": {
+    "en": "notochord",
+    "ta": "முதுகு ோண்",
+    "def": "",
+    "sub": ""
+  },
+  "nucleus": {
+    "en": "nucleus",
+    "ta": "அணு உட்கரு",
+    "def": "",
+    "sub": ""
+  },
+  "octaves": {
+    "en": "octaves",
+    "ta": "எண்மம்",
+    "def": "",
+    "sub": ""
+  },
+  "octet rule": {
+    "en": "octet rule",
+    "ta": "எண்ம விதி",
+    "def": "",
+    "sub": ""
+  },
+  "olericulture": {
+    "en": "olericulture",
+    "ta": "்காய் ்கறி மற்றும் உணவுத்்தாவரங்கழள வளரத்்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "operculum": {
+    "en": "operculum",
+    "ta": "க்சவுள் மூடி",
+    "def": "",
+    "sub": ""
+  },
+  "optical fibers": {
+    "en": "optical fibers",
+    "ta": "ஒளி இழை",
+    "def": "",
+    "sub": ""
+  },
+  "orbital velocity": {
+    "en": "orbital velocity",
+    "ta": "சுற்றியக்கத் திழ்சகவ்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "order": {
+    "en": "order",
+    "ta": "வரிழ்ச",
+    "def": "",
+    "sub": ""
+  },
+  "output": {
+    "en": "output",
+    "ta": "கவளியீடட்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "oxidation": {
+    "en": "oxidation",
+    "ta": "ஆகஸிஜகனற்றம்",
+    "def": "",
+    "sub": ""
+  },
+  "oxidation number": {
+    "en": "oxidation number",
+    "ta": "ஆகஸிஜகனற்ற எண்",
+    "def": "",
+    "sub": ""
+  },
+  "penetrate": {
+    "en": "penetrate",
+    "ta": "ஊடுருவு்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "permanent tissues": {
+    "en": "permanent tissues",
+    "ta": "நிழலத்்த திசுக்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "pharmacology": {
+    "en": "pharmacology",
+    "ta": "மருநதியல்",
+    "def": "",
+    "sub": ""
+  },
+  "phototropism": {
+    "en": "phototropism",
+    "ta": "ஒளிோடடம்",
+    "def": "",
+    "sub": ""
+  },
+  "phylum": {
+    "en": "phylum",
+    "ta": "க்தாகுதி",
+    "def": "",
+    "sub": ""
+  },
+  "piston": {
+    "en": "piston",
+    "ta": "உநது ்தண்டு",
+    "def": "",
+    "sub": ""
+  },
+  "plane mirror": {
+    "en": "plane mirror",
+    "ta": "்சம்தள ஆடி",
+    "def": "",
+    "sub": ""
+  },
+  "planet": {
+    "en": "planet",
+    "ta": "க்காள்",
+    "def": "",
+    "sub": ""
+  },
+  "plants": {
+    "en": "plants",
+    "ta": "்தாவரங்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "poikilothermic animal": {
+    "en": "poikilothermic animal",
+    "ta": "குளிர இரத்்த விலஙகு",
+    "def": "",
+    "sub": ""
+  },
+  "polymorphism": {
+    "en": "polymorphism",
+    "ta": "்பல்லுருவழமபபு",
+    "def": "",
+    "sub": ""
+  },
+  "preservatives": {
+    "en": "preservatives",
+    "ta": "்ப்தப்படுத்தி்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "pressure": {
+    "en": "pressure",
+    "ta": "அழுத்்தம்",
+    "def": "",
+    "sub": ""
+  },
+  "propagation": {
+    "en": "propagation",
+    "ta": "்பரவு்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "pump": {
+    "en": "pump",
+    "ta": "இழறப்பான",
+    "def": "",
+    "sub": ""
+  },
+  "radial symmetry": {
+    "en": "radial symmetry",
+    "ta": "ஆர ்சமசசீர",
+    "def": "",
+    "sub": ""
+  },
+  "radiation": {
+    "en": "radiation",
+    "ta": "்கதிரியக்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "radioactive decay": {
+    "en": "radioactive decay",
+    "ta": "்கதிரியக்க சிழ்தவு",
+    "def": "",
+    "sub": ""
+  },
+  "radiocarbon dating": {
+    "en": "radiocarbon dating",
+    "ta": "்கதிரியக்க ்கார்பன வயதுக்கணிபபு",
+    "def": "",
+    "sub": ""
+  },
+  "radiochemistry": {
+    "en": "radiochemistry",
+    "ta": "்கதிரியக்க கவதியியல்",
+    "def": "",
+    "sub": ""
+  },
+  "range of hearing": {
+    "en": "range of hearing",
+    "ta": "க்சவியுணர கேடுக்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "rarefactions": {
+    "en": "rarefactions",
+    "ta": "்தளரசசி்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "real and virtual image": {
+    "en": "real and virtual image",
+    "ta": "கமய் மற்றும் மாயபிம்்பம்",
+    "def": "",
+    "sub": ""
+  },
+  "reflection of sound": {
+    "en": "reflection of sound",
+    "ta": "ஒலி எதிகராளித்்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "remote control": {
+    "en": "remote control",
+    "ta": "க்தாழலயுணரவி",
+    "def": "",
+    "sub": ""
+  },
+  "resistor": {
+    "en": "resistor",
+    "ta": "மின்தழடயம்",
+    "def": "",
+    "sub": ""
+  },
+  "reverberation": {
+    "en": "reverberation",
+    "ta": "எதிரமுைக்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "rheostat": {
+    "en": "rheostat",
+    "ta": "மின்தழட மாற்றி",
+    "def": "",
+    "sub": ""
+  },
+  "space station": {
+    "en": "space station",
+    "ta": "விண்கவளி நிழலயம்",
+    "def": "",
+    "sub": ""
+  },
+  "species": {
+    "en": "species",
+    "ta": "சிற்றினம்",
+    "def": "",
+    "sub": ""
+  },
+  "specific latent heat": {
+    "en": "specific latent heat",
+    "ta": "்தன உள்ளுழற கவப்பம்",
+    "def": "",
+    "sub": ""
+  },
+  "spherical mirrors": {
+    "en": "spherical mirrors",
+    "ta": "க்காள்க ஆடி்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "sub phylum": {
+    "en": "sub phylum",
+    "ta": "துழணத் க்தாகுதி",
+    "def": "",
+    "sub": ""
+  },
+  "surface": {
+    "en": "surface",
+    "ta": "கமற்்பரபபு",
+    "def": "",
+    "sub": ""
+  },
+  "symbiotic microbes": {
+    "en": "symbiotic microbes",
+    "ta": "கூடடுயிர நுண்ணுயிர்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "taxonomy": {
+    "en": "taxonomy",
+    "ta": "வழ்கப்பாடு",
+    "def": "",
+    "sub": ""
+  },
+  "tetravalency": {
+    "en": "tetravalency",
+    "ta": "ோனகு இழணதிறன",
+    "def": "",
+    "sub": ""
+  },
+  "therapy": {
+    "en": "therapy",
+    "ta": "சிகிசழ்ச",
+    "def": "",
+    "sub": ""
+  },
+  "time period": {
+    "en": "time period",
+    "ta": "அழலவுக ்காலம்",
+    "def": "",
+    "sub": ""
+  },
+  "total internal reflection": {
+    "en": "total internal reflection",
+    "ta": "முழு அ்க எதிகராளிபபு",
+    "def": "",
+    "sub": ""
+  },
+  "toxic": {
+    "en": "toxic",
+    "ta": "ேஞ்சு",
+    "def": "",
+    "sub": ""
+  },
+  "transmitting": {
+    "en": "transmitting",
+    "ta": "்கடத்தி",
+    "def": "",
+    "sub": ""
+  },
+  "transpiration": {
+    "en": "transpiration",
+    "ta": "நீராவிபக்பாககு",
+    "def": "",
+    "sub": ""
+  },
+  "transverse waves": {
+    "en": "transverse waves",
+    "ta": "குறுக்கழல்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "triads": {
+    "en": "triads",
+    "ta": "மும்ழம",
+    "def": "",
+    "sub": ""
+  },
+  "trough": {
+    "en": "trough",
+    "ta": "அ்கடு",
+    "def": "",
+    "sub": ""
+  },
+  "tubular reabsorption": {
+    "en": "tubular reabsorption",
+    "ta": "குைாய்வழித்திரும்்ப உறிஞ்சு்தல்",
+    "def": "",
+    "sub": ""
+  },
+  "ultrasonics": {
+    "en": "ultrasonics",
+    "ta": "மீகயாலி",
+    "def": "",
+    "sub": ""
+  },
+  "underactive": {
+    "en": "underactive",
+    "ta": "குழறந்த அளவு விழன புரியும் ்தனழம க்காண்ட",
+    "def": "",
+    "sub": ""
+  },
+  "uniform motion": {
+    "en": "uniform motion",
+    "ta": "சீரான இயக்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "valance electrons": {
+    "en": "valance electrons",
+    "ta": "இழண திறன க்காண்ட எலகடரான்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "valence": {
+    "en": "valence",
+    "ta": "இழணதிறன",
+    "def": "",
+    "sub": ""
+  },
+  "variable resistor": {
+    "en": "variable resistor",
+    "ta": "மாறு மின்தழட",
+    "def": "",
+    "sub": ""
+  },
+  "velocity": {
+    "en": "velocity",
+    "ta": "திழ்சகவ்கம்",
+    "def": "",
+    "sub": ""
+  },
+  "vermiculture": {
+    "en": "vermiculture",
+    "ta": "மண்புழு வளரபியல்",
+    "def": "",
+    "sub": ""
+  },
+  "vulnerable species": {
+    "en": "vulnerable species",
+    "ta": "்பாதிபபுககுள்ளான சிற்றினங்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "xerophytes": {
+    "en": "xerophytes",
+    "ta": "வறண்ட நிலத்்தாவரங்கள்",
+    "def": "",
+    "sub": ""
+  },
+  "zero error": {
+    "en": "zero error",
+    "ta": "சுழிப்பிழை",
+    "def": "அளவீட்டுக் கருவியின் முதன்மை அளவுகோலும் வெர்னியர் அளவுகோலும் பொருந்தாமல் இருக்கும் ஆரம்பப் பிழை.",
+    "sub": "general"
+  },
+  "zero valence": {
+    "en": "zero valence",
+    "ta": "சுழி இழணதிறன",
+    "def": "",
+    "sub": ""
+  },
+  "cgs": {
+    "en": "cgs",
+    "ta": "ப்சன்டிமீடைர் கிராம் வினாடி",
+    "def": "",
+    "sub": ""
+  },
+  "psi": {
+    "en": "psi",
+    "ta": "எனனும் அலகு்களில்",
+    "def": "",
+    "sub": ""
+  },
+  "reverse": {
+    "en": "reverse",
+    "ta": "இந்த மநாயாைது எணடிமரா னவரஸ்",
+    "def": "",
+    "sub": ""
+  },
+  "slide show": {
+    "en": "slide show",
+    "ta": "னவப் ்பாரப்்பதற்கு",
+    "def": "",
+    "sub": ""
+  },
+  "saladin of egypt and suleiman the": {
+    "en": "saladin of egypt and suleiman the",
+    "ta": "தென்கிழக்்ககாசிய நாடுகளின் வரலாறு",
+    "def": "",
+    "sub": ""
+  },
+  "contradictions": {
+    "en": "contradictions",
+    "ta": "என்்ற புத்்தகத்்ததை அதை சரிசெய்யும் பல்்வவேறு வழிமுறைகளை",
+    "def": "",
+    "sub": ""
+  },
+  "bsnl                             tata steel": {
+    "en": "bsnl                             tata steel",
+    "ta": "இந்்தக் கிராம வளர்ச்சியின் காரணம் கிராம",
+    "def": "",
+    "sub": ""
+  },
+  "archaeologists": {
+    "en": "archaeologists",
+    "ta": "தொல்லியல் ஆய்வாளர்கள்",
+    "def": "பழங்கால மனிதர்களின் எச்சங்களையும் வரலாற்றையும் அகழ்வாராய்ச்சி மூலம் ஆய்வு செய்பவர்கள்.",
+    "sub": "general"
+  },
+  "archaeologist": {
+    "en": "archaeologist",
+    "ta": "தொல்லியல் ஆய்வாளர்",
+    "def": "பண்டைய கால வாழ்க்கை எச்சங்களை அகழ்ந்து ஆராயும் அறிவியலாளர்.",
+    "sub": "general"
+  },
+  "palaeoanthropologists": {
+    "en": "palaeoanthropologists",
+    "ta": "தொல் மானுடவியலாளர்கள்",
+    "def": "மனித பரிணாமத்தின் தொடக்க கால புதைபடிவங்களை ஆராயும் அறிவியலாளர்கள்.",
+    "sub": "general"
+  },
+  "fossils": {
+    "en": "fossils",
+    "ta": "புதைபடிவங்கள்",
+    "def": "பாறை அடுக்குகளில் பாதுகாக்கப்பட்ட பண்டைய தாவரங்கள் மற்றும் விலங்குகளின் எச்சங்கள்.",
+    "sub": "general"
+  },
+  "fossil": {
+    "en": "fossil",
+    "ta": "புதைபடிவம்",
+    "def": "மண்ணில் புதைந்து பாறையாக மாறிய பண்டைய உயிரினங்களின் எச்சம்.",
+    "sub": "general"
+  },
+  "evolution": {
+    "en": "evolution",
+    "ta": "பரிணாம வளர்ச்சி",
+    "def": "உயிரினங்கள் பல தலைமுறைகளாக அடையும் படிப்படியான மாற்றங்களின் செயல்முறை.",
+    "sub": "general"
+  },
+  "prehistory": {
+    "en": "prehistory",
+    "ta": "வரலாற்றுக்கு முந்தைய காலம்",
+    "def": "எழுத்துப்பூர்வ வரலாற்று ஆவணங்கள் தோன்றுவதற்கு முந்தைய மனித வரலாற்றுக் காலம்.",
+    "sub": "general"
+  },
+  "hominins": {
+    "en": "hominins",
+    "ta": "ஹோமினின்கள்",
+    "def": "நவீன மனிதர்கள் மற்றும் மனிதர்களின் தொடக்க கால முன்னோடி மூதாதையர் இனங்கள்.",
+    "sub": "general"
+  },
+  "excavate": {
+    "en": "excavate",
+    "ta": "அகழ்வாராய்ச்சி செய்",
+    "def": "பூமியின் மண் மற்றும் பாறை அடுக்குகளைத் தோண்டி வரலாற்றுச் சான்றுகளை வெளிக்கொணர்தல்.",
+    "sub": "general"
+  },
+  "vernier caliper": {
+    "en": "vernier caliper",
+    "ta": "வெர்னியர் அளவி",
+    "def": "மில்லிமீட்டரின் பத்தில் ஒரு பங்கு வரை மிகத் துல்லியமாக நீளத்தை அளவிடும் கருவி.",
+    "sub": "general"
+  },
+  "main scale": {
+    "en": "main scale",
+    "ta": "முதன்மை அளவுகோல்",
+    "def": "அளவீட்டுக் கருவியில் நிலையாக அமைக்கப்பட்ட அடிப்படை அளவுகோல்.",
+    "sub": "general"
+  },
+  "vernier scale": {
+    "en": "vernier scale",
+    "ta": "வெர்னியர் அளவுகோல்",
+    "def": "முதன்மை அளவுகோலின் மீது நகரும் நுட்பமான துணை அளவுகோல்.",
+    "sub": "general"
+  },
+  "glucose": {
+    "en": "glucose",
+    "ta": "குளுக்கோஸ்",
+    "def": "ஒளிச்சேர்க்கை மூலம் தாவரங்களால் உருவாக்கப்படும் எளிய சர்க்கரை மூலக்கூறு.",
+    "sub": "general"
+  },
+  "oxygen": {
+    "en": "oxygen",
+    "ta": "ஆக்ஸிஜன் (உயிர்வளி)",
+    "def": "சுவாசத்திற்கும் எரிதலுக்கும் அவசியமான காற்றில் உள்ள முக்கியமான வாயு.",
+    "sub": "general"
   }
 }
