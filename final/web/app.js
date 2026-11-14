@@ -65,9 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.body.classList.contains("lang-ta")) {
       document.body.classList.remove("lang-ta");
       document.body.classList.add("lang-en");
+      passageInput.placeholder = "Paste textbook English paragraph here (150-300 words)...";
     } else {
       document.body.classList.remove("lang-en");
       document.body.classList.add("lang-ta");
+      passageInput.placeholder = "பாடப்புத்தக ஆங்கிலப் பத்தியை இங்கு ஒட்டவும் (150-300 சொற்கள்)... / Paste textbook English paragraph here...";
     }
     updateWordCount();
   });
@@ -133,7 +135,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const btn = document.createElement("button");
         btn.type = "button";
         btn.className = "btn-secondary btn-sm preset-btn";
-        btn.textContent = `${p.subj_ta || p.subj_en}: ${p.title_ta || p.title_en}`;
+        const taLabel = `${p.subj_ta || p.subj_en}: ${p.title_ta || p.title_en}`;
+        const enLabel = `${p.subj_en || p.subj_ta}: ${p.title_en || p.title_ta}`;
+        btn.innerHTML = `<span class="ta-text">${escapeHtml(taLabel)}</span><span class="en-text">${escapeHtml(enLabel)}</span>`;
         btn.addEventListener("click", () => {
           passageInput.value = p.text;
           updateWordCount();
