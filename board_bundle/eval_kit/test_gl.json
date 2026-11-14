@@ -1,0 +1,1302 @@
+{
+ "compound surds": {
+  "ta": "கூட்டு முறுடுகள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "acute triangle": {
+  "ta": "குறுங்கோண முக்கோணம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "complement of a set": {
+  "ta": "நிரப்புக் கணம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "complementary events": {
+  "ta": "நிரப்பு நிகழ்ச்சிகள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "altitudes of a triangle": {
+  "ta": "முக்கோணத்தின்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "arithmetic mean": {
+  "ta": "கூட்டுச் சராசரி",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "conjugate": {
+  "ta": "இணை",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "consistent": {
+  "ta": "ஒருங்கமைவன",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "associative property": {
+  "ta": "சேர்ப்புப் பண்பு",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "constant": {
+  "ta": "மாறிலி",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "assumed mean": {
+  "ta": "ஊகச் சராசரி",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "coordinate axes": {
+  "ta": "ஆய அச்சுகள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "cuboid": {
+  "ta": "கனச் செவ்வகம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "cartesian plane": {
+  "ta": "கார்டீசியன் தளம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "cyclic quadrilateral": {
+  "ta": "வட்ட நாற்கரம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "circumcentre of a": {
+  "ta": "முக்கோணத்தின்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "division algorithm": {
+  "ta": "வகுத்தல் படிமுறை",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "co-efficient": {
+  "ta": "கெழு",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "expression": {
+  "ta": "நேரியப் பல்லுறுப்புக்கோவை",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "equivalent sets": {
+  "ta": "சமான கணங்கள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "major sector": {
+  "ta": "பெரிய வட்டக்கோணப்பகுதி",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "event": {
+  "ta": "நிகழ்ச்சி",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "tendency": {
+  "ta": "மையப்போக்கு அளவைகள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "externally": {
+  "ta": "வெளிப்புறமாக",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "median": {
+  "ta": "இடைநிலை",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "face of a solid": {
+  "ta": "ஒரு திண்மத்தின் முகப்பு",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "median of a triangle": {
+  "ta": "முக்கோணத்தின் நடுக்கோடு",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "factor theorem": {
+  "ta": "காரணித் தேற்றம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "mid point": {
+  "ta": "நடுப்புள்ளி",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "factorisation": {
+  "ta": "காரணிப்படுத்துதல்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "finite set": {
+  "ta": "முடிவுறு கணம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "mixed surds": {
+  "ta": "கலப்பு முறுடுகள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "frequency table": {
+  "ta": "நிகழ்வெண் பட்டியல்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "mode": {
+  "ta": "முகடு",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "triangle": {
+  "ta": "செங்கோட்டு மையம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "indices": {
+  "ta": "அடுக்குகள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "outcome": {
+  "ta": "விளைவு",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "infinite set": {
+  "ta": "முடிவிலி கணம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "overlapping sets": {
+  "ta": "வெட்டும் கணங்கள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "inradius": {
+  "ta": "உள்வட்ட ஆரம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "interior angles": {
+  "ta": "உட்கோணங்கள்                                       தசம எண்களின்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "internally": {
+  "ta": "உட்புறமாக",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "polynomial equation": {
+  "ta": "பல்லுறுப்புக்கோவைச்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "intersection of two sets": {
+  "ta": "கணங்களின் வெட்டு                                  சமன்பாடு",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "of sets": {
+  "ta": "வித்தியாசம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "radicand": {
+  "ta": "மூல அடிமானம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "terminating decimals": {
+  "ta": "முடிவுறு தசம எண்கள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "rational numbers": {
+  "ta": "விகிதமுறு எண்கள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "trigonometry": {
+  "ta": "முக்கோணவியல்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "remainder theroem": {
+  "ta": "மீதித் தேற்றம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "right triangle": {
+  "ta": "செங்கோண முக்கோணம்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "set complementation": {
+  "ta": "கண நிரப்பி",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "zeros of polynomial": {
+  "ta": "பல்லுறுப்புக்கோவையின்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "set difference": {
+  "ta": "கண வித்தியாசம்                                        பூச்சியங்கள்",
+  "src": "9_math_1_en.pdf",
+  "ok": false
+ },
+ "z": {
+  "ta": "ஒரு பகடையை உருட்டும்போது ஒற்்றறை எண் அல்்லது இரட்்டடை எண் கிடைக்கும்",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "c": {
+  "ta": "அக்கோணங்்கள் ஒன்றுக்கொன்று மிகை நிரப்புக்",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "b        c       d": {
+  "ta": "வெளிக்கோணமானது             இரண்டு            உள்்ளளெதிர்க்",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "e": {
+  "ta": "உள்்ளவாறு ஒரு பாலத்்ததை",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "f                  h": {
+  "ta": "விட்்டத்்ததைப்",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "g": {
+  "ta": "பட்்டத்்ததை",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "s": {
+  "ta": "வட்்ட        மையத்தின்                   குறிப்பு",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "r": {
+  "ta": "வழியே         செல்லும்     நாண்",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "o     r": {
+  "ta": "வட்்டத்தின்      விட்்டம்   என                  ஒரு வட்்டமானது",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "p": {
+  "ta": "பரிதி        என்்பது       அதன்",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "q": {
+  "ta": "பக்்கங்்கள் மற்றும் முனைகளை",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "b                          c              o": {
+  "ta": "அரை வட்்டம்",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "y": {
+  "ta": "மற்றொரு வகையில் தீர்வு காணல்",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "p                                d": {
+  "ta": "பாகங்்களாகப் பிரிக்கும்",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "cartesian coordinate": {
+  "ta": "தசம எண்களின்",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "system": {
+  "ta": "காலமுறைமை",
+  "src": "9_math_1_ta.pdf",
+  "ok": false
+ },
+ "abundant elements      -": {
+  "ta": "அதி்க அளவு ்காணப்படும் ்தனிமம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "acceleration           -": {
+  "ta": "முடுக்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "adulteration           -": {
+  "ta": "்கலப்படம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "aestivation            -": {
+  "ta": "க்காழட்கால உறக்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "alkalis                -": {
+  "ta": "எரி்காரங்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "allotropes             -": {
+  "ta": "புறகவற்றுழம வடிவம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "alloys                 -": {
+  "ta": "உகலா்கக ்கலழவ்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "alternating current    -": {
+  "ta": "மாறு மினகனாடடம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "amorphous              -": {
+  "ta": "்படி்க வடிவமற்ற",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "animals                -": {
+  "ta": "விலஙகு்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "anion                  -": {
+  "ta": "எதிரமின அயனி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "aquaregia              -": {
+  "ta": "இராஜதிராவ்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "asteroid               -": {
+  "ta": "சிறுக்காள்்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "atomic number          -": {
+  "ta": "அணு எண்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "atomic structure       -": {
+  "ta": "அணு அழமபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "autotrophic            -": {
+  "ta": "்தற்்சாரபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "bell jar               -": {
+  "ta": "மணி ஜாடி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "bilateral symmetry     -": {
+  "ta": "இரு ்பக்கச ்சமசசீர",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "biogeochemical cycle   -": {
+  "ta": "உயிர புவி கவதியியல் சுைற்சி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "biological oxidation   -": {
+  "ta": "உயிரியியல் ஆகஸி்சகனற்றம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "buccal cavity          -": {
+  "ta": "வாய்ககுழி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "canning                -": {
+  "ta": "்கலனழடத்்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "cardiac muscle         -": {
+  "ta": "இ்தயத்்தழ்ச",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "cartilage              -": {
+  "ta": "குருத்க்தலும்பு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "catenation             -": {
+  "ta": "சுய ்ச்கபபிழணபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "cation                 -": {
+  "ta": "கேரமின அயனி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "centrifugal force      -": {
+  "ta": "ழமய விலககு விழ்ச",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "centripetal force      -": {
+  "ta": "ழமயகோககு விழ்ச",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "chemical bond          -": {
+  "ta": "கவதிபபிழணபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "chemotherapy           -": {
+  "ta": "கவதிய சிகிசழ்ச முழற",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "coelom                 -": {
+  "ta": "உடற்குழி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "colloidal solution     -": {
+  "ta": "கூழம ்கழர்சல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "complex tissue         -": {
+  "ta": "கூடடுத்திசு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "compound epithelium    -": {
+  "ta": "கூடடு புறப்படலம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "compounds              -": {
+  "ta": "க்சரமம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "computer               -": {
+  "ta": "்கணினி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "coordinate covalent bond   -": {
+  "ta": "ஈ்தல் ்ச்கபிழணபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "covalent bond              -": {
+  "ta": "்ச்க பிழணபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "crystallization            -": {
+  "ta": "்படி்கமா்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "deformation                -": {
+  "ta": "உருககுழலவு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "dental formula             -": {
+  "ta": "்பற்சூத்திரம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "dialysis                   -": {
+  "ta": "கூழமபபிரிபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "diploblastic               -": {
+  "ta": "ஈரடுககு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "direct current             -": {
+  "ta": "கேர மினகனாடடம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "displacement               -": {
+  "ta": "இடபக்பயரசசி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "distillation               -": {
+  "ta": "வடி்கடடு்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "ductile                    -": {
+  "ta": "்கம்பியா்க நீடடக கூடிய",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "echolocation               -": {
+  "ta": "எதிகராளியிடம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "ectoderm                   -": {
+  "ta": "புறஅடுககு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "electric cell              -": {
+  "ta": "மின்கலம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "electric circuit           -": {
+  "ta": "மினசுற்று",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "electric energy            -": {
+  "ta": "மினனாற்றல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "electrical resistance      -": {
+  "ta": "மின்தழட",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "electrochemical cell       -": {
+  "ta": "மினகவதிக்கலம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "electrode                  -": {
+  "ta": "மினவாய்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "electrolyte                -": {
+  "ta": "மின்பகு திரவம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "electromagnet              -": {
+  "ta": "மின்காந்தம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "electrostatic              -": {
+  "ta": "நிழலமினனியல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "elements                   -": {
+  "ta": "்தனிமம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "endangered species         -": {
+  "ta": "அழிவின விளிம்பில் உள்ள சிற்றினங்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "endoderm                   -": {
+  "ta": "அ்கஅடுககு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "equator                    -": {
+  "ta": "பூமத்திய கரழ்க",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "excretion                  -": {
+  "ta": "்கழிவு நீக்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "fixed resistor             -": {
+  "ta": "நிழலயான மின்தழட",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "flame cell                 -": {
+  "ta": "சுடர க்சல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "force                      -": {
+  "ta": "விழ்ச",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "forensic chemistry         -": {
+  "ta": "்தடய கவதியியல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "fossil water               -": {
+  "ta": "புழ்த்படிவ நீர",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "frequency                  -": {
+  "ta": "அதிரகவண்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "fuse                       -": {
+  "ta": "மினனுருகு இழை",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "generator                  -": {
+  "ta": "மினனியற்றி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "genus                      -": {
+  "ta": "க்பரினம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "geotropism                 -": {
+  "ta": "புவிோடடம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "glomerular filtration      -": {
+  "ta": "குளாமருலர வடி்கடடு்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "heterogeneous              -": {
+  "ta": "்பல ்படித்்தான ்தனழம",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "heterotrophic               -": {
+  "ta": "பிற்சாரபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "hibernation                 -": {
+  "ta": "குளிர்கால உறக்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "homoeothermic animal        -": {
+  "ta": "கவப்ப இரத்்த விலஙகு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "homogenous                  -": {
+  "ta": "ஒரு ்படித்்தான ்தனழம",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "hydrophytes                 -": {
+  "ta": "நீரவாழத் ்தாவரங்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "hydrotropism                -": {
+  "ta": "நீர ோடடம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "immunization                -": {
+  "ta": "கோய்த்்தடுபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "inner transition elements   -": {
+  "ta": "உள் இழட நிழலத் ்தனிமம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "input                       -": {
+  "ta": "உள்ளீடட்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "internal energy             -": {
+  "ta": "அ்கஆற்றல",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "iron filings                -": {
+  "ta": "இரும்புத் து்கள்்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "iupac                       -": {
+  "ta": "தூய மற்றும் ்பயன்பாடடு கவதியலுக்கான ்சரவக்த்சக ்கை்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "kingdom                     -": {
+  "ta": "உல்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "lamp black                  -": {
+  "ta": "விளககு ்கரி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "latent heat                 -": {
+  "ta": "உள்ளுழற கவப்பம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "least count                 -": {
+  "ta": "மீசசிற்றளவு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "levitate                    -": {
+  "ta": "மி்தத்்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "longitudinal waves          -": {
+  "ta": "கேடடழல்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "malleable                   -": {
+  "ta": "்த்கடாகும் ்தனழமயுழடய",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "mantle                      -": {
+  "ta": "கமனடல் உழற",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "mass number                 -": {
+  "ta": "நிழற எண்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "melting                     -": {
+  "ta": "உருகு்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "mesoglea                    -": {
+  "ta": "ேடு அடுககு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "metalloids                  -": {
+  "ta": "உகலா்கப க்பாலி்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "meteorological              -": {
+  "ta": "வானிழல ஆய்வு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "mixture                     -": {
+  "ta": "்கலழவ",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "momentum                    -": {
+  "ta": "உந்தம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "motion                      -": {
+  "ta": "இயக்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "nocturnal                   -": {
+  "ta": "இரவில் இயஙகும்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "non polar solvant           -": {
+  "ta": "முழனவற்ற ்கழரப்பான",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "notochord                   -": {
+  "ta": "முதுகு ோண்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "nucleus                     -": {
+  "ta": "அணு உட்கரு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "octaves                     -": {
+  "ta": "எண்மம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "octet rule                  -": {
+  "ta": "எண்ம விதி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "olericulture                -": {
+  "ta": "்காய் ்கறி மற்றும் உணவுத்்தாவரங்கழள வளரத்்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "operculum                   -": {
+  "ta": "க்சவுள் மூடி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "optical fibers              -": {
+  "ta": "ஒளி இழை",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "orbital velocity               -": {
+  "ta": "சுற்றியக்கத் திழ்சகவ்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "order                          -": {
+  "ta": "வரிழ்ச",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "output                         -": {
+  "ta": "கவளியீடட்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "oxidation                      -": {
+  "ta": "ஆகஸிஜகனற்றம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "oxidation number               -": {
+  "ta": "ஆகஸிஜகனற்ற எண்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "penetrate                      -": {
+  "ta": "ஊடுருவு்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "permanent tissues              -": {
+  "ta": "நிழலத்்த திசுக்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "pharmacology                   -": {
+  "ta": "மருநதியல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "photosynthesis                 -": {
+  "ta": "ஒளிசக்சரகழ்க",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "phototropism                   -": {
+  "ta": "ஒளிோடடம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "phylum                         -": {
+  "ta": "க்தாகுதி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "piston                         -": {
+  "ta": "உநது ்தண்டு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "plane mirror                   -": {
+  "ta": "்சம்தள ஆடி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "planet                         -": {
+  "ta": "க்காள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "plants                         -": {
+  "ta": "்தாவரங்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "poikilothermic animal          -": {
+  "ta": "குளிர இரத்்த விலஙகு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "polymorphism                   -": {
+  "ta": "்பல்லுருவழமபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "preservatives                  -": {
+  "ta": "்ப்தப்படுத்தி்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "pressure                       -": {
+  "ta": "அழுத்்தம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "propagation                    -": {
+  "ta": "்பரவு்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "pump                           -": {
+  "ta": "இழறப்பான",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "radial symmetry                -": {
+  "ta": "ஆர ்சமசசீர",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "radiation                      -": {
+  "ta": "்கதிரியக்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "radioactive decay              -": {
+  "ta": "்கதிரியக்க சிழ்தவு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "radiocarbon dating             -": {
+  "ta": "்கதிரியக்க ்கார்பன வயதுக்கணிபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "radiochemistry                 -": {
+  "ta": "்கதிரியக்க கவதியியல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "range of hearing               -": {
+  "ta": "க்சவியுணர கேடுக்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "rarefactions                   -": {
+  "ta": "்தளரசசி்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "real and virtual image         -": {
+  "ta": "கமய் மற்றும் மாயபிம்்பம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "reflection of sound            -": {
+  "ta": "ஒலி எதிகராளித்்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "refraction                     -": {
+  "ta": "ஒளி வில்கல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "remote control                 -": {
+  "ta": "க்தாழலயுணரவி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "resistor                       -": {
+  "ta": "மின்தழடயம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "reverberation                  -": {
+  "ta": "எதிரமுைக்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "rheostat                       -": {
+  "ta": "மின்தழட மாற்றி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "space station               -": {
+  "ta": "விண்கவளி நிழலயம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "species                     -": {
+  "ta": "சிற்றினம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "specific latent heat        -": {
+  "ta": "்தன உள்ளுழற கவப்பம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "spherical mirrors           -": {
+  "ta": "க்காள்க ஆடி்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "stomata                     -": {
+  "ta": "இழலத்துழள",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "sub phylum                  -": {
+  "ta": "துழணத் க்தாகுதி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "surface                     -": {
+  "ta": "கமற்்பரபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "symbiotic microbes          -": {
+  "ta": "கூடடுயிர நுண்ணுயிர்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "taxonomy                    -": {
+  "ta": "வழ்கப்பாடு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "tetravalency                -": {
+  "ta": "ோனகு இழணதிறன",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "therapy                     -": {
+  "ta": "சிகிசழ்ச",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "time period                 -": {
+  "ta": "அழலவுக ்காலம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "total internal reflection   -": {
+  "ta": "முழு அ்க எதிகராளிபபு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "toxic                       -": {
+  "ta": "ேஞ்சு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "transmitting                -": {
+  "ta": "்கடத்தி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "transpiration               -": {
+  "ta": "நீராவிபக்பாககு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "transverse waves            -": {
+  "ta": "குறுக்கழல்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "triads                      -": {
+  "ta": "மும்ழம",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "trough                      -": {
+  "ta": "அ்கடு",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "tubular reabsorption        -": {
+  "ta": "குைாய்வழித்திரும்்ப உறிஞ்சு்தல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "ultrasonics                 -": {
+  "ta": "மீகயாலி",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "underactive                 -": {
+  "ta": "குழறந்த அளவு விழன புரியும் ்தனழம க்காண்ட",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "uniform motion              -": {
+  "ta": "சீரான இயக்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "valance electrons           -": {
+  "ta": "இழண திறன க்காண்ட எலகடரான்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "valence                     -": {
+  "ta": "இழணதிறன",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "variable resistor           -": {
+  "ta": "மாறு மின்தழட",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "velocity                    -": {
+  "ta": "திழ்சகவ்கம்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "vermiculture                -": {
+  "ta": "மண்புழு வளரபியல்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "vulnerable species          -": {
+  "ta": "்பாதிபபுககுள்ளான சிற்றினங்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "xerophytes                  -": {
+  "ta": "வறண்ட நிலத்்தாவரங்கள்",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "zero error                  -": {
+  "ta": "சுழிபபிழை",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "zero valence                -": {
+  "ta": "சுழி இழணதிறன",
+  "src": "9_sci_1_en.pdf",
+  "ok": false
+ },
+ "cgs": {
+  "ta": "ப்சன்டிமீடைர் கிராம்        வினாடி",
+  "src": "9_sci_1_ta.pdf",
+  "ok": false
+ },
+ "psi": {
+  "ta": "எனனும்         அலகு்களில்",
+  "src": "9_sci_1_ta.pdf",
+  "ok": false
+ },
+ "n                           s        n                 s": {
+  "ta": "்காந்தப் புலத்திற்கு செங்குத்தா்க னவக்்கப்",
+  "src": "9_sci_1_ta.pdf",
+  "ok": false
+ },
+ "v": {
+  "ta": "சபாருளின்    பிமபத்தின் உயரேம",
+  "src": "9_sci_1_ta.pdf",
+  "ok": false
+ },
+ "t": {
+  "ta": "ஒரு விைாடி மநரத்தில் ஒலி அனல ்க்க்கும்",
+  "src": "9_sci_1_ta.pdf",
+  "ok": false
+ },
+ "c       c    c           c           c       c       c": {
+  "ta": "நானகு னெடரஜன அணுக்்களு்ன இன்ந்து",
+  "src": "9_sci_1_ta.pdf",
+  "ok": false
+ },
+ "reverse": {
+  "ta": "இந்த மநாயாைது எணடிமரா னவரஸ்",
+  "src": "9_sci_1_ta.pdf",
+  "ok": false
+ },
+ "slide show": {
+  "ta": "னவப்                ்பாரப்்பதற்கு",
+  "src": "9_sci_1_ta.pdf",
+  "ok": false
+ },
+ "saladin of egypt and suleiman the": {
+  "ta": "தென்கிழக்்ககாசிய நாடுகளின் வரலாறு",
+  "src": "9_soc_1_en.pdf",
+  "ok": false
+ },
+ "contradictions": {
+  "ta": "என்்ற     புத்்தகத்்ததை                            அதை சரிசெய்யும் பல்்வவேறு வழிமுறைகளை",
+  "src": "9_soc_1_ta.pdf",
+  "ok": false
+ },
+ "bsnl                             tata steel": {
+  "ta": "இந்்தக் கிராம வளர்ச்சியின் காரணம் கிராம",
+  "src": "9_soc_1_ta.pdf",
+  "ok": false
+ }
+}

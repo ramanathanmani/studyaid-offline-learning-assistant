@@ -1,0 +1,83 @@
+=== NUMBERED PASSAGE / பாடப்பகுதி ===
+[S1] Temperature is the measure of hotness or coldness of a body.
+[S2] SI unit of temperature is kelvin (K).
+[S3] One kelvin is the fraction (1/273.16) of the thermodynamic temperature of the triple point of water (The temperature at which saturated water vapour, pure water and melting ice are in equilibrium).
+[S4] Zero kelvin (0 K) is commonly known as absolute zero.
+[S5] The other units for measuring temperature are degree celsius (°C) and fahrenheit (F).
+
+=== HARDEST SENTENCE BEFORE / AFTER / கடின வாக்கியம் (முன் / பின்) ===
+Original ([S3]): One kelvin is the fraction (1/273.16) of the thermodynamic temperature of the triple point of water (The temperature at which saturated water vapour, pure water and melting ice are in equilibrium).
+Simplified:   One kelvin is the temperature at which water, vapor, and ice are in equilibrium.
+
+Readability Metrics:
+Metric                   Original     Simplified   Change (%)
+Words                    30           14           -53.3%    
+Letters                  153          64           -58.2%    
+Avg letters/word         5.10         4.57         -10.4%    
+Sentences                2            1            -50.0%    
+Avg words/sentence       15.00        14.00        -6.7%     
+Avg syllables/word       1.80         1.64         -8.9%     
+Flesch Reading Ease      39.3         53.6         +14.3     
+Glossary terms count     7            3            -57.1%    
+
+=== SIMPLE SUMMARY / எளிய சுருக்கம் ===
+- Temperature is the measure of hotness or coldness of a body [S1]
+- One kelvin is the fraction [S3]
+- The other units for measuring temperature are degree celsius [S5]
+
+=== VILLAGE LIFE EXAMPLE / கிராமப்புற உதாரணம் ===
+A Chennai afternoon in May reaches about 40 °C, while Ooty in winter drops to about 15 °C. A thermometer measures each condition as an objective number, just as a kitchen kettle shows boiling water reaching 100 °C.
+
+=== HARD WORDS & TAMIL GLOSSARY / கடின சொற்கள் & தமிழாக்கம் ===
+- thermodynamic / வெப்ப இயக்கவியல் (Veppa iyakkaviyal): About how heat and energy move and change. | வெப்பம் மற்றும் ஆற்றல் எவ்வாறு நகர்கிறது மற்றும் மாறுகிறது என்பது பற்றிய ஆய்வு. [verified]
+- triple point / மும்மைப் புள்ளி (Mummaip-pulli): The one temperature where ice, water and vapour stay together. | பனிக்கட்டி, நீர் மற்றும் நீராவி ஆகியவை சமநிலையில் இருக்கும் ஒரு குறிப்பிட்ட வெப்பநிலை. [verified]
+- temperature / வெப்பநிலை (Veppanilai): How hot or cold something is. | ஒரு பொருள் எவ்வளவு சூடாக அல்லது குளிராக உள்ளது என்பதன் அளவு. [verified]
+- equilibrium / சமநிலை (Samanilai): State where nothing changes any more because everything is balanced. | அனைத்தும் சமநிலையில் இருப்பதால் எதுவும் மாறாத நிலை. [verified]
+- melting ice / உருகும் பனிக்கட்டி (Urugum panikkatti): Ice that is turning into water. | நீராக மாறிக்கொண்டிருக்கும் பனிக்கட்டி. [verified]
+
+=== QUIZ QUESTIONS / வினாடி வினா ===
+[Q1] கேள்வி / Question: Which unit besides Celsius is used to measure temperature?
+     Options / தேர்வுகள்:
+       A) Fahrenheit is used to measure temperature.
+       B) Kelvin
+       C) Degree Celsius
+       D) Absolute zero
+     விடை / Answer: Fahrenheit is used to measure temperature.
+     மேற்கோள் / Citation: S5
+     சரிபார்ப்பு / Support: SUPPORTED (shared: fahrenheit, measure, temperature) [சரி]
+[Q2] கேள்வி / Question: Fill in the blank: _____ is the measure of hotness or coldness of a body.
+     Options / தேர்வுகள்:
+       A) temperature
+       B) Kelvin
+       C) Degree Celsius
+       D) Fahrenheit
+     விடை / Answer: temperature
+     மேற்கோள் / Citation: S1
+     சரிபார்ப்பு / Support: SUPPORTED (exact term) [சரி]
+[Q3] கேள்வி / Question: Fill in the blank: SI unit of _____ is kelvin (K).
+     Options / தேர்வுகள்:
+       A) temperature
+       B) Kelvin
+       C) Degree Celsius
+       D) Fahrenheit
+     விடை / Answer: temperature
+     மேற்கோள் / Citation: S2
+     சரிபார்ப்பு / Support: SUPPORTED (exact term) [சரி]
+
+=== JUDGE PROOF TELEMETRY ===
+HOST: laptop (not Raspberry Pi)
+OS: Linux 7.0.0-43-generic
+CPU: 11th Gen Intel(R) Core(TM) i7-1185G7 @ 3.00GHz
+Cores: 8
+Execution threads: 4
+Total RAM: 14.3 GB
+Network interfaces: lo=UNKNOWN, enp0s31f6=DOWN, wlp0s20f3=DOWN
+Default route active: NO
+Offline status: OFFLINE
+Model name: Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8
+PTE size: 1083.33 MiB (1135951488 bytes)
+Peak RSS: 1922.1 MiB
+Inference time: 59.011 s (Load: 0.071 s | Prefill: 11.819 s | Decode: 47.178 s)
+Tokens generated: 934
+Tokens/sec: 15.83
+Execution mode: [REAL EXECUTORCH RUN]

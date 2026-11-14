@@ -1,0 +1,101 @@
+{
+  "id": "sample_heat_temp",
+  "commit": "d53f824",
+  "tag": "finals-freeze",
+  "date": "2026-11-14T13:01:28+05:30",
+  "host": "Laptop (x86_64)",
+  "model": "Llama-3.2-1B-Instruct-SpinQuant_INT4_EO8",
+  "threads": 4,
+  "telemetry": {
+    "elapsed_s": 99.87,
+    "rss_mb": 1902,
+    "offline_status": "ONLINE"
+  },
+  "passage": "Temperature is a physical quantity that expresses the degree of hotness or coldness of a substance. The SI unit of temperature is Kelvin (K). In everyday life, temperature is commonly measured in degrees Celsius (°C) or Fahrenheit (°F). Absolute zero is 0 K or -273.15 °C. Heat is energy in transit that flows from a higher temperature body to a lower temperature body until thermal equilibrium is reached.",
+  "result": {
+    "sents": [
+      "Temperature is a physical quantity that expresses the degree of hotness or coldness of a substance.",
+      "The SI unit of temperature is Kelvin (K).",
+      "In everyday life, temperature is commonly measured in degrees Celsius (°C) or Fahrenheit (°F).",
+      "Absolute zero is 0 K or -273.15 °C.",
+      "Heat is energy in transit that flows from a higher temperature body to a lower temperature body until thermal equilibrium is reached."
+    ],
+    "hard": 1,
+    "simple": "Temperature is a physical quantity that expresses the degree of hotness or coldness of a substance.",
+    "summary": [
+      {
+        "txt": "Temperature is a physical quantity that expresses the degree of hotness or coldness of a substance",
+        "cite": [1]
+      },
+      {
+        "txt": "In everyday life, temperature is commonly measured in degrees Celsius",
+        "cite": [3]
+      },
+      {
+        "txt": "Heat is energy in transit that flows from a higher temperature body to a lower temperature body until thermal equilibrium is reached",
+        "cite": [5]
+      }
+    ],
+    "terms": [
+      {
+        "en": "temperature",
+        "ta": "வெப்பநிலை"
+      },
+      {
+        "en": "kelvin",
+        "ta": "கெல்வின்"
+      },
+      {
+        "en": "absolute zero",
+        "ta": "தனிச் சுழி வெப்பநிலை"
+      },
+      {
+        "en": "equilibrium",
+        "ta": "சமநிலை"
+      },
+      {
+        "en": "celsius",
+        "ta": "செல்சியஸ்"
+      }
+    ],
+    "quiz": [
+      {
+        "q": "How is heat energy transferred?",
+        "opts": [
+          "It flows from a higher temperature body to a lower temperature body.",
+          "Kelvin",
+          "Degree Celsius",
+          "Fahrenheit"
+        ],
+        "ans": 0,
+        "cite": 5
+      },
+      {
+        "q": "Fill in the blank: _____ is a physical quantity that expresses the degree of hotness or coldness of a substance.",
+        "opts": [
+          "temperature",
+          "Kelvin",
+          "Degree Celsius",
+          "Fahrenheit"
+        ],
+        "ans": 0,
+        "cite": 1
+      },
+      {
+        "q": "Fill in the blank: The SI unit of _____ is Kelvin (K).",
+        "opts": [
+          "temperature",
+          "Kelvin",
+          "Degree Celsius",
+          "Fahrenheit"
+        ],
+        "ans": 0,
+        "cite": 2
+      }
+    ],
+    "example": {
+      "id": "temperature_chennai_ooty",
+      "txt": "A Chennai afternoon in May reaches about 40 °C, while Ooty in winter drops to about 15 °C. A thermometer measures each condition as an objective number, just as a kitchen kettle shows boiling water reaching 100 °C."
+    }
+  }
+}
