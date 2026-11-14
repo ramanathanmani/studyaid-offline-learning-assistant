@@ -14,12 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const judgeDrawer = document.getElementById("judge-drawer");
 
   const workingSec = document.getElementById("working-section");
-  const workingTimer = document.getElementById("working-timer");
-  const workingHost = document.getElementById("working-host");
   const queueNotice = document.getElementById("queue-notice");
   const errorSec = document.getElementById("error-section");
   const errorMsg = document.getElementById("error-msg");
   const resultsSec = document.getElementById("results-section");
+
+  function setWorkingTimer(val) {
+    document.querySelectorAll(".working-timer").forEach(el => el.textContent = val);
+  }
+  function setWorkingHost(val) {
+    document.querySelectorAll(".working-host").forEach(el => el.textContent = val);
+  }
 
   const sentenceList = document.getElementById("sentence-list");
   const origHardText = document.getElementById("orig-hard-text");
@@ -39,8 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateWordCount() {
     const txt = passageInput.value.trim();
     const words = txt ? txt.split(/\s+/).length : 0;
-    const isTa = document.body.classList.contains("lang-ta");
-    wordCount.textContent = isTa ? `${words} சொற்கள்` : `${words} words`;
+    wordCount.innerHTML = `<span class="ta-text">${words} சொற்கள்</span><span class="en-text">${words} words</span>`;
   }
   passageInput.addEventListener("input", updateWordCount);
 
@@ -75,13 +79,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Judge Drawer Toggle
-  judgeToggle.addEventListener("click", () => {
-    judgeDrawer.classList.toggle("hidden");
-    loadJudgeReport();
-  });
-  btnCloseJudge.addEventListener("click", () => {
-    judgeDrawer.classList.add("hidden");
-  });
+  if (judgeToggle) {
+    judgeToggle.addEventListener("click", () => {
+      judgeDrawer.classList.toggle("hidden");
+    });
+  }
+  if (btnCloseJudge) {
+    btnCloseJudge.addEventListener("click", () => {
+      judgeDrawer.classList.add("hidden");
+    });
+  }
 
   // Load Status
   function loadStatus() {
@@ -89,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(r => r.json())
       .then(st => {
         currentHost = st.host || "Local Device";
-        workingHost.textContent = currentHost;
+        setWorkingHost(currentHost);
 
         // Offline Chip
         const offChip = document.getElementById("offline-chip");
@@ -144,20 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch(() => {});
 
   // Load Judge Report
-  function loadJudgeReport() {
-    fetch("/api/report")
-      .then(r => r.json())
-      .then(d => {
-        if (d.report) {
-          document.getElementById("judge-report-content").textContent = d.report;
-        } else {
-          document.getElementById("judge-report-content").textContent = "Evaluation report not generated yet.";
-        }
-      })
-      .catch(() => {
-        document.getElementById("judge-report-content").textContent = "No report available.";
-      });
-  }
+  function loadJudgeReport() {}
 
   // Highlight Sentence in Reading View
   function highlightSentence(idx) {
@@ -182,14 +176,14 @@ document.addEventListener("DOMContentLoaded", () => {
     resultsSec.classList.add("hidden");
     errorSec.classList.add("hidden");
     workingSec.classList.remove("hidden");
-    workingTimer.textContent = "0.0";
+    setWorkingTimer("0.0");
     queueNotice.classList.add("hidden");
 
     const tStart = Date.now();
     clearInterval(timerInterval);
     timerInterval = setInterval(() => {
       const elapsed = ((Date.now() - tStart) / 1000).toFixed(1);
-      workingTimer.textContent = elapsed;
+      setWorkingTimer(elapsed);
     }, 200);
 
     fetch("/api/run", {
@@ -400,7 +394,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (Object.keys(quizAnswers).length === totalQ) {
       const score = Object.values(quizAnswers).filter(Boolean).length;
       quizScoreBanner.classList.remove("hidden");
-      quizScoreText.textContent = isTa ? `விடை சோதனை முடிவு: ${score} / ${totalQ} கேள்விகள் சரி` : `Final Quiz Score: ${score} / ${totalQ} correct`;
+      quizScoreText.innerHTML = isTa ? `<span class="ta-text">விடை முடிவு: ${score} / ${totalQ} சரி</span>` : `<span class="en-text">Final Quiz Score: ${score} / ${totalQ} correct</span>`;
     }
   }
 

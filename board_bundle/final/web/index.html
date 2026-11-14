@@ -61,7 +61,7 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
             <span class="ta-text">மாதிரி பத்தி ஒட்டு (Sample Passage)</span><span class="en-text">Paste Sample Passage</span>
           </button>
-          <span id="word-count" class="word-counter">0 சொற்கள் / words</span>
+          <span id="word-count" class="word-counter"><span class="ta-text">0 சொற்கள்</span><span class="en-text">0 words</span></span>
         </div>
         <textarea id="passage-input" rows="6" placeholder="பாடப்புத்தக ஆங்கிலப் பத்தியை இங்கு ஒட்டவும் (150-300 சொற்கள்)... / Paste textbook English paragraph here..."></textarea>
       </div>
@@ -87,9 +87,18 @@
     <section id="working-section" class="card working-card hidden">
       <div class="spinner"></div>
       <div class="working-details">
-        <h4 id="working-status-title" class="working-title"><span class="ta-text">மாதிரி செயல்படுத்தப்படுகிறது...</span><span class="en-text">Processing locally with INT4 model...</span></h4>
-        <p id="working-sub" class="working-sub">நேரம்: <span id="working-timer">0.0</span> விநாடிகள் (seconds) · சாதனம்: <span id="working-host">-</span></p>
-        <p id="queue-notice" class="queue-notice hidden">வரிசையில் காத்திருக்கிறது / Waiting in queue...</p>
+        <h4 id="working-status-title" class="working-title">
+          <span class="ta-text">மாதிரி செயல்படுத்தப்படுகிறது...</span>
+          <span class="en-text">Processing locally with INT4 model...</span>
+        </h4>
+        <p class="working-sub">
+          <span class="ta-text">நேரம்: <span class="working-timer">0.0</span> விநாடிகள் · சாதனம்: <span class="working-host">-</span></span>
+          <span class="en-text">Time elapsed: <span class="working-timer">0.0</span> s · Device: <span class="working-host">-</span></span>
+        </p>
+        <p id="queue-notice" class="queue-notice hidden">
+          <span class="ta-text">வரிசையில் காத்திருக்கிறது...</span>
+          <span class="en-text">Waiting in queue...</span>
+        </p>
       </div>
     </section>
 
@@ -115,7 +124,7 @@
       <!-- 4A: Reading View with Sentence Highlighting -->
       <div class="card result-card">
         <div class="card-header">
-          <span class="card-tag">பார்வை / Reading View</span>
+          <span class="card-tag"><span class="ta-text">பார்வை</span><span class="en-text">Reading View</span></span>
           <h3 class="card-title"><span class="ta-text">பாடப்புத்தக வாக்கியப் பகுப்பாய்வு</span><span class="en-text">Sentence Breakdown & Highlight</span></h3>
         </div>
         <div id="sentence-list" class="sentence-list">
@@ -126,16 +135,16 @@
       <!-- 4B: Simple Rewrite Side-by-Side -->
       <div class="card result-card">
         <div class="card-header">
-          <span class="card-tag">எளிமையாக்கம் / Simplification</span>
+          <span class="card-tag"><span class="ta-text">எளிமையாக்கம்</span><span class="en-text">Simplification</span></span>
           <h3 class="card-title"><span class="ta-text">கடின வாக்கியத்தின் எளிய வடிவம்</span><span class="en-text">Simplified Rewrite (Exact Numbers Preserved)</span></h3>
         </div>
         <div class="comparison-grid">
           <div class="comp-box comp-original">
-            <span class="comp-badge">அசல் வாக்கியம் (Original)</span>
+            <span class="comp-badge"><span class="ta-text">அசல் வாக்கியம்</span><span class="en-text">Original</span></span>
             <p id="orig-hard-text" class="comp-text"></p>
           </div>
           <div class="comp-box comp-simple">
-            <span class="comp-badge">எளிய வடிவம் (Simplified)</span>
+            <span class="comp-badge"><span class="ta-text">எளிய வடிவம்</span><span class="en-text">Simplified</span></span>
             <p id="simple-text" class="comp-text"></p>
           </div>
         </div>
@@ -144,7 +153,7 @@
       <!-- 4C: Summary Points -->
       <div class="card result-card">
         <div class="card-header">
-          <span class="card-tag">முக்கியக் குறிப்புகள் / Summary</span>
+          <span class="card-tag"><span class="ta-text">முக்கியக் குறிப்புகள்</span><span class="en-text">Summary</span></span>
           <h3 class="card-title"><span class="ta-text">மூன்று முக்கிய அறிவியல் கருத்துக்கள்</span><span class="en-text">Key Scientific Summary Points</span></h3>
         </div>
         <ul id="summary-list" class="summary-list">
@@ -155,7 +164,7 @@
       <!-- 4D: Hard Words & Glossary (Bilingual) -->
       <div class="card result-card">
         <div class="card-header">
-          <span class="card-tag">அறிவியல் கலைச்சொற்கள் / Glossary</span>
+          <span class="card-tag"><span class="ta-text">அறிவியல் கலைச்சொற்கள்</span><span class="en-text">Glossary</span></span>
           <h3 class="card-title"><span class="ta-text">கலைச்சொல் விளக்கம் (தமிழ் & ஆங்கிலம்)</span><span class="en-text">Scientific Terms & Definitions</span></h3>
         </div>
         <div class="table-responsive">
@@ -177,7 +186,7 @@
       <!-- 4E: Local Village Context Example -->
       <div class="card result-card">
         <div class="card-header">
-          <span class="card-tag">நடைமுறை உதாரணம் / Context Example</span>
+          <span class="card-tag"><span class="ta-text">நடைமுறை உதாரணம்</span><span class="en-text">Context Example</span></span>
           <h3 class="card-title"><span class="ta-text">நமது சூழல் சார்ந்த எளிய ஒப்பீடு</span><span class="en-text">Everyday Familiar Example</span></h3>
         </div>
         <div class="example-box">
@@ -195,7 +204,7 @@
       <!-- 4F: Interactive Quiz -->
       <div class="card result-card quiz-card">
         <div class="card-header">
-          <span class="card-tag">பயிற்சி வினாடிவினா / Interactive Quiz</span>
+          <span class="card-tag"><span class="ta-text">பயிற்சி வினாடிவினா</span><span class="en-text">Interactive Quiz</span></span>
           <h3 class="card-title"><span class="ta-text">புரிதல் சோதனை வினாக்கள்</span><span class="en-text">Self-Assessment Quiz</span></h3>
         </div>
         <div id="quiz-container" class="quiz-container">
@@ -209,7 +218,7 @@
               <circle cx="12" cy="12" r="2"/>
             </svg>
           </span>
-          <span id="quiz-score-text" class="score-text">மதிப்பெண்: 3 / 3</span>
+          <span id="quiz-score-text" class="score-text"><span class="ta-text">மதிப்பெண்: 3 / 3</span><span class="en-text">Score: 3 / 3</span></span>
         </div>
       </div>
 
@@ -219,7 +228,7 @@
   <!-- Judge Drawer Modal / Panel -->
   <aside id="judge-drawer" class="judge-drawer hidden">
     <div class="drawer-header">
-      <h3 class="drawer-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -3px; margin-right: 6px;"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg> For Judges (நடுவர் தொழில்நுட்ப அறிக்கை)</h3>
+      <h3 class="drawer-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -3px; margin-right: 6px;"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg> <span class="ta-text">நடுவர் பகுதி (கணினித் தரவுகள்)</span><span class="en-text">For Judges (System Telemetry)</span></h3>
       <button id="btn-close-judge" class="btn-close">&times;</button>
     </div>
     <div class="drawer-body">
@@ -242,23 +251,11 @@
           <tr><td>Peak RSS Memory</td><td id="j-rss">-</td></tr>
         </table>
       </div>
-
-      <div class="judge-metric-card">
-        <h4>3. Release Gate Verification (Laptop Hold-Out)</h4>
-        <div id="judge-report-content" class="report-box">
-          Loading verified eval numbers...
-        </div>
-      </div>
-
-      <div class="judge-metric-card alert-box">
-        <strong><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> What Automatic Scores Do Not Measure:</strong>
-        <p>Automatic checks verify groundedness, sentence citation validity, zero number hallucination, and glossary fidelity. They do not evaluate pedagogy or intuitive teaching clarity—which is validated via the 30-sample human check in gold.csv.</p>
-      </div>
     </div>
   </aside>
 
   <footer class="app-footer">
-    <p>StudyAid Offline · Tamil Nadu State Board Curriculum (தமிழ்நாடு அரசுப் பாடத்திட்டம்) · Local INT4 ExecuTorch AI on Device</p>
+    <p><span class="ta-text">StudyAid · தமிழ்நாடு அரசுப் பாடத்திட்டம் · முழுதும் ஆஃப்லைன்</span><span class="en-text">StudyAid · Tamil Nadu State Board Curriculum · Offline on Device</span></p>
   </footer>
 
   <script src="app.js"></script>
