@@ -1,0 +1,657 @@
+{
+  "refraction": {
+    "ta": "ஒளிவிலகல்",
+    "translit": "Oli-vilagal",
+    "en_def": "The bending of light when it passes from one material into another.",
+    "ta_def": "ஒளி ஒரு ஊடகத்திலிருந்து மற்றொரு ஊடகத்திற்கு செல்லும்போது ஏற்படும் விலகல்.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Science Unit 2",
+    "ref": "Unit 2"
+  },
+  "medium": {
+    "ta": "ஊடகம்",
+    "translit": "Oodagam",
+    "en_def": "The material light travels through, such as air, water or glass.",
+    "ta_def": "ஒளி அல்லது ஆற்றல் பரவும் பொருள்.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Science Unit 2",
+    "ref": "Unit 2"
+  },
+  "normal": {
+    "ta": "குத்துக்கோடு",
+    "translit": "Kuthukkodu",
+    "en_def": "An imaginary line at 90 degrees to the surface where light hits.",
+    "ta_def": "ஒளிபடும் தளத்திற்கு செங்குத்தாக வரையப்படும் கற்பனைக் கோடு.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Science Unit 2",
+    "ref": "Unit 2"
+  },
+  "obliquely": {
+    "ta": "சாய்வாக",
+    "translit": "Saaivaaga",
+    "en_def": "At a slant, not straight on.",
+    "ta_def": "நேராக இல்லாமல் ஒரு குறிப்பிட்ட கோணத்தில் அல்லது சாய்வாக.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Science Unit 2",
+    "ref": "Unit 2"
+  },
+  "temperature": {
+    "ta": "வெப்பநிலை",
+    "translit": "Veppanilai",
+    "en_def": "How hot or cold something is.",
+    "ta_def": "ஒரு பொருள் எவ்வளவு சூடாக அல்லது குளிராக உள்ளது என்பதன் அளவு.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 8 Science Unit 1",
+    "ref": "Unit 1"
+  },
+  "kelvin": {
+    "ta": "கெல்வின்",
+    "translit": "Kelvin",
+    "en_def": "The SI unit of temperature.",
+    "ta_def": "வெப்பநிலையின் SI அலகு.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 8 Science Unit 1",
+    "ref": "Unit 1"
+  },
+  "absolute zero": {
+    "ta": "தனிச் சுழி வெப்பநிலை",
+    "translit": "Thanich-chuzhi veppanilai",
+    "en_def": "The lowest possible temperature, 0 K.",
+    "ta_def": "மிகக் குறைந்த சாத்தியமான வெப்பநிலை, 0 K.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 9 Science Unit 7",
+    "ref": "Unit 7"
+  },
+  "triple point": {
+    "ta": "மும்மைப் புள்ளி",
+    "translit": "Mummaip-pulli",
+    "en_def": "The one temperature where ice, water and vapour stay together.",
+    "ta_def": "பனிக்கட்டி, நீர் மற்றும் நீராவி ஆகியவை சமநிலையில் இருக்கும் ஒரு குறிப்பிட்ட வெப்பநிலை.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 9 Science Unit 7",
+    "ref": "Unit 7"
+  },
+  "thermodynamic": {
+    "ta": "வெப்ப இயக்கவியல்",
+    "translit": "Veppa iyakkaviyal",
+    "en_def": "About how heat and energy move and change.",
+    "ta_def": "வெப்பம் மற்றும் ஆற்றல் எவ்வாறு நகர்கிறது மற்றும் மாறுகிறது என்பது பற்றிய ஆய்வு.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Science Unit 3",
+    "ref": "Unit 3"
+  },
+  "equilibrium": {
+    "ta": "சமநிலை",
+    "translit": "Samanilai",
+    "en_def": "State where nothing changes any more because everything is balanced.",
+    "ta_def": "அனைத்தும் சமநிலையில் இருப்பதால் எதுவும் மாறாத நிலை.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 9 Science Unit 7",
+    "ref": "Unit 7"
+  },
+  "saturated vapour": {
+    "ta": "நிறைவுற்ற நீராவி",
+    "translit": "Niraivutra neeraavi",
+    "en_def": "Holding the maximum amount of vapour possible at that temperature.",
+    "ta_def": "அந்த வெப்பநிலையில் அதிகபட்ச நீராவியைக் கொண்டிருக்கும் நிலை.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 9 Science Unit 7",
+    "ref": "Unit 7"
+  },
+  "saturated": {
+    "ta": "நிறைவுற்ற",
+    "translit": "Niraivutra",
+    "en_def": "Holding the maximum amount of vapour possible at that temperature.",
+    "ta_def": "அதிகபட்ச நீராவியைக் கொண்டிருக்கும் நிலை.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 9 Science Unit 7",
+    "ref": "Unit 7"
+  },
+  "degree celsius": {
+    "ta": "டிகிரி செல்சியஸ்",
+    "translit": "Degree Celsius",
+    "en_def": "Scale where water freezes at 0 °C and boils at 100 °C.",
+    "ta_def": "நீர் 0 °C இல் உறைந்து 100 °C இல் கொதிக்கும் வெப்பநிலை அளவுகோல்.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 8 Science Unit 1",
+    "ref": "Unit 1"
+  },
+  "celsius": {
+    "ta": "செல்சியஸ்",
+    "translit": "Celsius",
+    "en_def": "Scale where water freezes at 0 °C and boils at 100 °C.",
+    "ta_def": "நீர் 0 °C இல் உறைந்து 100 °C இல் கொதிக்கும் வெப்பநிலை அளவுகோல்.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 8 Science Unit 1",
+    "ref": "Unit 1"
+  },
+  "fahrenheit": {
+    "ta": "பாரன்ஹீட்",
+    "translit": "Fahrenheit",
+    "en_def": "Scale where water freezes at 32 °F and boils at 212 °F.",
+    "ta_def": "நீர் 32 °F இல் உறைந்து 212 °F இல் கொதிக்கும் வெப்பநிலை அளவுகோல்.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 8 Science Unit 1",
+    "ref": "Unit 1"
+  },
+  "melting ice": {
+    "ta": "உருகும் பனிக்கட்டி",
+    "translit": "Urugum panikkatti",
+    "en_def": "Ice that is turning into water.",
+    "ta_def": "நீராக மாறிக்கொண்டிருக்கும் பனிக்கட்டி.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 9 Science Unit 7",
+    "ref": "Unit 7"
+  },
+  "chloroplast": {
+    "ta": "பசுங்கணிகம்",
+    "translit": "Pasungkanigam",
+    "en_def": "Cell structure where photosynthesis occurs.",
+    "ta_def": "ஒளிச்சேர்க்கை நடைபெறும் செல்லின் பகுதி.",
+    "sub": "biology",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
+    "ref": "Unit 12"
+  },
+  "photosynthesis": {
+    "ta": "ஒளிச்சேர்க்கை",
+    "translit": "Olicherkkai",
+    "en_def": "Process by which green plants make food using sunlight.",
+    "ta_def": "தாவரங்கள் சூரிய ஒளியைப் பயன்படுத்தி உணவு தயாரிக்கும் முறை.",
+    "sub": "biology",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
+    "ref": "Unit 12"
+  },
+  "chlorophyll": {
+    "ta": "பச்சையம்",
+    "translit": "Pachaiyam",
+    "en_def": "Green pigment that absorbs sunlight for photosynthesis.",
+    "ta_def": "ஒளிச்சேர்க்கைக்கு உதவும் பச்சைக் நிறமி.",
+    "sub": "biology",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
+    "ref": "Unit 12"
+  },
+  "stomata": {
+    "ta": "இலைத்துளை",
+    "translit": "Ilaithulai",
+    "en_def": "Microscopic openings on leaves for gas exchange.",
+    "ta_def": "வாயுப் பரிமாற்றத்திற்கு உதவும் இலைகளின் நுண்ணிய துளைகள்.",
+    "sub": "biology",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
+    "ref": "Unit 12"
+  },
+  "peristalsis": {
+    "ta": "குடல் அசைவு",
+    "translit": "Kudal-asaivu",
+    "en_def": "Involuntary muscle contractions pushing food along digestive tract.",
+    "ta_def": "உணவை முன்னோக்கி நகர்த்தும் அலை போன்ற தசை இயக்கம்.",
+    "sub": "biology",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
+    "ref": "Unit 12"
+  },
+  "digestion": {
+    "ta": "செரிமானம்",
+    "translit": "Serimaanam",
+    "en_def": "Breakdown of food into absorbable nutrients.",
+    "ta_def": "உணவு எளிய ஊட்டச்சத்துக்களாக உடைக்கப்படும் செயல்முறை.",
+    "sub": "biology",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
+    "ref": "Unit 12"
+  },
+  "stomach": {
+    "ta": "இரைப்பை",
+    "translit": "Iraippai",
+    "en_def": "Organ where gastric acid and enzymes digest food.",
+    "ta_def": "உணவை செரிக்கும் அமில சுரப்பி கொண்ட உறுப்பு.",
+    "sub": "biology",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Biology Unit 12",
+    "ref": "Unit 12"
+  },
+  "current": {
+    "ta": "மின்னோட்டம்",
+    "translit": "Minnotam",
+    "en_def": "The flow of electric charge through a conductor.",
+    "ta_def": "கடத்தி வழியே பாயும் மின் கட்டுகளின் ஓட்டம்.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Physics Unit 4",
+    "ref": "Unit 4"
+  },
+  "circuit": {
+    "ta": "மின்சுற்று",
+    "translit": "Minsutru",
+    "en_def": "A closed loop through which electric current can flow.",
+    "ta_def": "மின்னோட்டம் பாய்வதற்கான ஒரு மூடிய பாதை.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 10 Physics Unit 4",
+    "ref": "Unit 4"
+  },
+  "frequency": {
+    "ta": "அதிர்வெண்",
+    "translit": "Athirven",
+    "en_def": "Number of wave oscillations per second (Hz).",
+    "ta_def": "ஒரு வினாடியில் ஏற்படும் அலைவு சுழற்சிகளின் எண்ணிக்கை.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 9 Physics Unit 8",
+    "ref": "Unit 8"
+  },
+  "vibration": {
+    "ta": "அதிர்வு",
+    "translit": "Athirvu",
+    "en_def": "Rapid back-and-forth motion of an object.",
+    "ta_def": "முன்னும் பின்னும் விரைவாக நிகழும் இயக்கம்.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 9 Physics Unit 8",
+    "ref": "Unit 8"
+  },
+  "amplitude": {
+    "ta": "வீச்சு",
+    "translit": "Veechu",
+    "en_def": "Maximum displacement of a wave from its rest position.",
+    "ta_def": "அலையின் அதிகபட்ச இடப்பெயர்ச்சி.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 9 Physics Unit 8",
+    "ref": "Unit 8"
+  },
+  "wavelength": {
+    "ta": "அலைநீளம்",
+    "translit": "Alaineelam",
+    "en_def": "Distance between two consecutive crests or compressions.",
+    "ta_def": "அடுத்தடுத்த இரண்டு முகடுகளுக்கு இடைப்பட்ட தூரம்.",
+    "sub": "physics",
+    "ok": true,
+    "src": "Samacheer Kalvi Class 9 Physics Unit 8",
+    "ref": "Unit 8"
+  },
+  "compound surds": {
+    "ta": "கூட்டு முறுடுகள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "acute triangle": {
+    "ta": "குறுங்கோண முக்கோணம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "complement of a set": {
+    "ta": "நிரப்புக் கணம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "complementary events": {
+    "ta": "நிரப்பு நிகழ்ச்சிகள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "altitudes of a triangle": {
+    "ta": "முக்கோணத்தின்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "arithmetic mean": {
+    "ta": "கூட்டுச் சராசரி",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "conjugate": {
+    "ta": "இணை",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "consistent": {
+    "ta": "ஒருங்கமைவன",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "associative property": {
+    "ta": "சேர்ப்புப் பண்பு",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "constant": {
+    "ta": "மாறிலி",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "assumed mean": {
+    "ta": "ஊகச் சராசரி",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "coordinate axes": {
+    "ta": "ஆய அச்சுகள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "cuboid": {
+    "ta": "கனச் செவ்வகம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "cartesian plane": {
+    "ta": "கார்டீசியன் தளம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "cyclic quadrilateral": {
+    "ta": "வட்ட நாற்கரம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "circumcentre of a": {
+    "ta": "முக்கோணத்தின்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "division algorithm": {
+    "ta": "வகுத்தல் படிமுறை",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "co-efficient": {
+    "ta": "கெழு",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "expression": {
+    "ta": "நேரியப் பல்லுறுப்புக்கோவை",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "equivalent sets": {
+    "ta": "சமான கணங்கள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "major sector": {
+    "ta": "பெரிய வட்டக்கோணப்பகுதி",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "event": {
+    "ta": "நிகழ்ச்சி",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "tendency": {
+    "ta": "மையப்போக்கு அளவைகள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "externally": {
+    "ta": "வெளிப்புறமாக",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "median": {
+    "ta": "இடைநிலை",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "face of a solid": {
+    "ta": "ஒரு திண்மத்தின் முகப்பு",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "median of a triangle": {
+    "ta": "முக்கோணத்தின் நடுக்கோடு",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "factor theorem": {
+    "ta": "காரணித் தேற்றம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "mid point": {
+    "ta": "நடுப்புள்ளி",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "factorisation": {
+    "ta": "காரணிப்படுத்துதல்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "finite set": {
+    "ta": "முடிவுறு கணம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "mixed surds": {
+    "ta": "கலப்பு முறுடுகள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "frequency table": {
+    "ta": "நிகழ்வெண் பட்டியல்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "mode": {
+    "ta": "முகடு",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "triangle": {
+    "ta": "செங்கோட்டு மையம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "indices": {
+    "ta": "அடுக்குகள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "outcome": {
+    "ta": "விளைவு",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "infinite set": {
+    "ta": "முடிவிலி கணம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "overlapping sets": {
+    "ta": "வெட்டும் கணங்கள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "inradius": {
+    "ta": "உள்வட்ட ஆரம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "interior angles": {
+    "ta": "உட்கோணங்கள்                                       தசம எண்களின்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "internally": {
+    "ta": "உட்புறமாக",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "polynomial equation": {
+    "ta": "பல்லுறுப்புக்கோவைச்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "intersection of two sets": {
+    "ta": "கணங்களின் வெட்டு                                  சமன்பாடு",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "of sets": {
+    "ta": "வித்தியாசம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "radicand": {
+    "ta": "மூல அடிமானம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "terminating decimals": {
+    "ta": "முடிவுறு தசம எண்கள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "rational numbers": {
+    "ta": "விகிதமுறு எண்கள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "trigonometry": {
+    "ta": "முக்கோணவியல்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "remainder theroem": {
+    "ta": "மீதித் தேற்றம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "right triangle": {
+    "ta": "செங்கோண முக்கோணம்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "set complementation": {
+    "ta": "கண நிரப்பி",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "zeros of polynomial": {
+    "ta": "பல்லுறுப்புக்கோவையின்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "set difference": {
+    "ta": "கண வித்தியாசம்                                        பூச்சியங்கள்",
+    "src": "9_math_1_en.pdf",
+    "ok": false
+  },
+  "z": {
+    "ta": "ஒரு பகடையை உருட்டும்போது ஒற்்றறை எண் அல்்லது இரட்்டடை எண் கிடைக்கும்",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "c": {
+    "ta": "அக்கோணங்்கள் ஒன்றுக்கொன்று மிகை நிரப்புக்",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "b        c       d": {
+    "ta": "வெளிக்கோணமானது             இரண்டு            உள்்ளளெதிர்க்",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "e": {
+    "ta": "உள்்ளவாறு ஒரு பாலத்்ததை",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "f                  h": {
+    "ta": "விட்்டத்்ததைப்",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "g": {
+    "ta": "பட்்டத்்ததை",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "s": {
+    "ta": "வட்்ட        மையத்தின்                   குறிப்பு",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "r": {
+    "ta": "வழியே         செல்லும்     நாண்",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "o     r": {
+    "ta": "வட்்டத்தின்      விட்்டம்   என                  ஒரு வட்்டமானது",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "p": {
+    "ta": "பரிதி        என்்பது       அதன்",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "q": {
+    "ta": "பக்்கங்்கள் மற்றும் முனைகளை",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "b                          c              o": {
+    "ta": "அரை வட்்டம்",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "y": {
+    "ta": "மற்றொரு வகையில் தீர்வு காணல்",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "p                                d": {
+    "ta": "பாகங்்களாகப் பிரிக்கும்",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "cartesian coordinate": {
+    "ta": "தசம எண்களின்",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "system": {
+    "ta": "காலமுறைமை",
+    "src": "9_math_1_ta.pdf",
+    "ok": false
+  },
+  "saladin of egypt and suleiman the": {
+    "ta": "தென்கிழக்்ககாசிய நாடுகளின் வரலாறு",
+    "src": "9_soc_1_en.pdf",
+    "ok": false
+  },
+  "contradictions": {
+    "ta": "என்்ற     புத்்தகத்்ததை                            அதை சரிசெய்யும் பல்்வவேறு வழிமுறைகளை",
+    "src": "9_soc_1_ta.pdf",
+    "ok": false
+  },
+  "bsnl                             tata steel": {
+    "ta": "இந்்தக் கிராம வளர்ச்சியின் காரணம் கிராம",
+    "src": "9_soc_1_ta.pdf",
+    "ok": false
+  }
+}

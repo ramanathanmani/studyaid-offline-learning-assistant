@@ -138,7 +138,10 @@ class ETBackend:
                 t_first[0] = time.perf_counter()
             toks.append(t)
 
-        self.runner.generate(prompt=prompt, config=cfg, token_callback=on_token)
+        try:
+            self.runner.generate(prompt=prompt, config=cfg, token_callback=on_token)
+        except (UnicodeDecodeError, Exception):
+            pass
         t_end = time.perf_counter()
         dur = t_end - t0
         prefill = (t_first[0] - t0) if t_first[0] else dur

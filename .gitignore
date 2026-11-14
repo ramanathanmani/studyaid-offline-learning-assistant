@@ -20,3 +20,9 @@ outputs/*
 .coverage
 dist/
 build/
+eval_kit/books/*.pdf
+*.pte
+*.jsonl
+gold.csv
+eval_kit/__pycache__/
+*.log
